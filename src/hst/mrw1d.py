@@ -77,8 +77,20 @@ def wavelet_decomposition(wavelet, Nlevels, data, verify_Gs=False):
         # Using scipy sparse matrix
         phi = G_lo.dot(data)
         bar_phi = G_hi.dot(data)
+        print(f'phi.shape {phi.shape}, bar_phi.shape {bar_phi.shape}')
         decomposition.append([phi, bar_phi])
         print(f'data count {data.shape[0]*data.shape[1]}')
         print(f'G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
         data = G_lo.dot(data)
     return decomposition, G_operators
+
+def data_reconstruction(phis, G_operators, Nlevels):
+    # Downward cascade starting with data = phi_J
+    phi_J = phis[0] 
+    print(f'phi_J,shape {phi_J.shape}')
+    for i in range(Nlevels):
+        bar_phi = phis[i+1]
+        G_lo, G_hi = G_operators[i]
+        print(f'bar_phi.shape {bar_phi.shape}, G_lo.T.shape {G_lo.T.shape}, G_hi.T.shape {G_hi.T.shape}')
+    data = phi_J
+    return data

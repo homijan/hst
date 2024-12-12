@@ -1,10 +1,10 @@
 import numpy as np
-from hst.mrw1d import wavelet_decomposition
+from hst.mrw1d import wavelet_decomposition, data_reconstruction
 
 # Print out essential properties of G_operators
 verify_Gs = True
 
-Nlevels = 10
+Nlevels = 6
 Ndata = 20
 data_length = 1024 # Should be a power of 2
 
@@ -21,3 +21,17 @@ for wavelet in wavelets:
     # Coarse phi_J interpretation
     cA = decomposition[len(decomposition)-1][0]
     print(f'wavelet {wavelet}, cA {cA}')
+
+    # Construct vector (phi_J, bar_phi_J, bar_phi_J-1,.., bar_phi_1) as in
+    phis = []
+    phi_J = decomposition[len(decomposition)-1][0]
+    phis.append(phi_J)
+    for phi, bar_phi in reversed(decomposition):
+        print(f'bar_phi.shape {bar_phi.shape}')
+        phis.append(bar_phi)
+
+    # Reverse the order of G_operators levels
+    G_operators.reverse()
+
+    data = data_reconstruction(phis, G_operators, Nlevels)
+    
