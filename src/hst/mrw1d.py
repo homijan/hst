@@ -95,45 +95,39 @@ def data_decomposition(G_operators, data, verify_Gs=False):
         verify_G_operators(G_operators)
 
     # Execute upward decompostion from fine to coarse
+    # following the blue procedure in Fig. 2 in Marchand et al, Wavelet Conditional Renormalization Group (2022)
     decomposition = []
+    # Starting (finest) level data
+    phi = data
     # The G_operators levels need to be reversed upward
     for G_lo, G_hi in reversed(G_operators):
-        #print(f'G_lo.shape {G_lo.shape}, data.shape {data.shape}')
-        # Using scipy sparse matrix
-        phi = G_lo.dot(data)
-        bar_phi = G_hi.dot(data)
-        #print(f'phi.shape {phi.shape}, bar_phi.shape {bar_phi.shape}')
-        #upward_decomposition.append([phi, bar_phi])
+        # Project high frequency data vector 
+        bar_phi = G_hi.dot(phi)
         decomposition.append(bar_phi)
-        print(f'G_lo.shape {G_lo.shape}, data.shape {data.shape}, data count {data.shape[0]*data.shape[1]}, G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
-        # current level data vector
-        data = phi
-    # Add phi_J (last phi stored in data)
-    decomposition.append(data)
+        print(f'G_lo.shape {G_lo.shape}, phi.shape {phi.shape}, phi count {phi.shape[0]*phi.shape[1]}, G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
+        # current level low frequency data vector
+        phi = G_lo.dot(phi)
+    # Add phi_J (coarsest level phi)
+    decomposition.append(phi)
 
     # Construct downward decomposition from coarse to fine
-    # as vector (phi_J, bar_phi_J, bar_phi_J-1,.., bar_phi_1) as in
+    # as vector (phi_J, bar_phi_J, bar_phi_J-1,.., bar_phi_1) 
+    # following Eq. 5 in Marchand et al, Wavelet Conditional Renormalization Group (2022)
     decomposition.reverse()
-#    decomposition = []
-#    phi_J = upward_decomposition[len(upward_decomposition)-1][0]
-#    decomposition.append(phi_J)
-#    for phi, bar_phi in reversed(upward_decomposition):
-#        #print(f'bar_phi.shape {bar_phi.shape}')
-#        decomposition.append(bar_phi)
 
     return decomposition
 
 def data_reconstruction(decomposition, G_operators):
-    """Implementation of data reconstruction from the wavelet coeffs (phi_J, bar_phi_J, .., bar_phi_1)."""
-    # Downward cascade starting with data = phi_J
-    phi_J = decomposition[0] 
-    print(f'phi_J,shape {phi_J.shape}')
-    # Reconstruct
-    data = phi_J
+    """Implementation of data reconstruction from the wavelet coeffs (phi_J, bar_phi_J, .., bar_phi_1).""" 
+    # Reconstruct by a downward cascade starting with phi_J
+    # following the red procedure in Fig. 2 in Marchand et al, Wavelet Conditional Renormalization Group (2022)
+    phi = decomposition[0]
     for i in range(len(G_operators)):
         bar_phi = decomposition[i+1]
         G_lo, G_hi = G_operators[i]
-        #print(f'data.shape {data.shape}, bar_phi.shape {bar_phi.shape}, G_lo.T.shape {G_lo.T.shape}, G_hi.T.shape {G_hi.T.shape}')
-        data = G_lo.T.dot(data) + G_hi.T.dot(bar_phi)
-        print(f'G_lo.T.shape {G_lo.T.shape}, data.shape {data.shape}, data count {data.shape[0]*data.shape[1]}, G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
-    return data
+        phi = G_lo.T.dot(phi) + G_hi.T.dot(bar_phi)
+        print(f'G_lo.T.shape {G_lo.T.shape}, bar_phi.shape {bar_phi.shape}, bar_phi count {bar_phi.shape[0]*bar_phi.shape[1]}, G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
+    # For clarity we highlight that final phi is on the lowest (finest) level
+    # following Fig. 2 in Marchand et al, Wavelet Conditional Renormalization Group (2022)
+    phi_0 = phi
+    return phi_0

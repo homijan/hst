@@ -7,8 +7,8 @@ save_Gs = False#True
 verify_Gs = False#True
 
 Nlevels = 7
-Ndata = 1000
-data_length = 2**Nlevels * 400 # constructed as a proper  power of 2
+Ndata = 5000
+data_length = 2**Nlevels * 100 # constructed as a proper  power of 2
 
 # Generate data
 input_data = np.random.rand(data_length, Ndata)
