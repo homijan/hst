@@ -35,7 +35,7 @@ def one_level_G_operators(Nrows, dec_lo, dec_hi):
     G_hi = csr_matrix(G_hi)
     return G_lo, G_hi
 
-def G_operators(wavelet, Nlevels, data_length):
+def generate_G_operators(wavelet, Nlevels, data_length):
     """Generate full set of mutli-resolution G_operators (wavelet + binate)"""
     # Obtain low and high resolution wavelet filters
     dec_lo = pywt.Wavelet(wavelet).dec_lo
@@ -76,14 +76,13 @@ def data_decomposition(G_operators, data, verify_Gs=False):
     upward_decomposition = []
     # The G_operators levels need to be reversed upward
     for G_lo, G_hi in reversed(G_operators):
-        print(f'G_lo.shape {G_lo.shape}, data.shape {data.shape}')
+        #print(f'G_lo.shape {G_lo.shape}, data.shape {data.shape}')
         # Using scipy sparse matrix
         phi = G_lo.dot(data)
         bar_phi = G_hi.dot(data)
         #print(f'phi.shape {phi.shape}, bar_phi.shape {bar_phi.shape}')
         upward_decomposition.append([phi, bar_phi])
-        print(f'data count {data.shape[0]*data.shape[1]}')
-        print(f'G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
+        print(f'G_lo.shape {G_lo.shape}, data.shape {data.shape}, data count {data.shape[0]*data.shape[1]}, G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
         # current level data vector
         data = phi
 
@@ -108,6 +107,6 @@ def data_reconstruction(decomposition, G_operators):
     for i in range(len(G_operators)):
         bar_phi = decomposition[i+1]
         G_lo, G_hi = G_operators[i]
-        print(f'data.shape {data.shape}, bar_phi.shape {bar_phi.shape}, G_lo.T.shape {G_lo.T.shape}, G_hi.T.shape {G_hi.T.shape}')
+        #print(f'data.shape {data.shape}, bar_phi.shape {bar_phi.shape}, G_lo.T.shape {G_lo.T.shape}, G_hi.T.shape {G_hi.T.shape}')
         data = G_lo.T.dot(data) + G_hi.T.dot(bar_phi)
     return data
