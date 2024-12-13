@@ -1,7 +1,7 @@
 import pywt
 from pywt import wavedec
 import numpy as np
-from hst.mrw1d import wavelet_decomposition
+from hst.mrw1d import G_operators, data_decomposition
 
 # MAIN
 def format_array(arr):
@@ -40,7 +40,10 @@ for coeff in coeffs:
 cA = coeffs[0]
 
 data = mat_data.T
-decomposition, G_operators = wavelet_decomposition(wavelet, Nlevels, data, verify_Gs)
+# Generate orthogonal G_lo (aka G) and G_hi (aka bar_G) operators
+G_operators_upward = G_operators(wavelet, Nlevels, data.shape[0])
+# Generate data decomposition into (phi_J, bar_phi_J, .., bar_phi_1)
+decomposition = data_decomposition(G_operators_upward, data, verify_Gs)
 # Coarse phi_J interpretation
 cA_ours = decomposition[0]
 
@@ -71,7 +74,10 @@ coeffs = wavedec(mat_data, wavelet, level=Nlevels)
 cA = coeffs[0]
 
 data = mat_data.T
-decomposition, G_operators = wavelet_decomposition(wavelet, Nlevels, data, verify_Gs)
+# Generate orthogonal G_lo (aka G) and G_hi (aka bar_G) operators
+G_operators_upward = G_operators(wavelet, Nlevels, data.shape[0])
+# Generate data decomposition into (phi_J, bar_phi_J, .., bar_phi_1)
+decomposition = data_decomposition(G_operators_upward, data, verify_Gs)
 # Coarse phi_J interpretation
 cA_ours = decomposition[0]
 #print(f'wavelet {wavelet}, cA_ours {cA_ours}')
@@ -82,7 +88,10 @@ wavelet = 'db2'
 dec_lo, dec_hi, rec_lo, rec_hi = wavelet_info(pywt.Wavelet(wavelet))
 print(f'TEST: wavelet {wavelet}')
 data = mat_data.T
-decomposition, G_operators = wavelet_decomposition(wavelet, Nlevels, data, verify_Gs)
+# Generate orthogonal G_lo (aka G) and G_hi (aka bar_G) operators
+G_operators_upward = G_operators(wavelet, Nlevels, data.shape[0])
+# Generate data decomposition into (phi_J, bar_phi_J, .., bar_phi_1)
+decomposition = data_decomposition(G_operators_upward, data, verify_Gs)
 # Coarse phi_J interpretation
 cA_ours = decomposition[0]
 print(f'wavelet {wavelet}, cA_ours {cA_ours}')
