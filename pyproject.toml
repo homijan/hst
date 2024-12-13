@@ -17,6 +17,7 @@ classifiers = [
 dependencies = [
     "numpy",
     "scipy",
+    "pywt",
 ]
 [tool.hatch.build.targets.wheel]
 packages = [
