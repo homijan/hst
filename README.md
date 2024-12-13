@@ -14,9 +14,9 @@ Our `hst` python package can be installed locally following these steps
 
 ## Demo
 
-Copy the **demo** script from the repository `hst/tests/test_wavelet_decomposition.py` which shows how to *decompose* (transform) and *reconstruct* (inverse transform) any given 1D data with `db1` or `db2` Daubechies wavelets. Set `verify_Gs = True` to see that `G_operators` correspodning to *mother* (`G` or `G_lo`) and *daughter* (`bar_G` or `G_hi`) wavelet operators are orthogonal and invertible. 
+Jupyter notebook `hst/docs/demo_hst.ipynb` shows how to *decompose* (transform) and *reconstruct* (inverse transform) given randomly generated super-Gaussian pulses in 1D with `db1` or `db2` Daubechies wavelets. Set `verify_Gs = True` to see that `G_operators` correspodning to *mother* (`G` or `G_lo`) and *daughter* (`bar_G` or `G_hi`) wavelet operators are orthogonal and invertible. 
 
-The matrix `input_data` can be adjusted using your 1D dataset. 
+The matrix `input_data` can be adjusted using any 1D dataset that has binate structure corresponding to multiresoltion levels `Nlevels`. 
 
 ## Multiresolution wavelet methodology
 
