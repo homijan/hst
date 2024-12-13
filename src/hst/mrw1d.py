@@ -10,15 +10,27 @@ def one_level_G_operators(Nrows, dec_lo, dec_hi):
     # Number of points in the filters
     Npoints = len(dec_lo)
     mod = int(Npoints / 2)
-    G_lo = np.zeros((Nrows, Ncols))
-    G_hi = np.zeros((Nrows, Ncols))
+    # CSR construction data
+    row = np.zeros(Nrows * Npoints - 2 * (mod-1)) 
+    col = np.zeros(Nrows * Npoints - 2 * (mod-1))
+    data_lo = np.zeros(Nrows * Npoints - 2 * (mod-1))
+    data_hi = np.zeros(Nrows * Npoints - 2 * (mod-1))
+    index = 0
     for i in range(Nrows):
         for p in range(Npoints):
             #print(f'i {i}, 2*i+Npoints-mod-p {2*i+Npoints-mod-p}')
             # BC sets zero values of data outside the grid
             if (2*i+Npoints-mod-p >= 0 and 2*i+Npoints-mod-p <= Ncols-1):
-                G_lo[i, 2*i+Npoints-mod-p] = dec_lo[p]
-                G_hi[i, 2*i+Npoints-mod-p] = dec_hi[p]
+                #G_lo[i, 2*i+Npoints-mod-p] = dec_lo[p]
+                #G_hi[i, 2*i+Npoints-mod-p] = dec_hi[p]
+                row[index] = i
+                col[index] = 2*i+Npoints-mod-p
+                data_lo[index] = dec_lo[p]
+                data_hi[index] = dec_hi[p]
+                index = index + 1
+    # Using scipy sparse matrix
+    G_lo = csr_matrix((data_lo, (row, col)), shape = (Nrows, Ncols))
+    G_hi = csr_matrix((data_hi, (row, col)), shape = (Nrows, Ncols))
     # Compensate for the clamped BC to ensure G*G^T + bar_G*bar_G^T = I
     if (mod == 2):
         # mod == 2 means a 4 point filter, where only three points are used 
@@ -30,9 +42,6 @@ def one_level_G_operators(Nrows, dec_lo, dec_hi):
         i = Nrows-1; j = Ncols-1
         G_lo[i, j] = scale * G_lo[i, j]
         G_hi[i, j] = scale * G_hi[i, j]
-    # Using scipy sparse matrix
-    G_lo = csr_matrix(G_lo)
-    G_hi = csr_matrix(G_hi)
     return G_lo, G_hi
 
 def generate_G_operators(wavelet, Nlevels, data_length):
@@ -56,7 +65,7 @@ def generate_G_operators(wavelet, Nlevels, data_length):
 
     return G_operators
 
-def G_operators_verification(G_operators):
+def verify_G_operators(G_operators):
     """Verify that the set of G_operators is orthogonal and invertible""" 
     for G_lo, G_hi in G_operators:
         print(f'Otrhogonality: G_lo.G_hi.T')
@@ -66,14 +75,27 @@ def G_operators_verification(G_operators):
         print(f'Invertibility: G_lo^T.G_lo + G_hi^T.G_hi = I')
         print(f'{G_lo.T.dot(G_lo) + G_hi.T.dot(G_hi)}')
 
+def save_G_operators(G_operators, file_name):
+    # Save generated G_operators using dictionary 
+    savez_dict = {}
+    savez_dict['allow_pickle'] = True
+    for index, level_Gops in enumerate(G_operators):
+        key_lo = f'G_lo_{index}'
+        key_hi = f'G_hi_{index}'
+        print(f'saving key {key_lo}, level_Gops[0].shape {level_Gops[0].shape}, level_Gops[1].shape {level_Gops[1].shape}')
+        print(f'saving key {key_hi}, level_Gops[1].shape {level_Gops[1].shape}')
+        savez_dict[key_lo] = level_Gops[0]
+        savez_dict[key_hi] = level_Gops[1]
+    np.savez(file_name, **savez_dict)
+
 def data_decomposition(G_operators, data, verify_Gs=False):
     """Implementation of the wavelet decomposition (phi_J, bar_phi_J, .., bar_phi_1)"""
     if (verify_Gs):
         # Verify orthogonality and invertibility of G_operators at all levels
-        G_operators_verification(G_operators)
+        verify_G_operators(G_operators)
 
     # Execute upward decompostion from fine to coarse
-    upward_decomposition = []
+    decomposition = []
     # The G_operators levels need to be reversed upward
     for G_lo, G_hi in reversed(G_operators):
         #print(f'G_lo.shape {G_lo.shape}, data.shape {data.shape}')
@@ -81,19 +103,23 @@ def data_decomposition(G_operators, data, verify_Gs=False):
         phi = G_lo.dot(data)
         bar_phi = G_hi.dot(data)
         #print(f'phi.shape {phi.shape}, bar_phi.shape {bar_phi.shape}')
-        upward_decomposition.append([phi, bar_phi])
+        #upward_decomposition.append([phi, bar_phi])
+        decomposition.append(bar_phi)
         print(f'G_lo.shape {G_lo.shape}, data.shape {data.shape}, data count {data.shape[0]*data.shape[1]}, G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
         # current level data vector
         data = phi
+    # Add phi_J (last phi stored in data)
+    decomposition.append(data)
 
     # Construct downward decomposition from coarse to fine
     # as vector (phi_J, bar_phi_J, bar_phi_J-1,.., bar_phi_1) as in
-    decomposition = []
-    phi_J = upward_decomposition[len(upward_decomposition)-1][0]
-    decomposition.append(phi_J)
-    for phi, bar_phi in reversed(upward_decomposition):
-        #print(f'bar_phi.shape {bar_phi.shape}')
-        decomposition.append(bar_phi)
+    decomposition.reverse()
+#    decomposition = []
+#    phi_J = upward_decomposition[len(upward_decomposition)-1][0]
+#    decomposition.append(phi_J)
+#    for phi, bar_phi in reversed(upward_decomposition):
+#        #print(f'bar_phi.shape {bar_phi.shape}')
+#        decomposition.append(bar_phi)
 
     return decomposition
 
@@ -109,4 +135,5 @@ def data_reconstruction(decomposition, G_operators):
         G_lo, G_hi = G_operators[i]
         #print(f'data.shape {data.shape}, bar_phi.shape {bar_phi.shape}, G_lo.T.shape {G_lo.T.shape}, G_hi.T.shape {G_hi.T.shape}')
         data = G_lo.T.dot(data) + G_hi.T.dot(bar_phi)
+        print(f'G_lo.T.shape {G_lo.T.shape}, data.shape {data.shape}, data count {data.shape[0]*data.shape[1]}, G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
     return data
