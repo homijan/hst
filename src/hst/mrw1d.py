@@ -88,9 +88,11 @@ def data_reconstruction(phis, G_operators, Nlevels):
     # Downward cascade starting with data = phi_J
     phi_J = phis[0] 
     print(f'phi_J,shape {phi_J.shape}')
+    # Reconstruct
+    data = phi_J
     for i in range(Nlevels):
         bar_phi = phis[i+1]
         G_lo, G_hi = G_operators[i]
-        print(f'bar_phi.shape {bar_phi.shape}, G_lo.T.shape {G_lo.T.shape}, G_hi.T.shape {G_hi.T.shape}')
-    data = phi_J
+        print(f'data.shape {data.shape}, bar_phi.shape {bar_phi.shape}, G_lo.T.shape {G_lo.T.shape}, G_hi.T.shape {G_hi.T.shape}')
+        data = G_lo.T.dot(data) + G_hi.T.dot(bar_phi)
     return data

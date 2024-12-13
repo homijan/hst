@@ -34,4 +34,10 @@ for wavelet in wavelets:
     G_operators.reverse()
 
     data = data_reconstruction(phis, G_operators, Nlevels)
+
+    print(f'mat_data.shape {mat_data.shape}, data.shape {data.shape}')
+    print('mat_data[:, 0]')
+    print(f'{mat_data[:, 0]}')
+    print('data[:, 0]')
+    print(f'{data[:, 0]}')
     
