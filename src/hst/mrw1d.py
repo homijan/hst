@@ -63,35 +63,51 @@ def G_operators_verification(G_operators):
         print(f'{G_lo.T.dot(G_lo) + G_hi.T.dot(G_hi)}')
 
 def wavelet_decomposition(wavelet, Nlevels, data, verify_Gs=False):
-    """TODO: clean up the implementation of the wavelet decomposition into phis and bar_phis"""
+    """TODO: 2b improved: Implementation of the wavelet decomposition (phi_J, bar_phi_J, .., bar_phi_1)"""
     # Generate orthogonal G_lo (aka G) and G_hi (aka bar_G) operators
     data_length = data.shape[0]
     G_operators = multi_level_G_operators(wavelet, Nlevels, data_length)
     if (verify_Gs):
         # Verify orthogonality and invertibility of G_operators at all levels
         G_operators_verification(G_operators)
-    # Prepare results
-    decomposition = []
+
+    # Execute upward decompostion from fine to coarse
+    upward_decomposition = []
     for G_lo, G_hi in G_operators:
         print(f'G_lo.shape {G_lo.shape}, data.shape {data.shape}')
         # Using scipy sparse matrix
         phi = G_lo.dot(data)
         bar_phi = G_hi.dot(data)
-        print(f'phi.shape {phi.shape}, bar_phi.shape {bar_phi.shape}')
-        decomposition.append([phi, bar_phi])
+        #print(f'phi.shape {phi.shape}, bar_phi.shape {bar_phi.shape}')
+        upward_decomposition.append([phi, bar_phi])
         print(f'data count {data.shape[0]*data.shape[1]}')
         print(f'G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
-        data = G_lo.dot(data)
+        # current level data vector
+        data = phi
+
+    # Construct downward decomposition from coarse to fine
+    # as vector (phi_J, bar_phi_J, bar_phi_J-1,.., bar_phi_1) as in
+    decomposition = []
+    phi_J = upward_decomposition[len(upward_decomposition)-1][0]
+    decomposition.append(phi_J)
+    for phi, bar_phi in reversed(upward_decomposition):
+        #print(f'bar_phi.shape {bar_phi.shape}')
+        decomposition.append(bar_phi)
+
+    # Reverse the order of G_operators levels to go downward
+    G_operators.reverse()
+
     return decomposition, G_operators
 
-def data_reconstruction(phis, G_operators, Nlevels):
+def data_reconstruction(decomposition, G_operators, Nlevels):
+    """Implementation of data reconstruction from the wavelet coeffs (phi_J, bar_phi_J, .., bar_phi_1)."""
     # Downward cascade starting with data = phi_J
-    phi_J = phis[0] 
+    phi_J = decomposition[0] 
     print(f'phi_J,shape {phi_J.shape}')
     # Reconstruct
     data = phi_J
     for i in range(Nlevels):
-        bar_phi = phis[i+1]
+        bar_phi = decomposition[i+1]
         G_lo, G_hi = G_operators[i]
         print(f'data.shape {data.shape}, bar_phi.shape {bar_phi.shape}, G_lo.T.shape {G_lo.T.shape}, G_hi.T.shape {G_hi.T.shape}')
         data = G_lo.T.dot(data) + G_hi.T.dot(bar_phi)

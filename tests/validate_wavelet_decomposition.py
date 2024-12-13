@@ -41,8 +41,8 @@ cA = coeffs[0]
 
 data = mat_data.T
 decomposition, G_operators = wavelet_decomposition(wavelet, Nlevels, data, verify_Gs)
-# Coarse phi interpretation
-cA_ours = decomposition[len(decomposition)-1][0]
+# Coarse phi_J interpretation
+cA_ours = decomposition[0]
 
 print('Note that 1:-1 indexes of our implementation match pywt values')
 print('This shows we use the filter/Gops correctly, with a different BC though (on purpose)!')
@@ -50,6 +50,7 @@ print(f'cA')
 print(f'{cA}')
 print(f'cA_ours')
 print(f'{cA_ours}')
+print(f'cA - cA_ours.T {cA - cA_ours.T}')
 
 
 print('Demonstration of working with db1 (our implementation is cross-checked against pywt) and db2 (we use only our implementation with zero-outside BC)')
@@ -71,8 +72,8 @@ cA = coeffs[0]
 
 data = mat_data.T
 decomposition, G_operators = wavelet_decomposition(wavelet, Nlevels, data, verify_Gs)
-# Coarse phi interpretation
-cA_ours = decomposition[len(decomposition)-1][0]
+# Coarse phi_J interpretation
+cA_ours = decomposition[0]
 #print(f'wavelet {wavelet}, cA_ours {cA_ours}')
 print(f'{wavelet} verification: cA - cA_ours^T') 
 print(f'{cA - cA_ours.T}')
@@ -82,6 +83,6 @@ dec_lo, dec_hi, rec_lo, rec_hi = wavelet_info(pywt.Wavelet(wavelet))
 print(f'TEST: wavelet {wavelet}')
 data = mat_data.T
 decomposition, G_operators = wavelet_decomposition(wavelet, Nlevels, data, verify_Gs)
-# Coarse phi interpretation
-cA_ours = decomposition[len(decomposition)-1][0]
+# Coarse phi_J interpretation
+cA_ours = decomposition[0]
 print(f'wavelet {wavelet}, cA_ours {cA_ours}')

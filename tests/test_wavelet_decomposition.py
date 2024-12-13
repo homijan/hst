@@ -19,21 +19,10 @@ for wavelet in wavelets:
     print(f'TEST: wavelet {wavelet}')
     decomposition, G_operators = wavelet_decomposition(wavelet, Nlevels, mat_data, verify_Gs)
     # Coarse phi_J interpretation
-    cA = decomposition[len(decomposition)-1][0]
+    cA = decomposition[0]
     print(f'wavelet {wavelet}, cA {cA}')
 
-    # Construct vector (phi_J, bar_phi_J, bar_phi_J-1,.., bar_phi_1) as in
-    phis = []
-    phi_J = decomposition[len(decomposition)-1][0]
-    phis.append(phi_J)
-    for phi, bar_phi in reversed(decomposition):
-        print(f'bar_phi.shape {bar_phi.shape}')
-        phis.append(bar_phi)
-
-    # Reverse the order of G_operators levels
-    G_operators.reverse()
-
-    data = data_reconstruction(phis, G_operators, Nlevels)
+    data = data_reconstruction(decomposition, G_operators, Nlevels)
 
     print(f'mat_data.shape {mat_data.shape}, data.shape {data.shape}')
     print('mat_data[:, 0]')
