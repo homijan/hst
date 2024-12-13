@@ -12,4 +12,8 @@ Our `hst` python package can be installed locally following these steps
 
    `>>> from hst.mrw1d import generate_G_operators, save_G_operators, data_decomposition, data_reconstruction`
 
+## Demo
+
+Copy the **demo** script from the repository `hst/tests/test_wavelet_decomposition.py` which shows how to *decompose* (transform) and *reconstruct* (inverse transverse) any given 1D data (adapt `input_data` to your 1D dataset). 
+
 ## Multiresolution wavelet methodology
