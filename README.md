@@ -1,1 +1,3 @@
-# Multiresolution wavelet methodology
+# Heisenberg scattering transform (HST)
+
+## Multiresolution wavelet methodology
