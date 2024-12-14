@@ -49,7 +49,7 @@ Daughter wavelet (or *wavelet* using $`b_k`$)
 
 `dec_hi [-0.066291+0.085581j, -0.110485-0.085581j, 0.662912-0.171163j, -0.662912+0.171163j, 0.110485+0.085581j, 0.066291-0.085581j]`
 
-Orthogonality 
+Demonstration of orthogonality 
 
 `|dec_lo * dec_hi| (1.0408340855860843e-17+0j)`
 
