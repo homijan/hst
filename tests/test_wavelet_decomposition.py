@@ -107,4 +107,14 @@ print(f'dec_hi {dec_hi}')
 print(f'Orthogonality')
 print(f'dec_lo.dec_hi {sum(dec_lo * dec_hi)}')
 print('Invertibility')
-print(f'dec_lo^*.dec_lo + dec_hi^*.dec_hi = {sum(dec_lo.conjugate() * dec_lo) + sum(dec_hi.conjugate() * dec_hi)}')   
+print(f'dec_lo^*.dec_lo + dec_hi^*.dec_hi = {sum(dec_lo.conjugate() * dec_lo) + sum(dec_hi.conjugate() * dec_hi)}')
+
+# Check orthogonality and invertibility with zero-BC
+dec_lo_BC = dec_lo[2:]
+dec_hi_BC = dec_hi[2:]
+print(f'Orthogonality')
+print(f'dec_lo_BC.dec_hi_BC {sum(dec_lo_BC * dec_hi_BC)}')
+print('Invertibility')
+print(f'dec_lo_BC^*.dec_lo_BC + dec_hi_BC^*.dec_hi_BC = {sum(dec_lo_BC.conjugate() * dec_lo_BC) + sum(dec_hi_BC.conjugate() * dec_hi_BC)}')
+
+
