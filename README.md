@@ -39,18 +39,21 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^T \phi_j + \gamma_j \bar{G}_{j-1}^T \bar{\phi}_j
 
 - Symmetry $`a_k = a_{1-k}`$
 - Orthogonality $`b_k = (-1)^k a^*_{1-k},~(1)`$ (holds for any discrete wavelet)
-- In the case of **SDW2**, $`a_k \neq 0`$ for $`k = -2, -1, 0, 1, 2`$ and the SDW2 filter coeffs $`a_1 = 0.662912+0.171163j, a_2 = 0.110485-0.085581j, a_3 = -0.066291-0.085581j`$
+- In the case of **SDW2**, $`a_k \neq 0`$ for $`k = -2, -1, 0, 1, 2`$ and the SDW2 filter coeffs $`\sqrt{2} a_1 = 0.662912+0.171163j, \sqrt{2} a_2 = 0.110485-0.085581j, \sqrt{2} a_3 = -0.066291-0.085581j`$ [Lima, *Image Processing with Complex Daubechies Wavelets* (1997)],
 
 Mother wavelet (or *scaling function* using $`a_k`$)
 
-`dec_lo [-0.066291-0.085581j, 0.110485-0.085581j, 0.662912+0.171163j, 0.662912+0.171163j, 0.110485-0.085581j, -0.066291-0.085581j]`
+`dec_lo [-0.04687482-0.06051491j, 0.07812469-0.06051491j, 0.46874957+0.12103052j, 0.46874957+0.12103052j, 0.07812469-0.06051491j, -0.04687482-0.06051491j]`
 
 Daughter wavelet (or *wavelet* using $`b_k`$)
 
-`dec_hi [-0.066291+0.085581j, -0.110485-0.085581j, 0.662912-0.171163j, -0.662912+0.171163j, 0.110485+0.085581j, 0.066291-0.085581j]`
+`dec_hi [-0.04687482+0.06051491j, -0.07812469-0.06051491j, 0.46874957-0.12103052j, -0.46874957+0.12103052j, 0.07812469+0.06051491j, 0.04687482-0.06051491j]`
 
 Demonstration of orthogonality 
 
-`|dec_lo * dec_hi| (1.0408340855860843e-17+0j)`
+`dec_lo.dec_hi = (3.469446951953614e-18+0j)`
 
+Demonstration of invertibility
+
+`dec_lo^*.dec_lo + dec_hi^*.dec_hi = (0.9999974786819997+0j)`
 
