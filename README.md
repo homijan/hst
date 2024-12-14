@@ -16,7 +16,7 @@ Our `hst` python package can be installed locally following these steps
 
 Jupyter notebook `hst/docs/demo_hst.ipynb` shows how to *decompose* (transform) and *reconstruct* (inverse transform) given randomly generated super-Gaussian pulses in 1D with `db1` or `db2` Daubechies wavelets. Set `verify_Gs = True` to see that `G_operators` correspodning to *mother* (`G` or `G_lo`) and *daughter* (`bar_G` or `G_hi`) wavelet operators are orthogonal
 
-$`G \bar{G}^{\dagger} = \bar{G} G^{\dagger} = 0 \quad\Leftrightarrow\quad b_k = (-1)^k a^*_{1-k},`$
+$`G \bar{G}^{\dagger} = \bar{G} G^{\dagger} = 0`$
 
 and invertible
 
@@ -35,6 +35,22 @@ and
 
 $`\phi_{j-1} = \gamma_j G_{j-1}^T \phi_j + \gamma_j \bar{G}_{j-1}^T \bar{\phi}_j.~(8)`$
 
+### Symmetric Daubechies Wavelets (SDW)
 
+- Symmetry $`a_k = a_{1-k}`$
+- Orthogonality $`b_k = (-1)^k a^*_{1-k},~(1)`$ (holds for any discrete wavelet)
+- Case SDW2 $`k=-2, -1, 0, 1, 2`$ and the SWD2 filter $`a_1 = 0.662912+0.171163j, a_2 = 0.110485-0.085581j, a_3 = -0.066291-0.085581j`$
+
+Mother wavelet (or *scaling function* using $`a_k`$)
+
+`dec_lo [-0.066291-0.085581j, 0.110485-0.085581j, 0.662912+0.171163j, 0.662912+0.171163j, 0.110485-0.085581j, -0.066291-0.085581j]`
+
+Daughter wavelet (or *wavelet* using $`b_k`$)
+
+`dec_hi [-0.066291+0.085581j, -0.110485-0.085581j, 0.662912-0.171163j, -0.662912+0.171163j, 0.110485+0.085581j, 0.066291-0.085581j]`
+
+Orthogonality 
+
+`|dec_lo * dec_hi| (1.0408340855860843e-17+0j)`
 
 
