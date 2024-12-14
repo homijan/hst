@@ -18,7 +18,7 @@ verify_Gs = False#True
 
 Nlevels = 7
 Ndata = 15 # Number of randomized super-Gaussian (small number to plot)
-data_length = 2**Nlevels * 200 # constructed as a proper  power of 2
+data_length = 2**Nlevels * 100 # constructed as a proper  power of 2
 
 #Nlevels = 3
 #Ndata = 10
@@ -80,4 +80,31 @@ for wavelet in wavelets:
     for i in range(Ndata):
         plt.plot(x, input_data[:, i])
         plt.plot(x, reconstructed_data[:, i], '-.')
-    plt.show()    
+    plt.show()
+
+# DAUB4 or db2
+dec_lo = np.array([-0.12940952255126037, 0.2241438680420134, 0.8365163037378079, 0.48296291314453416])
+# Symmetric (a_k = a_{1-k}) SWD2 with indexes [-2, -1, 0, 1, 2, 3]
+a1 = 0.662912 + 0.171163j
+a2 = 0.110485 - 0.085581j
+a3 = -0.066291 - 0.085581j
+# Symmetry and unitary scaling 1/sqrt(2)
+dec_lo = np.array([a3 / 2.0**0.5, a2 / 2.0**0.5, a1 / 2.0**0.5, a1 / 2.0**0.5, a2 / 2.0**0.5, a3 / 2.0**0.5])
+
+N = len(dec_lo)
+dec_hi = np.zeros(N, dtype=complex)
+for index in range(N):
+    # offeset of the local k from python i index as k_loc = i + offset
+    offset = int(1 - N / 2)
+    k_loc = index + offset
+    print(f'array index {index}, k_loc {k_loc}')
+    # b_k = (-1)^k a^*_{1-k}
+    dec_hi[index] = (-1)**k_loc * dec_lo[1 - k_loc - offset].conjugate()
+    
+print('SDW2 filters')
+print(f'dec_lo {dec_lo}')
+print(f'dec_hi {dec_hi}')
+print(f'Orthogonality')
+print(f'dec_lo.dec_hi {sum(dec_lo * dec_hi)}')
+print('Invertibility')
+print(f'dec_lo^*.dec_lo + dec_hi^*.dec_hi = {sum(dec_lo.conjugate() * dec_lo) + sum(dec_hi.conjugate() * dec_hi)}')   
