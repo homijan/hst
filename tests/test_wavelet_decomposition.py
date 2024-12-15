@@ -82,39 +82,116 @@ for wavelet in wavelets:
         plt.plot(x, reconstructed_data[:, i], '-.')
     plt.show()
 
+# Discrete Wavelets analysis
+wavelets = [] 
 # DAUB4 or db2
-dec_lo = np.array([-0.12940952255126037, 0.2241438680420134, 0.8365163037378079, 0.48296291314453416])
+dec_lo = 1.0 / 2.0**0.0 * np.array([-0.12940952255126037+0j, 0.2241438680420134+0j, 0.8365163037378079+0j, 0.48296291314453416+0j])
+wavelets.append(['db2', dec_lo, [(4.0/3.0)**0.5]])
+
 # Symmetric (a_k = a_{1-k}) SWD2 with indexes [-2, -1, 0, 1, 2, 3]
 a1 = 0.662912 + 0.171163j
 a2 = 0.110485 - 0.085581j
 a3 = -0.066291 - 0.085581j
 # Symmetry and unitary scaling 1/sqrt(2)
-dec_lo = np.array([a3 / 2.0**0.5, a2 / 2.0**0.5, a1 / 2.0**0.5, a1 / 2.0**0.5, a2 / 2.0**0.5, a3 / 2.0**0.5])
+scale = 1.0 / 2.0**0.0
+dec_lo = scale * np.array([a3, a2, a1, a1, a2, a3], dtype=complex)
+wavelets.append(['SDW2', dec_lo, [1.0, 1.0]])
 
-N = len(dec_lo)
-dec_hi = np.zeros(N, dtype=complex)
-for index in range(N):
-    # offeset of the local k from python i index as k_loc = i + offset
-    offset = int(1 - N / 2)
-    k_loc = index + offset
-    print(f'array index {index}, k_loc {k_loc}')
-    # b_k = (-1)^k a^*_{1-k}
-    dec_hi[index] = (-1)**k_loc * dec_lo[1 - k_loc - offset].conjugate()
+for wavelet, dec_lo, scaling in wavelets:
+    N = len(dec_lo)
+    dec_hi = np.zeros(N, dtype=complex)
+    for index in range(N):
+        # offeset of the local k from python i index as k_loc = i + offset
+        offset = int(1 - N / 2)
+        k_loc = index + offset
+        print(f'array index {index}, k_loc {k_loc}, 1 - k_loc {1 - k_loc}')
+        # b_k = (-1)^k a^*_{1-k}
+        dec_hi[index] = (-1)**k_loc * dec_lo[1 - k_loc - offset].conjugate()
     
-print('SDW2 filters')
-print(f'dec_lo {dec_lo}')
-print(f'dec_hi {dec_hi}')
-print(f'Orthogonality')
-print(f'dec_lo.dec_hi {sum(dec_lo * dec_hi)}')
-print('Invertibility')
-print(f'dec_lo^*.dec_lo + dec_hi^*.dec_hi = {sum(dec_lo.conjugate() * dec_lo) + sum(dec_hi.conjugate() * dec_hi)}')
+    print(f'{wavelet} filters')
+    print(f'dec_lo {dec_lo}')
+    print(f'dec_hi {dec_hi}')
+    print(f'Orthogonality')
+    print(f'dec_lo.dec_hi {dec_lo @ dec_hi}')
+    print('Invertibility')
+    print(f'dec_lo^*.dec_lo + dec_hi^*.dec_hi = {dec_lo.conjugate() @ dec_lo + dec_hi.conjugate() @ dec_hi}')
 
-# Check orthogonality and invertibility with zero-BC
-dec_lo_BC = dec_lo[2:]
-dec_hi_BC = dec_hi[2:]
-print(f'Orthogonality')
-print(f'dec_lo_BC.dec_hi_BC {sum(dec_lo_BC * dec_hi_BC)}')
-print('Invertibility')
-print(f'dec_lo_BC^*.dec_lo_BC + dec_hi_BC^*.dec_hi_BC = {sum(dec_lo_BC.conjugate() * dec_lo_BC) + sum(dec_hi_BC.conjugate() * dec_hi_BC)}')
+    print('HST') 
+    Nrows = 4; Ncols = 2 * Nrows
+    Npoints = len(dec_lo)
+    mod = int(Npoints / 2)
+    mat_G = np.zeros((Nrows, Ncols), dtype=complex)
+    bar_mat_G = np.zeros((Nrows, Ncols), dtype=complex)
+    for i in range(Nrows):
+        for p in range(Npoints):
+            #print(f'i {i}, 2*i+Npoints-mod-p {2*i+Npoints-mod-p}')
+            # BC sets zero values of data outside the grid
+            if (2*i+Npoints-mod-p >= 0 and 2*i+Npoints-mod-p <= Ncols-1):
+                # Note that dec_lo and dec_hi are assigned in reverse order (compatible with Pywavelets)
+                mat_G[i, 2*i+Npoints-mod-p] = dec_lo[p]
+                bar_mat_G[i, 2*i+Npoints-mod-p] = dec_hi[p]
 
+    # Check orthogonality and invertibility with zero-BCL
+    i0 = int(N / 2 - 1)
+    print(f'BCL i0 {i0}')
+    # Reduced filters on the left boundary
+    # Note the BC cut is on a reversed filter (compatible with the matrix above)
+    dec_lo_BCL = dec_lo[:-i0]
+    dec_hi_BCL = dec_hi[:-i0]
+    print(f'dec_lo_BCL {dec_lo_BCL}')
+    print(f'dec_hi_BCL {dec_hi_BCL}')
 
+    # Compensate for the clamped BC to ensure G*G^T + bar_G*bar_G^T = I
+    scale_mat_G00 = 1
+    scale_bar_mat_G00 = 1
+    if (mod == 2 or mod == 3):
+        # mod == 2 means a 4 point filter, where only three points are used 
+        # because of the BC (one value was dropped), hence the scaling sqrt(4/3)
+
+        # Enforcing the orthogonality of the BC lo/hi filters
+        # Note the BC cut is on a reversed filter (compatible with the matrix above)
+        prod_BCL = dec_lo_BCL * dec_hi_BCL.conjugate()
+        scale = (- sum(prod_BCL[:-1]) / prod_BCL[-1])**0.5
+        print(f'scale {scale}')
+        dec_lo_BCL[-1] = scale * dec_lo_BCL[-1]
+        dec_hi_BCL[-1] = scale.conjugate() * dec_hi_BCL[-1]
+        prod_BCL = dec_lo_BCL * dec_hi_BCL.conjugate()
+        print(f'prod_BCL = dec_lo_BCL * dec_hi_BCL {prod_BCL}, sum(prod_BCL) {sum(prod_BCL)}')
+        #scale = (4.0/3.0)**0.5 + 0j
+        scale_mat_G00 = scale
+        scale_bar_mat_G00 = scale.conjugate()
+
+    # Apply the tailored scaling
+    print(f'mod {mod}, scale_mat_G00 {scale_mat_G00}, scale_bar_mat_G00 {scale_bar_mat_G00}')
+    i = 0; j = 0
+    mat_G[i, j] = scale_mat_G00 * mat_G[i, j]
+    bar_mat_G[i, j] = scale_bar_mat_G00 * bar_mat_G[i, j]
+    i = Nrows-1; j = Ncols-1
+    mat_G[i, j] = scale_mat_G00 * mat_G[i, j]
+    bar_mat_G[i, j] = scale_bar_mat_G00 * bar_mat_G[i, j]
+
+    mat_G = np.matrix(mat_G)
+    bar_mat_G = np.matrix(bar_mat_G)
+    print('Minimalistic mat_G with BCs')
+    print(mat_G)
+    print('Minimalistic bar_mat_G with BCs')
+    print(bar_mat_G)
+    print('mat_G.bar_mat_G^H')
+    print(mat_G @ bar_mat_G.H)
+    print('mat_G^H.mat_G + bar_mat_G^H.bar_mat_G')
+    print(mat_G.H @ mat_G + bar_mat_G.H @ bar_mat_G)
+#    # Construct 
+#    tmp = dec_lo_BCL * dec_hi_BCL
+#    print(f'dec_lo_BCL * dec_hi_BCL {tmp}')
+#    scaling[0] = (- sum(tmp[1:]) / tmp[0])**0.5
+#    print(f'scaling {scaling}')
+#    for i in range(i0):
+#        dec_lo_BCL[i] = scaling[i] * dec_lo_BCL[i]
+#        dec_hi_BCL[i] = scaling[i] * dec_hi_BCL[i]
+#    #a_BCL = np.array([[dec_lo[i0:], 0], dec_lo, [0, dec_lo[:-i0]]])
+#    #print(a_BCL)
+#    print(f'dec_lo_BCL * dec_hi_BCL {dec_lo_BCL * dec_hi_BCL}')
+#    print(f'Orthogonality')
+#    print(f'dec_lo_BCL.dec_hi_BCL {dec_lo_BCL @ dec_hi_BCL}')
+#    print('Invertibility')
+#    print(f'dec_lo_BCL^*.dec_lo_BCL + dec_hi_BCL^*.dec_hi_BCL = {dec_lo_BCL.conjugate() @ dec_lo_BCL + dec_hi_BCL.conjugate() @ dec_hi_BCL}')
