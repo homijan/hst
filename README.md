@@ -43,6 +43,7 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^T \phi_j + \gamma_j \bar{G}_{j-1}^T \bar{\phi}_j
 - `dec_lo` filter coefficients $`[a_{-1}, a_0, a_1, a_2]`$ = `[-0.12940952+0.j, 0.22414387+0.j, 0.8365163 +0.j, 0.48296291+0.j]`
 - corresponding `dec_hi` filter coefficients $`[b_{-1}, b_0, b_1, b_2] = [-a_{2}, a_1, -a_0, a_{-1}]`$ = `[-0.48296291+0.j  0.8365163 +0.j -0.22414387+0.j -0.12940952-0.j]`
 - a simple **one-level** 4x8 $G$ and $\bar{G}$ operators with *outise-zero-BC*
+
   $`G = \begin{bmatrix}
   1 & 2 & 3 & 4 & 5 & 6 & 7 & 8
   \\
