@@ -45,13 +45,13 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^T \phi_j + \gamma_j \bar{G}_{j-1}^T \bar{\phi}_j
 - a simple **one-level** 4x8 $G$ and $\bar{G}$ operators with *outise-zero-BC*
 
   $`G = \begin{bmatrix}
-  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8
+  \tilde{a}_1 & \tilde{a}_0 & \tilde{a}_{-1} & 0 & 0 & 0 & 0 & 0
   \\
-  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8
+  0 & a_2 & a_1 & a_0 & a{-1} & 0 & 0 & 0
   \\
-  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8
+  0 & 0 & 0 & a_2 & a_1 & a_0 & a{-1} & 0
   \\
-  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8
+  0 & 0 & 0 & 0 & 0 & \tilde{a}_2 & \tilde{a}_1 & \tilde{a}_0
   \end{bmatrix}`$
 
   $`\bar{G} = \begin{bmatrix}
