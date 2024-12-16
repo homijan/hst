@@ -69,7 +69,7 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^T \phi_j + \gamma_j \bar{G}_{j-1}^T \bar{\phi}_j
 - BC coefficients $\tilde{a}$ are obtained from $`G\bar{G}^H = 0`$ and $`G^{H}G + \bar{G}^{H} \bar{G} = I`$ leading to
 
   $`\begin{align}
-  &= 0
+  -tilde{a}_1 \tilde{a}_0^* + \tilde{a}_0 \tilde{a}_1^* - \tilde{a}_{-1} \tilde{a}_2^* &= 0
   \\
   &= 0
   \\
