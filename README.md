@@ -45,33 +45,33 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^T \phi_j + \gamma_j \bar{G}_{j-1}^T \bar{\phi}_j
 - a simple **one-level** 4x8 $G$ and $\bar{G}$ operators with *outise-zero-BC* (*right-to-left* reversed to match `pywt`)
 
   $`G = \begin{bmatrix}
-  \tilde{a}_1 & \tilde{a}_0 & \tilde{a}_{-1} & 0 & 0 & 0 & 0 & 0
+  \alpha a_1 & a_0 & a_{-1} & 0 & 0 & 0 & 0 & 0
   \\
   0 & a_2 & a_1 & a_0 & a_{-1} & 0 & 0 & 0
   \\
   0 & 0 & 0 & a_2 & a_1 & a_0 & a_{-1} & 0
   \\
-  0 & 0 & 0 & 0 & 0 & \tilde{a}_2 & \tilde{a}_1 & \tilde{a}_0
+  0 & 0 & 0 & 0 & 0 & a_2 & a_1 & \alpha a_0
   \end{bmatrix}`$
 
   $`\bar{G} = \begin{bmatrix}
-  -\tilde{a}_0 & \tilde{a}_1 & -\tilde{a}_2 & 0 & 0 & 0 & 0 & 0
+  -\alpha a_0 & a_1 & -a_2 & 0 & 0 & 0 & 0 & 0
   \\
   0 & a_{-1} & -a_0 & a_1 & -a_2 & 0 & 0 & 0
   \\
   0 & 0 & 0 & a_{-1} & -a_0 & a_{1} & -a_2 & 0
   \\
-  0 & 0 & 0 & 0 & 0 & \tilde{a}_{-1} & -\tilde{a}_0 & \tilde{a}_1
+  0 & 0 & 0 & 0 & 0 & a_{-1} & -a_0 & \alpha a_1
   \end{bmatrix}`$
 
-  where $`\tilde{a}_{-1}, \tilde{a}_0, \tilde{a}_1, \tilde{a}_2`$ are scaled $a$ coeficients adjusting the BC to maintain $G$ and $\bar{G}$ orthogonal and invertible. 
+  where $`\alpha`$ scales $a$ coeficients adjusting the BC to maintain $G$ and $\bar{G}$ orthogonal and invertible. 
 
-- BC coefficients $\tilde{a}$ are obtained from $`G\bar{G}^H = 0`$ and $`G^{H}G + \bar{G}^{H} \bar{G} = I`$ leading to
+- BC scaling $\alpha$ is obtained from $`G\bar{G}^H = 0`$ and $`G^{H}G + \bar{G}^{H} \bar{G} = I`$ leading to
 
   $`\begin{align}
-  -\tilde{a}_1 \tilde{a}_0^* + \tilde{a}_0 \tilde{a}_1^* - \tilde{a}_{-1} \tilde{a}_2^* &= 0
+  - \alpha^2 a_1 a_0^* + a_0 a_1^* - a_{-1} a_2^* &= 0
   \\
-  \tilde{a}_1 \tilde{a}_1^* + \tilde{a}_0 \tilde{a}_0^* &= 1 \Rightarrow 
+  \alpha^2 a_1 a_1^* + \alpha^2 a_0 a_0^* &= 1 \Rightarrow 
   \end{align}`$
   
 ### Complex Symmetric Daubechies Wavelets (SDW)
