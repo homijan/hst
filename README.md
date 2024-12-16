@@ -71,12 +71,44 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^T \phi_j + \gamma_j \bar{G}_{j-1}^T \bar{\phi}_j
   $`\begin{align}
   -\tilde{a}_1 \tilde{a}_0^* + \tilde{a}_0 \tilde{a}_1^* - \tilde{a}_{-1} \tilde{a}_2^* &= 0
   \\
-  \tilde{a}_1 \tilde{a}_1^* + \tilde{a}_0 \tilde{a}_0^* &= 1
+  \tilde{a}_1 \tilde{a}_1^* + \tilde{a}_0 \tilde{a}_0^* &= 1 \Rightarrow 
   \end{align}`$
+  
 ### Complex Symmetric Daubechies Wavelets (SDW)
 
 - Symmetry $`a_k = a_{1-k}`$
 - In the case of **SDW2**, $`a_k \neq 0`$ for $`k = -2, -1, 0, 1, 2`$ and the SDW2 filter coeffs $`a_1 = 0.662912+0.171163j, a_2 = 0.110485-0.085581j, a_3 = -0.066291-0.085581j`$ [Lima, *Image Processing with Complex Daubechies Wavelets* (1997)],
+- a simple **one-level** 4x8 $G$ and $\bar{G}$ operators with *outise-zero-BC* (*right-to-left* reversed to match `pywt`)
+
+  $`G = \begin{bmatrix}
+  \tilde{a}_1 & \tilde{a}_0 & \tilde{a}_{-1} & \tilde{a}_{-2} & 0 & 0 & 0 & 0
+  \\
+  a_3 & a_2 & a_1 & a_0 & a_{-1} & a_{-2} & 0 & 0
+  \\
+  0 & 0 & a_3 & a_2 & a_1 & a_0 & a_{-1} & a_{-2}
+  \\
+  0 & 0 & 0 & 0 & \tilde{a}_{3} & \tilde{a}_2 & \tilde{a}_1 & \tilde{a}_0
+  \end{bmatrix}`$
+
+  $`\bar{G} = \begin{bmatrix}
+  -\tilde{a}_0 & \tilde{a}_1 & -\tilde{a}_2 & \tilde{a}_{3} & 0 & 0 & 0 & 0
+  \\
+  -a_{-2} & a_{-1} & -a_0 & a_1 & -a_2 & a_3 & 0 & 0
+  \\
+  0 & 0 & -a_{-2} & a_{-1} & -a_0 & a_{1} & -a_2 & a_3
+  \\
+  0 & 0 & 0 & 0 & -\tilde{a}_{-2} & \tilde{a}_{-1} & -\tilde{a}_0 & \tilde{a}_1
+  \end{bmatrix}`$
+
+  where $`\tilde{a}_{-1}, \tilde{a}_0, \tilde{a}_1, \tilde{a}_2`$ are scaled $a$ coeficients adjusting the BC to maintain $G$ and $\bar{G}$ orthogonal and invertible. 
+
+- BC coefficients $\tilde{a}$ are obtained from $`G\bar{G}^H = 0`$ and $`G^{H}G + \bar{G}^{H} \bar{G} = I`$ leading to
+
+  $`\begin{align}
+  -\tilde{a}_1 \tilde{a}_0^* + \tilde{a}_0 \tilde{a}_1^* - \tilde{a}_{-1} \tilde{a}_2^* &= 0
+  \\
+  \tilde{a}_1 \tilde{a}_1^* + \tilde{a}_0 \tilde{a}_0^* &= 1 \Rightarrow 
+  \end{align}`$
 
 Mother wavelet (or *scaling function* using $`a_k`$)
 
