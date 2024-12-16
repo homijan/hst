@@ -72,7 +72,9 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^T \phi_j + \gamma_j \bar{G}_{j-1}^T \bar{\phi}_j
   -\alpha a_1 \alpha^* a_0^* - a_0 a_1^* + a_{-1} a_2^* &= 0,
   \\
   \alpha^* a_1^* \alpha a_1 + \alpha^* a_0^* \alpha a_0 &= 1,
-  \\
+  \end{align}`$
+  
+  $`\begin{align}
   a_{-1} + a_0 + a_1 + a_2 = \sqrt{2},
   \\
   -a_{2} + a_1 -a_0 + a_{-1} = 0,
