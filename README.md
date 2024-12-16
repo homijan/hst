@@ -91,7 +91,7 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^T \phi_j + \gamma_j \bar{G}_{j-1}^T \bar{\phi}_j
   \\
   a_3 & a_2 & a_1 & a_0 & a_{-1} & a_{-2} & 0 & 0
   \\
-  0 & 0 & a_3 & a_2 & a_1 & a_0 & a_{-1} & \gamma a_{-2}
+  0 & 0 & a_3 & a_2 & a_1 & a_0 & a_{-1} & a_{-2}
   \\
   0 & 0 & 0 & 0 & a_{3} & \delta a_2 & \beta a_1 & \alpha a_0
   \end{bmatrix}`$
@@ -101,7 +101,7 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^T \phi_j + \gamma_j \bar{G}_{j-1}^T \bar{\phi}_j
   \\
   -a_{-2} & a_{-1} & -a_0 & a_1 & -a_2 & a_3 & 0 & 0
   \\
-  0 & 0 & -a_{-2} & a_{-1} & -a_0 & a_{1} & -a_2 & \gamma a_3
+  0 & 0 & -a_{-2} & a_{-1} & -a_0 & a_{1} & -a_2 & a_3
   \\
   0 & 0 & 0 & 0 & -a_{-2} & \delta a_{-1} & -\beta a_0 & \alpha a_1
   \end{bmatrix}`$
