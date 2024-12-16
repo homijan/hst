@@ -144,7 +144,7 @@ for wavelet, dec_lo, scaling in wavelets:
     # Compensate for the clamped BC to ensure G*G^T + bar_G*bar_G^T = I
     scale_mat_G00 = 1
     scale_bar_mat_G00 = 1
-    if (mod == 2 or mod == 3):
+    if (mod == 2):# or mod == 3):
         # mod == 2 means a 4 point filter, where only three points are used 
         # because of the BC (one value was dropped), hence the scaling sqrt(4/3)
 
@@ -160,15 +160,37 @@ for wavelet, dec_lo, scaling in wavelets:
         #scale = (4.0/3.0)**0.5 + 0j
         scale_mat_G00 = scale
         scale_bar_mat_G00 = scale.conjugate()
+    elif (mod == 3):
+        scale = 1.0206218666596347+0j
+        scale_mat_G00 = scale
+        scale_bar_mat_G00 = scale.conjugate()
+        # Note the BC cut is on a reversed filter (compatible with the matrix above)
+        # Apply alpha scale
+        dec_lo_BCL[3] = scale * dec_lo_BCL[3]
+        dec_hi_BCL[3] = scale.conjugate() * dec_hi_BCL[3]
+        prod_BCL = dec_lo_BCL * dec_hi_BCL.conjugate()
+        beta = (- (prod_BCL[0] + prod_BCL[1] + prod_BCL[3]) / prod_BCL[2])**0.5
+        print(f'beta scale {beta}')
+        dec_lo_BCL[2] = beta * dec_lo_BCL[2]
+        dec_hi_BCL[2] = beta.conjugate() * dec_hi_BCL[2]
+        prod_BCL = dec_lo_BCL * dec_hi_BCL.conjugate()
+        print(f'prod_BCL = dec_lo_BCL * dec_hi_BCL {prod_BCL}, sum(prod_BCL) {sum(prod_BCL)}')
+        #beta = 1.0287543742494876+0j
 
     # Apply the tailored scaling
     print(f'mod {mod}, scale_mat_G00 {scale_mat_G00}, scale_bar_mat_G00 {scale_bar_mat_G00}')
     i = 0; j = 0
     mat_G[i, j] = scale_mat_G00 * mat_G[i, j]
     bar_mat_G[i, j] = scale_bar_mat_G00 * bar_mat_G[i, j]
+    if (mod == 3):
+       mat_G[i, j+1] = beta * mat_G[i, j+1]
+       bar_mat_G[i, j+1] = beta.conjugate() * bar_mat_G[i, j+1]
     i = Nrows-1; j = Ncols-1
     mat_G[i, j] = scale_mat_G00 * mat_G[i, j]
     bar_mat_G[i, j] = scale_bar_mat_G00 * bar_mat_G[i, j]
+    if (mod == 3):
+       mat_G[i, j-1] = beta * mat_G[i, j-1]
+       bar_mat_G[i, j-1] = beta.conjugate() * bar_mat_G[i, j-1]
 
     mat_G = np.matrix(mat_G)
     bar_mat_G = np.matrix(bar_mat_G)
