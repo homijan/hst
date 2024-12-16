@@ -117,7 +117,7 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^T \phi_j + \gamma_j \bar{G}_{j-1}^T \bar{\phi}_j
   \\
   -\gamma a_3 (\alpha a_0)^* + a_2 (\beta a_1)^* - a_{1} a_2^* + a_{0} a_3^* &= 0
   \\    
-  (\alpha a_1)^* \alpha a_1 + a_3^* a_3 + (\alpha a_0)^* \alpha a_0 + a_{-2}^* a_{-2} &= 1 \Rightarrow \alpha^2 = \frac{1 - 2 a_3^* a_3}{a_1^* a_1 + a_0^* a_0} 
+  (\alpha a_1)^* \alpha a_1 + (\gamma a_3)^* \gamma a_3 + (\alpha a_0)^* \alpha a_0 + (\gamma a_{-2})^* \gamma a_{-2} &= 1 \Rightarrow \alpha^2 = \frac{1 - 2 a_3^* a_3}{a_1^* a_1 + a_0^* a_0} 
   \end{align}`$
 
 Mother wavelet (or *scaling function* using $`a_k`$)
