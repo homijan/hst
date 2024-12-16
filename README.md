@@ -34,12 +34,39 @@ $`\phi_j = \gamma_j^{-1} G_{j-1} \phi_{j-1} \quad\text{and}\quad \bar{\phi}_j = 
 and
 
 $`\phi_{j-1} = \gamma_j G_{j-1}^T \phi_j + \gamma_j \bar{G}_{j-1}^T \bar{\phi}_j.~(8)`$
+## Daubechies Wavelets
+- Discrete wavelets defined through coefficients $`a_k \neq 0`$ for handful of $k$s
+- Orthogonality $`b_k = (-1)^k a^*_{1-k},~(1)`$ (holds for any discrete wavelet)
+- The orthogonal low-frequency operator $G$ and high frequency $\bar{G}$ are contructed in terms of discrete convolution through $`a_k`$s and $`b_k`$s and by binating the resolution of the data  
 
-### Symmetric Daubechies Wavelets (SDW)
+### Real DAUB4 `db2`
+- `dec_lo` filter coefficients $`[a_{-1}, a_0, a_1, a_2]`$ = `[-0.12940952+0.j, 0.22414387+0.j, 0.8365163 +0.j, 0.48296291+0.j]`
+- corresponding `dec_hi` filter coefficients $`[b_{-1}, b_0, b_1, b_2] = [-a_{2}, a_1, -a_0, a_{-1}]`$ = `[-0.48296291+0.j  0.8365163 +0.j -0.22414387+0.j -0.12940952-0.j]`
+- a simple **one-level** 4x8 $G$ and $\bar{G}$ operators with *outise-zero-BC*
+  $`G = \begin{bmatrix}
+  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8
+  \\
+  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8
+  \\
+  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8
+  \\
+  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8
+  \end{bmatrix}`$
+
+  $`\bar{G} = \begin{bmatrix}
+  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8
+  \\
+  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8
+  \\
+  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8
+  \\
+  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8
+  \end{bmatrix}`$
+  
+### Complex Symmetric Daubechies Wavelets (SDW)
 
 - Symmetry $`a_k = a_{1-k}`$
-- Orthogonality $`b_k = (-1)^k a^*_{1-k},~(1)`$ (holds for any discrete wavelet)
-- In the case of **SDW2**, $`a_k \neq 0`$ for $`k = -2, -1, 0, 1, 2`$ and the SDW2 filter coeffs $`\sqrt{2} a_1 = 0.662912+0.171163j, \sqrt{2} a_2 = 0.110485-0.085581j, \sqrt{2} a_3 = -0.066291-0.085581j`$ [Lima, *Image Processing with Complex Daubechies Wavelets* (1997)],
+- In the case of **SDW2**, $`a_k \neq 0`$ for $`k = -2, -1, 0, 1, 2`$ and the SDW2 filter coeffs $`a_1 = 0.662912+0.171163j, a_2 = 0.110485-0.085581j, a_3 = -0.066291-0.085581j`$ [Lima, *Image Processing with Complex Daubechies Wavelets* (1997)],
 
 Mother wavelet (or *scaling function* using $`a_k`$)
 
