@@ -35,7 +35,7 @@ and
 
 $`\phi_{j-1} = \gamma_j G_{j-1}^T \phi_j + \gamma_j \bar{G}_{j-1}^T \bar{\phi}_j.~(8)`$
 ## Daubechies Wavelets
-- Discrete wavelets defined through coefficients $`a_k \neq 0`$ for handful of $k$s
+- Discrete wavelets defined through coefficients $`a_k \neq 0`$ for handful of $`k`$s
 - Orthogonality $`b_k = (-1)^k a^*_{1-k},~(1)`$ (holds for any discrete wavelet)
 - The orthogonal low-frequency operator $G$ and high frequency $\bar{G}$ are contructed in terms of discrete convolution through $`a_k`$s and $`b_k`$s and by binating the resolution of the data  
 
