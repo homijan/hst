@@ -131,7 +131,11 @@ $`\begin{align}
 
 $`(c_0 \delta + c_1)^2 + c_2 \delta^2 + c_3 = 0,~(7)`$
 
-where the coefficients in $`(7)`$ are $`c_0 = a_2 a_1^*,~c_1 = \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^*,~c_2 = - a_1^2 a_2^2,~c_3 = 2 a_3^2 a_1^2 - \frac{a_1^2}{2}`$ from $`(6)`$ and $`(1)`$.
+where the coefficients in $`(7)`$ are 
+
+$`c_0 = a_2 a_1^*,~c_1 = \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^*,~c_2 = - a_1^2 a_2^2,~c_3 = 2 a_3^2 a_1^2 - \frac{a_1^2}{2},~(8)`$
+
+from $`(6)`$ and $`(1)`$.
 
 Mother wavelet (or *scaling function* using $`a_k`$)
 
