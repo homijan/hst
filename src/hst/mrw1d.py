@@ -90,7 +90,12 @@ def generate_G_operators(wavelet, Nlevels, data_length):
         dec_lo = pywt.Wavelet('db2').dec_lo
         scaling = [(4.0/3.0)**0.5]
     elif wavelet=='sdw2':
-        dec_lo = [-0.066291-0.085581j, 0.110485-0.085581j, 0.662912+0.171163j, 0.662912+0.171163j, 0.110485-0.085581j, -0.066291-0.085581j]
+        # Symmetric (a_k = a_{1-k}) SWD2 with indexes [-2, -1, 0, 1, 2, 3]
+        a1 = 0.662912 + 0.171163j
+        a2 = 0.110485 - 0.085581j
+        a3 = -0.066291 - 0.085581j
+        dec_lo = np.array([a3, a2, a1, a1, a2, a3], dtype=complex)
+        #dec_lo = [-0.066291-0.085581j, 0.110485-0.085581j, 0.662912+0.171163j, 0.662912+0.171163j, 0.110485-0.085581j, -0.066291-0.085581j]
         scaling = [1.0204969605748353+0.015876976569495486j, 1.012298185699968-0.015876906424713344j]
     dec_hi = generate_wavelet(dec_lo)
 
@@ -113,12 +118,12 @@ def generate_G_operators(wavelet, Nlevels, data_length):
 def verify_G_operators(G_operators):
     """Verify that the set of G_operators is orthogonal and invertible""" 
     for G_lo, G_hi in G_operators:
-        print(f'Otrhogonality: G_lo.G_hi.T')
-        print(f'{G_lo.dot(G_hi.T)}')
-        print(f'Orthogonality: G_hi.G_lo.T')
-        print(f'{G_hi.dot(G_lo.T)}')
-        print(f'Invertibility: G_lo^T.G_lo + G_hi^T.G_hi = I')
-        print(f'{G_lo.T.dot(G_lo) + G_hi.T.dot(G_hi)}')
+        print(f'Otrhogonality: G_lo.G_hi.H')
+        print(f'{G_lo.dot(G_hi.H)}')
+        print(f'Orthogonality: G_hi.G_lo.H')
+        print(f'{G_hi.dot(G_lo.H)}')
+        print(f'Invertibility: G_lo^H.G_lo + G_hi^H.G_hi = I')
+        print(f'{G_lo.H.dot(G_lo) + G_hi.H.dot(G_hi)}')
 
 
 def save_G_operators(G_operators, file_name):
@@ -173,8 +178,8 @@ def data_reconstruction(decomposition, G_operators):
     for i in range(len(G_operators)):
         bar_phi = decomposition[i+1]
         G_lo, G_hi = G_operators[i]
-        phi = G_lo.T.dot(phi) + G_hi.T.dot(bar_phi)
-        print(f'G_lo.T.shape {G_lo.T.shape}, bar_phi.shape {bar_phi.shape}, bar_phi count {bar_phi.shape[0]*bar_phi.shape[1]}, G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
+        phi = G_lo.H.dot(phi) + G_hi.H.dot(bar_phi)
+        print(f'G_lo.H.shape {G_lo.H.shape}, bar_phi.shape {bar_phi.shape}, bar_phi count {bar_phi.shape[0]*bar_phi.shape[1]}, G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
     # For clarity we highlight that final phi is on the lowest (finest) level
     # following Fig. 2 in Marchand et al, Wavelet Conditional Renormalization Group (2022)
     phi_0 = phi

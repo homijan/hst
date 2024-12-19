@@ -14,7 +14,7 @@ def superGaussian(x, cs):
 # Save G_operators
 save_Gs = False#True
 # Print out essential properties of G_operators
-verify_Gs = False#True
+verify_Gs = True
 
 Nlevels = 7
 Ndata = 15 # Number of randomized super-Gaussian (small number to plot)
@@ -82,6 +82,7 @@ for wavelet in wavelets:
         plt.plot(x, reconstructed_data[:, i], '-.')
     plt.show()
 
+quit()
 # Discrete Wavelets analysis
 wavelets = [] 
 # DAUB4 or db2
@@ -166,7 +167,7 @@ for wavelet, dec_lo, scaling in wavelets:
     #print(f'dec_lo^*.dec_lo + dec_hi^*.dec_hi = {dec_lo.conjugate() @ dec_lo + dec_hi.conjugate() @ dec_hi}')
 
     print('HST') 
-    Nrows = 4; Ncols = 2 * Nrows
+    Nrows = 16; Ncols = 2 * Nrows
     Npoints = len(dec_lo)
     mod = int(Npoints / 2)
     mat_G = np.zeros((Nrows, Ncols), dtype=complex)
