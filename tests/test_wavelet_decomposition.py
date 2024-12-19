@@ -45,7 +45,7 @@ input_data = superGaussian(x, input_coeffs)
 print(f'Nlevels {Nlevels}, data_length {data_length}, Ndata {Ndata}')
 
 # Data decomposition into wavelet basis
-wavelets = ['db1', 'db2']
+wavelets = ['db1', 'db2', 'sdw2']
 for wavelet in wavelets:
     print(f'TEST: wavelet {wavelet}')
     # Generate orthogonal G_lo (aka G) and G_hi (aka bar_G) operators
@@ -155,16 +155,6 @@ dec_lo = scale * np.array([a3, a2, a1, a1, a2, a3], dtype=complex)
 wavelets.append(['SDW2', dec_lo, [alpha, beta]])
 
 for wavelet, dec_lo, scaling in wavelets:
-#    N = len(dec_lo)
-#    dec_hi = np.zeros(N, dtype=complex)
-#    for index in range(N):
-#        # offeset of the local k from python i index as k_loc = i + offset
-#        offset = int(1 - N / 2)
-#        k_loc = index + offset
-#        print(f'array index {index}, k_loc {k_loc}, 1 - k_loc {1 - k_loc}')
-#        # b_k = (-1)^k a^*_{1-k}
-#        dec_hi[index] = (-1)**k_loc * dec_lo[1 - k_loc - offset].conjugate()
-
     dec_hi = generate_wavelet(dec_lo)
     
     print(f'{wavelet} filters')

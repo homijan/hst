@@ -18,17 +18,31 @@ def generate_wavelet(dec_lo):
     return dec_hi
 
 
-def one_level_G_operators(Nrows, dec_lo, dec_hi):
+def one_level_G_operators(Nrows, dec_lo, dec_hi, scaling):
     """Generate orthogonal G operators with clamped BC given low and high filters"""
+#    Ncols = 2 * Nrows
+#    Npoints = len(dec_lo)
+#    mod = int(Npoints / 2)
+#    G_lo = np.zeros((Nrows, Ncols), dtype=complex)
+#    G_hi = np.zeros((Nrows, Ncols), dtype=complex)
+#    for i in range(Nrows):
+#        for p in range(Npoints):
+#            #print(f'i {i}, 2*i+Npoints-mod-p {2*i+Npoints-mod-p}')
+#            # BC sets zero values of data outside the grid
+#            if (2*i+Npoints-mod-p >= 0 and 2*i+Npoints-mod-p <= Ncols-1):
+#                # Note that dec_lo and dec_hi are assigned in reverse order (compatible with Pywavelets)
+#                G_lo[i, 2*i+Npoints-mod-p] = dec_lo[p]
+#                G_hi[i, 2*i+Npoints-mod-p] = dec_hi[p]
+
     Ncols = 2 * Nrows
     # Number of points in the filters
     Npoints = len(dec_lo)
     mod = int(Npoints / 2)
     # CSR construction data
-    row = np.zeros(Nrows * Npoints - 2 * (mod-1)) 
-    col = np.zeros(Nrows * Npoints - 2 * (mod-1))
-    data_lo = np.zeros(Nrows * Npoints - 2 * (mod-1))
-    data_hi = np.zeros(Nrows * Npoints - 2 * (mod-1))
+    row = np.zeros(Nrows * Npoints - 2 * (mod-1), dtype=complex) 
+    col = np.zeros(Nrows * Npoints - 2 * (mod-1), dtype=complex)
+    data_lo = np.zeros(Nrows * Npoints - 2 * (mod-1), dtype=complex)
+    data_hi = np.zeros(Nrows * Npoints - 2 * (mod-1), dtype=complex)
     index = 0
     for i in range(Nrows):
         for p in range(Npoints):
@@ -46,24 +60,39 @@ def one_level_G_operators(Nrows, dec_lo, dec_hi):
     G_lo = csr_matrix((data_lo, (row, col)), shape = (Nrows, Ncols))
     G_hi = csr_matrix((data_hi, (row, col)), shape = (Nrows, Ncols))
     # Compensate for the clamped BC to ensure G*G^T + bar_G*bar_G^T = I
-    if (mod == 2):
-        # mod == 2 means a 4 point filter, where only three points are used 
-        # because of the BC (one value was dropped), hence the scaling sqrt(4/3)
-        scale = (4.0/3.0)**0.5
-        i = 0; j = 0
-        G_lo[i, j] = scale * G_lo[i, j]
-        G_hi[i, j] = scale * G_hi[i, j]
-        i = Nrows-1; j = Ncols-1
-        G_lo[i, j] = scale * G_lo[i, j]
-        G_hi[i, j] = scale * G_hi[i, j]
+    #print(f'scaling of BC coefficients (first and last row): {scaling}')
+    for j in range(len(scaling)):
+        G_lo[0, j] = scaling[j] * G_lo[0, j]
+        G_lo[Nrows-1, Ncols-1-j] = scaling[j] * G_lo[Nrows-1, Ncols-1-j] 
+        G_hi[0, j] = scaling[j].conjugate() * G_hi[0, j]
+        G_hi[Nrows-1, Ncols-1-j] = scaling[j].conjugate() * G_hi[Nrows-1, Ncols-1-j]
+#    if (mod == 2):
+#        # mod == 2 means a 4 point filter, where only three points are used 
+#        # because of the BC (one value was dropped), hence the scaling sqrt(4/3)
+#        scale = (4.0/3.0)**0.5
+#        i = 0; j = 0
+#        G_lo[i, j] = scale * G_lo[i, j]
+#        G_hi[i, j] = scale * G_hi[i, j]
+#        i = Nrows-1; j = Ncols-1
+#        G_lo[i, j] = scale * G_lo[i, j]
+#        G_hi[i, j] = scale * G_hi[i, j]
     return G_lo, G_hi
 
 
 def generate_G_operators(wavelet, Nlevels, data_length):
     """Generate full set of mutli-resolution G_operators (wavelet + binate)"""
     # Obtain low and high resolution wavelet filters
-    dec_lo = pywt.Wavelet(wavelet).dec_lo
-    dec_hi = pywt.Wavelet(wavelet).dec_hi
+    # TODO: create own wavelet info wrapper 
+    if wavelet=='db1':
+        dec_lo = pywt.Wavelet('db1').dec_lo
+        scaling = []
+    elif wavelet=='db2':
+        dec_lo = pywt.Wavelet('db2').dec_lo
+        scaling = [(4.0/3.0)**0.5]
+    elif wavelet=='sdw2':
+        dec_lo = [-0.066291-0.085581j, 0.110485-0.085581j, 0.662912+0.171163j, 0.662912+0.171163j, 0.110485-0.085581j, -0.066291-0.085581j]
+        scaling = [1.0204969605748353+0.015876976569495486j, 1.012298185699968-0.015876906424713344j]
+    dec_hi = generate_wavelet(dec_lo)
 
     G_operators = []
     Nrows = data_length
@@ -72,7 +101,7 @@ def generate_G_operators(wavelet, Nlevels, data_length):
             print(f'Cannot binate data of length {Nrows} at level {level}')
             quit()
         Nrows = int(Nrows / 2)
-        G_lo, G_hi = one_level_G_operators(Nrows, dec_lo, dec_hi)
+        G_lo, G_hi = one_level_G_operators(Nrows, dec_lo, dec_hi, scaling)
         G_operators.append([G_lo, G_hi]) 
 
     # Reverse the order of G_operators levels to go downward
