@@ -36,7 +36,7 @@ and
 $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger \bar{\phi}_j.~(8)`$
 ## Daubechies Wavelets
 - Discrete wavelets defined through coefficients $`a_k \neq 0`$ for handful of $`k`$s
-- Orthogonality $`b_k = (-1)^k a^*_{1-k},~(1)`$ (holds for any discrete wavelet)
+- Orthogonality that holds for any discrete wavelet $`b_k = (-1)^k a^*_{1-k},~(0)`$
 - The orthogonal low-frequency operator $G$ and high frequency $\bar{G}$ are contructed in terms of discrete convolution through $`a_k`$s and $`b_k`$s and by binating the resolution of the data  
 
 ### Real DAUB4 `db2`
@@ -83,7 +83,9 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
 ### Complex Symmetric Daubechies Wavelets (SDW)
 
 - Symmetry $`a_k = a_{1-k}`$
-- In the case of **SDW2**, $`a_k \neq 0`$ for $`k = -2, -1, 0, 1, 2`$ and the SDW2 filter coeffs $`a_1 = 0.662912+0.171163j, a_2 = 0.110485-0.085581j, a_3 = -0.066291-0.085581j`$ [Lima, *Image Processing with Complex Daubechies Wavelets* (1997)],
+- In the case of **SDW2**, $`a_k \neq 0`$ for $`k = -2, -1, 0, 1, 2`$ and the SDW2 filter coeffs [Lima, *Image Processing with Complex Daubechies Wavelets* (1997)]
+
+  $`a_1 = 0.662912+0.171163j, a_2 = 0.110485-0.085581j, a_3 = -0.066291-0.085581j,~(1)`$
 - a simple **one-level** 4x8 $G$ and $\bar{G}$ operators with *outise-zero-BC* (*right-to-left* reversed to match `pywt`)
 
   $`G = \begin{bmatrix}
@@ -129,7 +131,7 @@ $`\begin{align}
 
 $`(c_0 \delta + c_1)^2 + c_2 \delta^2 + c_3 = 0,~(7)`$
 
-where the coefficients in $`(7)`$ are $`c_0 = a_2 a_1^*,~c_1 = \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^*,~c_2 = - a_1^2 a_2^2,~c_3 = 2 a_3^2 a_1^2 - \frac{a_1^2}{2}`$ from $`(6)`$
+where the coefficients in $`(7)`$ are $`c_0 = a_2 a_1^*,~c_1 = \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^*,~c_2 = - a_1^2 a_2^2,~c_3 = 2 a_3^2 a_1^2 - \frac{a_1^2}{2}`$ from $`(6)`$ and $`(1)`$.
 
 Mother wavelet (or *scaling function* using $`a_k`$)
 
