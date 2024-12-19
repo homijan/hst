@@ -205,6 +205,6 @@ Demonstration of invertibility
   \\
   0 & 0 & -a_3 & a_2 & -a_1 & a_1 & -a_2 & a_3
   \\
-  0 & 0 & 0 & 0 & -a_3 & a_2 & -\delts a_1 & \gamma a_1
+  0 & 0 & 0 & 0 & -a_3 & a_2 & -\delta a_1 & \gamma a_1
   \end{bmatrix},~(3),~(3)`$
 
