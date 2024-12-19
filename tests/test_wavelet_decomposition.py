@@ -136,10 +136,11 @@ Iv00, Iv01, Iv10, Iv11, num_Iv00, num_Iv01, num_Iv10, num_Iv11 = print_corner(G.
 # Constrain is to satisfy orthogonality
 equations = [Og00, Og01] # equal zero
 solutions = solve(equations, s_alpha, s_beta, dict=True)
-num_s_alpha = lambdify([s_a1, s_a2, s_a3], solutions[0][s_alpha], 'numpy')
-num_s_beta = lambdify([s_a1, s_a2, s_a3], solutions[0][s_beta], 'numpy')
-print(f's_alpha {solutions[0][s_alpha]} = {num_s_alpha(a1, a2, a3)}')
-print(f's_beta {solutions[0][s_beta]} = {num_s_beta(a1, a2, a3)}')
+sol_number = 1 # positive solution #1 much better than negative solution #0
+num_s_alpha = lambdify([s_a1, s_a2, s_a3], solutions[sol_number][s_alpha], 'numpy')
+num_s_beta = lambdify([s_a1, s_a2, s_a3], solutions[sol_number][s_beta], 'numpy')
+print(f's_alpha {solutions[sol_number][s_alpha]} = {num_s_alpha(a1, a2, a3)}')
+print(f's_beta {solutions[sol_number][s_beta]} = {num_s_beta(a1, a2, a3)}')
 
 alpha = num_s_alpha(a1, a2, a3)
 beta = num_s_beta(a1, a2, a3)
