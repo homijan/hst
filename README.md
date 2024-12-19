@@ -86,91 +86,24 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
 - In the case of **SDW2**, $`a_k \neq 0`$ for $`k = -2, -1, 0, 1, 2`$ and the SDW2 filter coeffs [Lima, *Image Processing with Complex Daubechies Wavelets* (1997)]
 
   $`a_1 = 0.662912+0.171163j, a_2 = 0.110485-0.085581j, a_3 = -0.066291-0.085581j,~(1)`$
-- a simple **one-level** 4x8 $G$ and $\bar{G}$ operators with *outise-zero-BC* (*right-to-left* reversed to match `pywt`)
 
-  $`G = \begin{bmatrix}
-  \alpha a_1 & \beta a_0 & \delta a_{-1} & a_{-2} & 0 & 0 & 0 & 0
-  \\
-  a_3 & a_2 & a_1 & a_0 & a_{-1} & a_{-2} & 0 & 0
-  \\
-  0 & 0 & a_3 & a_2 & a_1 & a_0 & a_{-1} & a_{-2}
-  \\
-  0 & 0 & 0 & 0 & a_{3} & \delta a_2 & \beta a_1 & \alpha a_0
-  \end{bmatrix},~(2)`$
+  Mother wavelet (or *scaling function* using $`a_k`$)
 
-  $`\bar{G} = \begin{bmatrix}
-  -\alpha a_0 & \beta a_1 & -\delta a_2 & a_{3} & 0 & 0 & 0 & 0
-  \\
-  -a_{-2} & a_{-1} & -a_0 & a_1 & -a_2 & a_3 & 0 & 0
-  \\
-  0 & 0 & -a_{-2} & a_{-1} & -a_0 & a_{1} & -a_2 & a_3
-  \\
-  0 & 0 & 0 & 0 & -a_{-2} & \delta a_{-1} & -\beta a_0 & \alpha a_1
-  \end{bmatrix},~(3)`$
+  `dec_lo [-0.04687482-0.06051491j, 0.07812469-0.06051491j, 0.46874957+0.12103052j, 0.46874957+0.12103052j, 0.07812469-0.06051491j, -0.04687482-0.06051491j]`
 
-  where $`\alpha, \beta, \delta`$ are scaling coeficients adjusting the BC to maintain $G$ and $\bar{G}$ orthogonal and invertible. 
+  Daughter wavelet (or *wavelet* using $`b_k`$)
 
-- BC coefficients $\tilde{a}$ are obtained from $`G\bar{G}^H = 0`$ and $`G^{H}G + \bar{G}^{H} \bar{G} = I`$ leading to
+  `dec_hi [-0.04687482+0.06051491j, -0.07812469-0.06051491j, 0.46874957-0.12103052j, -0.46874957+0.12103052j, 0.07812469+0.06051491j, 0.04687482-0.06051491j]`
 
-  $`\begin{align}
-  -\alpha a_1 (\alpha a_0)^* + \beta a_0 (\beta a_1)^* - \delta a_{-1} (\delta a_2)^* + a_{-2} a_3^* &= 0
-  \Rightarrow \beta^2 a_1 a_1^* - \delta^2 a_2 a_2^* = \alpha^2 a_1 a_1^* - a_3 a_3^* \\
-  -\alpha a_1 (a_{-2})^* + \beta a_0 a_{-1}^* - \delta a_{-1} a_0^* + a_{-2} a_1^* &= 0
-  \Rightarrow \alpha a_1 a_3^* - \beta a_1 a_1^* + \delta a_2 a_1^* - a_3 a_1^* = 0
-  \\    
-  (\alpha a_1)^* \alpha a_1 + a_3^* a_3 + (\alpha a_0)^* \alpha a_0 + a_{-2}^* a_{-2} &= 1 \Rightarrow \alpha^2 = \frac{1 - 2 a_3^* a_3}{2 a_1^* a_1} 
-  \end{align}`$
+  Demonstration of orthogonality 
 
-$`\begin{align}
-\alpha &= \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}},~(4)
-\\
-\beta^2 a_1^2 - \delta^2 a_2^2 &= \frac{1}{2} - 2 a_3^2 \quad\Rightarrow\quad \frac{\left( \delta a_2 a_1^* + \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^* \right)^2}{a_1^2} - \delta^2 a_2^2 + 2 a_3^2 - \frac{1}{2} = 0,~(5)
-\\
-\delta a_2 a_1^* - \beta a_1^2 &= a_3 a_1^* - \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* \quad\Rightarrow\quad \beta = \frac{\delta a_2 a_1^* + \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^*}{a_1^2},~(6)
-\end{align}`$
+  `dec_lo.dec_hi = (3.469446951953614e-18+0j)`
 
-$`(c_0 \delta + c_1)^2 + c_2 \delta^2 + c_3 = 0,~(7)`$
+  Demonstration of invertibility
 
-where the coefficients in $`(7)`$ are 
+  `dec_lo^*.dec_lo + dec_hi^*.dec_hi = (0.9999974786819997+0j)`
 
-$`c_0 = a_2 a_1^*,~c_1 = \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^*,~c_2 = - a_1^2 a_2^2,~c_3 = 2 a_3^2 a_1^2 - \frac{a_1^2}{2},~(8)`$
-$`\begin{align}
-c_0 &= a_2 a_1^* = 0.05859353161699999-0.075643615927j,
-\\
-c1 &= \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^* = -0.0012083052838937208+0.09170815709256316j, 
-\\
-c2 &= - a_1^2 a_2^2 = -0.009155158577863866+0j, 
-\\
-c3 &= 2 a_3^2 a_1^2 - \frac{a_1^2}{2} = -0.22338837595327443+0j
-\end{align}`$
-
-from $`(6)`$ and $`(1)`$.
-
-$`\begin{align}
-\delta &= \frac{-c_0 c_1 + \sqrt{-c_0^2 c_3 - c_1^2 c_2 - c_2 c_3}}{c_0^2 + c_2} = 1.9155051882105336 ~+~ 3.751738673936107j, 
-\\
-\beta &= \frac{\delta a_2 a_1^* + c_1}{a_1^2} = 0.8422906717227432 ~+~ 0.35549943385941607j,
-\\
-\alpha &= \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} = 1.0206218666596347 ~+~ 0j,
-\end{align}`$
-
-Mother wavelet (or *scaling function* using $`a_k`$)
-
-`dec_lo [-0.04687482-0.06051491j, 0.07812469-0.06051491j, 0.46874957+0.12103052j, 0.46874957+0.12103052j, 0.07812469-0.06051491j, -0.04687482-0.06051491j]`
-
-Daughter wavelet (or *wavelet* using $`b_k`$)
-
-`dec_hi [-0.04687482+0.06051491j, -0.07812469-0.06051491j, 0.46874957-0.12103052j, -0.46874957+0.12103052j, 0.07812469+0.06051491j, 0.04687482-0.06051491j]`
-
-Demonstration of orthogonality 
-
-`dec_lo.dec_hi = (3.469446951953614e-18+0j)`
-
-Demonstration of invertibility
-
-`dec_lo^*.dec_lo + dec_hi^*.dec_hi = (0.9999974786819997+0j)`
-
-# Succesful method!
+- a simple **one-level** 4x8 $G$ and $\bar{G}$ operators with *outise-zero-BC* (*right-to-left* reversed to match `pywt`) *succesful method!*
 
   $`G = \begin{bmatrix}
   \alpha a_1 & \beta a_0 & a_{-1} & a_{-2} & 0 & 0 & 0 & 0
@@ -206,7 +139,7 @@ Demonstration of invertibility
   0 & 0 & -a_3^* & a_2^* & -a_1^* & a_1^* & -a_2^* & a_3^*
   \\
   0 & 0 & 0 & 0 & -a_3^* & a_2^* & -(\beta a_1)^* & (\alpha a_1)^*
-  \end{bmatrix},~(3),~(3)`$
+  \end{bmatrix},~(3),`$
 
   **Solution to the orthogonality constraint on BC**
 
