@@ -180,6 +180,14 @@ Demonstration of invertibility
   0 & 0 & a_3 & a_2 & a_1 & a_0 & a_{-1} & a_{-2}
   \\
   0 & 0 & 0 & 0 & a_{3} & \delta a_2 & \beta a_1 & \alpha a_0
+  \end{bmatrix} = \begin{bmatrix}
+  \alpha a_1 & \beta a_1 & a_2 & a_3 & 0 & 0 & 0 & 0
+  \\
+  a_3 & a_2 & a_1 & a_1 & a_3 & a_3 & 0 & 0
+  \\
+  0 & 0 & a_3 & a_2 & a_1 & a_1 & a_3 & a_3
+  \\
+  0 & 0 & 0 & 0 & a_{3} & \delta a_2 & \beta a_1 & \alpha a_1
   \end{bmatrix},~(2)`$
 
   $`\bar{G} = \begin{bmatrix}
@@ -190,5 +198,13 @@ Demonstration of invertibility
   0 & 0 & -a_{-2} & a_{-1} & -a_0 & a_{1} & -a_2 & a_3
   \\
   0 & 0 & 0 & 0 & -a_{-2} & \delta a_{-1} & -\beta a_0 & \alpha a_1
-  \end{bmatrix},~(3)`$
+  \end{bmatrix} = \begin{bmatrix}
+  -\gamma a_1 & \delta a_1 & -\delta a_2 & a_{3} & 0 & 0 & 0 & 0
+  \\
+  -a_3 & a_2 & -a_1 & a_1 & -a_2 & a_3 & 0 & 0
+  \\
+  0 & 0 & -a_3 & a_2 & -a_1 & a_{1} & -a_2 & a_3
+  \\
+  0 & 0 & 0 & 0 & -a_3 & \delta a_3 & -\beta a_1 & \alpha a_1
+  \end{bmatrix},~(3),~(3)`$
 
