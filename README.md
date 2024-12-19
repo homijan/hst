@@ -122,12 +122,14 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
 $`\begin{align}
 \alpha &= \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}},~(4)
 \\
-\beta^2 a_1^2 - \delta^2 a_2^2 &= \frac{1}{2} - 2 a_3^2 \quad\Rightarrow\quad \frac{\left( \delta a_2 a_1^* + \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^* \right)^2}{a_1^2} - \delta^2 a_2^2 - \frac{1}{2} + 2 a_3^2 = 0
+\beta^2 a_1^2 - \delta^2 a_2^2 &= \frac{1}{2} - 2 a_3^2 \quad\Rightarrow\quad \frac{\left( \delta a_2 a_1^* + \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^* \right)^2}{a_1^2} - \delta^2 a_2^2 + 2 a_3^2 - \frac{1}{2} = 0,~(5)
 \\
-\delta a_2 a_1^* - \beta a_1^2 &= a_3 a_1^* - \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* \quad\Rightarrow\quad \beta = \frac{\delta a_2 a_1^* + \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^*}{a_1^2},~(5)
+\delta a_2 a_1^* - \beta a_1^2 &= a_3 a_1^* - \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* \quad\Rightarrow\quad \beta = \frac{\delta a_2 a_1^* + \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^*}{a_1^2},~(6)
 \end{align}`$
 
-$`(c_0 \delta + c_1)^2 + c_2 \delta^2 + c_3 = 0,~(6)`$
+$`(c_0 \delta + c_1)^2 + c_2 \delta^2 + c_3 = 0,~(7)`$
+
+where the coefficients in $`(7)`$ are $`c_0 = a_2 a_1^*,~c_1 = \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^*,~c_2 = - a_1^2 a_2^2,~c_3 = 2 a_3^2 a_1^2 - \frac{a_1^2}{2}`$ from $`(6)`$
 
 Mother wavelet (or *scaling function* using $`a_k`$)
 
