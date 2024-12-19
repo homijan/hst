@@ -119,6 +119,14 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
   (\alpha a_1)^* \alpha a_1 + a_3^* a_3 + (\alpha a_0)^* \alpha a_0 + a_{-2}^* a_{-2} &= 1 \Rightarrow \alpha^2 = \frac{1 - 2 a_3^* a_3}{2 a_1^* a_1} 
   \end{align}`$
 
+$`\begin{align}
+\alpha &= \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}}
+\\
+\beta^2 a_1 a_1^* - \delta^2 a_2 a_2^* = \frac{1}{2} - 2 a_3^2
+\\
+\delta a_2 a_1^* - \beta a_1^2 &= a_3 a_1^* - \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* 
+\end{align}`$
+
 Mother wavelet (or *scaling function* using $`a_k`$)
 
 `dec_lo [-0.04687482-0.06051491j, 0.07812469-0.06051491j, 0.46874957+0.12103052j, 0.46874957+0.12103052j, 0.07812469-0.06051491j, -0.04687482-0.06051491j]`
