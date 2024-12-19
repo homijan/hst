@@ -202,6 +202,50 @@ for wavelet, dec_lo, scaling in wavelets:
     print(mat_G @ bar_mat_G.H)
     print('mat_G^H.mat_G + bar_mat_G^H.bar_mat_G')
     print(mat_G.H @ mat_G + bar_mat_G.H @ bar_mat_G)
+
+# Find the analytical solution for delta
+from sympy import symbols, Eq, solve, I, simplify, lambdify
+
+# defining the symbolic variable 'z'
+x = symbols('x')
+c0 = symbols('c0')
+c1 = symbols('c1')
+c2 = symbols('c2')
+c3 = symbols('c3')
+
+# setting up the complex equation z^2 + 1 = 0
+equation = Eq((c0*x + c1)**2 + c2*x**2 + c3, 0)
+
+# solving the equation symbolically to find complex solutions
+solutions = solve(equation, x)
+
+# printing solutions
+print(f'Solutions {solutions}')
+
+# Fill in numerical values
+alpha = ((1.0 - 2.0 * a3 * a3.conjugate())/(2.0 * a1 * a1.conjugate()))**0.5
+nc0 = a2 * a1.conjugate()
+nc1 = alpha * a1 * a3.conjugate() - a3 * a1.conjugate()
+nc2 = - a1 * a1.conjugate() * a2 * a2.conjugate()
+nc3 = 2.0 * a3 * a3.conjugate() * a1 * a1.conjugate() - a1 * a1.conjugate() / 2.0
+
+print(f'c0 = {nc0}, c1 = {nc1}, c2 = {nc2}, c3 = {nc3}')
+
+delta0 = lambdify([c0, c1, c2, c3], solutions[0], 'numpy')
+delta1 = lambdify([c0, c1, c2, c3], solutions[1], 'numpy')
+
+print(f'delta0 = {delta0(nc0, nc1, nc2, nc3)}')
+print(f'delta0 = {simplify(solutions[0].subs([(c0, nc0), (c1, nc1), (c2, nc2), (c3, nc3)]))}')
+print(f'delta1 = {delta1(nc0, nc1, nc2, nc3)}')
+print(f'delta1 = {simplify(solutions[1].subs([(c0, nc0), (c1, nc1), (c2, nc2), (c3, nc3)]))}')
+
+delta = delta1(nc0, nc1, nc2, nc3)
+beta = (delta * a2 * a1.conjugate() + nc1) / (a1 * a1.conjugate())
+
+print(f'alpha = {alpha}')
+print(f'beta = {beta}')
+print(f'delta = {delta}')
+
 #    # Construct 
 #    tmp = dec_lo_BCL * dec_hi_BCL
 #    print(f'dec_lo_BCL * dec_hi_BCL {tmp}')
