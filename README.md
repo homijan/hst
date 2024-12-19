@@ -120,11 +120,11 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
   \end{align}`$
 
 $`\begin{align}
-\alpha &= \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}}~(4)
+\alpha &= \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}},~(4)
 \\
 \beta^2 a_1^2 - \delta^2 a_2^2 &= \frac{1}{2} - 2 a_3^2 \quad\Rightarrow\quad \frac{\left( \delta a_2 a_1^* + \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^* \right)^2}{a_1^2} - \delta^2 a_2^2 - \frac{1}{2} + 2 a_3^2 = 0
 \\
-\delta a_2 a_1^* - \beta a_1^2 &= a_3 a_1^* - \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* \quad\Rightarrow\quad \beta = \frac{\delta a_2 a_1^* + \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^*}{a_1^2}~(5)
+\delta a_2 a_1^* - \beta a_1^2 &= a_3 a_1^* - \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* \quad\Rightarrow\quad \beta = \frac{\delta a_2 a_1^* + \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^*}{a_1^2},~(5)
 \end{align}`$
 
 $`(c_0 \delta + c_1)^2 + c_2 \delta^2 + c_3 = 0,~(6)`$
