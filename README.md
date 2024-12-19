@@ -33,7 +33,7 @@ $`\phi_j = \gamma_j^{-1} G_{j-1} \phi_{j-1} \quad\text{and}\quad \bar{\phi}_j = 
 
 and
 
-$`\phi_{j-1} = \gamma_j G_{j-1}^T \phi_j + \gamma_j \bar{G}_{j-1}^T \bar{\phi}_j.~(8)`$
+$`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger \bar{\phi}_j.~(8)`$
 ## Daubechies Wavelets
 - Discrete wavelets defined through coefficients $`a_k \neq 0`$ for handful of $`k`$s
 - Orthogonality $`b_k = (-1)^k a^*_{1-k},~(1)`$ (holds for any discrete wavelet)
