@@ -191,7 +191,7 @@ Demonstration of invertibility
   \end{bmatrix},~(2)`$
 
   $`\bar{G} = \begin{bmatrix}
-  -\gamma a_0 & \delta a_1 & -\delta a_2 & a_{3} & 0 & 0 & 0 & 0
+  -\gamma a_0 & \delta a_1 & -a_2 & a_{3} & 0 & 0 & 0 & 0
   \\
   -a_{-2} & a_{-1} & -a_0 & a_1 & -a_2 & a_3 & 0 & 0
   \\
@@ -199,7 +199,7 @@ Demonstration of invertibility
   \\
   0 & 0 & 0 & 0 & -a_{-2} & \delta a_{-1} & -\beta a_0 & \alpha a_1
   \end{bmatrix} = \begin{bmatrix}
-  -\gamma a_1 & \delta a_1 & -\delta a_2 & a_{3} & 0 & 0 & 0 & 0
+  -\gamma a_1 & \delta a_1 & -a_2 & a_{3} & 0 & 0 & 0 & 0
   \\
   -a_3 & a_2 & -a_1 & a_1 & -a_2 & a_3 & 0 & 0
   \\
