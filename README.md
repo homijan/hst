@@ -170,7 +170,7 @@ Demonstration of invertibility
 
 `dec_lo^*.dec_lo + dec_hi^*.dec_hi = (0.9999974786819997+0j)`
 
-# TEST
+# Succesful method!
 
   $`G = \begin{bmatrix}
   \alpha a_1 & \beta a_0 & a_{-1} & a_{-2} & 0 & 0 & 0 & 0
@@ -191,20 +191,25 @@ Demonstration of invertibility
   \end{bmatrix},~(2)`$
 
   $`\bar{G} = \begin{bmatrix}
-  -\gamma a_0^* & \delta a_1^* & -a_2^* & a_3^* & 0 & 0 & 0 & 0
+  -(\alpha a_0)^* & (\beta a_1)^* & -a_2^* & a_3^* & 0 & 0 & 0 & 0
   \\
   -a_{-2}^* & a_{-1}^* & -a_0^* & a_1^* & -a_2^* & a_3^* & 0 & 0
   \\
   0 & 0 & -a_{-2}^* & a_{-1}^* & -a_0^* & a_{1}^* & -a_2^* & a_3^*
   \\
-  0 & 0 & 0 & 0 & -a_{-2}^* & a_{-1}^* & -\delta a_0^* & \gamma a_1^*
+  0 & 0 & 0 & 0 & -a_{-2}^* & a_{-1}^* & -(\beta a_0)^* & (\alpha a_1)^*
   \end{bmatrix} = \begin{bmatrix}
-  -\gamma a_1^* & \delta a_1^* & -a_2^* & a_3^* & 0 & 0 & 0 & 0
+  -(\alpha a_1)^* & (\beta a_1)^* & -a_2^* & a_3^* & 0 & 0 & 0 & 0
   \\
   -a_3^* & a_2^* & -a_1^* & a_1^* & -a_2^* & a_3^* & 0 & 0
   \\
   0 & 0 & -a_3^* & a_2^* & -a_1^* & a_1^* & -a_2^* & a_3^*
   \\
-  0 & 0 & 0 & 0 & -a_3^* & a_2^* & -\delta a_1^* & \gamma a_1^*
+  0 & 0 & 0 & 0 & -a_3^* & a_2^* & -(\beta a_1)^* & (\alpha a_1)^*
   \end{bmatrix},~(3),~(3)`$
 
+  **Solution to the orthogonality constraint on BC**
+
+  `s_alpha = (a_2*(a_2/(a_2 + a_3) + a_3*sqrt((a_1 - a_2 - a_3)*(a_1 + a_2 + a_3))/(a_1*(a_2 + a_3))) - a_2 + a_3)/a_3 = (1.0204969605748353+0.015876976569495486j)`
+  
+  `s_beta a_2/(a_2 + a_3) + a_3*sqrt((a_1 - a_2 - a_3)*(a_1 + a_2 + a_3))/(a_1*(a_2 + a_3)) = (1.012298185699968-0.015876906424713344j)`
