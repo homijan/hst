@@ -124,7 +124,7 @@ $`\begin{align}
 \\
 \beta^2 a_1^2 - \delta^2 a_2^2 &= \frac{1}{2} - 2 a_3^2
 \\
-\delta a_2 a_1^* - \beta a_1^2 &= a_3 a_1^* - \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* 
+\delta a_2 a_1^* - \beta a_1^2 &= a_3 a_1^* - \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* \Rightarrow \beta = \frac{\delta a_2 a_1^* + \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^*}{a_1^2}
 \end{align}`$
 
 Mother wavelet (or *scaling function* using $`a_k`$)
