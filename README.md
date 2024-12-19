@@ -143,9 +143,9 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
 
   **Solution to the orthogonality constraint on BC**
 
-  `s_alpha = (a_2*(a_2/(a_2 + a_3) + a_3*sqrt((a_1 - a_2 - a_3)*(a_1 + a_2 + a_3))/(a_1*(a_2 + a_3))) - a_2 + a_3)/a_3 = (1.0204969605748353+0.015876976569495486j)`
+  `alpha = (a_2*(a_2/(a_2 + a_3) + a_3*sqrt((a_1 - a_2 - a_3)*(a_1 + a_2 + a_3))/(a_1*(a_2 + a_3))) - a_2 + a_3)/a_3 = (1.0204969605748353+0.015876976569495486j)`
   
-  `s_beta a_2/(a_2 + a_3) + a_3*sqrt((a_1 - a_2 - a_3)*(a_1 + a_2 + a_3))/(a_1*(a_2 + a_3)) = (1.012298185699968-0.015876906424713344j)`
+  `beta = a_2/(a_2 + a_3) + a_3*sqrt((a_1 - a_2 - a_3)*(a_1 + a_2 + a_3))/(a_1*(a_2 + a_3)) = (1.012298185699968-0.015876906424713344j)`
 
 Explicit form of the orthogonal operators $`G`$ and $`\bar{G}`$ for SDW2
 
