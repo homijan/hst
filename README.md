@@ -94,7 +94,7 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
   0 & 0 & a_3 & a_2 & a_1 & a_0 & a_{-1} & a_{-2}
   \\
   0 & 0 & 0 & 0 & a_{3} & \delta a_2 & \beta a_1 & \alpha a_0
-  \end{bmatrix}`$
+  \end{bmatrix},~(2)`$
 
   $`\bar{G} = \begin{bmatrix}
   -\alpha a_0 & \beta a_1 & -\delta a_2 & a_{3} & 0 & 0 & 0 & 0
@@ -104,9 +104,9 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
   0 & 0 & -a_{-2} & a_{-1} & -a_0 & a_{1} & -a_2 & a_3
   \\
   0 & 0 & 0 & 0 & -a_{-2} & \delta a_{-1} & -\beta a_0 & \alpha a_1
-  \end{bmatrix}`$
+  \end{bmatrix},~(3)`$
 
-  where $`\tilde{a}_{-1}, \tilde{a}_0, \tilde{a}_1, \tilde{a}_2`$ are scaled $a$ coeficients adjusting the BC to maintain $G$ and $\bar{G}$ orthogonal and invertible. 
+  where $`\alpha, \beta, \delta`$ are scaling coeficients adjusting the BC to maintain $G$ and $\bar{G}$ orthogonal and invertible. 
 
 - BC coefficients $\tilde{a}$ are obtained from $`G\bar{G}^H = 0`$ and $`G^{H}G + \bar{G}^{H} \bar{G} = I`$ leading to
 
@@ -120,12 +120,14 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
   \end{align}`$
 
 $`\begin{align}
-\alpha &= \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}}
+\alpha &= \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}}~(4)
 \\
 \beta^2 a_1^2 - \delta^2 a_2^2 &= \frac{1}{2} - 2 a_3^2 \quad\Rightarrow\quad \frac{\left( \delta a_2 a_1^* + \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^* \right)^2}{a_1^2} - \delta^2 a_2^2 - \frac{1}{2} + 2 a_3^2 = 0
 \\
-\delta a_2 a_1^* - \beta a_1^2 &= a_3 a_1^* - \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* \quad\Rightarrow\quad \beta = \frac{\delta a_2 a_1^* + \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^*}{a_1^2}
+\delta a_2 a_1^* - \beta a_1^2 &= a_3 a_1^* - \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* \quad\Rightarrow\quad \beta = \frac{\delta a_2 a_1^* + \sqrt{\frac{1 - 2 a_3^2}{2 a_1^2}} a_1 a_3^* - a_3 a_1^*}{a_1^2}~(5)
 \end{align}`$
+
+$`(c_0 \delta + c_1)^2 + c_2 \delta^2 + c_3 = 0,~(6)`$
 
 Mother wavelet (or *scaling function* using $`a_k`$)
 
