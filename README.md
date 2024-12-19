@@ -41,7 +41,7 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
 
 ### Real DAUB4 `db2`
 - `dec_lo` filter coefficients $`[a_{-1}, a_0, a_1, a_2]`$ = `[-0.12940952+0.j, 0.22414387+0.j, 0.8365163 +0.j, 0.48296291+0.j]`
-- corresponding `dec_hi` filter coefficients $`[b_{-1}, b_0, b_1, b_2] = [-a_{2}, a_1, -a_0, a_{-1}]`$ = `[-0.48296291+0.j  0.8365163 +0.j -0.22414387+0.j -0.12940952-0.j]`
+- corresponding `dec_hi` filter coefficients $`[b_{-1}, b_0, b_1, b_2] = [-a_{2}^*, a_1^*, -a_0^*, a_{-1}^*]`$ = `[-0.48296291+0.j  0.8365163 +0.j -0.22414387+0.j -0.12940952-0.j]`
 - a simple **one-level** 4x8 $G$ and $\bar{G}$ operators with *outise-zero-BC* (*right-to-left* reversed to match `pywt`)
 
   $`G = \begin{bmatrix}
@@ -55,30 +55,20 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
   \end{bmatrix}`$
 
   $`\bar{G} = \begin{bmatrix}
-  -\alpha a_0 & a_1 & -a_2 & 0 & 0 & 0 & 0 & 0
+  -(\alpha a_0)^* & a_1^* & -a_2^* & 0 & 0 & 0 & 0 & 0
   \\
-  0 & a_{-1} & -a_0 & a_1 & -a_2 & 0 & 0 & 0
+  0 & a_{-1}^* & -a_0^* & a_1^* & -a_2^* & 0 & 0 & 0
   \\
-  0 & 0 & 0 & a_{-1} & -a_0 & a_{1} & -a_2 & 0
+  0 & 0 & 0 & a_{-1}^* & -a_0^* & a_{1}^* & -a_2^* & 0
   \\
-  0 & 0 & 0 & 0 & 0 & a_{-1} & -a_0 & \alpha a_1
+  0 & 0 & 0 & 0 & 0 & a_{-1}^* & -a_0^* & (\alpha a_1)^*
   \end{bmatrix}`$
 
   where $`\alpha`$ scales $a$ coeficients adjusting the BC to maintain $G$ and $\bar{G}$ orthogonal and invertible. 
 
 - BC scaling $\alpha$ is obtained from $`G\bar{G}^H = 0`$ and $`G^{H}G + \bar{G}^{H} \bar{G} = I`$ leading to
 
-  $`\begin{align}
-  -\alpha a_1 (\alpha a_0)^* - a_0 a_1^* + a_{-1} a_2^* &= 0,
-  \\
-  (\alpha a_1)^* \alpha a_1 + (\alpha a_0)^* \alpha a_0 &= 1,
-  \end{align}`$
-  
-  $`\begin{align}
-  a_{-1} + a_0 + a_1 + a_2 = \sqrt{2},
-  \\
-  -a_{2} + a_1 -a_0 + a_{-1} = 0,
-  \end{align}`$
+  $`-\alpha a_1 (\alpha a_0)^* - a_0 a_1^* + a_{-1} a_2^* = 0,`$
   
 ### Complex Symmetric Daubechies Wavelets (SDW)
 
