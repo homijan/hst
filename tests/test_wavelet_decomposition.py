@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from hst.mrw1d import generate_G_operators, save_G_operators, data_decomposition, data_reconstruction
+from hst.mrw1d import generate_wavelet, generate_G_operators, save_G_operators, data_decomposition, data_reconstruction
 
 # Multi-coefficient super-Gaussian data generation
 def superGaussian(x, cs): 
@@ -155,15 +155,17 @@ dec_lo = scale * np.array([a3, a2, a1, a1, a2, a3], dtype=complex)
 wavelets.append(['SDW2', dec_lo, [alpha, beta]])
 
 for wavelet, dec_lo, scaling in wavelets:
-    N = len(dec_lo)
-    dec_hi = np.zeros(N, dtype=complex)
-    for index in range(N):
-        # offeset of the local k from python i index as k_loc = i + offset
-        offset = int(1 - N / 2)
-        k_loc = index + offset
-        print(f'array index {index}, k_loc {k_loc}, 1 - k_loc {1 - k_loc}')
-        # b_k = (-1)^k a^*_{1-k}
-        dec_hi[index] = (-1)**k_loc * dec_lo[1 - k_loc - offset].conjugate()
+#    N = len(dec_lo)
+#    dec_hi = np.zeros(N, dtype=complex)
+#    for index in range(N):
+#        # offeset of the local k from python i index as k_loc = i + offset
+#        offset = int(1 - N / 2)
+#        k_loc = index + offset
+#        print(f'array index {index}, k_loc {k_loc}, 1 - k_loc {1 - k_loc}')
+#        # b_k = (-1)^k a^*_{1-k}
+#        dec_hi[index] = (-1)**k_loc * dec_lo[1 - k_loc - offset].conjugate()
+
+    dec_hi = generate_wavelet(dec_lo)
     
     print(f'{wavelet} filters')
     print(f'dec_lo {dec_lo}')

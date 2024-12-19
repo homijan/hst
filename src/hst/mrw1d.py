@@ -4,6 +4,20 @@ import numpy as np
 from scipy.sparse import csr_matrix
 #from cupyx.scipy.sparse import csr_matrix
 
+def generate_wavelet(dec_lo):
+    """Create a consistent high frequency decomposition wavelet b_k = (-1)^k a^*_{1-k}"""
+    N = len(dec_lo)
+    dec_hi = np.zeros(N, dtype=complex)
+    for index in range(N):
+        # offeset of the local k from python i index as k_loc = i + offset
+        offset = int(1 - N / 2)
+        k_loc = index + offset
+        #print(f'array index {index}, k_loc {k_loc}, 1 - k_loc {1 - k_loc}')
+        # b_k = (-1)^k a^*_{1-k}
+        dec_hi[index] = (-1)**k_loc * dec_lo[1 - k_loc - offset].conjugate()
+    return dec_hi
+
+
 def one_level_G_operators(Nrows, dec_lo, dec_hi):
     """Generate orthogonal G operators with clamped BC given low and high filters"""
     Ncols = 2 * Nrows
@@ -44,6 +58,7 @@ def one_level_G_operators(Nrows, dec_lo, dec_hi):
         G_hi[i, j] = scale * G_hi[i, j]
     return G_lo, G_hi
 
+
 def generate_G_operators(wavelet, Nlevels, data_length):
     """Generate full set of mutli-resolution G_operators (wavelet + binate)"""
     # Obtain low and high resolution wavelet filters
@@ -65,6 +80,7 @@ def generate_G_operators(wavelet, Nlevels, data_length):
 
     return G_operators
 
+
 def verify_G_operators(G_operators):
     """Verify that the set of G_operators is orthogonal and invertible""" 
     for G_lo, G_hi in G_operators:
@@ -74,6 +90,7 @@ def verify_G_operators(G_operators):
         print(f'{G_hi.dot(G_lo.T)}')
         print(f'Invertibility: G_lo^T.G_lo + G_hi^T.G_hi = I')
         print(f'{G_lo.T.dot(G_lo) + G_hi.T.dot(G_hi)}')
+
 
 def save_G_operators(G_operators, file_name):
     # Save generated G_operators using dictionary 
@@ -87,6 +104,7 @@ def save_G_operators(G_operators, file_name):
         savez_dict[key_lo] = level_Gops[0]
         savez_dict[key_hi] = level_Gops[1]
     np.savez(file_name, **savez_dict)
+
 
 def data_decomposition(G_operators, data, verify_Gs=False):
     """Implementation of the wavelet decomposition (phi_J, bar_phi_J, .., bar_phi_1)"""
@@ -116,6 +134,7 @@ def data_decomposition(G_operators, data, verify_Gs=False):
     decomposition.reverse()
 
     return decomposition
+
 
 def data_reconstruction(decomposition, G_operators):
     """Implementation of data reconstruction from the wavelet coeffs (phi_J, bar_phi_J, .., bar_phi_1).""" 
