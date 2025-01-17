@@ -8,7 +8,7 @@ $`\rho(z) = i \ln (R_0(z))`$
 
 $`S_0(x) = \rho(f(x))`$
 
-$`S_m(x) = \rho([W_{k_m} S_{m-1}](x)) = \rho([\psi_k * S_{m-1}](x))`$
+$`S_m(x) = \rho\left([W_{k_m} S_{m-1}](x)\right) = \rho\left([\psi_k * S_{m-1}](x)\right)`$
 
 # References
 1. `MST_Javier_Minguillon.pdf`
