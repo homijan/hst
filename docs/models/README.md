@@ -1,6 +1,6 @@
 # HST modeling
 
-$`[ W_k f](x) = [\psi_k * f](x) = \int \psi_k(x^\prime) f(x - x^\prime) dx^\prime`$
+$`\left[ W_k f\right](x) = \left[\psi_k * f \right](x) = \int \psi_k(x^\prime) f(x - x^\prime) dx^\prime`$
 
 $`R_0(z) = z + \exp^{i \arg (z)}`$
 
@@ -8,7 +8,7 @@ $`\rho(z) = i \ln (R_0(z))`$
 
 $`S_0(x) = \rho(f(x))`$
 
-$`S_m(x) = \rho\left([W_{k_m} S_{m-1}](x)\right) = \rho\left([\psi_{k_m} * S_{m-1}](x)\right)`$
+$`S_m(x) = \rho\left( \left[ W_{k_m} S_{m-1} \right](x)\right) = \rho\left(\left[ \psi_{k_m} * S_{m-1} \right](x)\right)`$
 
 $`S_1(x) = \rho\left([\psi_{k_1} * \rho(f)](x)\right)`$
 
