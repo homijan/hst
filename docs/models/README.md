@@ -1,6 +1,6 @@
 # HST modeling
 
-$`[ W_k f](x) = [\psi_k * f](x) = \int \psi_k`$
+$`[ W_k f](x) = [\psi_k * f](x) = \int \psi_k(x^{'})`$
 $`(x^') f(x - x^') dx^'`$
 
 # References
