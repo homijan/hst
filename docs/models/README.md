@@ -10,11 +10,11 @@ $`S_m(x) = \rho\left( \left[ W_{k_m} S_{m-1} \right](x)\right) = \rho\left(\left
 
 $`S_0(x) = \rho(f(x))`$
 
-$`S_1(x) = \rho\left(\left[\psi_{k_1} * \rho(f)\right](x)\right)`$
+$`S_1(x) = \rho\left(\left[ \psi_{k_1} * S_0 \right](x)\right) = \rho\left(\left[\psi_{k_1} * \rho(f)\right](x)\right)`$
 
-$`S_2(x) = \rho\left(\left[\psi_{k_2} * \rho\left(\left[\psi_{k_1} * \rho(f)\right]\right)\right](x)\right)`$
+$`S_2(x) = \rho\left(\left[ \psi_{k_2} * S_1 \right](x)\right) = \rho\left(\left[\psi_{k_2} * \rho\left(\left[\psi_{k_1} * \rho(f)\right]\right)\right](x)\right)`$
 
-$`S_3(x) = \rho\left(\left[\psi_{k_3} * \rho\left(\left[\psi_{k_2} * \rho\left(\left[\psi_{k_1} * \rho(f)\right]\right)\right]\right)\right](x)\right)`$
+$`S_3(x) = \rho\left(\left[ \psi_{k_2} * S_2 \right](x)\right) = \rho\left(\left[\psi_{k_3} * \rho\left(\left[\psi_{k_2} * \rho\left(\left[\psi_{k_1} * \rho(f)\right]\right)\right]\right)\right](x)\right)`$
 
 # References
 1. `MST_Javier_Minguillon.pdf`
