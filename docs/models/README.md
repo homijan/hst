@@ -6,7 +6,7 @@ $`R_0(z) = z + \exp^{i \arg (z)}`$
 
 $`\rho(z) = i \ln (R_0(z))`$
 
-$`S_0 = \rho(f(x))`$
+$`S_0(x) = \rho(f(x))`$
 
 $`S_m(x) = \rho([W_{k_m} S_{m-1}](x)) = \rho([\psi_k * S_{m-1}](x))`$
 
