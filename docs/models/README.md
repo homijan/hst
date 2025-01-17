@@ -1,8 +1,7 @@
 # HST modeling
 
-$`[ W_k f](x)`$ 
-
-$`= [\psi_k * f] = \int \psi_k(x^') f(x - x^') dx^'`$
+$`[ W_k f](x) = [\psi_k * f]`$ 
+$`= \int \psi_k(x^') f(x - x^') dx^'`$
 
 # References
 1. `MST_Javier_Minguillon.pdf`
