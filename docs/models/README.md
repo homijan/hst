@@ -6,6 +6,10 @@ $`R_0(z) = z + \exp^{i \arg (z)}`$
 
 $`\rho(z) = i \ln (R_0(z))`$
 
+$`S_0 = \rho(f(x))`$
+
+$`S_m(x) = \rho([W_{k_m} S_{m-1}](x)) = \rho([\psi_k * S_{m-1}](x))`$
+
 # References
 1. `MST_Javier_Minguillon.pdf`
 2. M. Glinsky, *A transformational approach to collective behavior*, `arXiv:2410.08558v4` (2025)
