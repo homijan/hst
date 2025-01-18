@@ -48,11 +48,11 @@ Define
 
 $`\rho(f) = \overline{\rho}(f) = i \log(f + c)`$
 
-then 
+where $f, c \in \mathbb{C}$. Then the invertability manifests as
 
-$`\rho^{-1}(g) = \overline{\rho}^{-1}(g) = \exp(-i g) - c\quad and\quad\rho^{-1}\left(\rho(f)\right) = \exp(- i^2 \log(f+c)) - c = f,`$
+$`\rho^{-1}(g) = \overline{\rho}^{-1}(g) = \exp(-i g) - c\quad and\quad\rho^{-1}\left(\rho(f)\right) = \exp(- i^2 \log(f+c)) - c = f.`$
 
-where $f, c \in \mathbb{C}$.
+.
 
 # References
 1. `MST_Javier_Minguillon.pdf`
