@@ -25,6 +25,9 @@ where $\rho$ and $\overline{\rho}$ are invertible functions, $`\rho\left(\rho^{-
 
 $`S_0 = \rho(\phi_0).~(2)`$
 
+Then, similar to $`\text{(8, Ref3)}`$, the decomposition $(1)$ can be *inverted* to reconstruct the original *fine data* $`\phi_0`$ from *nonlinear multi-resolution* **low & high frequency components**
+$`[S_J, \overline{S}_J, .., \overline{S}_1]`$ as
+
 # References
 1. `MST_Javier_Minguillon.pdf`
 2. M. Glinsky, *A transformational approach to collective behavior*, `arXiv:2410.08558v4` (2025)
