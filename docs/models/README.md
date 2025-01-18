@@ -19,9 +19,9 @@ $`\overline{G}_j G_j = G_j \overline{G}_j = 0\quad and\quad G_j^T G_j + \overlin
 
 Similar to low-frequency  multi-resolution decompostion in $`\text{(4, Ref3)}`$, define a nonlinear low-frequency decomposition
 
-$`S_j = \rho\left(G_{j-1} S_{j-1}\right)\quad and\quad \overline{S}_j = \rho\left(\overline{G}_{j-1} S_{j-1}\right),~(1)`$
+$`S_j = \rho\left(G_{j-1} S_{j-1}\right)\quad and\quad \overline{S}_j = \overline{\rho}\left(\overline{G}_{j-1} S_{j-1}\right),~(1)`$
 
-where $\rho$ is an invertible function, $`\rho\left(\rho^{-1}(f)\right) = \rho^{-1}\left(\rho(f)\right) = f`$, acting on the data vector element by element, and the recursion $`(1)`$ starts from the *fine data* $`\phi_0`$ as
+where $\rho$ and $\overline{\rho}$ are invertible functions, $`\rho\left(\rho^{-1}(f)\right) = \rho^{-1}\left(\rho(f)\right) = f`$ and $`\overline{\rho}\left(\overline{\rho}^{-1}(f)\right) = \overline{\rho}^{-1}\left(\overline{\rho}(f)\right) = f`$, acting on the data vector element by element, and the recursion $`(1)`$ starts from the *fine data* $`\phi_0`$ as
 
 $`S_0 = \rho(\phi_0).~(2)`$
 
