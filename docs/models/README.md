@@ -60,9 +60,15 @@ The HST nonlinear decomposition reads
 
 $`S_j = i \log\left(G_{j-1} S_{j-1} + c\right)\quad and\quad \overline{S}_j = i \log\left(\overline{G}_{j-1} S_{j-1} + c\right),~(7)`$
 
-and the reconstruction
+and the nonlinear reconstruction
 
 $`S_{j-1} = G_{j-1}^H\left(\exp\left(-i S_j\right) - c\right) + \overline{G}_{j-1}^H \left(\exp\left(-i \overline{S}_j\right) - c\right),~(8)`$
+
+with the final step
+
+$`\phi_0 = \exp(-i S_0) - c,~(9)`$
+
+thus concluding the methodology of the application of *nonlinear multi-resolution* to the Heisenberg scattering transformation.
 
 # References
 1. `MST_Javier_Minguillon.pdf`
