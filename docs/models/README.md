@@ -37,7 +37,7 @@ Similar to low-frequency  multi-resolution decompostion in $`\text{(4, Ref3)}`$,
 
 $`S_j = \rho(G_{j-1} S_{j-1}),`$
 
-where $\rho$ is an analytic (invertable) function acting on the data vector element by element.
+where $\rho$ is an invertible function acting on the data vector element by element.
 # References
 1. `MST_Javier_Minguillon.pdf`
 2. M. Glinsky, *A transformational approach to collective behavior*, `arXiv:2410.08558v4` (2025)
