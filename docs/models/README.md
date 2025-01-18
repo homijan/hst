@@ -19,7 +19,7 @@ $`\overline{G}_j G_j = G_j \overline{G}_j = 0\quad and\quad G_j^H G_j + \overlin
 
 ## Nonlinear multi-resolution analysis
 
-Similar to low-frequency  multi-resolution decompostion in $`\text{(4, Ref3)}`$, define a nonlinear low-frequency decomposition
+Similar to low-frequency  multi-resolution decompostion in $`\text{(4, Ref3)}`$, define a nonlinear decomposition
 
 $`S_j = \rho\left(G_{j-1} S_{j-1}\right)\quad and\quad \overline{S}_j = \overline{\rho}\left(\overline{G}_{j-1} S_{j-1}\right),~(1)`$
 
@@ -46,13 +46,15 @@ thus completing the *nonlinear multi-resolution* **decomposition and reconstruct
 
 Define the multi-resolution nonlinearity
 
-$`\rho(f) = \overline{\rho}(f) = i \log(f + c)`$
+$`\rho(f) = \overline{\rho}(f) = i \log(f + c),~(5)`$
 
 where $f, c \in \mathbb{C}$. Then the invertability manifests as
 
 $`\rho^{-1}(g) = \overline{\rho}^{-1}(g) = \exp(-i g) - c\quad and\quad\rho^{-1}\left(\rho(f)\right) = \exp(- i^2 \log(f+c)) - c = f.`$
 
-.
+The HST nonlinear decomposition reads
+
+$`S_j = i \log\left(G_{j-1} S_{j-1} + c\right)\quad and\quad \overline{S}_j = i \log\left(\overline{G}_{j-1} S_{j-1} + c\right),~(6)`$
 
 # References
 1. `MST_Javier_Minguillon.pdf`
