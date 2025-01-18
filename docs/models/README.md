@@ -35,7 +35,7 @@ $`\overline{G}_j G_j = G_j \overline{G}_j = 0\quad and\quad G_j^T G_j + \overlin
 
 Similar to low-frequency  multi-resolution decompostion in $`\text{(4, Ref3)}`$, define a nonlinear low-frequency decomposition
 
-$`S_j = \rho(G_{j-1} S_{j-1}),~(1)`$
+$`S_j = \rho(G_{j-1} S_{j-1})\quad and\quad \overline{S}_j = \overline{\rho}(\overline{G}_{j-1} S_{j-1}),~(1)`$
 
 where $\rho$ is an invertible function acting on the data vector element by element, and the recursion $`(1)`$ starts of the *fine data* as
 
