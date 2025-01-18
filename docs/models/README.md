@@ -44,6 +44,11 @@ thus completing the *nonlinear multi-resolution* **decomposition and reconstruct
 
 ## Application to Heisenberg scattering transformation (HST)
 
+Define
+
+$`\rho(f) = \overline{\rho}(f) = i \log(f + 1)`$
+
+
 # References
 1. `MST_Javier_Minguillon.pdf`
 2. M. Glinsky, *A transformational approach to collective behavior*, `arXiv:2410.08558v4` (2025)
