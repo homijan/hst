@@ -48,7 +48,11 @@ Define
 
 $`\rho(f) = \overline{\rho}(f) = i \log(f + c)\quad and\quad \rho^{-1}(g) = \overline{\rho}^{-1}(g) = \exp(-i g) - c`$
 
-then $\rho^{-1}\left(\rho(f)\right) = \exp(- i^2 \log(f+c)) - c = f$.
+then 
+
+$`\rho^{-1}\left(\rho(f)\right) = \exp(- i^2 \log(f+c)) - c = f,`$
+
+where $f, c \in \mathbb{C}$.
 
 # References
 1. `MST_Javier_Minguillon.pdf`
