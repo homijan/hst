@@ -9,11 +9,11 @@ $`\phi_j = G_{j-1} \phi_{j-1}\quad and\quad \overline{\phi}_j = \overline{G}_{j-
 can be *inverted* to reconstruct the original *fine data* $`\phi_0`$ from multi-resolution **low & high frequency components**
 $`[\phi_J, \overline{\phi}_J, .., \overline{\phi}_1]`$ as
 
-$`G_{j-1}^T \phi_j = G_{j-1}^T G_{j-1} \phi_{j-1} \quad and\quad \overline{G}_{j-1}^T \overline{\phi}_j = \overline{G}_{j-1}^T \overline{G}_{j-1} \phi_{j-1}\quad \Rightarrow \quad \phi_{j-1} = G_{j-1}^T \phi_j + \overline{G}_{j-1}^T \overline{\phi}_j,~\text{(8, Ref3)}`$
+$`G_{j-1}^H \phi_j = G_{j-1}^H G_{j-1} \phi_{j-1} \quad and\quad \overline{G}_{j-1}^H \overline{\phi}_j = \overline{G}_{j-1}^H \overline{G}_{j-1} \phi_{j-1}\quad \Rightarrow \quad \phi_{j-1} = G_{j-1}^H \phi_j + \overline{G}_{j-1}^H \overline{\phi}_j,~\text{(8, Ref3)}`$
 
 which holds only if the **wavelet orthonormal filters** define a unitary transformation satisfying
 
-$`\overline{G}_j G_j = G_j \overline{G}_j = 0\quad and\quad G_j^T G_j + \overline{G}_j^T \overline{G}_j = I,~\text{(7, Ref3)}`$
+$`\overline{G}_j G_j = G_j \overline{G}_j = 0\quad and\quad G_j^H G_j + \overline{G}_j^H \overline{G}_j = I,~\text{(7, Ref3)}`$
 
 ## Nonlinear multi-resolution analysis
 
@@ -27,6 +27,8 @@ $`S_0 = \rho(\phi_0).~(2)`$
 
 Then, similar to $`\text{(8, Ref3)}`$, the decomposition $(1)$ can be *inverted* to reconstruct the original *fine data* $`\phi_0`$ from *nonlinear multi-resolution* **low & high frequency components**
 $`[S_J, \overline{S}_J, .., \overline{S}_1]`$ as
+
+$`G_{j-1}^H\rho^{-1}\left(S_j\right) = G_{j-1}^H G_{j-1} S_{j-1}\quad and\quad \overline{G}_{j-1}^H \overline{\rho}^{-1}\left(\overline{S}_j\right) = \overline{G}_{j-1}^H\overline{G}_{j-1} S_{j-1}\quad \Rightarrow\quad S_{j-1} = G_{j-1}^H\rho^{-1}\left(S_j\right) + \overline{G}_{j-1}^H \overline{\rho}^{-1}\left(\overline{S}_j\right),~(3)`$
 
 # References
 1. `MST_Javier_Minguillon.pdf`
