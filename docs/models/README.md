@@ -1,4 +1,4 @@
-# HST modeling
+# HST
 
 ## Standard multi-resolution analysis
 
