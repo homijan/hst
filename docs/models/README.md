@@ -62,7 +62,7 @@ $`S_j = i \log\left(G_{j-1} S_{j-1} + c\right)\quad and\quad \overline{S}_j = i 
 
 and the reconstruction
 
-S_{j-1} = G_{j-1}^H\left(\exp\left(-i S_j\right) - c\right) + \overline{G}_{j-1}^H \left(\exp\left(-i \overline{S}_j\right) - c\right),~(8)`$
+$`S_{j-1} = G_{j-1}^H\left(\exp\left(-i S_j\right) - c\right) + \overline{G}_{j-1}^H \left(\exp\left(-i \overline{S}_j\right) - c\right),~(8)`$
 
 # References
 1. `MST_Javier_Minguillon.pdf`
