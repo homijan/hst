@@ -25,7 +25,7 @@ $`\phi_j = G_{j-1} \phi_{j-1}\quad and\quad \overline{\phi}_j = \overline{G}_{j-
 can be *inverted* to reconstruct the original *fine data* from multi-resolution **low & high frequency components**
 $`[\phi_J, \overline{\phi}_J, .., \overline{\phi}_1]`$ as
 
-$`G_{j-1}^T \phi_j = G_{j-1}^T G_{j-1} \phi_{j-1} \quad and\quad \overline{G}_{j-1}^T \overline{\phi}_j = \overline{G}_{j-1}^T \overline{G}_{j-1} \phi_{j-1}\quad \Rightarrow \quad \phi_{j-1 = G_{j-1}^T \phi_j + \overline{G}_{j-1}^T \overline{\phi}_j,~\text{(8, Ref3)}}`$
+$`G_{j-1}^T \phi_j = G_{j-1}^T G_{j-1} \phi_{j-1} \quad and\quad \overline{G}_{j-1}^T \overline{\phi}_j = \overline{G}_{j-1}^T \overline{G}_{j-1} \phi_{j-1}\quad \Rightarrow \quad \phi_{j-1} = G_{j-1}^T \phi_j + \overline{G}_{j-1}^T \overline{\phi}_j,~\text{(8, Ref3)}`$
 
 which holds only if the **wavelet orthonormal filters** define a unitary transformation satisfying
 
