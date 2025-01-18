@@ -1,21 +1,5 @@
 # HST modeling
 
-$`\left[ W_k f\right](x) = \left[\psi_k * f \right](x) = \int \psi_k(x^\prime) f(x - x^\prime) dx^\prime`$
-
-$`R_0(z) = z + \exp^{i \arg (z)}`$
-
-$`\rho(z) = i \ln (R_0(z))`$
-
-$`S_m(x) = \rho\left( \left[ W_{k_m} S_{m-1} \right](x)\right) = \rho\left(\left[ \psi_{k_m} * S_{m-1} \right](x)\right)`$
-
-$`S_0(x) = \rho(f(x))`$
-
-$`S_1(x) = \rho\left(\left[ \psi_{k_1} * S_0 \right](x)\right) = \rho\left(\left[\psi_{k_1} * \rho(f)\right](x)\right)`$
-
-$`S_2(x) = \rho\left(\left[ \psi_{k_2} * S_1 \right](x)\right) = \rho\left(\left[\psi_{k_2} * \rho\left(\left[\psi_{k_1} * \rho(f)\right]\right)\right](x)\right)`$
-
-$`S_3(x) = \rho\left(\left[ \psi_{k_2} * S_2 \right](x)\right) = \rho\left(\left[\psi_{k_3} * \rho\left(\left[\psi_{k_2} * \rho\left(\left[\psi_{k_1} * \rho(f)\right]\right)\right]\right)\right](x)\right)`$
-
 ## Standard multi-resolution analysis
 
 Assuming $`\gamma_j = 1`$, the multi-resolution decomposition from *fine data* $`\phi_0`$ to *coarse data* $`\phi_J`$
@@ -37,7 +21,7 @@ Similar to low-frequency  multi-resolution decompostion in $`\text{(4, Ref3)}`$,
 
 $`S_j = \rho\left(G_{j-1} S_{j-1}\right)\quad and\quad \overline{S}_j = \rho\left(\overline{G}_{j-1} S_{j-1}\right),~(1)`$
 
-where $\rho$ is an invertible function ($`\rho^{-1}\left(\rho(f)\right) = f`$) acting on the data vector element by element, and the recursion $`(1)`$ starts from the *fine data* $`\phi_0`$ as
+where $\rho$ is an invertible function, $`\rho^{-1}\left(\rho(f)\right) = f`$, acting on the data vector element by element, and the recursion $`(1)`$ starts from the *fine data* $`\phi_0`$ as
 
 $`S_0 = \rho(\phi_0).~(2)`$
 
@@ -45,3 +29,21 @@ $`S_0 = \rho(\phi_0).~(2)`$
 1. `MST_Javier_Minguillon.pdf`
 2. M. Glinsky, *A transformational approach to collective behavior*, `arXiv:2410.08558v4` (2025)
 3. T. Marchand et al, *Wavelet Conditional Renormalization Group*, `arXiv:2207.04941v1` (2022)
+
+# Notes
+
+$`\left[ W_k f\right](x) = \left[\psi_k * f \right](x) = \int \psi_k(x^\prime) f(x - x^\prime) dx^\prime`$
+
+$`R_0(z) = z + \exp^{i \arg (z)}`$
+
+$`\rho(z) = i \ln (R_0(z))`$
+
+$`S_m(x) = \rho\left( \left[ W_{k_m} S_{m-1} \right](x)\right) = \rho\left(\left[ \psi_{k_m} * S_{m-1} \right](x)\right)`$
+
+$`S_0(x) = \rho(f(x))`$
+
+$`S_1(x) = \rho\left(\left[ \psi_{k_1} * S_0 \right](x)\right) = \rho\left(\left[\psi_{k_1} * \rho(f)\right](x)\right)`$
+
+$`S_2(x) = \rho\left(\left[ \psi_{k_2} * S_1 \right](x)\right) = \rho\left(\left[\psi_{k_2} * \rho\left(\left[\psi_{k_1} * \rho(f)\right]\right)\right](x)\right)`$
+
+$`S_3(x) = \rho\left(\left[ \psi_{k_2} * S_2 \right](x)\right) = \rho\left(\left[\psi_{k_3} * \rho\left(\left[\psi_{k_2} * \rho\left(\left[\psi_{k_1} * \rho(f)\right]\right)\right]\right)\right](x)\right)`$
