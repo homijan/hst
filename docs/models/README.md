@@ -20,11 +20,16 @@ $`S_3(x) = \rho\left(\left[ \psi_{k_2} * S_2 \right](x)\right) = \rho\left(\left
 
 Assuming $`\gamma_j = 1`$, the multi-resolution decomposition from *fine data* $`\phi_0`$ to *coarse data* $`\phi_J`$
 
-$`\phi_j = G_{j-1} \phi_{j-1}\quad and\quad \overline{\phi}_j = \overline{G}_{j-1} \phi_{j-1}~\text{(4, Ref3)}`$
+$`\phi_j = G_{j-1} \phi_{j-1}\quad and\quad \overline{\phi}_j = \overline{G}_{j-1} \phi_{j-1},~\text{(4, Ref3)}`$
 
 can be *inverted* to reconstruct the original *fine data* from multi-resolution **low & high frequency components**
+$`[\phi_J, \overline{\phi}_J, .., \overline{\phi}_1]`$ as
 
-$`G_{j-1}^T \phi_j = G_{j-1}^T G_{j-1} \phi_{j-1} \quad and\quad \overline{G}_{j-1}^T \overline{\phi}_j = \overline{G}_{j-1}^T \overline{G}_{j-1} \phi_{j-1}\quad \Rightarrow \quad \phi_{j-1 = }`$
+$`G_{j-1}^T \phi_j = G_{j-1}^T G_{j-1} \phi_{j-1} \quad and\quad \overline{G}_{j-1}^T \overline{\phi}_j = \overline{G}_{j-1}^T \overline{G}_{j-1} \phi_{j-1}\quad \Rightarrow \quad \phi_{j-1 = G_{j-1}^T \phi_j + \overline{G}_{j-1}^T \overline{\phi}_j,~\text{(8, Ref3)}}`$
+
+which holds only if the **wavelet orthonormal filters** define a unitary transformation satisfying
+
+$`\overline{G}_j G_j = G_j \overline{G}_j = 0\quad and\quad \overline{G}_j^T \overline{G}_j + G_j^T G_j = I,~\text{(7, Ref3)}`$
 
 # References
 1. `MST_Javier_Minguillon.pdf`
