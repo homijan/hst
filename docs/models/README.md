@@ -29,7 +29,7 @@ $`G_{j-1}^T \phi_j = G_{j-1}^T G_{j-1} \phi_{j-1} \quad and\quad \overline{G}_{j
 
 which holds only if the **wavelet orthonormal filters** define a unitary transformation satisfying
 
-$`\overline{G}_j G_j = G_j \overline{G}_j = 0\quad and\quad \overline{G}_j^T \overline{G}_j + G_j^T G_j = I,~\text{(7, Ref3)}`$
+$`\overline{G}_j G_j = G_j \overline{G}_j = 0\quad and\quad G_j^T G_j + \overline{G}_j^T \overline{G}_j = I,~\text{(7, Ref3)}`$
 
 # References
 1. `MST_Javier_Minguillon.pdf`
