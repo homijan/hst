@@ -34,6 +34,8 @@ $`G_{j-1}^H\rho^{-1}\left(S_j\right) = G_{j-1}^H G_{j-1} S_{j-1}\quad and\quad \
 
 $`\Rightarrow\quad S_{j-1} = G_{j-1}^H\rho^{-1}\left(S_j\right) + \overline{G}_{j-1}^H \overline{\rho}^{-1}\left(\overline{S}_j\right),~(3)`$
 
+where $(3)$ holds because $`\rho`$ and $`\overline{\rho}`$ are invertible and wavelet filters $G_j$ and $\overline{G}_j$ define a unitary transformation $`\text{(7, Ref3)}`$.
+
 # References
 1. `MST_Javier_Minguillon.pdf`
 2. M. Glinsky, *A transformational approach to collective behavior*, `arXiv:2410.08558v4` (2025)
