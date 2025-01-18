@@ -37,9 +37,9 @@ Similar to low-frequency  multi-resolution decompostion in $`\text{(4, Ref3)}`$,
 
 $`S_j = \rho\left(G_{j-1} S_{j-1}\right)\quad and\quad \overline{S}_j = \overline{\rho}\left(\overline{G}_{j-1} S_{j-1}\right),~(1)`$
 
-where $\rho$ and $\overline{\rho}$ are invertible functions acting on the data vector element by element, and the recursion $`(1)`$ starts of the *fine data* as
+where $\rho$ and $\overline{\rho}$ are invertible functions acting on the data vector element by element, and the recursion $`(1)`$ starts of the *fine data* $`\phi_0`$ as
 
-$`S_0 = \rho(f).~(2)`$
+$`S_0 = \rho(\phi_0).~(2)`$
 
 # References
 1. `MST_Javier_Minguillon.pdf`
