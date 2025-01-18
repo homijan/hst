@@ -35,9 +35,12 @@ $`\overline{G}_j G_j = G_j \overline{G}_j = 0\quad and\quad G_j^T G_j + \overlin
 
 Similar to low-frequency  multi-resolution decompostion in $`\text{(4, Ref3)}`$, define a nonlinear low-frequency decomposition
 
-$`S_j = \rho(G_{j-1} S_{j-1}),`$
+$`S_j = \rho(G_{j-1} S_{j-1}),~(1)`$
 
-where $\rho$ is an invertible function acting on the data vector element by element.
+where $\rho$ is an invertible function acting on the data vector element by element, and the recursion $`(1)`$ starts of the *fine data* as
+
+$`S_0 = \rho(f).~(2)`$
+
 # References
 1. `MST_Javier_Minguillon.pdf`
 2. M. Glinsky, *A transformational approach to collective behavior*, `arXiv:2410.08558v4` (2025)
