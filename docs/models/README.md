@@ -44,7 +44,7 @@ thus completing the *nonlinear multi-resolution* **decomposition and reconstruct
 
 ## Application to Heisenberg scattering transformation (HST)
 
-Define
+Define the multi-resolution nonlinearity
 
 $`\rho(f) = \overline{\rho}(f) = i \log(f + c)`$
 
