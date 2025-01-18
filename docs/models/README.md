@@ -36,6 +36,12 @@ $`\Rightarrow\quad S_{j-1} = G_{j-1}^H\rho^{-1}\left(S_j\right) + \overline{G}_{
 
 where $(3)$ holds because $`\rho`$ and $`\overline{\rho}`$ are invertible and wavelet filters $G_j$ and $\overline{G}_j$ define a unitary transformation $`\text{(7, Ref3)}`$.
 
+Note, that the recursive application of $`(3)`$ leads to a reconstruction of the *fine data* vector $`S_0`$. This is simply followed by the inversion of $`(2)`$
+
+$`\phi_0 = g^{-1}\left( S_0 \right),~(4)`$
+
+thus completing the *nonlinear multi-resolution decomposition and reconstruction*!
+
 # References
 1. `MST_Javier_Minguillon.pdf`
 2. M. Glinsky, *A transformational approach to collective behavior*, `arXiv:2410.08558v4` (2025)
