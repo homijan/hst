@@ -46,8 +46,9 @@ thus completing the *nonlinear multi-resolution* **decomposition and reconstruct
 
 Define
 
-$`\rho(f) = \overline{\rho}(f) = i \log(f + 1)\quad and\quad \rho^{-1}(g) = \overline{\rho}^{-1}(g) = \exp(i g) - 1`$
+$`\rho(f) = \overline{\rho}(f) = i \log(f + 1)\quad and\quad \rho^{-1}(g) = \overline{\rho}^{-1}(g) = \exp(-i g) - 1`$
 
+then $\rho^{-1}\left(\rho(f)\right) = \exp(- i^2 \log(f+1)) - 1 = f$.
 
 # References
 1. `MST_Javier_Minguillon.pdf`
