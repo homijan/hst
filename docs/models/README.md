@@ -16,7 +16,15 @@ $`S_2(x) = \rho\left(\left[ \psi_{k_2} * S_1 \right](x)\right) = \rho\left(\left
 
 $`S_3(x) = \rho\left(\left[ \psi_{k_2} * S_2 \right](x)\right) = \rho\left(\left[\psi_{k_3} * \rho\left(\left[\psi_{k_2} * \rho\left(\left[\psi_{k_1} * \rho(f)\right]\right)\right]\right)\right](x)\right)`$
 
+## Standard multi-resolution analysis
+
+Assuming $`\gamma_j = 1`$, the multi-resolution decomposition from *fine data* $`\phi_0`$ to *coarse data* $`\phi_J`$
+
 $`\phi_j = G_{j-1} \phi_{j-1}\quad and\quad \overline{\phi}_j = \overline{G}_{j-1} \phi_{j-1}~\text{(4, Ref3)}`$
+
+can be *inverted* to reconstruct the original *fine data* from multi-resolution **low & high frequency components**
+
+$`G_{j-1}^T \phi_j = G_{j-1}^T G_{j-1} \phi_{j-1} \quad and\quad \overline{G}_{j-1}^T \overline{\phi}_j = \overline{G}_{j-1}^T \overline{G}_{j-1} \phi_{j-1}\quad \Rightarrow \quad \phi_{j-1 = }`$
 
 # References
 1. `MST_Javier_Minguillon.pdf`
