@@ -42,7 +42,7 @@ $`\phi_0 = g^{-1}\left( S_0 \right),~(4)`$
 
 thus completing the *nonlinear multi-resolution* **decomposition and reconstruction procedure**!
 
-## Application to Heisenberg scattering transformation
+## Application to Heisenberg scattering transformation (HST)
 
 # References
 1. `MST_Javier_Minguillon.pdf`
