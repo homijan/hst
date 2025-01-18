@@ -16,7 +16,7 @@ $`S_2(x) = \rho\left(\left[ \psi_{k_2} * S_1 \right](x)\right) = \rho\left(\left
 
 $`S_3(x) = \rho\left(\left[ \psi_{k_2} * S_2 \right](x)\right) = \rho\left(\left[\psi_{k_3} * \rho\left(\left[\psi_{k_2} * \rho\left(\left[\psi_{k_1} * \rho(f)\right]\right)\right]\right)\right](x)\right)`$
 
-$`\phi_j = G_{j-1} \phi_{j-1}\quad and\quad \widebar{\phi}_j = \widebar{G} \widebar{\phi}_{j-1}~\text{(4, Ref3)}`$
+$`\phi_j = G_{j-1} \phi_{j-1}\quad and\quad \overline{\phi}_j = \overline{G} \overline{\phi}_{j-1}~\text{(4, Ref3)}`$
 
 # References
 1. `MST_Javier_Minguillon.pdf`
