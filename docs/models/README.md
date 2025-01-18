@@ -54,7 +54,7 @@ $`\rho^{-1}(g) = \overline{\rho}^{-1}(g) = \exp(-i g) - c,~(6)`$
 
 and the invertability manifests as
 
-$`\rho^{-1}\left(\rho(f)\right) = \exp(- i^2 \log(f+c)) - c = f.`$
+$`\rho^{-1}\left(\rho(f)\right) = \exp(- i^2 \log(f+c)) - c = \rho\left( \rho^{-1}(f)\right) = i \log(\exp(-i f) - c + c) = f.`$
 
 The HST nonlinear decomposition reads
 
