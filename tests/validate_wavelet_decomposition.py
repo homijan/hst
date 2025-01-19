@@ -43,7 +43,9 @@ data = mat_data.T
 # Generate orthogonal G_lo (aka G) and G_hi (aka bar_G) operators
 G_operators = generate_G_operators(wavelet, Nlevels, data.shape[0])
 # Generate data decomposition into (phi_J, bar_phi_J, .., bar_phi_1)
-decomposition = data_decomposition(G_operators, data, verify_Gs)
+# This test is strictly for pure multi-resolution without the nonlinearity
+nonlinear_function = False
+decomposition = data_decomposition(G_operators, data, nonlinear_function, verify_Gs)
 # Coarse phi_J interpretation
 cA_ours = decomposition[0]
 
@@ -77,7 +79,9 @@ data = mat_data.T
 # Generate orthogonal G_lo (aka G) and G_hi (aka bar_G) operators
 G_operators = generate_G_operators(wavelet, Nlevels, data.shape[0])
 # Generate data decomposition into (phi_J, bar_phi_J, .., bar_phi_1)
-decomposition = data_decomposition(G_operators, data, verify_Gs)
+# This test is strictly for pure multi-resolution without the nonlinearity
+nonlinear_function = False
+decomposition = data_decomposition(G_operators, data, nonlinear_function, verify_Gs)
 # Coarse phi_J interpretation
 cA_ours = decomposition[0]
 #print(f'wavelet {wavelet}, cA_ours {cA_ours}')
@@ -91,7 +95,9 @@ data = mat_data.T
 # Generate orthogonal G_lo (aka G) and G_hi (aka bar_G) operators
 G_operators = generate_G_operators(wavelet, Nlevels, data.shape[0])
 # Generate data decomposition into (phi_J, bar_phi_J, .., bar_phi_1)
-decomposition = data_decomposition(G_operators, data, verify_Gs)
+# This test is strictly for pure multi-resolution without the nonlinearity
+nonlinear_function = False
+decomposition = data_decomposition(G_operators, data, nonlinear_function, verify_Gs)
 # Coarse phi_J interpretation
 cA_ours = decomposition[0]
 print(f'wavelet {wavelet}, cA_ours {cA_ours}')

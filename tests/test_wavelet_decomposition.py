@@ -44,6 +44,16 @@ input_data = superGaussian(x, input_coeffs)
 
 print(f'Nlevels {Nlevels}, data_length {data_length}, Ndata {Ndata}')
 
+# Proof of concept nonlinear function
+c_nln = 1e-1
+power_nln = 1.0 / 2.0
+def nonlinear_function(f):
+    return (f + c_nln)**power_nln
+def nonlinear_function_inverse(g): 
+    return g**(1.0 / power_nln) - c_nln
+    # A dummy test to show the sensitivity of the inverse function
+    #return g**(1.0 / (0.9999 * power_nln)) - c_nln
+
 # Data decomposition into wavelet basis
 wavelets = ['db1', 'db2', 'sdw2']
 for wavelet in wavelets:
@@ -58,7 +68,7 @@ for wavelet in wavelets:
         print(f'G_operators saved into {file_name}.')
     # Generate data decomposition into (phi_J, bar_phi_J, .., bar_phi_1)
     print('Compute data decomposition:')
-    decomposition = data_decomposition(G_operators, input_data, verify_Gs)
+    decomposition = data_decomposition(G_operators, input_data, nonlinear_function, verify_Gs)
     print('Decomposition done!')
     # Coarse phi_J interpretation
     cA = decomposition[0]
@@ -67,7 +77,7 @@ for wavelet in wavelets:
 
     # Generate data reconstruction from (phi_J, bar_phi_J, .., bar_phi_1) 
     print('Compute data reconstruction:')
-    reconstructed_data = data_reconstruction(decomposition, G_operators)
+    reconstructed_data = data_reconstruction(decomposition, G_operators, nonlinear_function_inverse)
     print('Reconstruction done!')
 
     # Verification of direct and inverse multiresolution decomposition and reconstruction

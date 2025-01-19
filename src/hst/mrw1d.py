@@ -126,8 +126,8 @@ def save_G_operators(G_operators, file_name):
     np.savez(file_name, **savez_dict)
 
 
-def data_decomposition(G_operators, data, verify_Gs=False):
-    """Implementation of the wavelet decomposition (phi_J, bar_phi_J, .., bar_phi_1)"""
+def data_decomposition(G_operators, data, fnln, verify_Gs=False):
+    """Implementation of the nonlinear wavelet decomposition (S_J, bar_S_J, .., bar_S_1)"""
     if (verify_Gs):
         # Verify orthogonality and invertibility of G_operators at all levels
         verify_G_operators(G_operators)
@@ -137,36 +137,55 @@ def data_decomposition(G_operators, data, verify_Gs=False):
     decomposition = []
     # Starting (finest) level data
     phi = data
+    if fnln != False:
+        # Apply nonlinearity
+        phi = fnln(phi)
     # The G_operators levels need to be reversed upward
     for G_lo, G_hi in reversed(G_operators):
-        # Project high frequency data vector 
+        # Project high frequency data vector
         bar_phi = G_hi.dot(phi)
+        if fnln != False:
+            # Apply nonlinearity
+            bar_phi = fnln(bar_phi)
         decomposition.append(bar_phi)
         print(f'G_lo.shape {G_lo.shape}, phi.shape {phi.shape}, phi count {phi.shape[0]*phi.shape[1]}, G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
         # current level low frequency data vector
         phi = G_lo.dot(phi)
+        if fnln != False:
+            # Apply nonlinearity
+            phi = fnln(phi)
     # Add phi_J (coarsest level phi)
     decomposition.append(phi)
 
     # Construct downward decomposition from coarse to fine
-    # as vector (phi_J, bar_phi_J, bar_phi_J-1,.., bar_phi_1) 
+    # as vector (phi_J, bar_phi_J, bar_phi_J-1,.., bar_phi_1)
+    # or vector  (S_J, bar_S_J, bar_S_J-1,.., bar_S_1) if nonlinear function provided
     # following Eq. 5 in Marchand et al, Wavelet Conditional Renormalization Group (2022)
     decomposition.reverse()
 
     return decomposition
 
 
-def data_reconstruction(decomposition, G_operators):
-    """Implementation of data reconstruction from the wavelet coeffs (phi_J, bar_phi_J, .., bar_phi_1).""" 
+def data_reconstruction(decomposition, G_operators, fnln_inv=False):
+    """Implementation of data reconstruction from the wavelet coeffs (S_J, bar_S_J, .., bar_S_1).""" 
     # Reconstruct by a downward cascade starting with phi_J
     # following the red procedure in Fig. 2 in Marchand et al, Wavelet Conditional Renormalization Group (2022)
-    phi = decomposition[0]
+    phi = decomposition[0] 
     for i in range(len(G_operators)):
         bar_phi = decomposition[i+1]
+        if fnln_inv != False:
+            # Apply the inverse nonlinearity
+            phi = fnln_inv(phi)
+            bar_phi = fnln_inv(bar_phi)
         G_lo, G_hi = G_operators[i]
         phi = G_lo.H.dot(phi) + G_hi.H.dot(bar_phi)
         print(f'G_lo.H.shape {G_lo.H.shape}, bar_phi.shape {bar_phi.shape}, bar_phi count {bar_phi.shape[0]*bar_phi.shape[1]}, G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
     # For clarity we highlight that final phi is on the lowest (finest) level
     # following Fig. 2 in Marchand et al, Wavelet Conditional Renormalization Group (2022)
     phi_0 = phi
+
+    if fnln_inv != False:
+        # Apply the inverse nonlinearity
+        phi_0 = fnln_inv(phi_0)
+
     return phi_0
