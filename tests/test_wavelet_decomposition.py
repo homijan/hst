@@ -45,18 +45,31 @@ input_data = superGaussian(x, input_coeffs)
 print(f'Nlevels {Nlevels}, data_length {data_length}, Ndata {Ndata}')
 
 # Proof of concept nonlinear function
-c_nln = 1e-1
-power_nln = 1.0 / 2.0
-def bar_nonlinear_function(f):
-    return (f + c_nln)**power_nln
-def bar_nonlinear_function_inverse(g): 
-    return g**(1.0 / power_nln) - c_nln
-    # A dummy test to show the sensitivity of the inverse function
-    #return g**(1.0 / (0.9999 * power_nln)) - c_nln
+# Unit operation on low-frequencies
 def nonlinear_function(f):
     return f
 def nonlinear_function_inverse(g):
     return g
+# Logarithmic operation on high-frequencies
+c_nln = 1e-1
+def bar_nonlinear_function(f):
+    return np.log(f + c_nln) 
+    #return (f + c_nln)**power_nln
+def bar_nonlinear_function_inverse(g): 
+    return np.exp(g) - c_nln
+    #return g**(1.0 / power_nln) - c_nln
+    # A dummy test to show the sensitivity of the inverse function
+    #return g**(1.0 / (0.9999 * power_nln)) - c_nln
+# Polynomial operation on high-frequencies
+if False:
+    c_nln = 1e-1
+    power_nln = 1.0 / 2.0
+    def bar_nonlinear_function(f): 
+        return (f + c_nln)**power_nln
+    def bar_nonlinear_function_inverse(g):
+        #return g**(1.0 / power_nln) - c_nln
+        # A dummy test to show the sensitivity of the inverse function
+        return g**(1.0 / (0.95 * power_nln)) - c_nln
 
 # Data decomposition into wavelet basis
 wavelets = ['db1', 'db2', 'sdw2']
