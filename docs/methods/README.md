@@ -82,11 +82,11 @@ $`\rho(f) = \rho^{-1}(f) = f.`$
 
 Define the high-frequency multi-resolution nonlinearity
 
-$`\overline{\rho}(f) = \log(f + c),`$
+$`\overline{\rho}(f) = \exp(f) - c,`$
 
 where $f, c \in \mathbb{C}$. Then the *inverse function* reads
 
-$`\overline{\rho}^{-1}(g) = \exp(g) - c,`$
+$`\overline{\rho}^{-1}(f) = \log(g + c),`$
 
 # References
 1. `MST_Javier_Minguillon.pdf`
