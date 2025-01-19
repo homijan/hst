@@ -1,7 +1,8 @@
 import pywt
 from pywt import wavedec
 import numpy as np
-from hst.mrw1d import generate_G_operators, data_decomposition
+from hst.wavelet_operators import generate_G_operators
+from hst.linear_multres import linear_data_decomposition
 
 # MAIN
 def format_array(arr):
@@ -43,9 +44,7 @@ data = mat_data.T
 # Generate orthogonal G_lo (aka G) and G_hi (aka bar_G) operators
 G_operators = generate_G_operators(wavelet, Nlevels, data.shape[0])
 # Generate data decomposition into (phi_J, bar_phi_J, .., bar_phi_1)
-# This test is strictly for pure multi-resolution without the nonlinearity
-nonlinear_function = False
-decomposition = data_decomposition(G_operators, data, nonlinear_function, verify_Gs)
+decomposition = linear_data_decomposition(G_operators, data, verify_Gs)
 # Coarse phi_J interpretation
 cA_ours = decomposition[0]
 
@@ -79,9 +78,7 @@ data = mat_data.T
 # Generate orthogonal G_lo (aka G) and G_hi (aka bar_G) operators
 G_operators = generate_G_operators(wavelet, Nlevels, data.shape[0])
 # Generate data decomposition into (phi_J, bar_phi_J, .., bar_phi_1)
-# This test is strictly for pure multi-resolution without the nonlinearity
-nonlinear_function = False
-decomposition = data_decomposition(G_operators, data, nonlinear_function, verify_Gs)
+decomposition = linear_data_decomposition(G_operators, data, verify_Gs)
 # Coarse phi_J interpretation
 cA_ours = decomposition[0]
 #print(f'wavelet {wavelet}, cA_ours {cA_ours}')
@@ -95,9 +92,7 @@ data = mat_data.T
 # Generate orthogonal G_lo (aka G) and G_hi (aka bar_G) operators
 G_operators = generate_G_operators(wavelet, Nlevels, data.shape[0])
 # Generate data decomposition into (phi_J, bar_phi_J, .., bar_phi_1)
-# This test is strictly for pure multi-resolution without the nonlinearity
-nonlinear_function = False
-decomposition = data_decomposition(G_operators, data, nonlinear_function, verify_Gs)
+decomposition = linear_data_decomposition(G_operators, data, verify_Gs)
 # Coarse phi_J interpretation
 cA_ours = decomposition[0]
 print(f'wavelet {wavelet}, cA_ours {cA_ours}')
