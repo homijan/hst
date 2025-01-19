@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from hst.wavelet_operators import generate_G_operators, save_G_operators
-from hst.nonlinear_multres import nonlinear_data_decomposition, nonlinear_data_reconstruction
+from hst.nonlinmultres import nonlinear_data_decomposition, nonlinear_data_reconstruction
 
 # Multi-coefficient super-Gaussian data generation
 def superGaussian(x, cs): 

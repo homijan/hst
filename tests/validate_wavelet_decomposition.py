@@ -2,7 +2,7 @@ import pywt
 from pywt import wavedec
 import numpy as np
 from hst.wavelet_operators import generate_G_operators
-from hst.linear_multres import linear_data_decomposition
+from hst.linmultres import linear_data_decomposition
 
 # MAIN
 def format_array(arr):
