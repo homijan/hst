@@ -16,11 +16,11 @@ Our `hst` python package can be installed locally following these steps
 
 Jupyter notebook `hst/docs/demo_hst.ipynb` shows how to *decompose* (transform) and *reconstruct* (inverse transform) given randomly generated super-Gaussian pulses in 1D with `db1` or `db2` Daubechies wavelets. Set `verify_Gs = True` to see that `G_operators` correspodning to *mother* (`G` or `G_lo`) and *daughter* (`bar_G` or `G_hi`) wavelet operators are orthogonal
 
-$`G \bar{G}^{\dagger} = \bar{G} G^{\dagger} = 0`$
+$`G \overline{G}^{\dagger} = \overline{G} G^{\dagger} = 0`$
 
 and invertible
 
-$`G^{\dagger}G + \bar{G}^{\dagger}\bar{G} = I.`$
+$`G^{\dagger}G + \overline{G}^{\dagger}\overline{G} = I.`$
 
 The matrix `input_data` can be adjusted using any 1D dataset that has binate structure corresponding to multiresoltion levels `Nlevels`. 
 
@@ -29,20 +29,20 @@ The matrix `input_data` can be adjusted using any 1D dataset that has binate str
 We follow the theory of multiresolution analysis described in "Marchand et al, *Wavelet Conditional Renormalization Group* (2022)"
 visualized in Fig. 2, more precisely applied as
 
-$`\phi_j = \gamma_j^{-1} G_{j-1} \phi_{j-1} \quad\text{and}\quad \bar{\phi}_j = \gamma_j^{-1} \bar{G}_{j-1} \phi_{j-1},~(4)`$
+$`\varphi_j = \gamma_j^{-1} G_{j-1} \varphi_{j-1} \quad\text{and}\quad \overline{\varphi}_j = \gamma_j^{-1} \overline{G}_{j-1} \varphi_{j-1},~(4)`$
 
 and
 
-$`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger \bar{\phi}_j.~(8)`$
+$`\varphi_{j-1} = \gamma_j G_{j-1}^\dagger \varphi_j + \gamma_j \overline{G}_{j-1}^\dagger \overline{\varphi}_j.~(8)`$
 ## Daubechies Wavelets
 - Discrete wavelets defined through coefficients $`a_k \neq 0`$ for handful of $`k`$s
 - Orthogonality that holds for any discrete wavelet $`b_k = (-1)^k a^*_{1-k},~(0)`$
-- The orthogonal low-frequency operator $G$ and high frequency $\bar{G}$ are contructed in terms of discrete convolution through $`a_k`$s and $`b_k`$s and by binating the resolution of the data  
+- The orthogonal low-frequency operator $G$ and high frequency $\overline{G}$ are contructed in terms of discrete convolution through $`a_k`$s and $`b_k`$s and by binating the resolution of the data  
 
 ### Real DAUB4 `db2`
 - `dec_lo` filter coefficients $`[a_{-1}, a_0, a_1, a_2]`$ = `[-0.12940952+0.j, 0.22414387+0.j, 0.8365163 +0.j, 0.48296291+0.j]`
 - corresponding `dec_hi` filter coefficients $`[b_{-1}, b_0, b_1, b_2] = [-a_{2}^*, a_1^*, -a_0^*, a_{-1}^*]`$ = `[-0.48296291+0.j  0.8365163 +0.j -0.22414387+0.j -0.12940952-0.j]`
-- a simple **one-level** 4x8 $G$ and $\bar{G}$ operators with *outise-zero-BC* (*right-to-left* reversed to match `pywt`)
+- a simple **one-level** 4x8 $G$ and $\overline{G}$ operators with *outise-zero-BC* (*right-to-left* reversed to match `pywt`)
 
   $`G = \begin{bmatrix}
   \alpha a_1 & a_0 & a_{-1} & 0 & 0 & 0 & 0 & 0
@@ -54,7 +54,7 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
   0 & 0 & 0 & 0 & 0 & a_2 & a_1 & \alpha a_0
   \end{bmatrix}`$
 
-  $`\bar{G} = \begin{bmatrix}
+  $`\overline{G} = \begin{bmatrix}
   -(\alpha a_0)^* & a_1^* & -a_2^* & 0 & 0 & 0 & 0 & 0
   \\
   0 & a_{-1}^* & -a_0^* & a_1^* & -a_2^* & 0 & 0 & 0
@@ -64,9 +64,9 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
   0 & 0 & 0 & 0 & 0 & a_{-1}^* & -a_0^* & (\alpha a_1)^*
   \end{bmatrix}`$
 
-  where $`\alpha`$ scales $a$ coeficients adjusting the BC to maintain $G$ and $\bar{G}$ orthogonal and invertible. 
+  where $`\alpha`$ scales $a$ coeficients adjusting the BC to maintain $G$ and $\overline{G}$ orthogonal and invertible. 
 
-- BC scaling $\alpha$ is obtained from $`G\bar{G}^H = 0`$ and $`G^{H}G + \bar{G}^{H} \bar{G} = I`$ leading to
+- BC scaling $\alpha$ is obtained from $`G\overline{G}^H = 0`$ and $`G^{H}G + \overline{G}^{H} \overline{G} = I`$ leading to
 
   $`-\alpha a_1 (\alpha a_0)^* - a_0 a_1^* + a_{-1} a_2^* = 0,`$
   
@@ -93,7 +93,7 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
 
   `dec_lo^*.dec_lo + dec_hi^*.dec_hi = (0.9999974786819997+0j)`
 
-- a simple **one-level** 4x8 $G$ and $\bar{G}$ operators with *outise-zero-BC* (*right-to-left* reversed to match `pywt`) *succesful method!*
+- a simple **one-level** 4x8 $G$ and $\overline{G}$ operators with *outise-zero-BC* (*right-to-left* reversed to match `pywt`) *succesful method!*
 
   $`G = \begin{bmatrix}
   \alpha a_1 & \beta a_0 & a_{-1} & a_{-2} & 0 & 0 & 0 & 0
@@ -113,7 +113,7 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
   0 & 0 & 0 & 0 & a_{3} & a_2 & \beta a_1 & \alpha a_1
   \end{bmatrix},~(2)`$
 
-  $`\bar{G} = \begin{bmatrix}
+  $`\overline{G} = \begin{bmatrix}
   -(\alpha a_0)^* & (\beta a_1)^* & -a_2^* & a_3^* & 0 & 0 & 0 & 0
   \\
   -a_{-2}^* & a_{-1}^* & -a_0^* & a_1^* & -a_2^* & a_3^* & 0 & 0
@@ -137,7 +137,7 @@ $`\phi_{j-1} = \gamma_j G_{j-1}^\dagger \phi_j + \gamma_j \bar{G}_{j-1}^\dagger 
   
   `beta = a_2/(a_2 + a_3) + a_3*sqrt((a_1 - a_2 - a_3)*(a_1 + a_2 + a_3))/(a_1*(a_2 + a_3)) = (1.012298185699968-0.015876906424713344j)`
 
-Explicit form of the orthogonal operators $`G`$ and $`\bar{G}`$ for SDW2
+Explicit form of the orthogonal operators $`G`$ and $`\overline{G}`$ for SDW2
 
 `Minimalistic mat_G with BCs
 [[ 0.67378213+0.18519636j  0.67378215+0.162743j    0.110485  -0.085581j

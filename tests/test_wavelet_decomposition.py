@@ -44,6 +44,9 @@ input_data = superGaussian(x, input_coeffs)
 
 print(f'Nlevels {Nlevels}, data_length {data_length}, Ndata {Ndata}')
 
+def unit_func(f):
+    return f
+
 # Data decomposition into wavelet basis
 wavelets = ['db1', 'db2', 'sdw2']
 for wavelet in wavelets:
@@ -58,7 +61,7 @@ for wavelet in wavelets:
         print(f'G_operators saved into {file_name}.')
     # Generate data decomposition into (phi_J, bar_phi_J, .., bar_phi_1)
     print('Compute data decomposition:')
-    decomposition = data_decomposition(G_operators, input_data, verify_Gs)
+    decomposition = data_decomposition(G_operators, input_data, unit_func, verify_Gs)
     print('Decomposition done!')
     # Coarse phi_J interpretation
     cA = decomposition[0]
@@ -67,7 +70,7 @@ for wavelet in wavelets:
 
     # Generate data reconstruction from (phi_J, bar_phi_J, .., bar_phi_1) 
     print('Compute data reconstruction:')
-    reconstructed_data = data_reconstruction(decomposition, G_operators)
+    reconstructed_data = data_reconstruction(decomposition, G_operators, unit_func)
     print('Reconstruction done!')
 
     # Verification of direct and inverse multiresolution decomposition and reconstruction
