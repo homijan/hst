@@ -44,17 +44,21 @@ thus completing the *nonlinear multi-resolution* **decomposition and reconstruct
 
 ## Application to Heisenberg scattering transformation (HST)
 
-Define the multi-resolution nonlinearity
+Let the low-frequency nonlinearity and its inverse be
 
-$`\rho(f) = \overline{\rho}(f) = i \log(f + c),~(5)`$
+$`\rho(f) = \rho^{-1}(f) = f.`$
+
+Define the high frequency multi-resolution nonlinearity
+
+$`\overline{\rho}(f) = i \log(f + c),~(5)`$
 
 where $f, c \in \mathbb{C}$. Then the *inverse function* reads
 
-$`\rho^{-1}(g) = \overline{\rho}^{-1}(g) = \exp(-i g) - c,~(6)`$
+$`\overline{\rho}^{-1}(g) = \exp(-i g) - c,~(6)`$
 
 and the invertability manifests as
 
-$`\rho^{-1}\left(\rho(f)\right) = \exp(- i^2 \log(f+c)) - c = \rho\left( \rho^{-1}(f)\right) = i \log(\exp(-i f) - c + c) = f.`$
+$`\overline{\rho}^{-1}\left(\overline{\rho}(f)\right) = \exp(- i^2 \log(f+c)) - c = \overline{\rho}\left( \overline{\rho}^{-1}(f)\right) = i \log(\exp(-i f) - c + c) = f.`$
 
 The HST nonlinear decomposition reads
 
