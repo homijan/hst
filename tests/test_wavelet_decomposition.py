@@ -41,7 +41,6 @@ for i in range(Ndata):
     # c3 super-Gaussian power scaling
     input_coeffs[i, 3] = int(10 * input_coeffs[i, 3])
 input_data = superGaussian(x, input_coeffs)
-#input_data = np.random.rand(data_length, Ndata)
 
 print(f'Nlevels {Nlevels}, data_length {data_length}, Ndata {Ndata}')
 
@@ -71,16 +70,16 @@ for wavelet in wavelets:
         file_name = f'G_operators_{wavelet}.npz'
         save_G_operators(G_operators, file_name)
         print(f'G_operators saved into {file_name}.')
-    # Generate data decomposition into (phi_J, bar_phi_J, .., bar_phi_1)
+    # Generate data decomposition into (S_J, bar_S_J, .., bar_S_1)
     print('Compute data decomposition:')
     decomposition = nonlinear_data_decomposition(G_operators, input_data, nonlinear_function, bar_nonlinear_function, verify_Gs)
     print('Decomposition done!')
-    # Coarse phi_J interpretation
+    # Coarse S_J interpretation
     cA = decomposition[0]
     #print(f'wavelet {wavelet}, cA')
     #print(f'{cA}')
 
-    # Generate data reconstruction from (phi_J, bar_phi_J, .., bar_phi_1) 
+    # Generate data reconstruction from (S_J, bar_S_J, .., bar_S_1) 
     print('Compute data reconstruction:')
     reconstructed_data = nonlinear_data_reconstruction(decomposition, G_operators, nonlinear_function_inverse, bar_nonlinear_function_inverse)
     print('Reconstruction done!')

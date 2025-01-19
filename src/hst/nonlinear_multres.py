@@ -56,9 +56,7 @@ def nonlinear_data_reconstruction(decomposition, G_operators, fnln_inv, bar_fnln
     # following Fig. 2 in Marchand et al, Wavelet Conditional Renormalization Group (2022)
     S_0 = S
 
-# Move outside this routine
-#    if fnln_inv != False:
-#        # Apply the inverse nonlinearity
-#        phi_0 = fnln_inv(phi_0)
+    # Apply the inverse nonlinearity to reconstruct the data in its original linear form
+    phi_0 = fnln_inv(S_0)
 
-    return S_0
+    return phi_0
