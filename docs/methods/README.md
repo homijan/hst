@@ -48,7 +48,7 @@ Let the low-frequency nonlinearity and its inverse be
 
 $`\rho(f) = \rho^{-1}(f) = f.`$
 
-Define the high frequency multi-resolution nonlinearity
+Define the high-frequency multi-resolution nonlinearity
 
 $`\overline{\rho}(f) = i \log(f + c),~(5)`$
 
@@ -73,6 +73,20 @@ with the final step
 $`\varphi_0 = \exp(-i S_0) - c,~(9)`$
 
 thus concluding the methodology of the application of *nonlinear multi-resolution* to the Heisenberg scattering transformation.
+
+## TESTING
+
+Let the low-frequency nonlinearity and its inverse be
+
+$`\rho(f) = \rho^{-1}(f) = f.`$
+
+Define the high-frequency multi-resolution nonlinearity
+
+$`\overline{\rho}(f) = \log(f + c),`$
+
+where $f, c \in \mathbb{C}$. Then the *inverse function* reads
+
+$`\overline{\rho}^{-1}(g) = \exp(g) - c,`$
 
 # References
 1. `MST_Javier_Minguillon.pdf`
