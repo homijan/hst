@@ -54,12 +54,9 @@ def nonlinear_function_inverse(g):
 c_nln = 1e-1
 def bar_nonlinear_function(f):
     return np.log(f + c_nln) 
-    #return (f + c_nln)**power_nln
 def bar_nonlinear_function_inverse(g): 
     return np.exp(g) - c_nln
-    #return g**(1.0 / power_nln) - c_nln
-    # A dummy test to show the sensitivity of the inverse function
-    #return g**(1.0 / (0.9999 * power_nln)) - c_nln
+
 # Polynomial operation on high-frequencies
 if False:
     c_nln = 1e-1
