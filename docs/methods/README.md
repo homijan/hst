@@ -54,19 +54,13 @@ $`\rho(f) = \rho^{-1}(f) = f.`$
 
 Define the high-frequency multi-resolution nonlinearity
 
-$`\overline{\rho}(f) = i \log(f + c),~(5)`$
-
 $`\overline{\rho}(f) = i \log(R_0(f)),~(5)`$
 
-where $f, c \in \mathbb{C}$. Then the *inverse function* reads
-
-$`\overline{\rho}^{-1}(g) = \exp(-i g) - c,~(6)`$
+where $f \in \mathbb{C}$. Then the *inverse function* reads
 
 $`\overline{\rho}^{-1}(g) = R_0^{-1}\left(\exp(-i g)\right),~(6)`$
 
 and the invertability manifests as
-
-$`\overline{\rho}^{-1}\left(\overline{\rho}(f)\right) = \exp(- i^2 \log(f+c)) - c = \overline{\rho}\left( \overline{\rho}^{-1}(f)\right) = i \log(\exp(-i f) - c + c) = f.`$
 
 $`\overline{\rho}^{-1}\left(\overline{\rho}(f)\right) = R_0^{-1}\left(\exp(- i^2 \log(R_0(f)))\right) = \overline{\rho}\left( \overline{\rho}^{-1}(f)\right) = i \log\left(R_0\left(R_0^{-1}\left(\exp(-i f)\right)\right)\right) = f.`$
 
