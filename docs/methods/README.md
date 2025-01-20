@@ -74,23 +74,6 @@ $`\varphi_0 = \exp(-i S_0) - c,~(9)`$
 
 thus concluding the methodology of the application of *nonlinear multi-resolution* to the Heisenberg scattering transformation.
 
-## TESTING
-
-Let the low-frequency nonlinearity and its inverse be
-
-$`\rho(f) = \rho^{-1}(f) = f.`$
-
-Define the high-frequency multi-resolution nonlinearity
-
-$`\overline{\rho}(f) = \log(f + c),`$
-
-where $f, c \in \mathbb{C}$. Then the *inverse function* reads
-
-$`\overline{\rho}^{-1}(g) = \exp(g) - c.`$
-
-**Note** that $\overline{\rho}$ takes the form of logarithmic nonlinearity. This should be consistent with Michaels HST formulation in Ref2,
-once used complex logarithm and exponentinal, and once including $R_0(f)$ and its inverse.
-
 # References
 1. `MST_Javier_Minguillon.pdf`
 2. M. Glinsky, *A transformational approach to collective behavior*, `arXiv:2410.08558v4` (2025)
