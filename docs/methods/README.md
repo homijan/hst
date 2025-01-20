@@ -70,7 +70,7 @@ $`S_j = G_{j-1} S_{j-1} \quad and\quad \overline{S}_j = i \log\left(R_0\left(\ov
 
 and the nonlinear reconstruction
 
-$`S_{j-1} = G_{j-1}^H S_j + \overline{G}_{j-1}^H R_0^{-1}\left(\exp\left(-i \overline{S}_j\right)\right),~(8)`$
+$`S_{j-1} = G_{j-1}^H S_j + \overline{G}_{j-1}^H \left(R_0^{-1}\left(\exp\left(-i \overline{S}_j\right)\right)\right),~(8)`$
 
 with the final step
 
