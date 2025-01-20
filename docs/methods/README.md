@@ -44,7 +44,9 @@ thus completing the *nonlinear multi-resolution* **decomposition and reconstruct
 
 ## Application to Heisenberg scattering transformation (HST)
 
-Let the low-frequency nonlinearity and its inverse be
+$`z_k(z) = z - \frac{z}{|z|}\quad and\quad z(z_k) = z_k + \frac{z_k}{|z_k|}`$
+
+Let the low-frequency nonlinearity and its inverse be unit operators
 
 $`\rho(f) = \rho^{-1}(f) = f.`$
 
