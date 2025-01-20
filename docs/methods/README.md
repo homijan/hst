@@ -46,7 +46,7 @@ thus completing the *nonlinear multi-resolution* **decomposition and reconstruct
 
 $`z_k(z) := R_0^{-1}(z) = z - \frac{z}{|z|}\quad and\quad z(z_k) :=  R_0(z_k) = z_k + \frac{z_k}{|z_k|}`$
 
-$`\Rightarrow\quad R_0(R_0^{-1}(z)) = R_0\left(z - \frac{z}{|z|}\right) = \left(z - \frac{z}{|z|}\right) + \frac{\left(z - \frac{z}{|z|}\right)}{\left|z - \frac{z}{|z|}\right|} = \left(z - \frac{z}{|z|}\right) + \frac{\left(|z| - 1\right)\frac{z}{|z|}}{|z|-1}`$
+$`\Rightarrow\quad R_0(R_0^{-1}(z)) = R_0\left(z - \frac{z}{|z|}\right) = \left(z - \frac{z}{|z|}\right) + \frac{\left(z - \frac{z}{|z|}\right)}{\left|z - \frac{z}{|z|}\right|} = \left(z - \frac{z}{|z|}\right) + \frac{\left(|z| - 1\right)\frac{z}{|z|}}{|z|-1} = z`$
 
 Let the low-frequency nonlinearity and its inverse be unit operators
 
