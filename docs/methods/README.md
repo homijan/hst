@@ -64,7 +64,7 @@ where $f \in \mathbb{C}$. Then the *inverse function* reads
 
 $`\overline{\rho}^{-1}(g) = R_0^{-1}\left(\exp(-i g)\right),~(6)`$
 
-and the invertability manifests as
+and the invertibility manifests as
 
 $`\overline{\rho}^{-1}\left(\overline{\rho}(f)\right) = R_0^{-1}\left(\exp(- i^2 \log(R_0(f)))\right) = \overline{\rho}\left( \overline{\rho}^{-1}(f)\right) = i \log\left(R_0\left(R_0^{-1}\left(\exp(-i f)\right)\right)\right) = f.`$
 
