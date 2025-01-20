@@ -44,7 +44,7 @@ thus completing the *nonlinear multi-resolution* **decomposition and reconstruct
 
 ## Application to Heisenberg scattering transformation (HST)
 
-$`z_k(z) = z - \frac{z}{|z|}\quad and\quad z(z_k) :=  R_0(z_k) = z_k + \frac{z_k}{|z_k|}\quad\Rightarrow\quad R_0\left(z - \frac{z}{|z|}\right) = \left(z - \frac{z}{|z|}\right) + \frac{\left(z - \frac{z}{|z|}\right)}{\left|z - \frac{z}{|z|}\right|} = \left(z - \frac{z}{|z|}\right) + \frac{\left(z - \frac{z}{|z|}\right)}{|z|-1}`$
+$`z_k(z) := R_0^{-1}(z) = z - \frac{z}{|z|}\quad and\quad z(z_k) :=  R_0(z_k) = z_k + \frac{z_k}{|z_k|}\quad\Rightarrow\quad R_0\left(z - \frac{z}{|z|}\right) = \left(z - \frac{z}{|z|}\right) + \frac{\left(z - \frac{z}{|z|}\right)}{\left|z - \frac{z}{|z|}\right|} = \left(z - \frac{z}{|z|}\right) + \frac{\left(z - \frac{z}{|z|}\right)}{|z|-1}`$
 
 Let the low-frequency nonlinearity and its inverse be unit operators
 
