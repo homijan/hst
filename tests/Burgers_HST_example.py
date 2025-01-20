@@ -48,16 +48,17 @@ print(f'Using wavelet {wavelet} on {n_levels} scattering levels within the Heise
 G_operators = generate_G_operators(wavelet, n_levels, data_length)
 print('G_operators generated.')
 # Generate data decomposition into (S_J, bar_S_J, .., bar_S_1)
-print('Compute data decomposition:')
+print('Compute data decomposition (S_J, bar_S_J, .., bar_S_1):')
 decomposition = nonlinear_data_decomposition(G_operators, input_data, nonlinear_function, bar_nonlinear_function)
 print('Decomposition done!')
 # Coarse S_J interpretation
 S_J = decomposition[0]
+bar_S_J = decomposition[1]
 bar_S_1 = decomposition[n_levels]
-print(f'S_J.shape {S_J.shape}, bar_S_1.shape {bar_S_1.shape}')
+print(f'S_J.shape {S_J.shape}, bar_S_J.shape {bar_S_J.shape}, bar_S_1.shape {bar_S_1.shape}')
 
 # Generate data reconstruction from (S_J, bar_S_J, .., bar_S_1) 
-print('Compute data reconstruction:')
+print('Compute data reconstruction from (S_J, bar_S_J, .., bar_S_1):')
 reconstructed_data = nonlinear_data_reconstruction(decomposition, G_operators, nonlinear_function_inverse, bar_nonlinear_function_inverse)
 print('Reconstruction done!')
 
@@ -67,10 +68,40 @@ print(f'input_data.shape {input_data.shape}, reconstructed_data.shape {reconstru
 print('input_data[:, :] - reconstructed_data[:, :]')
 print(f'{input_data[:, :] - reconstructed_data[:, :]}')
 
+#################
+# Visualization #
+#################
+# Prepare x vectors for each level by "bination"
+x_levels = []
+xlevel = x
+for i in range(n_levels):
+    xlevel = xlevel[::2]
+    print(f'xlevel.shape {xlevel.shape}')
+    # Add x coordinates for bar_S_i
+    x_levels.append(xlevel)
+# Reverse the order to make bar_S_J x coords first
+x_levels.reverse()
+
 # Plot results
-n_plots = 5 
+n_plots = 5
+fig1, ax = plt.subplots() 
+fig2, axs = plt.subplots(n_plots, 3)
+i_plot = 0
 for i in range(n_data):
     if i % int(n_data / n_plots) == 0:
-        plt.plot(x, input_data[:, i].real)
-        plt.plot(x, reconstructed_data[:, i].real, '-.')
+        ax.plot(x, input_data[:, i].real)
+        ax.plot(x, reconstructed_data[:, i].real, '-.')
+        # S_J
+        axs[i_plot, 0].plot(x_levels[0], decomposition[0][:, i].real, 'x-')
+        axs[i_plot, 0].plot(x_levels[0], decomposition[0][:, i].imag, 'o-')
+        # bar_S_j
+        for j in range(n_levels):
+            # Skip the S_J
+            component = j + 1
+            axs[i_plot, 1].plot(x_levels[j], decomposition[component][:, i].real, 'x-')
+            axs[i_plot, 2].plot(x_levels[j], decomposition[component][:, i].imag, 'o-') 
+        i_plot = i_plot + 1
+axs[0, 0].set_title('S_J')
+axs[0, 1].set_title('Re(bar_S)')
+axs[0, 2].set_title('Im(bar_S)')
 plt.show()
