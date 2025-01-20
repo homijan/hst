@@ -10,11 +10,29 @@ def nonlinear_function(f):
 def nonlinear_function_inverse(g):
     return g
 # Logarithmic operation on high-frequencies
-c_nln = 1e-1
+eps = 1e-10
+c_nln = 1e-2
+# Note that that the one shift is turned off
+def R0(f):
+    return f + c_nln #+ f / (abs(f) + eps)
+def R0_inverse(g):
+    return g - c_nln #- g / (abs(g) + eps)
+def MG_bar_nonlinear_function(f):
+    return 1j*np.log(R0(f))
+def MG_bar_nonlinear_function_inverse(g): 
+    return R0_inverse(np.exp(-1j*g))
+
+# log scatter from S_0 to coarser structures
+#def bar_nonlinear_function(f):
+#    return MG_bar_nonlinear_function(f)
+#def bar_nonlinear_function_inverse(g):
+#    return MG_bar_nonlinear_function_inverse(g)
+
+# log scatter from S_J to finer structures
 def bar_nonlinear_function(f):
-    return 1j*np.log(f + c_nln)
-def bar_nonlinear_function_inverse(g): 
-    return np.exp(-1j*g) - c_nln
+    return MG_bar_nonlinear_function_inverse(f)
+def bar_nonlinear_function_inverse(g):
+    return MG_bar_nonlinear_function(g) 
 
 ##############
 # Input data #
@@ -84,24 +102,32 @@ x_levels.reverse()
 
 # Plot results
 n_plots = 5
+dsnp = int(n_data / n_plots)
+print(f'dsnp {dsnp}')
 fig1, ax = plt.subplots() 
 fig2, axs = plt.subplots(n_plots, 3)
+
 i_plot = 0
 for i in range(n_data):
-    if i % int(n_data / n_plots) == 0:
+    if i % dsnp == 0:
+        print(f'Snapshot {i}')
         ax.plot(x, input_data[:, i].real)
         ax.plot(x, reconstructed_data[:, i].real, '-.')
         # S_J
-        axs[i_plot, 0].plot(x_levels[0], decomposition[0][:, i].real, 'x-')
-        axs[i_plot, 0].plot(x_levels[0], decomposition[0][:, i].imag, 'o-')
+        ax_R = axs[i_plot, 0].twinx()
+        axs[i_plot, 0].plot(x_levels[0], decomposition[0][:, i].real, 'x-', label='real')
+        ax_R.plot(x_levels[0], decomposition[0][:, i].imag, 'o-', label='imag')
         # bar_S_j
         for j in range(n_levels):
             # Skip the S_J
             component = j + 1
-            axs[i_plot, 1].plot(x_levels[j], decomposition[component][:, i].real, 'x-')
-            axs[i_plot, 2].plot(x_levels[j], decomposition[component][:, i].imag, 'o-') 
+            axs[i_plot, 1].plot(x_levels[j], decomposition[component][:, i].real, 'x-', label=f'j={n_levels-j}')
+            axs[i_plot, 2].plot(x_levels[j], decomposition[component][:, i].imag, 'o-', label=f'j={n_levels-j}') 
         i_plot = i_plot + 1
-axs[0, 0].set_title('S_J')
+axs[0, 0].set_title(f'S_J={n_levels}')
+axs[0, 0].legend()
 axs[0, 1].set_title('Re(bar_S)')
+axs[0, 1].legend()
 axs[0, 2].set_title('Im(bar_S)')
+axs[0, 2].legend()
 plt.show()

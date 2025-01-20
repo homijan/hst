@@ -44,29 +44,37 @@ thus completing the *nonlinear multi-resolution* **decomposition and reconstruct
 
 ## Application to Heisenberg scattering transformation (HST)
 
-Let the low-frequency nonlinearity and its inverse be
+Define function $`R_0`$ and its inverse $`R_0^{-1}`$ as
+
+$`z_k(z) := R_0^{-1}(z) = z - \frac{z}{|z|}\quad and\quad z(z_k) :=  R_0(z_k) = z_k + \frac{z_k}{|z_k|}, `$
+
+shown to be inverse to each other
+
+$`\Rightarrow\quad R_0(R_0^{-1}(z)) = R_0\left(z - \frac{z}{|z|}\right) = \left(z - \frac{z}{|z|}\right) + \frac{\left(z - \frac{z}{|z|}\right)}{\left|z - \frac{z}{|z|}\right|} = \left(z - \frac{z}{|z|}\right) + \frac{\left(|z| - 1\right)\frac{z}{|z|}}{|z|-1} = z.`$
+
+Let the low-frequency nonlinearity and its inverse be unit operators
 
 $`\rho(f) = \rho^{-1}(f) = f.`$
 
 Define the high-frequency multi-resolution nonlinearity
 
-$`\overline{\rho}(f) = i \log(f + c),~(5)`$
+$`\overline{\rho}(f) = i \log(R_0(f)),~(5)`$
 
-where $f, c \in \mathbb{C}$. Then the *inverse function* reads
+where $f \in \mathbb{C}$. Then the *inverse function* reads
 
-$`\overline{\rho}^{-1}(g) = \exp(-i g) - c,~(6)`$
+$`\overline{\rho}^{-1}(g) = R_0^{-1}\left(\exp(-i g)\right),~(6)`$
 
-and the invertability manifests as
+and the invertibility manifests as
 
-$`\overline{\rho}^{-1}\left(\overline{\rho}(f)\right) = \exp(- i^2 \log(f+c)) - c = \overline{\rho}\left( \overline{\rho}^{-1}(f)\right) = i \log(\exp(-i f) - c + c) = f.`$
+$`\overline{\rho}^{-1}\left(\overline{\rho}(f)\right) = R_0^{-1}\left(\exp(- i^2 \log(R_0(f)))\right) = \overline{\rho}\left( \overline{\rho}^{-1}(f)\right) = i \log\left(R_0\left(R_0^{-1}\left(\exp(-i f)\right)\right)\right) = f.`$
 
 The HST nonlinear decomposition reads
 
-$`S_j = G_{j-1} S_{j-1} \quad and\quad \overline{S}_j = i \log\left(\overline{G}_{j-1} S_{j-1} + c\right),~(7)`$
+$`S_j = G_{j-1} S_{j-1} \quad and\quad \overline{S}_j = i \log\left(R_0\left(\overline{G}_{j-1} S_{j-1}\right)\right),~(7)`$
 
 and the nonlinear reconstruction
 
-$`S_{j-1} = G_{j-1}^H S_j + \overline{G}_{j-1}^H \left(\exp\left(-i \overline{S}_j\right) - c\right),~(8)`$
+$`S_{j-1} = G_{j-1}^H S_j + \overline{G}_{j-1}^H \left(R_0^{-1}\left(\exp\left(-i \overline{S}_j\right)\right)\right),~(8)`$
 
 with the final step
 
