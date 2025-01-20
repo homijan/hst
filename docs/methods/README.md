@@ -66,11 +66,11 @@ $`\overline{\rho}^{-1}\left(\overline{\rho}(f)\right) = R_0^{-1}\left(\exp(- i^2
 
 The HST nonlinear decomposition reads
 
-$`S_j = G_{j-1} S_{j-1} \quad and\quad \overline{S}_j = i \log\left(\overline{G}_{j-1} S_{j-1} + c\right),~(7)`$
+$`S_j = G_{j-1} S_{j-1} \quad and\quad \overline{S}_j = i \log\left(R_0\left(\overline{G}_{j-1} S_{j-1}\right)\right),~(7)`$
 
 and the nonlinear reconstruction
 
-$`S_{j-1} = G_{j-1}^H S_j + \overline{G}_{j-1}^H \left(\exp\left(-i \overline{S}_j\right) - c\right),~(8)`$
+$`S_{j-1} = G_{j-1}^H S_j + \overline{G}_{j-1}^H R_0^{-1}\left(\exp\left(-i \overline{S}_j\right)\right),~(8)`$
 
 with the final step
 
