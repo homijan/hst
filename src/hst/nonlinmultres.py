@@ -50,8 +50,8 @@ def nonlinear_data_reconstruction(decomposition, G_operators, fnln_inv, bar_fnln
         # Get this level wavelet filters (orthonormal operators)
         G_lo, G_hi = G_operators[i]
         # Reconstruct S_{j-1} from low-ferquency S_j and high-frequency bar_S_j
-        S = G_lo.H.dot(S) + G_hi.H.dot(bar_S)
-        print(f'G_lo.H.shape {G_lo.H.shape}, bar_S.shape {bar_S.shape}, bar_S count {bar_S.shape[0]*bar_S.shape[1]}, G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
+        S = G_lo.conjugate(False).transpose(copy=False).dot(S) + G_hi.conjugate(False).transpose(copy=False).dot(bar_S)
+        print(f'G_lo.H.shape {G_lo.conjugate(False).transpose(copy=False).shape}, bar_S.shape {bar_S.shape}, bar_S count {bar_S.shape[0]*bar_S.shape[1]}, G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
     # For clarity we highlight that final S is on the lowest (finest) level
     # following Fig. 2 in Marchand et al, Wavelet Conditional Renormalization Group (2022)
     S_0 = S
