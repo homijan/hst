@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.interpolate import PchipInterpolator
 from hst.wavelet_operators import generate_G_operators
+from hst.linmultres import linear_data_decomposition, linear_data_reconstruction
 from hst.nonlinmultres import nonlinear_data_decomposition, nonlinear_data_reconstruction
 from hst.hst import hst_data_decomposition, hst_data_reconstruction
 
@@ -37,7 +38,33 @@ G_operators = generate_G_operators(wavelet, n_levels, data_length)
 print('G_operators generated.')
 
 ################################################################
-# non-linear Wavelet Transform decompostion and reconstruction  #
+# linear Wavelet Transform decompostion and reconstruction #
+################################################################
+# Generate data decomposition into (S_J, bar_S_J, .., bar_S_1)
+print('Compute data decomposition (S_J, bar_S_J, .., bar_S_1):')
+decomposition_lwt = linear_data_decomposition(G_operators, input_data)
+print('Decomposition done!')
+# Coarse S_J interpretation
+S_J_lwt = decomposition_lwt[0]
+bar_S_J_lwt = decomposition_lwt[1]
+bar_S_1_lwt = decomposition_lwt[n_levels]
+print(f'S_J.shape {S_J_lwt.shape}, bar_S_J.shape {bar_S_J_lwt.shape}, bar_S_1.shape {bar_S_1_lwt.shape}')
+
+# Generate data reconstruction from (S_J, bar_S_J, .., bar_S_1) 
+print('Compute data reconstruction from (S_J, bar_S_J, .., bar_S_1):')
+reconstructed_data_lwt = linear_data_reconstruction(decomposition_lwt, G_operators)
+print('Reconstruction done!')
+
+# Verification of direct and inverse multiresolution decomposition and reconstruction
+print(f'Verfication of the nonlinear multiresolution decomposition and its inverse reconstruction:')
+print(f'input_data.shape {input_data.shape}, reconstructed_data.shape {reconstructed_data_lwt.shape}')
+print('input_data[:, :] - reconstructed_data[:, :]')
+print(f'{input_data[:, :] - reconstructed_data_lwt[:, :]}')
+print(f'norm: {np.linalg.norm(input_data[:, :] - reconstructed_data_lwt[:, :])}')
+
+
+################################################################
+# non-linear Wavelet Transform decompostion and reconstruction #
 ################################################################
 # Unit operation on low-frequencies
 def nonlinear_function(f):
@@ -93,19 +120,21 @@ print(f'norm: {np.linalg.norm(input_data[:, :] - reconstructed_data_wt[:, :])}')
 #######################################
 # HST decompostion and reconstruction #
 #######################################
+keep_bar_Sm = True
+
 # Generate data decomposition into (S_J, bar_S_J, .., bar_S_1)
 print('Compute data decomposition (S_J, bar_S_J, .., bar_S_1):')
-decomposition = hst_data_decomposition(G_operators, input_data, keep_bar_Sm=True)
+decomposition = hst_data_decomposition(G_operators, input_data, keep_bar_Sm)
 print('Decomposition done!')
 # Coarse S_J interpretation
 bar_S_m = decomposition[0]
 S_m = decomposition[1]
-S_0 = decomposition[n_levels]
+S_0 = decomposition[n_levels - int(not keep_bar_Sm)]
 print(f'S_J.shape {S_m.shape}, bar_S_J.shape {bar_S_m.shape}, S_0.shape {S_0.shape}')
 
 # Generate data reconstruction from (S_J, bar_S_J, .., bar_S_1) 
 print('Compute data reconstruction from (S_J, bar_S_J, .., bar_S_1):')
-reconstructed_data = hst_data_reconstruction(decomposition, G_operators, keep_bar_Sm=True)
+reconstructed_data = hst_data_reconstruction(decomposition, G_operators, keep_bar_Sm)
 print('Reconstruction done!')
 
 # Verification of direct and inverse multiresolution decomposition and reconstruction
@@ -118,7 +147,7 @@ print(f'norm: {np.linalg.norm(input_data[:, :] - reconstructed_data[:, :])}')
 #################
 # Visualization #
 #################
-def visualize(decomposition, reconstructed_data):
+def visualize(decomposition, reconstructed_data, Sj_text, S_J_text):
     # Prepare x vectors for each level by "bination"
     x_levels = []
     xlevel = x
@@ -145,25 +174,33 @@ def visualize(decomposition, reconstructed_data):
             ax.plot(x, reconstructed_data[:, i].real, '-.')
             # S_J
             #ax_R = axs[i_plot, 0].twinx()
-            axs[i_plot, 0].plot(x_levels[0], decomposition[0][:, i].real, 'x-', label='real')
-            axs[i_plot, 0].plot(x_levels[0], decomposition[0][:, i].imag, 'o-', label='imag')
+            
+            if (keep_bar_Sm or Sj_text == "bar_Sj"):                
+                axs[i_plot, 0].plot(x_levels[0], decomposition[0][:, i].real, 'x-', label='real')
+                axs[i_plot, 0].plot(x_levels[0], decomposition[0][:, i].imag, 'o-', label='imag')
+                
             # bar_S_j
             for j in range(n_levels):
                 # Skip the S_J
-                component = j + 1
+                if (keep_bar_Sm or Sj_text == "bar_Sj"):
+                    component = j + 1
+                else:
+                    component = j                    
                 axs[i_plot, 1].plot(x_levels[j], decomposition[component][:, i].real, 'x-', label=f'j={n_levels-j}')
                 axs[i_plot, 2].plot(x_levels[j], decomposition[component][:, i].imag, 'o-', label=f'j={n_levels-j}') 
             i_plot = i_plot + 1
-    axs[0, 0].set_title(f'S_J, levels={n_levels}')
+    axs[0, 0].set_title(f'{S_J_text}, levels={n_levels}')
     axs[0, 0].legend()
-    axs[0, 1].set_title('Re(Sj)')
+    axs[0, 1].set_title(f'Re({Sj_text})')
     axs[0, 1].legend()
-    axs[0, 2].set_title('Im(Sj)')
+    axs[0, 2].set_title(f'Im({Sj_text})')
     axs[0, 2].legend()
 #    plt.show()
 
-visualize(decomposition_wt, reconstructed_data_wt)
+visualize(decomposition_lwt, reconstructed_data_lwt, "bar_Sj", "S_J")
+plt.suptitle('linear WT')
+visualize(decomposition_wt, reconstructed_data_wt, "bar_Sj", "S_J")
 plt.suptitle('non-linear WT')
-visualize(decomposition, reconstructed_data)
+visualize(decomposition, reconstructed_data, "Sj", "bar_S_J")
 plt.suptitle('HST')
 plt.show()

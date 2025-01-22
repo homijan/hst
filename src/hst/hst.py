@@ -75,15 +75,15 @@ def hst_data_reconstruction(decomposition, G_operators, keep_bar_Sm=True):
         bar_Sj = decomposition[0]
     else:
         Sm = decomposition[0] 
-        bar_Sj = G_operators[0].H.dot(rho_inverse(Sm))
+        bar_Sj = G_operators[0][1].conjugate(False).transpose(copy=False).dot(rho_inverse(Sm))
               
-    for i in range(len(G_operators)):
-        Sj = decomposition[i + int(keep_bar_Sm)]
+    for i in range(len(G_operators) - int(not keep_bar_Sm)):
+        Sj = decomposition[i + 1]
         # Apply the inverse low-frequency and high-frequency nonlinearities
         Sj = rho_inverse(Sj)
         bar_Sj = bar_rho_inverse(bar_Sj)
         # Get this level wavelet filters (orthonormal operators)
-        G_lo, G_hi = G_operators[i]
+        G_lo, G_hi = G_operators[i + int(not keep_bar_Sm)]
         # Reconstruct bar_S_{j-1} from low-ferquency S_j and high-frequency bar_S_j
         bar_Sj = G_lo.conjugate(False).transpose(copy=False).dot(Sj) + G_hi.conjugate(False).transpose(copy=False).dot(bar_Sj)
         print(f'G_lo.H.shape {G_lo.conjugate(False).transpose(copy=False).shape}, bar_S.shape {bar_Sj.shape}, bar_S count {bar_Sj.shape[0]*bar_Sj.shape[1]}, G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
