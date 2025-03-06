@@ -1,7 +1,10 @@
 import numpy as np
 from hst.wavelet_operators import verify_G_operators
 
-def nonlinear_data_decomposition(G_operators, data, fnln, bar_fnln, verify_Gs=False):
+def unit_fnln(S):
+    return S
+
+def nonlinear_data_decomposition(G_operators, data, fnln=unit_fnln, bar_fnln=unit_fnln, verify_Gs=False):
     """Implementation of the nonlinear wavelet decomposition (S_J, bar_S_J, .., bar_S_1)"""
     if (verify_Gs):
         # Verify orthogonality and invertibility of G_operators at all levels
