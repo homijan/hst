@@ -9,6 +9,14 @@ def nonlinear_function(f):
     return f
 def nonlinear_function_inverse(g):
     return g
+def bar_nonlinear_function(f):
+    return f
+def bar_nonlinear_function_inverse(g):
+    return g
+
+
+
+
 # Logarithmic operation on high-frequencies
 eps = 1e-10
 c_nln = 1e-2
@@ -29,10 +37,11 @@ def MG_bar_nonlinear_function_inverse(g):
 #    return MG_bar_nonlinear_function_inverse(g)
 
 # log scatter from S_J to finer structures
-def bar_nonlinear_function(f):
-    return MG_bar_nonlinear_function_inverse(f)
-def bar_nonlinear_function_inverse(g):
-    return MG_bar_nonlinear_function(g) 
+#def bar_nonlinear_function(f):
+#    return MG_bar_nonlinear_function_inverse(f)
+#def bar_nonlinear_function_inverse(g):
+#    return MG_bar_nonlinear_function(g) 
+
 
 ##############
 # Input data #
