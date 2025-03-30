@@ -29,6 +29,8 @@ def nonlinear_data_decomposition(G_operators, data, fnln=unit_fnln, bar_fnln=uni
         S = G_lo.dot(S)
         # Apply the low-frequency nonlinearity
         S = fnln(S)
+        # IDEA: can we just stack bar_S columns to S columns?
+        # Because we eventually want every bar_S to be pooled/coarsend/lowpass-filtered to the J level
     # Add S_J (coarsest level S)
     decomposition.append(S)
 
