@@ -33,14 +33,14 @@ print(f'Input data from file {input_data_file}, data_length {data_length}, n_dat
 wavelet = 'sdw2'
 
 # Number of scatters
-n_levels = 4 # = m + 1
+n_levels = 3 # = m + 1
 print(f'Using wavelet {wavelet} on {n_levels} scattering levels within the Heisenberg scattering transform.')
 
 # Generate orthogonal G_lo (aka G) and G_hi (aka bar_G) operators
 G_operators = generate_G_operators(wavelet, n_levels, data_length)
 print('G_operators generated.')
 
-################################################################
+################################################################    
 # linear Wavelet Transform decompostion and reconstruction #
 ################################################################
 # Generate data decomposition into (S_J, bar_S_J, .., bar_S_1)
@@ -268,11 +268,11 @@ def visualize2(decomposition, decompositionFull, reconstructed_data, suptitle, S
             bar = '$\\bar{' if j % 2 == 1 else ''
             barend = '}$' if j % 2 == 1 else ''
             print(i, j, len(decompositionFull[i]))
-            axs2[i, 2**(n_levels - i)*j].plot(x_levels[i], decompositionFull[i][j][:, 0].real, 'x-', label=rf'Re({bar}S{barend}_{i}{j})')
-            axs2[i, 2**(n_levels - i)*j].plot(x_levels[i], decompositionFull[i][j][:, 0].imag, 'o-', label=rf'Im({bar}S{barend}_{i}{j})')
+            axs2[i, 2**(n_levels - i)*j].plot(x_levels[i], decompositionFull[i][j][:, 128].real, 'x-', label=rf'Re({bar}S{barend}_{i}{j})')
+            axs2[i, 2**(n_levels - i)*j].plot(x_levels[i], decompositionFull[i][j][:, 128].imag, 'o-', label=rf'Im({bar}S{barend}_{i}{j})')
             axs2[i, 2**(n_levels - i)*j].legend()
     
-    fig3.suptitle(r'HST2 full tree $\bar{S}$')
+    fig3.suptitle('HST2 full tree')
     fig3.tight_layout()
     
 visualize2(decompositionHst2, decompositionHst2Full, reconstructedHst2, 'HST2', "Sj, bar_S_J", "images/hst.png")

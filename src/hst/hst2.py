@@ -30,7 +30,7 @@ def hst2_data_decomposition(G_operators, data, verify_Gs=False):
     # Starting (finest) level data
     f0 = data
     # Apply the low-frequency nonlinearity to obtain S_0
-    bar_Sj = 1j*np.log(R0(f0))
+    bar_Sj = bar_rho(f0)
     decomposition = [bar_Sj]
     decompositionFull = [[bar_Sj]]
     
