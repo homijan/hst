@@ -4,6 +4,16 @@ from scipy.interpolate import PchipInterpolator
 from hst.wavelet_operators import generate_G_operators
 from hst.nonlinmultres import nonlinear_data_decomposition, nonlinear_data_reconstruction
 
+# Unit operation on low-frequencies
+def nonlinear_function(f):
+    return f
+def nonlinear_function_inverse(g):
+    return g
+def bar_nonlinear_function(f):
+    return f
+def bar_nonlinear_function_inverse(g):
+    return g
+
 #######################################
 # Michael Glinsky - conformal mapping #
 #######################################
@@ -32,17 +42,14 @@ def R_inv(z):
 def R(z, outside=True):
     value = 1j * np.log( R_0(np.array(z).astype(complex), outside=outside))
     return value
-######################################
 
-# Unit operation on low-frequencies
-def nonlinear_function(f):
-    return f
-def nonlinear_function_inverse(g):
-    return g
+# Uncomment to use MG's rectifier
+mapping_sheet_outside = True
 def bar_nonlinear_function(f):
-    return f
+    return R(f, mapping_sheet_outside)
 def bar_nonlinear_function_inverse(g):
-    return g
+    return R_inv(g)
+######################################
 
 
 #def h_MG(z):
@@ -93,18 +100,18 @@ def bar_nonlinear_function_inverse(g):
 #        print(f'bar_nonlinear_function_inverse(bar_nonlinear_function(z)) {nln_inv_nln_z:.3e}')
 
 
-# Logarithmic operation on high-frequencies
-eps = 1e-10
-c_nln = 1e-2
-# Note that that the one shift is turned off
-def R0(f):
-    return f + c_nln #+ f / (abs(f) + eps)
-def R0_inverse(g):
-    return g - c_nln #- g / (abs(g) + eps)
-def MG_bar_nonlinear_function(f):
-    return 1j*np.log(R0(f))
-def MG_bar_nonlinear_function_inverse(g): 
-    return R0_inverse(np.exp(-1j*g))
+## Logarithmic operation on high-frequencies
+#eps = 1e-10
+#c_nln = 1e-2
+## Note that that the one shift is turned off
+#def R0(f):
+#    return f + c_nln #+ f / (abs(f) + eps)
+#def R0_inverse(g):
+#    return g - c_nln #- g / (abs(g) + eps)
+#def MG_bar_nonlinear_function(f):
+#    return 1j*np.log(R0(f))
+#def MG_bar_nonlinear_function_inverse(g): 
+#    return R0_inverse(np.exp(-1j*g))
 
 # log scatter from S_0 to coarser structures
 #def bar_nonlinear_function(f):
