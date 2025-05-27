@@ -5,21 +5,46 @@ from hst.wavelet_operators import verify_G_operators
 eps = 1e-10
 c_nln = 1e-2
 
-def R0(f : complex) -> complex:
-    return f + np.exp(1j*np.angle(f))
-def R0_inverse(f : complex) -> complex:
-    return f - np.exp(1j*np.angle(f))
-def rho(f):
-    return f
-def rho_inverse(f):
-    return f
-def bar_rho(f):
-    return f
-def bar_rho_inverse(f): 
-    return f
+def R_0(z : complex, outside=True) -> complex:
+    z_bar = 2.0 * z / np.pi
+    z_bar = np.array(z_bar).astype(complex)
+    
+    value_plus = (z_bar + np.sqrt( z_bar * z_bar - 1 )) / 1j
+    value_minus = (z_bar - np.sqrt( z_bar * z_bar - 1 )) / 1j
+    
+    if outside:
+        value = np.where(np.real(z) >= 0, value_plus, value_minus)
+    else:
+        value = np.where(np.real(z) >= 0, value_minus, value_plus)
+        
+    return value
+
+def R_0_inv(z : complex) -> complex:
+    value = np.pi * (z * 1j + 1/(z * 1j) ) / 4.0
+    return value
+
+def R_inv(z):
+    value = R_0_inv(np.exp(np.array(z).astype(complex) / 1j))
+    return value
+
+def R(z, outside=True):
+    value = 1j * np.log(R_0(np.array(z).astype(complex), outside=outside))
+    return value
+
+def rho(z : complex):
+    return z
+
+def rho_inverse(z : complex):
+    return z
+
+def bar_rho(z : complex):
+    return R(z)
+
+def bar_rho_inverse(z : complex): 
+    return R_inv(z)
 
 
-def hst2_data_decomposition(G_operators, data, verify_Gs=False):
+def hst3_data_decomposition(G_operators, data, verify_Gs=False):
     """Implementation of the nonlinear wavelet decomposition (S_J, bar_S_J, .., bar_S_1)"""
     if (verify_Gs):
         # Verify orthogonality and invertibility of G_operators at all levels
@@ -66,7 +91,7 @@ def hst2_data_decomposition(G_operators, data, verify_Gs=False):
     return decomposition, decompositionFull
 
 
-def hst2_data_reconstruction(decomposition, G_operators):
+def hst3_data_reconstruction(decomposition, G_operators):
     """Implementation of data reconstruction from the wavelet coeffs (S_J, bar_S_J, .., bar_S_1).""" 
     
     # Reconstruct by a downward cascade starting with S_J

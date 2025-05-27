@@ -7,8 +7,23 @@ from hst.linmultres import linear_data_decomposition, linear_data_reconstruction
 from hst.nonlinmultres import nonlinear_data_decomposition, nonlinear_data_reconstruction
 from hst.hst import hst_data_decomposition, hst_data_reconstruction
 from hst.hst2 import hst2_data_decomposition, hst2_data_reconstruction
+from hst.hst3 import hst3_data_decomposition, hst3_data_reconstruction
 #from hst2 import hst2_data_decomposition, hst2_data_reconstruction
 
+import matplotlib
+def move_figure(f, x, y):
+    """Move figure's upper left corner to pixel (x, y)"""
+    backend = matplotlib.get_backend()
+    if backend == 'tkagg':
+        f.canvas.manager.window.wm_geometry("+%d+%d" % (x, y))
+    elif backend == 'wxagg':
+        f.canvas.manager.window.SetPosition((x, y))
+    else:
+        # This works for QT and GTK
+        # You can also use window.setGeometry
+        f.canvas.manager.window.move(x, y)
+        
+        
 ##############
 # Input data #
 ##############
@@ -150,7 +165,7 @@ print(f'norm: {np.linalg.norm(input_data[:, :] - reconstructed_data[:, :])}')
 #################
 # Visualization #
 #################
-def visualize(decomposition, reconstructed_data, suptitle, Sj_text, S_J_text, file_name):
+def visualize(decomposition, reconstructed_data, fig_position, suptitle, Sj_text, S_J_text, file_name):
     # Prepare x vectors for each level by "bination"
     x_levels = []
     xlevel = x
@@ -166,8 +181,10 @@ def visualize(decomposition, reconstructed_data, suptitle, Sj_text, S_J_text, fi
     n_plots = 5
     dsnp = int(n_data / n_plots)
     print(f'dsnp {dsnp}')
-    fig1, ax = plt.subplots() 
+    fig1, ax = plt.subplots()
+    move_figure(fig1, fig_position[0], fig_position[1])
     fig2, axs = plt.subplots(n_plots, 3)
+    move_figure(fig2, fig_position[0]+25, fig_position[1]+50)
 
     i_plot = 0
     for i in range(n_data):
@@ -204,9 +221,9 @@ def visualize(decomposition, reconstructed_data, suptitle, Sj_text, S_J_text, fi
 #    plt.show()
 
 os.makedirs('images', exist_ok=True)
-visualize(decomposition_lwt, reconstructed_data_lwt, 'linear WT', "bar_Sj", "S_J", "images/lwt.png")
-visualize(decomposition_wt, reconstructed_data_wt, 'non-linear WT', "bar_Sj", "S_J", "images/nwt.png")
-visualize(decomposition, reconstructed_data, 'HST', "Sj", "bar_S_J", "images/hst.png")
+visualize(decomposition_lwt, reconstructed_data_lwt, [100, 50], 'linear WT', "bar_Sj", "S_J", "images/lwt.png")
+visualize(decomposition_wt, reconstructed_data_wt, [950, 50], 'non-linear WT', "bar_Sj", "S_J", "images/nwt.png")
+visualize(decomposition, reconstructed_data, [1750, 50], 'HST', "Sj", "bar_S_J", "images/hst.png")
 
 
 ## HST2
@@ -217,7 +234,9 @@ reconstructedHst2 = hst2_data_reconstruction(decompositionHst2, G_operators)
 #################
 # Visualization #
 #################
-def visualize2(decomposition, decompositionFull, reconstructed_data, suptitle, Sj_text, file_name):
+full_tree_idx = 14
+
+def visualize2(decomposition, decompositionFull, fig_position, reconstructed_data, suptitle, Sj_text, file_name):
     n_decomp = len(decomposition)
     
     # Prepare x vectors for each level by "bination"
@@ -237,7 +256,9 @@ def visualize2(decomposition, decompositionFull, reconstructed_data, suptitle, S
     dsnp = int(n_data / n_plots)
     print(f'dsnp {dsnp}')
     fig1, ax = plt.subplots() 
+    move_figure(fig1, fig_position[0], fig_position[1])
     fig2, axs = plt.subplots(n_plots, 2)
+    move_figure(fig2, fig_position[0]+25, fig_position[1]+50)
 
     i_plot = 0
     for i in range(n_data):
@@ -263,18 +284,27 @@ def visualize2(decomposition, decompositionFull, reconstructed_data, suptitle, S
     fig2.tight_layout()
     
     fig3, axs2 = plt.subplots((n_levels+1), 2**n_levels)
+    move_figure(fig3, fig_position[0]+50, fig_position[1]+100)
     for i in range(n_levels+1):
         for j in range(2**i):
             bar = '$\\bar{' if j % 2 == 1 else ''
             barend = '}$' if j % 2 == 1 else ''
             print(i, j, len(decompositionFull[i]))
-            axs2[i, 2**(n_levels - i)*j].plot(x_levels[i], decompositionFull[i][j][:, 128].real, 'x-', label=rf'Re({bar}S{barend}_{i}{j})')
-            axs2[i, 2**(n_levels - i)*j].plot(x_levels[i], decompositionFull[i][j][:, 128].imag, 'o-', label=rf'Im({bar}S{barend}_{i}{j})')
+            axs2[i, 2**(n_levels - i)*j].plot(x_levels[i], decompositionFull[i][j][:, full_tree_idx].real, 'x-', label=rf'Re({bar}S{barend}_{i}{j})')
+            axs2[i, 2**(n_levels - i)*j].plot(x_levels[i], decompositionFull[i][j][:, full_tree_idx].imag, 'o-', label=rf'Im({bar}S{barend}_{i}{j})')
             axs2[i, 2**(n_levels - i)*j].legend()
     
-    fig3.suptitle('HST2 full tree')
+    fig3.suptitle(f'{suptitle} full tree')
     fig3.tight_layout()
     
-visualize2(decompositionHst2, decompositionHst2Full, reconstructedHst2, 'HST2', "Sj, bar_S_J", "images/hst.png")
+visualize2(decompositionHst2, decompositionHst2Full, [100, 700], reconstructedHst2, 'HST2', "Sj, bar_S_J", "images/hst2.png")
+
+
+## HST3
+
+decompositionHst3, decompositionHst3Full = hst3_data_decomposition(G_operators, input_data)
+reconstructedHst3 = hst3_data_reconstruction(decompositionHst3, G_operators)
+    
+visualize2(decompositionHst3, decompositionHst3Full, [950, 700], reconstructedHst3, 'HST3', "Sj, bar_S_J", "images/hst3.png")
 
 plt.show()
