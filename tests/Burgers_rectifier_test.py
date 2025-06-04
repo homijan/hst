@@ -14,7 +14,7 @@ def R_0(z : complex, outside=True) -> complex:
     value_minus = (z_bar - np.sqrt( z_bar * z_bar - 1 )) / 1j
     
     if outside:
-        value = np.where(np.real(z) >= 0, value_plus, value_minus)
+        value = np.where(np.real(z) >= 0, value_plus, value_minus) # MOD: use value_plus for positive real part
     else:
         value = np.where(np.real(z) >= 0, value_minus, value_plus)
         
@@ -30,6 +30,7 @@ def R_inv(z):
 
 def R(z, outside=True):
     value = 1j * np.log(R_0(np.array(z).astype(complex), outside=outside))
+    value = np.real(value) + 1j * np.maximum(np.imag(value), 0.0) # MOD: ensure non-negative imaginary part
     return value
 
 def rho(z : complex):
@@ -45,7 +46,7 @@ def bar_rho_inverse(z : complex):
     return R_inv(z)
 
 # h inv test
-if 0:
+if 1:
     def h_inv(z : complex):
         z_bar = 2.0 * z / np.pi
         z_bar = np.array(z_bar).astype(complex)
@@ -59,7 +60,7 @@ if 0:
         return value_plus, np.abs(value_plus), value_minus, np.abs(value_minus), value
     
     xx = np.linspace(-np.pi, np.pi, 200)
-    hinv = h_inv(xx *1 - 1j*np.pi/10)
+    hinv = h_inv(xx *1 - 0*np.pi/1000)
     plt.figure(figsize=(10, 5))
     plt.plot(xx, np.real(hinv[0]), label='real part +')
     plt.plot(xx, np.imag(hinv[0]), '*', label='imag part +')
@@ -68,8 +69,8 @@ if 0:
     plt.plot(xx, np.imag(hinv[2]), label='imag part -')
     plt.plot(xx, np.abs(hinv[3]), label='abs -')
     plt.plot(xx, np.real(hinv[4]), '--k', label='real part h inv')
-    plt.plot(xx, np.imag(hinv[4]), ':k', label='real part h inv')
-    plt.plot(xx, np.abs(hinv[4]), label='abs h inv')
+    plt.plot(xx, np.imag(hinv[4]), ':k', label='imag part h inv')
+    plt.plot(xx, np.abs(hinv[4]), '-.', label='abs h inv')
     plt.legend()
     plt.title('Inverse of h function')
     plt.xlabel('x')
@@ -110,89 +111,90 @@ def test_function(x):
     return x
     return x**3/10
 
+t_idx = -1
 if 0:
     # Test function for rectifier
     def test_function(x):
-        return np.sin(x) * np.exp(-x)
+        return (1j*np.abs(np.sin(x)) + np.cos(x))*1.5#*1.5 + 2 + 2j
     N = 150
-    xx = np.linspace(0, np.pi/2, N)
+    xx = np.linspace(-np.pi, np.pi, N)
     input_data = test_function(xx)
 else:
     # select time index
     t_idx = 14
     xx = x
-    input_data = input_data[:, t_idx] + 1j * input_data[:, t_idx][::-1]
-    input_data = input_data * 15
+    input_data = input_data[:, t_idx] #+ 1j * input_data[:, t_idx][::-1]
+    input_data = input_data #- 0.5#* 15 - 10
 
-reMax = np.max(np.real(input_data))
-imMax = np.max(np.imag(input_data))
-maxMax = max(reMax, imMax)*1.2
 
-# Apply rectifier
-rect_data = R(input_data, outside=True)
-rect0_data = R_0(input_data, outside=True)
-rect_data2 = R(input_data, outside=False)
-#rect_data = rect_data + rect_data2
-print(np.real(rect_data))
-print(np.imag(rect_data))
-
-# plot the input data
 plt.figure(figsize=(22, 8))
-n = 5
-m = 2
-plt.subplot(m, n, 1)
-plt.plot(xx, np.real(input_data), label=f'real')
-plt.plot(xx, np.imag(input_data), label=f'imag')
-plt.title(f'Input data t={t_idx}')
-plt.xlabel('x')
-plt.legend()
-plt.subplot(m, n, 2)
-plt.plot(xx, np.real(rect_data), label=f'real, outside=T')
-plt.plot(xx, np.imag(rect_data), label=f'imag, outside=T')
-#plt.plot(np.real(rect_data2), label=f'real, outside=F')
-#plt.plot(np.imag(rect_data2), label=f'imag, outside=F')
-plt.xlabel('x')
-plt.legend()
-plt.title(f'Rectified data R(z) t={t_idx}')
-plt.subplot(m, n, 3)
-plt.scatter(np.real(input_data), np.imag(input_data), c=xx, cmap='viridis', s=1)
-plt.colorbar(label='x')
-plt.title('Input data Complex Plane')
-plt.xlim(-maxMax, maxMax)
-plt.ylim(-maxMax, maxMax)
-plt.xlabel('Re')
-plt.ylabel('Im')
-plt.subplot(m, n, 4)
-plt.scatter(np.real(rect0_data), np.imag(rect0_data), c=xx, cmap='viridis', s=1)
-plt.colorbar(label='x')
-plt.title('R_0 Complex Plane')
-plt.xlim(-maxMax, maxMax)
-plt.ylim(-maxMax, maxMax)
-plt.xlabel('Re')
-plt.ylabel('Im')
-plt.subplot(m, n, 5)
-rect_data = R(input_data, outside=True)
-plt.scatter(np.real(rect_data), np.imag(rect_data), c=xx, cmap='viridis', s=1)
-plt.xlim(-maxMax, maxMax)
-plt.ylim(-maxMax, maxMax)
-plt.xlabel('Re')
-plt.ylabel('Im')
-plt.colorbar(label='x')
-plt.title('Rectified data Complex Plane')
-rect_data_rec = rect_data
-for i in range(5):
-    plt.subplot(m, n, 6+i)
-    rect_data_rec = R(rect_data_rec, outside=True)
-    plt.scatter(np.real(rect_data_rec), np.imag(rect_data_rec), c=xx, cmap='viridis', s=1)
-    reMax = np.max(np.real(rect_data_rec))
-    imMax = np.max(np.imag(rect_data_rec))
+n = 3
+m = 5
+for i in range(n):
+    reMax = np.max(np.real(input_data))
+    imMax = np.max(np.imag(input_data))
     maxMax = max(reMax, imMax)*1.2
+
+    # Apply rectifier
+    outside = True
+    rect_data = R(input_data, outside=outside)
+    rect0_data = R_0(input_data, outside=outside)
+    #rect_data2 = R(input_data, outside=False)
+    #rect_data = rect_data + rect_data2
+    print(np.real(rect_data))
+    print(np.imag(rect_data))
+
+    reMax = np.max(np.real(rect_data))
+    imMax = np.max(np.imag(rect_data))
+    maxMax2 = max(reMax, imMax)*1.2
+
+    reMax = np.max(np.real(rect0_data))
+    imMax = np.max(np.imag(rect0_data))
+    maxMax3 = max(reMax, imMax)*1.2
+    
+    # plot the input data
+    plt.subplot(n, m, 1 + i*m)
+    plt.plot(xx, np.real(input_data), label=f'real')
+    plt.plot(xx, np.imag(input_data), label=f'imag')
+    plt.title(f'Input data t={t_idx}')
+    plt.xlabel('x')
+    plt.legend()
+    plt.subplot(n, m, 2 + i*m)
+    plt.plot(xx, np.real(rect_data), label=f'real, outside={outside}')
+    plt.plot(xx, np.imag(rect_data), label=f'imag, outside={outside}')
+    #plt.plot(np.real(rect_data2), label=f'real, outside=F')
+    #plt.plot(np.imag(rect_data2), label=f'imag, outside=F')
+    plt.xlabel('x')
+    plt.legend()
+    plt.title(f'Rectified data R(z) t={t_idx}')
+    plt.subplot(n, m, 3 + i*m)
+    plt.scatter(np.real(input_data), np.imag(input_data), c=xx, cmap='viridis', s=1)
+    plt.colorbar(label='x')
+    plt.title('Input data Complex Plane')
     plt.xlim(-maxMax, maxMax)
     plt.ylim(-maxMax, maxMax)
     plt.xlabel('Re')
     plt.ylabel('Im')
+    plt.subplot(n, m, 4 + i*m)
+    plt.scatter(np.real(rect0_data), np.imag(rect0_data), c=xx, cmap='viridis', s=1)
     plt.colorbar(label='x')
-    plt.title(f'Rectified {i+2}x data Complex Plane')
+    plt.title('R_0 Complex Plane')
+    plt.xlim(-maxMax3, maxMax3)
+    plt.ylim(-maxMax3, maxMax3)
+    plt.xlabel('Re')
+    plt.ylabel('Im')
+    plt.subplot(n, m, 5 + i*m)
+    plt.scatter(np.real(rect_data), np.imag(rect_data), c=xx, cmap='viridis', s=1)
+    plt.xlim(-maxMax2, maxMax2)
+    plt.ylim(-maxMax2, maxMax2)
+    plt.xlabel('Re')
+    plt.ylabel('Im')
+    plt.colorbar(label='x')
+    plt.title('Rectified data Complex Plane')
+    
+    input_data = rect_data  # use rectified data for the next iteration
+    #input_data = np.real(rect_data)
+    
 plt.tight_layout()
 
 if 0:

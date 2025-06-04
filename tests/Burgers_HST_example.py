@@ -262,7 +262,7 @@ def visualize2(decomposition, decompositionFull, fig_position, reconstructed_dat
 
     i_plot = 0
     for i in range(n_data):
-        if i % dsnp == 0:
+        if i % dsnp == 0 and i < input_data.shape[1]:
             print(f'Snapshot {i}')
             ax.plot(x, input_data[:, i].real)
             ax.plot(x, reconstructed_data[:, i].real, '-.')
@@ -302,9 +302,89 @@ visualize2(decompositionHst2, decompositionHst2Full, [100, 700], reconstructedHs
 
 ## HST3
 
-decompositionHst3, decompositionHst3Full = hst3_data_decomposition(G_operators, input_data)
+decompositionHst3, decompositionHst3Full, _ = hst3_data_decomposition(G_operators, input_data)
 reconstructedHst3 = hst3_data_reconstruction(decompositionHst3, G_operators)
     
 visualize2(decompositionHst3, decompositionHst3Full, [950, 700], reconstructedHst3, 'HST3', "Sj, bar_S_J", "images/hst3.png")
+
+
+
+
+
+def visualize3(decomposition, decompositionFull, decompositionFullWavelet, fig_position, reconstructed_data, suptitle, Sj_text, file_name):
+    n_decomp = len(decomposition)
+    
+    # Prepare x vectors for each level by "bination"
+    x_levels = []
+    xlevel = x
+    x_levels.append(xlevel)
+    for i in range(n_levels):
+        xlevel = xlevel[::2]
+        #print(f'xlevel.shape {xlevel.shape}')
+        # Add x coordinates for bar_S_i
+        x_levels.append(xlevel)
+    # Reverse the order to make bar_S_J x coords first
+    #x_levels.reverse()
+
+    # Plot results
+    n_plots = 5
+    dsnp = int(n_data / n_plots)
+    print(f'dsnp {dsnp}')
+    fig1, ax = plt.subplots() 
+    move_figure(fig1, fig_position[0], fig_position[1])
+    fig2, axs = plt.subplots(n_plots, 2)
+    move_figure(fig2, fig_position[0]+25, fig_position[1]+50)
+
+    i_plot = 0
+    for i in range(n_data):
+        if i % dsnp == 0 and i < input_data.shape[1]:
+            print(f'Snapshot {i}')
+            ax.plot(x, input_data[:, i].real)
+            ax.plot(x, reconstructed_data[:, i].real, '-.')
+            # S_J
+            #ax_R = axs[i_plot, 0].twinx()
+                            
+            # bar_S_j
+            for j in range(n_decomp):
+                axs[i_plot, 0].plot(x_levels[-1], decomposition[j][:, i].real, 'x-', label=f'k={j}')
+                axs[i_plot, 1].plot(x_levels[-1], decomposition[j][:, i].imag, 'o-', label=f'k={j}')
+            i_plot = i_plot + 1
+    axs[0, 0].set_title(f'Re({Sj_text})')
+    axs[0, 0].legend()
+    axs[0, 1].set_title(f'Im({Sj_text})')
+    axs[0, 1].legend()
+    fig1.suptitle(suptitle)
+    fig1.tight_layout()
+    fig2.suptitle(suptitle)
+    fig2.tight_layout()
+    
+    fig3, axs2 = plt.subplots((n_levels+1), 2**n_levels)
+    move_figure(fig3, fig_position[0]+50, fig_position[1]+100)
+    for i in range(n_levels+1):
+        for j in range(2**i):
+            bar = '$\\bar{' if j % 2 == 1 else ''
+            barend = '}$' if j % 2 == 1 else ''
+            print(i, j, len(decompositionFull[i]))
+            axs2[i, 2**(n_levels - i)*j].plot(x_levels[i], decompositionFull[i][j][:, full_tree_idx].real, 'x-', label=rf'Re({bar}S{barend}_{i}{j})')
+            axs2[i, 2**(n_levels - i)*j].plot(x_levels[i], decompositionFull[i][j][:, full_tree_idx].imag, 'o-', label=rf'Im({bar}S{barend}_{i}{j})')
+            axs2[i, 2**(n_levels - i)*j].plot(x_levels[i], decompositionFullWavelet[i][j][:, full_tree_idx].real, 'x--', label=rf'Re({bar}S{barend}_{i}{j})')
+            axs2[i, 2**(n_levels - i)*j].plot(x_levels[i], decompositionFullWavelet[i][j][:, full_tree_idx].imag, 'o--', label=rf'Im({bar}S{barend}_{i}{j})')
+            axs2[i, 2**(n_levels - i)*j].legend()
+    
+    fig3.suptitle(f'{suptitle} full tree')
+    fig3.tight_layout()
+
+
+## HST3 on other data
+
+data_other = np.sin(np.linspace(-np.pi, np.pi, 1024))
+input_data = [data_other, data_other]
+input_data = np.array(input_data).T
+full_tree_idx = 0
+
+decompositionHst3, decompositionHst3Full, decompositionFullWavelet = hst3_data_decomposition(G_operators, input_data)
+reconstructedHst3 = hst3_data_reconstruction(decompositionHst3, G_operators)
+    
+visualize3(decompositionHst3, decompositionHst3Full, decompositionFullWavelet, [1750, 700], reconstructedHst3, 'HST3 other', "Sj, bar_S_J", "images/hst3.png")
 
 plt.show()

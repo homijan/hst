@@ -28,14 +28,16 @@ def R_inv(z):
     return value
 
 def R(z, outside=True):
+    #value = np.real(z) + 1j * np.abs(np.imag(z)) # ensure non-negative imaginary part
     value = 1j * np.log(R_0(np.array(z).astype(complex), outside=outside))
+    value = np.real(value) + 1j * np.maximum(np.imag(value), 0.0) # ensure non-negative imaginary part
     return value
 
 def rho(z : complex):
-    return z
+    return z #R(z)
 
 def rho_inverse(z : complex):
-    return z
+    return z #R_inv(z)
 
 def bar_rho(z : complex):
     return R(z)
@@ -58,21 +60,25 @@ def hst3_data_decomposition(G_operators, data, verify_Gs=False):
     bar_Sj = bar_rho(f0)
     decomposition = [bar_Sj]
     decompositionFull = [[bar_Sj]]
+    decompositionFullWavelet = [[f0]]
     
     # The G_operators levels need to be reversed upward
     for G_lo, G_hi in reversed(G_operators):
         
         decompositionNext = []
+        decompositionNextWavelet = []
         for bar_Sj in decomposition:
             # Project high frequency data vector
             bar_Sjp1 = G_hi.dot(bar_Sj)
             # Apply the high-frequency nonlinearity
+            decompositionNextWavelet.append(bar_Sjp1)
             bar_Sjp1 = bar_rho(bar_Sjp1)
             
             #print(f'G_lo.shape {G_lo.shape}, S.shape {bar_Sj.shape}, S count {bar_Sj.shape[0]*bar_Sj.shape[1]}, G_lo count_nonzero {np.count_nonzero(G_lo.toarray())}')
             # Project low frequency data vector
             Sj = G_lo.dot(bar_Sj)
             # Apply the low-frequency nonlinearity
+            decompositionNextWavelet.append(Sj)
             Sj = rho(Sj)
             
             decompositionNext.append(Sj)
@@ -80,6 +86,7 @@ def hst3_data_decomposition(G_operators, data, verify_Gs=False):
             
         decomposition = decompositionNext
         decompositionFull.append(decomposition)
+        decompositionFullWavelet.append(decompositionNextWavelet)
         
     # Add S_J (coarsest level S)
 
@@ -88,7 +95,7 @@ def hst3_data_decomposition(G_operators, data, verify_Gs=False):
     # following Eq. 5 in Marchand et al, Wavelet Conditional Renormalization Group (2022)
     #decomposition.reverse()
 
-    return decomposition, decompositionFull
+    return decomposition, decompositionFull, decompositionFullWavelet
 
 
 def hst3_data_reconstruction(decomposition, G_operators):
