@@ -6,17 +6,17 @@ eps = 1e-10
 c_nln = 1e-2
 
 def R0(f : complex) -> complex:
-    return f + np.exp(1j*np.angle(f))
+    return f# + np.exp(1j*np.angle(f))
 def R0_inverse(f : complex) -> complex:
-    return f - np.exp(1j*np.angle(f))
+    return f# - np.exp(1j*np.angle(f))
 def rho(f):
     return f
 def rho_inverse(f):
     return f
 def bar_rho(f):
-    return f
+    return f#np.log(R0(f))
 def bar_rho_inverse(f): 
-    return f
+    return f#R0_inverse(np.exp(f))
 
 
 def hst2_data_decomposition(G_operators, data, verify_Gs=False):

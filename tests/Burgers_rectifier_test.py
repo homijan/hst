@@ -59,8 +59,8 @@ if 1:
             value = np.where(np.real(z) >= 0, value_plus, value_minus)
         return value_plus, np.abs(value_plus), value_minus, np.abs(value_minus), value
     
-    xx = np.linspace(-np.pi, np.pi, 200)
-    hinv = h_inv(xx *1 - 0*np.pi/1000)
+    xx = np.linspace(-np.pi, np.pi, 20000)
+    hinv = h_inv(xx *1j + np.pi / 2 - 0.01)
     plt.figure(figsize=(10, 5))
     plt.plot(xx, np.real(hinv[0]), label='real part +')
     plt.plot(xx, np.imag(hinv[0]), '*', label='imag part +')

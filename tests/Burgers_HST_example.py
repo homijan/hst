@@ -110,9 +110,10 @@ def MG_bar_nonlinear_function_inverse(g):
 
 # log scatter from S_J to finer structures
 def bar_nonlinear_function(f):
-    return MG_bar_nonlinear_function_inverse(f)
+    return MG_bar_nonlinear_function(f) 
 def bar_nonlinear_function_inverse(g):
-    return MG_bar_nonlinear_function(g) 
+    return MG_bar_nonlinear_function_inverse(g)
+
 # Generate data decomposition into (S_J, bar_S_J, .., bar_S_1)
 print('Compute data decomposition (S_J, bar_S_J, .., bar_S_1):')
 decomposition_wt = nonlinear_data_decomposition(G_operators, input_data, nonlinear_function, bar_nonlinear_function)

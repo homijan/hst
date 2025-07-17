@@ -24,13 +24,18 @@ def R_0_inv(z : complex) -> complex:
     return value
 
 def R_inv(z):
+    #return np.exp(np.array(z).astype(complex) / 1j)
     value = R_0_inv(np.exp(np.array(z).astype(complex) / 1j))
     return value
 
 def R(z, outside=True):
+    #return 1j * np.log(z)
     #value = np.real(z) + 1j * np.abs(np.imag(z)) # ensure non-negative imaginary part
     value = 1j * np.log(R_0(np.array(z).astype(complex), outside=outside))
-    value = np.real(value) + 1j * np.maximum(np.imag(value), 0.0) # ensure non-negative imaginary part
+    if (outside):
+        value = np.real(value) + 1j * np.maximum(np.imag(value), 0.0) # ensure non-negative imaginary part
+    else:
+        value = np.real(value) + 1j * np.minimum(np.imag(value), 0.0) # ensure non-positive imaginary part
     return value
 
 def rho(z : complex):
