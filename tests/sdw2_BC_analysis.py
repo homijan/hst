@@ -1,5 +1,5 @@
 import numpy as np
-from hst.mrw1d import generate_wavelet
+from hst.wavelet_operators import generate_wavelet
 
 # Discrete Wavelets analysis
 wavelets = [] 
@@ -11,6 +11,18 @@ wavelets.append(['db2', dec_lo, [(4.0/3.0)**0.5]])
 a1 = 0.662912 + 0.171163j
 a2 = 0.110485 - 0.085581j
 a3 = -0.066291 - 0.085581j
+
+x1 = 3/2 - 1j*np.sqrt(5/12) - 1/2*np.sqrt(10/3 - 2j*np.sqrt(15))
+x2 = 3/2 - 1j*np.sqrt(5/12) + 1/2*np.sqrt(10/3 - 2j*np.sqrt(15))
+
+cx2m1 = x2#np.conjugate(x2)**-1
+K = np.sqrt(2) * 2**-3 / ((1 - x1)*(1 - cx2m1))
+a_2 = K
+a_1 = K * (3 - (x1 + cx2m1))
+a0 = K * (x1*cx2m1 - 3*(x1 + cx2m1) + 3)
+a1 = K * (3*x1*cx2m1 - 3*(x1 + cx2m1) + 1)
+a2 = K * (3*x1*cx2m1 - (x1 + cx2m1))
+a3 = K * x1*cx2m1
 
 ####################################################
 # Orthogonal and invertibel scaling of BC for SDW2 #
