@@ -35,12 +35,29 @@ def R_0(z, outside=True):
         
     return value
 
+def R_0_inv(z):
+    return z
+def R_0(z, outside=True):
+    return z
+
 def R_inv(z):
     value = R_0_inv(np.exp(np.array(z).astype(complex) / 1j))
     return value
 
 def R(z, outside=True):
     value = 1j * np.log( R_0(np.array(z).astype(complex), outside=outside))
+    value.real = np.cos(value.real)
+    return value
+
+def R_inv(z):
+    value = np.array(z).astype(complex)
+    value.real = np.arccos(2.0 * value.real)
+    value = np.exp(value / 1j)
+    return value
+
+def R(z, outside=True):
+    value = 1j * np.log(np.array(z).astype(complex))
+    value.real = np.cos(2.0 * value.real)
     return value
 
 # Uncomment to use MG's rectifier
