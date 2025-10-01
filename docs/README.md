@@ -24,5 +24,5 @@ $`\begin{equation}
 \end{equation}`$
 
 $`\begin{equation}
-\int \left( \frac{1}{2\rho(x)}\left( \partial_\rho W(\rho(x) )\right)^2 \right) dV + \rho(x) \varepsilon(x)  - E \right) dV = 0
+\int \left( \frac{1}{2\rho(x)}\left( \partial_\rho W(\rho(x) )\right)^2 + \rho(x) \varepsilon(x)  - E \right) dV = 0
 \end{equation}`$
