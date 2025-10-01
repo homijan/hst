@@ -20,5 +20,9 @@ H(\rho, v, \varepsilon) = \int \left( \frac{1}{2\rho(x)}\left( \partial_\rho W(\
 \end{equation}`$
 
 $`\begin{equation}
-\int \left( \frac{1}{2\rho(x)}\left( \partial_\rho W(\rho(x) )\right)^2 \right) dV + \int \left(\rho(x) \varepsilon(x) \right) dV - E = 0
+\int \left( \frac{1}{2\rho(x)}\left( \partial_\rho W(\rho(x))\right)^2 \right) dV + \int \left(\rho(x) \varepsilon(x) \right) dV - E = 0
+\end{equation}`$
+
+$`\begin{equation}
+\int \left( \frac{1}{2\rho(x)}\left( \partial_\rho W(\rho(x) )\right)^2 \right) dV + \rho(x) \varepsilon(x)  - E \right) dV = 0
 \end{equation}`$
