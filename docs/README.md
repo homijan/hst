@@ -31,3 +31,7 @@ $`\begin{equation}
 $`\begin{equation}
 \partial_\rho W(\rho(x) ) = \sqrt{2 \rho(x) E  - 2 \rho(x)^2 \varepsilon(x)}
 \end{equation}`$
+
+$`\begin{equation}
+\partial_\rho W = \sqrt{2 \rho E  - 2 \rho^2 \varepsilon}
+\end{equation}`$
