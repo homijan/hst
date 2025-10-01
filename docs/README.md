@@ -13,12 +13,12 @@ $`\begin{equation}
 \partial_t S(\rho, t) + H(\rho, v, \varepsilon, t) = 0
 \end{equation}`$
 
-Since $`\partial_t H(\rho, v, \varepsilon, t) = 0`$, $`S(q, t) = W(q) + Et`$
+Since $`\partial_t H(\rho, v, \varepsilon, t) = 0`$, $`S(q, t) = W(q) - Et`$
 
 $`\begin{equation}
 H(\rho, v, \varepsilon) = \int \left( \frac{1}{2\rho(x)}\left( \partial_\rho W(\rho(x) )\right)^2 + \rho(x) \varepsilon(x) \right) dV
 \end{equation}`$
 
 $`\begin{equation}
-\left( \partial_\rho W(\rho) \right)^2 
+\int \left( \frac{1}{2\rho(x)}\left( \partial_\rho W(\rho(x) )\right)^2 \right) dV + \int \left(\rho(x) \varepsilon(x) \right) dV - E = 0
 \end{equation}`$
