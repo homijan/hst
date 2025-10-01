@@ -27,3 +27,7 @@ $`\begin{equation}
 \int \left( \frac{1}{2\rho(x)}\left( \partial_\rho W(\rho(x) )\right)^2 + \rho(x) \varepsilon(x) - E \right) dV = 0
 \Rightarrow \frac{1}{2\rho(x)}\left( \partial_\rho W(\rho(x) )\right)^2 + \rho(x) \varepsilon(x) - E = 0
 \end{equation}`$
+
+$`\begin{equation}
+\partial_\rho W(\rho(x) ) = \sqrt{2 \rho(x) E  - 2 \rho(x)^2 \varepsilon(x)}
+\end{equation}`$
