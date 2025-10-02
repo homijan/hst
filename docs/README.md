@@ -18,6 +18,8 @@ $`\begin{equation}
 
 where Hamiltonian is defined through the hamiltonian density $`h(x)`$ (local quantity)
 
+https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Variational_Principles_in_Classical_Mechanics_(Cline)/16%3A_Analytical_Formulations_for_Continuous_Systems/16.04%3A_The_Hamiltonian_density_formulation_for_continuous_systems
+
 $`\begin{equation}
 H(\rho, v, \varepsilon, t) = \int h(\rho, v, \varepsilon, t) dV.
 \end{equation}`$
