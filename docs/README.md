@@ -39,7 +39,7 @@ $`\begin{equation}
 and evaluate action functional based on the action density $`s(x)`$ (local quantity) as
 
 $`\begin{equation}
-S(\rho, t) = \int s(\rho, t) dV,
+S(\rho, t) = \int s(\rho(x, t), t) dV,
 \end{equation}`$
 
 ?
