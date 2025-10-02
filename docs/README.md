@@ -16,6 +16,26 @@ $`\begin{equation}
 \partial_t S(\rho, t) + H(\rho, v, \varepsilon, t) = 0
 \end{equation}`$
 
+where Hamiltonian is defined through the hamiltonian density $`h(x)`$ (local quantity)
+
+$`\begin{equation}
+H(\rho, v, \varepsilon, t) = \int h(\rho, v, \varepsilon, t) dV.
+\end{equation}`$
+
+Can we write
+
+$`\begin{equation}
+\int \left( \partial_t s(\rho, t) + h(\rho, v, \varepsilon, t) \right) dV = 0
+\end{equation}`$
+
+and evaluate action functional based on the action density $`s(x)`$ (local quantity) as
+
+$`\begin{equation}
+S(\rho, t) = \int s(\rho, t) dV,
+\end{equation}`$
+
+?
+
 Since $`\partial_t H(\rho, v, \varepsilon, t) = 0`$, $`S(q, t) = W(q) - Et`$, and $`(\delta_\rho S)(x) = (\partial_\rho S)(x) = (\partial_\rho W)(x) = \rho(x) v(x)`$
 
 $`\begin{equation}
