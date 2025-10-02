@@ -25,8 +25,8 @@ H(\rho, v, \varepsilon, t) = \int h(\rho, v, \varepsilon, t) dV.
 Can we write
 
 $`\begin{equation}
-\int \left( \partial_t s(\rho, t) + h(\rho, v, \varepsilon, t) \right) dV = 0
-\end{equation}`$
+\int \left( \partial_t s(\rho, t) + h(\rho, v, \varepsilon, t) \right) dV = 0 \Leftarrow  \partial_t s(x, t) + h(x, t)
+\end{equation} = 0`$
 
 and evaluate action functional based on the action density $`s(x)`$ (local quantity) as
 
