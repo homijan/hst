@@ -9,11 +9,14 @@ H(\rho, v, \varepsilon) = \int \left( \frac{1}{2}\rho(x) v(x)^2 + \rho(x) \varep
 
 ## Hamilton-Jacobi in 1D
 
+We assume that $`\partial_{\nabla \rho} W = 0`$, we get variational derivative $`\delta_\rho W = \partial_\rho W`$.
+
+
 $`\begin{equation}
 \partial_t S(\rho, t) + H(\rho, v, \varepsilon, t) = 0
 \end{equation}`$
 
-Since $`\partial_t H(\rho, v, \varepsilon, t) = 0`$, $`S(q, t) = W(q) - Et`$, and $`(\partial_\rho S)(x) = (\partial_\rho W)(x) = \rho(x) v(x)`$
+Since $`\partial_t H(\rho, v, \varepsilon, t) = 0`$, $`S(q, t) = W(q) - Et`$, and $`(\delta_\rho S)(x) = (\partial_\rho S)(x) = (\partial_\rho W)(x) = \rho(x) v(x)`$
 
 $`\begin{equation}
 H(\rho, v, \varepsilon) = \int \left( \frac{1}{2\rho(x)}\left( \nabla \partial_\rho W(\rho(x) )\right)^2 + \rho(x) \varepsilon(x) \right) dV
