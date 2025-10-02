@@ -25,7 +25,7 @@ H(\rho, v, \varepsilon, t) = \int h(\rho, v, \varepsilon, t) dV.
 For example the ideal fluid's Hamiltonian density (corresponding to total energy density) reads
 
 $`\begin{equation}
-h(x, t) = h(rho(x, t), v(x, t), \varespilon(x, t)) = \rho(x, t) \left( v(x, t)^2 + \varepsilon(x, t)\right).
+h(x, t) = h(rho(x, t), v(x, t), \varepsilon(x, t)) = \rho(x, t) \left( v(x, t)^2 + \varepsilon(x, t)\right).
 \end{equation}`$
 
 Can we write
