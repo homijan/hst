@@ -20,7 +20,7 @@ H(\rho, v, \varepsilon) = \int \left( \frac{1}{2\rho(x)}\left( \nabla \partial_\
 \end{equation}`$
 
 $`\begin{equation}
-\int \left( \frac{1}{2\rho(x)}\left( \nabl \partial_\rho W(\rho(x))\right)^2 \right) dV + \int \left(\rho(x) \varepsilon(x) \right) dV - E = 0
+\int \left( \frac{1}{2\rho(x)}\left( \nabla \partial_\rho W(\rho(x))\right)^2 \right) dV + \int \left(\rho(x) \varepsilon(x) \right) dV - E = 0
 \end{equation}`$
 
 $`\begin{equation}
