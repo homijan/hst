@@ -13,7 +13,7 @@ H_{HO}(q, v) = \frac{1}{2} m v^2 + \frac{1}{2} m \omega^2 q^2,
 Harmonic fluid oscillator
 
 $`\begin{equation}
-H_{HFO}(q, v) = \sum_i \frac{1}{2} m v_i^2 + \frac{1}{2} m \omega^2 q_i^2 =  \frac{1}{2} m \sum_i v_i^2 + \frac{1}{2} m \omega^2 \sum_i q_i^2 \overset{^{i \rightarrow \infty}_{as~\rho(q)}}{\Rightarrow} \int \left( \frac{1}{2} \rho(q) v(q)^2 + \frac{1}{2 m} \omega^2 \rho(q)^2 \right) dq,
+H_{HFO}(q, v) = \sum_i^N \frac{1}{2} m v_i^2 + \frac{1}{2} m \omega^2 q_i^2 = \frac{1}{2} m \sum_i^N v_i^2 + \frac{1}{2} m \omega^2 \sum_i^N q_i^2 = \frac{1}{2} m N \bar{\left(v^2\right)} + \frac{1}{2} m \omega^2 N \bar{\left(q^2\right)} \overset{^{i \rightarrow \infty}_{as~\rho(q)}}{\Rightarrow} \int \left( \frac{1}{2} \rho(q) v(q)^2 + \frac{1}{2 m} \omega^2 \rho(q)^2 \right) dq,
 \end{equation}`$
 
 where linear position $`q`$ [cm], linear density $`\rho(q)`$ [g/cm], fluid velocity $`v(q)`$ [cm/s], and angular frequency $`\omega = 2\pi f`$ [rad/s].
