@@ -3,11 +3,22 @@
 # Euler fluid Hamiltonian
 
 ## Hamiltonian in 1D 
+
+Harmonic oscillator
+
 $`\begin{equation}
-H(\rho, v, \varepsilon) = \int \left( \frac{1}{2}\rho(x) v(x)^2 + \rho(x) \varepsilon(x) \right) dV
+H_{HO}(p, q) = \frac{p^2}{2 m} + \frac{1}{2} m \omega^2 q^2,
 \end{equation}`$
 
-## Hamilton-Jacobi in 1D
+Ideal fluid
+
+$`\begin{equation}
+H_{IF}(\rho, v, \varepsilon) = \int \left( \frac{1}{2}\rho(x) v(x)^2 + \rho(x) \varepsilon(x) \right) dV
+\end{equation}`$
+
+## Hamilton-Jacobi
+
+
 
 We assume that $`\partial_{\nabla \rho} W = 0`$, we get variational derivative $`\delta_\rho W = \partial_\rho W`$.
 
