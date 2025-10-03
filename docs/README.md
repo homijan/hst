@@ -71,6 +71,10 @@ $`\begin{equation}
 
 ### Action of ideal compressible fluid
 
+$`\begin{equation}
+\partial_t S_{IF}(\rho, v, \varepsilon, t) = - H_{IF}(\rho, v, \varepsilon, t) = - \int \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x) \right) dx
+\end{equation}`$
+
 We assume that $`\partial_{\nabla \rho} W = 0`$, we get variational derivative $`\delta_\rho W = \partial_\rho W`$.
 
 
