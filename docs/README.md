@@ -26,10 +26,10 @@ H_{HFO}(\rho(x), v(x)) = \int \rho(x) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2
 
 where linear position $`x`$ [cm], linear density $`\rho(x)`$ [g/cm], fluid velocity $`v(x) = \frac{d x}{d t}`$ [cm/s], and frequency $`f = \frac{\omega}{2\pi}`$ [rad/s].
 
-Ideal fluid
+### Ideal compressible fluid
 
 $`\begin{equation}
-H_{IF}(\rho, v, \varepsilon) = \int \left( \frac{1}{2}\rho(x) v(x)^2 + \rho(x) \varepsilon(x) \right) dV
+H_{IF}(\rho, v, \varepsilon) = \int \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x) \right) dx
 \end{equation}`$
 
 ## Hamilton-Jacobi
