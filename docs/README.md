@@ -16,7 +16,7 @@ $`\begin{equation}
 H_{HFO}(q, v) = \sum_i^N \frac{1}{2} m v_i^2 + \frac{1}{2} m \omega^2 q_i^2 = \frac{1}{2} m \sum_i^N v_i^2 + \frac{1}{2} m \omega^2 \sum_i^N q_i^2 = \frac{1}{2} m N \left<v^2\right> + \frac{1}{2} m \omega^2 N \left<q^2\right> \overset{^{i \rightarrow \infty}_{as~\rho(q)}}{\Rightarrow} \int \rho(q) \left( \frac{1}{2} v(q)^2 + \frac{1}{2} (2\pi)^2 f^2 q^2 \right) dq,
 \end{equation}`$
 
-where linear position $`q`$ [cm], linear density $`\rho(q)`$ [g/cm], fluid velocity $`v(q)`$ [cm/s], and frequency $`f = \frac{\omega}{2\pi}`$ [rad/s].
+where linear position $`q`$ [cm], linear density $`\rho(q)`$ [g/cm], fluid velocity $`v(q) = \frac{d q}{d t}`$ [cm/s], and frequency $`f = \frac{\omega}{2\pi}`$ [rad/s].
 
 Kinetic energy density $`T = \rho v^2`$ [J/cm] (or (g / cm)(cm$`^2`$ / s$`^2`$) = g cm / s$`^2`$].
 
