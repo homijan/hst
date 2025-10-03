@@ -52,11 +52,19 @@ $`\begin{equation}
 \partial_t S(x, t) + H(x, \partial_x S, t) = 0.~(6)
 \end{equation}`$.
 
-However, we will leverage a version where we assume we know how to evaluate the hamiltonian
+However, we will leverage a version where we assume we know how to evaluate the hamiltonian with respect to coordinate $`x`$ and momentum $`v`$ as
 
 $`\begin{equation}
 \partial_t S(x, t) + H(x, v, t) = 0.~(7)
 \end{equation}`$.
+
+In case of continuous system, we write the **action functional** $`\mathbcal{S}(\rho, t)`$ evaluated on the coordinate field $`\rho`$, where the Hamilton Jacobi equation 
+
+Similar to Hamiltonian density we define the action density
+
+$`\begin{equation}
+S(x, t)
+\end{equation}`$
 
 ### Action of harmonic oscilator
 
