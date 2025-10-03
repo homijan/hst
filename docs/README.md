@@ -41,7 +41,7 @@ H_{IF}(\rho, v, \varepsilon) = \int \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsi
 defining Hamiltonian density
 
 $`\begin{equation}
-f_{IF}(\rho(x), v(x), \varepsilon(x)) = \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x) \right),~(5)
+h_{IF}(\rho(x), v(x), \varepsilon(x)) = \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x) \right),~(5)
 \end{equation}`$
 
 ## Hamilton-Jacobi
