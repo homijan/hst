@@ -58,7 +58,7 @@ $`\begin{equation}
 \partial_t S(x, t) + H(x, v, t) = 0.~(7)
 \end{equation}`$.
 
-In case of continuous system, we write the **action functional** $`\mathbcal{S}(\rho, t)`$ evaluated on the coordinate field $`\rho`$, where the Hamilton Jacobi equation 
+In case of continuous system, we write the **action functional** $`\mathcal{S}(\rho, t)`$ evaluated on the coordinate field $`\rho`$, where the Hamilton Jacobi equation 
 
 Similar to Hamiltonian density we define the action density
 
