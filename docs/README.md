@@ -46,10 +46,10 @@ h_{IF}(\rho(x), v(x), \varepsilon(x)) = \rho(x) \left( \frac{1}{2} v(x)^2 + \var
 
 ## Action via Hamilton-Jacobi equation in 1D
 
-Generating function (or action)
+Generating function (or action) is governed by the Hamilton Jacobi equation (requires the knowledge of Hamiltonian)
 
 $`\begin{equation}
-\partial_t S(x, t) + H(x, \partial_x S, t) = 0
+\partial_t S(x, t) + H(x, \partial_x S, t) = 0.~(6)
 \end{equation}`$
 
 ### Action of harmonic oscilator
