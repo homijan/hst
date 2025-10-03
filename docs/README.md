@@ -65,7 +65,7 @@ $`\begin{equation}
 \end{equation}`$
 
 $`\begin{equation}
-\partial_t S_{FHO}(\rho, t) = - H_{FHO}(x, v, t) = - \int \rho(x, t) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx
+\partial_t S_{FHO}(\rho, v, t) = - H_{FHO}(\rho v, t) = - \int \rho(x, t) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx
 \end{equation}`$
 
 
