@@ -61,7 +61,7 @@ $`\begin{equation}
 In case of continuous system, we write the **action functional** $`\mathcal{S}(\rho, t)`$ evaluated on the coordinate field $`\rho`$, where the Hamilton Jacobi equation for action functional reads
 
 $`\begin{equation}
-\partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, v, \varepsilo, t) = 0.
+\partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, v, \varepsilon, t) = 0.
 \end{equation}`$.
 
 Similar to Hamiltonian density $`\mathcal{h}`$ we define the action density by the following
