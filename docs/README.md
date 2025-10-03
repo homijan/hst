@@ -64,7 +64,7 @@ $`\begin{equation}
 \partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, v, \varepsilon, t) = 0.
 \end{equation}`$.
 
-Similar to Hamiltonian density $`\mathcal{h}`$ we define the action density by the following
+Similar to Hamiltonian density $`\mathcal{h}`$ we define the action density $`\mathcal{s}`$ by the following
 
 $`\begin{equation}
 \mathcal{S}(\rho, t) = \int \mathcal{s}(\rho(x), t) dx
