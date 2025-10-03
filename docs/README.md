@@ -21,13 +21,13 @@ H_{NHO}(x, v) = \sum_i^N \frac{1}{2} m v_i^2 + \frac{1}{2} m \omega^2 x_i^2 = \f
 Fluid harmonic oscillator ($`\overset{^{i \rightarrow \infty}_{as~\rho(x)}}{\Rightarrow}`$) Hamiltonian functional
 
 $`\begin{equation}
-H_{FHO}(\rho(x), v(x)) = \int \rho(x) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx,~(2)
+H_{FHO}(\rho, v) = \int \rho(x, t) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx,~(2)
 \end{equation}`$
 
 defining Hamiltonian density
 
 $`\begin{equation}
-h_{FHO}(\rho(x), v(x)) = \rho(x) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right),~(3)
+h_{FHO}(\rho(x, t), v(x)) = \rho(x, t) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right),~(3)
 \end{equation}`$
 
 where linear position $`x`$ [cm], linear density $`\rho(x)`$ [g/cm], fluid velocity $`v(x) = \frac{d x}{d t}`$ [cm/s], and frequency $`f = \frac{\omega}{2\pi}`$ [rad/s].
@@ -63,6 +63,11 @@ $`\begin{equation}
 $`\begin{equation}
 \partial_t S_{HO}(x, t) = - H_{HO}(x, v, t) = - \frac{1}{2} m v(x(t), t)^2 - \frac{1}{2} m \omega^2 x(t)^2
 \end{equation}`$
+
+$`\begin{equation}
+\partial_t S_{FHO}(x, t) = - H_{FHO}(x, v, t) = - \int \rho(x, t) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx
+\end{equation}`$
+
 
 ### Action of ideal compressible fluid
 
