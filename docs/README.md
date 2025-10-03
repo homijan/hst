@@ -9,7 +9,7 @@
 1-particle harmonic oscillator Hamiltonian function
 
 $`\begin{equation}
-H_{HO}(x, v) = \frac{1}{2} m v^2 + \frac{1}{2} m \omega^2 x^2,
+H_{HO}(x, v) = \frac{1}{2} m v^2 + \frac{1}{2} m \omega^2 x^2,~(1)
 \end{equation}`$
 
 N-particles harmonic oscillator (independent particles, no collisions) Hamiltonian function
@@ -21,13 +21,13 @@ H_{NHO}(x, v) = \sum_i^N \frac{1}{2} m v_i^2 + \frac{1}{2} m \omega^2 x_i^2 = \f
 Fluid harmonic oscillator ($`\overset{^{i \rightarrow \infty}_{as~\rho(x)}}{\Rightarrow}`$) Hamiltonian functional
 
 $`\begin{equation}
-H_{FHO}(\rho(x), v(x)) = \int \rho(x) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx,
+H_{FHO}(\rho(x), v(x)) = \int \rho(x) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx,~(2)
 \end{equation}`$
 
 defining Hamiltonian density
 
 $`\begin{equation}
-h_{FHO}(\rho(x), v(x)) = \rho(x) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right),
+h_{FHO}(\rho(x), v(x)) = \rho(x) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right),~(3)
 \end{equation}`$
 
 where linear position $`x`$ [cm], linear density $`\rho(x)`$ [g/cm], fluid velocity $`v(x) = \frac{d x}{d t}`$ [cm/s], and frequency $`f = \frac{\omega}{2\pi}`$ [rad/s].
@@ -35,7 +35,13 @@ where linear position $`x`$ [cm], linear density $`\rho(x)`$ [g/cm], fluid veloc
 ### Ideal compressible fluid
 
 $`\begin{equation}
-H_{IF}(\rho, v, \varepsilon) = \int \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x) \right) dx
+H_{IF}(\rho, v, \varepsilon) = \int \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x) \right) dx,~(4)
+\end{equation}`$
+
+defining Hamiltonian density
+
+$`\begin{equation}
+f_{IF}(\rho(x), v(x), \varepsilon(x)) = \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x) \right),~(5)
 \end{equation}`$
 
 ## Hamilton-Jacobi
