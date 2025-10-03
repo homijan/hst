@@ -2,18 +2,20 @@
 
 # Euler fluid Hamiltonian
 
-## Hamiltonian in 1D 
+## Hamiltonians in 1D 
 
-Harmonic oscillator
+### Harmonic oscilator
+
+1-particle harmonic oscillator
 
 $`\begin{equation}
 H_{HO}(x, v) = \frac{1}{2} m v^2 + \frac{1}{2} m \omega^2 x^2,
 \end{equation}`$
 
-N-harmonic-oscillators
+N-particles harmonic oscillator (independent particles, no collisions)
 
 $`\begin{equation}
-H_{HFO}(x, v) = \sum_i^N \frac{1}{2} m v_i^2 + \frac{1}{2} m \omega^2 x_i^2 = \frac{1}{2} m \sum_i^N v_i^2 + \frac{1}{2} m \omega^2 \sum_i^N x_i^2 = \frac{1}{2} m N \left<v^2\right> + \frac{1}{2} m \omega^2 N \left<x^2\right> \overset{^{i \rightarrow \infty}_{as~\rho(x)}}{\Rightarrow} \int \rho(x) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx,
+H_{HFO}(x, v) = \sum_i^N \frac{1}{2} m v_i^2 + \frac{1}{2} m \omega^2 x_i^2 = \frac{1}{2} m \sum_i^N v_i^2 + \frac{1}{2} m \omega^2 \sum_i^N x_i^2 = \frac{1}{2} m N \left<v^2\right> + \frac{1}{2} m \omega^2 N \left<x^2\right> ,
 \end{equation}`$
 
 $`\overset{^{i \rightarrow \infty}_{as~\rho(x)}}{\Rightarrow}`$ Harmonic fluid oscillator
