@@ -16,6 +16,8 @@ $`\begin{equation}
 H_{HFO}(q, v) = \sum_i \frac{1}{2} m v_i^2 + \frac{1}{2} m \omega^2 q_i^2 \overset{^{i \rightarrow \infty}_{as~\rho(q)}}{\Rightarrow} \int \left( \frac{1}{2} \rho(q) v(q)^2 + \frac{1}{2 m} \omega^2 \rho(q)^2 \right) dq,
 \end{equation}`$
 
+where linear density $`\rho(q)`$ [g/cm], fluid velocity $`v(q)`$ [cm/s], and angular frequency $`\omega = 2\pi f`$ [rad/s]
+
 Ideal fluid
 
 $`\begin{equation}
