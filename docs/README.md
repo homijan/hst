@@ -24,6 +24,12 @@ $`\begin{equation}
 H_{FHO}(\rho(x), v(x)) = \int \rho(x) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx,
 \end{equation}`$
 
+defining Hamiltonian density
+
+$`\begin{equation}
+h_{FHO}(\rho(x), v(x)) = \rho(x) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right),
+\end{equation}`$
+
 where linear position $`x`$ [cm], linear density $`\rho(x)`$ [g/cm], fluid velocity $`v(x) = \frac{d x}{d t}`$ [cm/s], and frequency $`f = \frac{\omega}{2\pi}`$ [rad/s].
 
 ### Ideal compressible fluid
