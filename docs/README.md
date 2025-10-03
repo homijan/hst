@@ -61,7 +61,7 @@ $`\begin{equation}
 ### Action of harmonic oscilator
 
 $`\begin{equation}
-\partial_t S_{HO}(x, t) + H_{HO}(x, v, t) = 0
+\partial_t S_{HO}(x, t) = - H_{HO}(x, v, t) = - \frac{1}{2} m v^2 - \frac{1}{2} m \omega^2 x^2
 \end{equation}`$
 
 ### Action of ideal compressible fluid
