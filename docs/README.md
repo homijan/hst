@@ -18,7 +18,7 @@ H_{HFO}(q, v) = \sum_i \frac{1}{2} m v_i^2 + \frac{1}{2} m \omega^2 q_i^2 \overs
 
 where linear position $`q`$ [cm], linear density $`\rho(q)`$ [g/cm], fluid velocity $`v(q)`$ [cm/s], and angular frequency $`\omega = 2\pi f`$ [rad/s].
 
-Kinetic energy density $`T = \rho v^2`$ [J/cm] (or (g / cm)(cm$^2$ / s$^2$) = g cm / s$^2$].
+Kinetic energy density $`T = \rho v^2`$ [J/cm] (or (g / cm)(cm$`^2`$ / s$`^2`$) = g cm / s$`^2`$].
 
 Ideal fluid
 
