@@ -21,7 +21,7 @@ H_{NHO}(x, v) = \sum_i^N \frac{1}{2} m v_i^2 + \frac{1}{2} m \omega^2 x_i^2 = \f
 Fluid harmonic oscillator ($`\overset{^{i \rightarrow \infty}_{as~\rho(x)}}{\Rightarrow}`$) Hamiltonian functional
 
 $`\begin{equation}
-\mathbcal{H}_{FHO}(\rho, v) = \int \rho(x, t) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx,~(2)
+\mathcal{H}_{FHO}(\rho, v) = \int \rho(x, t) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx,~(2)
 \end{equation}`$
 
 defining Hamiltonian density
