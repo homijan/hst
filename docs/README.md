@@ -21,13 +21,13 @@ H_{NHO}(x, v) = \sum_i^N \frac{1}{2} m v_i^2 + \frac{1}{2} m \omega^2 x_i^2 = \f
 Fluid harmonic oscillator ($`\overset{^{i \rightarrow \infty}_{as~\rho(x)}}{\Rightarrow}`$) Hamiltonian functional
 
 $`\begin{equation}
-H_{FHO}(\rho, v) = \int \rho(x, t) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx,~(2)
+\mathbcal{H}_{FHO}(\rho, v) = \int \rho(x, t) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx,~(2)
 \end{equation}`$
 
 defining Hamiltonian density
 
 $`\begin{equation}
-h_{FHO}(\rho(x, t), v(x)) = \rho(x, t) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right),~(3)
+\mathcal{h}_{FHO}(\rho(x, t), v(x)) = \rho(x, t) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right),~(3)
 \end{equation}`$
 
 where linear position $`x`$ [cm], linear density $`\rho(x)`$ [g/cm], fluid velocity $`v(x) = \frac{d x}{d t}`$ [cm/s], and frequency $`f = \frac{\omega}{2\pi}`$ [rad/s].
@@ -35,13 +35,13 @@ where linear position $`x`$ [cm], linear density $`\rho(x)`$ [g/cm], fluid veloc
 ### Ideal compressible fluid
 
 $`\begin{equation}
-H_{IF}(\rho, v, \varepsilon) = \int \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x) \right) dx,~(4)
+\mathcal{H}_{IF}(\rho, v, \varepsilon) = \int \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x) \right) dx,~(4)
 \end{equation}`$
 
 defining Hamiltonian density
 
 $`\begin{equation}
-h_{IF}(\rho(x), v(x), \varepsilon(x)) = \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x) \right),~(5)
+\mathcal{h}_{IF}(\rho(x), v(x), \varepsilon(x)) = \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x) \right),~(5)
 \end{equation}`$
 
 ## Action via Hamilton-Jacobi equation in 1D
@@ -58,12 +58,16 @@ $`\begin{equation}
 \partial_t S(x, t) + H(x, v, t) = 0.~(7)
 \end{equation}`$.
 
-In case of continuous system, we write the **action functional** $`\mathcal{S}(\rho, t)`$ evaluated on the coordinate field $`\rho`$, where the Hamilton Jacobi equation 
-
-Similar to Hamiltonian density we define the action density
+In case of continuous system, we write the **action functional** $`\mathcal{S}(\rho, t)`$ evaluated on the coordinate field $`\rho`$, where the Hamilton Jacobi equation for action functional reads
 
 $`\begin{equation}
-S(x, t)
+\partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, v, \varepsilo, t) = 0.
+\end{equation}`$.
+
+Similar to Hamiltonian density $`\mathcal{h}`$ we define the action density by the following
+
+$`\begin{equation}
+\mathcal{S}(\rho, t) = \int \mathcal{s}(\rho(x), t) dx
 \end{equation}`$
 
 ### Action of harmonic oscilator
