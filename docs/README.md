@@ -7,16 +7,16 @@
 Harmonic oscillator
 
 $`\begin{equation}
-H_{HO}(q, v) = \frac{1}{2} m v^2 + \frac{1}{2} m \omega^2 q^2,
+H_{HO}(x, v) = \frac{1}{2} m v^2 + \frac{1}{2} m \omega^2 x^2,
 \end{equation}`$
 
 Harmonic fluid oscillator
 
 $`\begin{equation}
-H_{HFO}(q, v) = \sum_i^N \frac{1}{2} m v_i^2 + \frac{1}{2} m \omega^2 q_i^2 = \frac{1}{2} m \sum_i^N v_i^2 + \frac{1}{2} m \omega^2 \sum_i^N q_i^2 = \frac{1}{2} m N \left<v^2\right> + \frac{1}{2} m \omega^2 N \left<q^2\right> \overset{^{i \rightarrow \infty}_{as~\rho(q)}}{\Rightarrow} \int \rho(q) \left( \frac{1}{2} v(q)^2 + \frac{1}{2} (2\pi)^2 f^2 q^2 \right) dq,
+H_{HFO}(x, v) = \sum_i^N \frac{1}{2} m v_i^2 + \frac{1}{2} m \omega^2 x_i^2 = \frac{1}{2} m \sum_i^N v_i^2 + \frac{1}{2} m \omega^2 \sum_i^N x_i^2 = \frac{1}{2} m N \left<v^2\right> + \frac{1}{2} m \omega^2 N \left<x^2\right> \overset{^{i \rightarrow \infty}_{as~\rho(x)}}{\Rightarrow} \int \rho(x) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx,
 \end{equation}`$
 
-where linear position $`q`$ [cm], linear density $`\rho(q)`$ [g/cm], fluid velocity $`v(q) = \frac{d q}{d t}`$ [cm/s], and frequency $`f = \frac{\omega}{2\pi}`$ [rad/s].
+where linear position $`x`$ [cm], linear density $`\rho(x)`$ [g/cm], fluid velocity $`v(x) = \frac{d x}{d t}`$ [cm/s], and frequency $`f = \frac{\omega}{2\pi}`$ [rad/s].
 
 Ideal fluid
 
