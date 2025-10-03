@@ -44,9 +44,21 @@ $`\begin{equation}
 h_{IF}(\rho(x), v(x), \varepsilon(x)) = \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x) \right),~(5)
 \end{equation}`$
 
-## Hamilton-Jacobi
+## Action via Hamilton-Jacobi equation in 1D
 
+Generating function (or action)
 
+$`\begin{equation}
+\partial_t S(x, t) + H(x, \partial_x S, t) = 0
+\end{equation}`$
+
+### Action of harmonic oscilator
+
+$`\begin{equation}
+\partial_t S_{HO}(x, t) + H_{H)}(x, v, t) = 0
+\end{equation}`$
+
+### Action of ideal compressible fluid
 
 We assume that $`\partial_{\nabla \rho} W = 0`$, we get variational derivative $`\delta_\rho W = \partial_\rho W`$.
 
