@@ -13,7 +13,7 @@ H_{HO}(p, q) = \frac{p^2}{2 m} + \frac{1}{2} m \omega^2 q^2,
 Harmonic fluid oscillator
 
 $`\begin{equation}
-H_{HFO}(p, q) = \sum_i \frac{p_i^2}{2 m} + \frac{1}{2} m \omega^2 q_i^2 \overset{i \rightarrow \infty}{\Rightarrow} \int \frac{1}{2} \rho(x) v(x)^2 + \frac{1}{2} \omega^2 \rho^2,
+H_{HFO}(p, q) = \sum_i \frac{p_i^2}{2 m} + \frac{1}{2} m \omega^2 q_i^2 \overset{^{i \rightarrow \infty}_{as~\rho(x)}}{\Rightarrow} \int \frac{1}{2} \rho(x) v(x)^2 + \frac{1}{2 m} \omega^2 \rho^2,
 \end{equation}`$
 
 Ideal fluid
