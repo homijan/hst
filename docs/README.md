@@ -50,7 +50,13 @@ Generating function (or action) is governed by the Hamilton Jacobi equation (req
 
 $`\begin{equation}
 \partial_t S(x, t) + H(x, \partial_x S, t) = 0.~(6)
-\end{equation}`$
+\end{equation}`$.
+
+However, we will leverage a version where we assume we know how to evaluate the hamiltonian
+
+$`\begin{equation}
+\partial_t S(x, t) + H(x, v, t) = 0.~(7)
+\end{equation}`$.
 
 ### Action of harmonic oscilator
 
