@@ -82,6 +82,10 @@ $`\begin{equation}
 \int \left( \partial_t \mathcal{s}(\rho(x, t), t) + \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) \right) dx = 0.
 \end{equation}`$
 
+### Practical observation
+
+One partical dynamics described by (7) leads to the solution of particle trajectory $`x(t)`$, which also solves the equivalent dynamics system of Hamilton equations $`\dot{x} = \partial_p H,~ \dot{p} = - \partial_x H`$
+
 ### Action of harmonic oscilator
 
 $`\begin{equation}
