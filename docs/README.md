@@ -76,7 +76,7 @@ $`\begin{equation}
 \partial_t \mathcal{s}(\rho(x, t), t) = - \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) = 0,~\forall (x, t).~(10)
 \end{equation}`$
 
-It is simple to see that $`\mathcal{S}`$ from (9) satisfies (8), when $`\mathcal{s}`$ solves (10), because (8) can be written as
+It is simple to see that $`\mathcal{S}`$ defined by (9) satisfies (8) if $`\mathcal{s}`$ solves (10) $`\forall (x, t)`$, because (8) can be written as
 
 $`\begin{equation}
 \int \left( \mathcal{s}(\rho(x, t), t) + \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) \right) dx = 0.
