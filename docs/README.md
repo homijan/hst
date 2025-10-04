@@ -84,7 +84,13 @@ $`\begin{equation}
 
 ### Practical observation
 
-One partical dynamics described by (7) leads to the solution of particle trajectory $`x(t)`$, which also solves the equivalent dynamics system of Hamilton equations $`\dot{x} = \partial_p H,~ \dot{p} = - \partial_x H`$
+One partical dynamics described by (7) leads to the solution of particle trajectory $`x(t)`$, which also solves the equivalent dynamics system of Hamilton equations $`\dot{x} = \partial_p H,~ \dot{p} = - \partial_x H`$.
+
+Our objective is to obtain (postprocess) the action (generating function) of the dynamics assuming we know the solution $`x(t)`$ and consequently $`v(t) = \dot(x)(t)`$, hence the solution $S$ of (7) only depends on time
+
+$`\begin{equation}
+\partial_t S(t) + H(x(t), v(t), t) = 0.~(11)
+\end{equation}`$.
 
 ### Action of harmonic oscilator
 
