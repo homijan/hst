@@ -89,7 +89,7 @@ One partical dynamics described by (7) leads to the solution of particle traject
 Our objective is to obtain (postprocess) the action (generating function) of the dynamics (7) assuming we know the solution $`x(t)`$ and consequently $`v(t) = \dot(x)(t)`$, hence the solution $S$ of (7) only depends on time $`t`$
 
 $`\begin{equation}
-\partial_t S(t) + H(x(t), v(t), t) = 0.~(11)
+\partial_t S(t) = - H(x(t), v(t), t).~(11)
 \end{equation}`$
 
 Similarly in the case of continuous fields, our objective is to obtain (postprocess) the action functional (generating functional) of the dynamics (10) assuming we know the solution $`\rho(x, t)`$, $`v(x, t)`$, and $`\varepsilon(x, t)`$, hence the solution $\mathcal{s}$ of (10) only depends on time $`t`$ and position $`x`$
