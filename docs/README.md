@@ -35,10 +35,8 @@ where linear position $`x`$ [cm], linear density $`\rho(x)`$ [g/cm], fluid veloc
 ### Ideal compressible fluid
 
 $`\begin{equation}
-\mathcal{H}_{IF}(\rho, v, \varepsilon, t) = \int \left( \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x)\right)  + g(x, t) \right) dx,~(4)
+\mathcal{H}_{IF}(\rho, v, \varepsilon, t) = \int \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x)\right) dx,~(4)
 \end{equation}`$
-
-where $`g(x, t)`$ is an external source of energy density.
 
 defining Hamiltonian density
 
