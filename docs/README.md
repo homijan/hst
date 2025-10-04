@@ -79,7 +79,7 @@ $`\begin{equation}
 It is simple to see that $`\mathcal{S}`$ defined by (9) satisfies (8) if $`\mathcal{s}`$ solves (10) $`\forall (x, t)`$, because (8) can be written as
 
 $`\begin{equation}
-\int \left( \mathcal{s}(\rho(x, t), t) + \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) \right) dx = 0.
+\int \left( \partial_t \mathcal{s}(\rho(x, t), t) + \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) \right) dx = 0.
 \end{equation}`$
 
 ### Action of harmonic oscilator
