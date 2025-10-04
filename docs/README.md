@@ -61,13 +61,25 @@ $`\begin{equation}
 In case of continuous system, we write the **action functional** $`\mathcal{S}(\rho, t)`$ evaluated on the coordinate field $`\rho`$, where the Hamilton Jacobi equation for action functional reads
 
 $`\begin{equation}
-\partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, v, \varepsilon, t) = 0.
+\partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, v, \varepsilon, t) = 0.~(8)
 \end{equation}`$.
 
 Similar to Hamiltonian density $`\mathcal{h}`$ we define the action density $`\mathcal{s}`$ by the following
 
 $`\begin{equation}
-\mathcal{S}(\rho, t) = \int \mathcal{s}(\rho(x), t) dx
+\mathcal{S}(\rho, t) = \int \mathcal{s}(\rho(x), t) dx,~(9)
+\end{equation}`$
+
+and we write the density Hamilton-Jacobi equation
+
+$`\begin{equation}
+\partial_t \mathcal{s}(x, t) = \partial_t \mathcal{s}(\rho(x, t), t) = - \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) = 0.~(10)
+\end{equation}`$
+
+It is simple to see that $`\mathcal{S}`$ from (9) satisfies (8), when $`\mathcal{s}`$ solves (10), because (8) can be written as
+
+$`\begin{equation}
+\int \left( \mathcal{s}(\rho(x, t), t) + \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) \right) dx = 0.
 \end{equation}`$
 
 ### Action of harmonic oscilator
