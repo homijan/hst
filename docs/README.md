@@ -90,7 +90,7 @@ Our objective is to obtain (postprocess) the action (generating function) of the
 
 $`\begin{equation}
 \partial_t S(t) + H(x(t), v(t), t) = 0.~(11)
-\end{equation}`$.
+\end{equation}`$
 
 ### Action of harmonic oscilator
 
