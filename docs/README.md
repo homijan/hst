@@ -100,12 +100,18 @@ $`\begin{equation}
 
 ### Action of harmonic oscilator
 
-$`\begin{equation}
-\partial_t S_{HO}(x, t) = - H_{HO}(x, v, t) = - \frac{1}{2} m v(x(t), t)^2 - \frac{1}{2} m \omega^2 x(t)^2
-\end{equation}`$
+One particle case corresponds to governing equation (11) with one particle Hamiltonian (1) leading to
 
 $`\begin{equation}
-\partial_t S_{FHO}(\rho, v, t) = - H_{FHO}(\rho, v, t) = - \int \rho(x, t) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx
+\partial_t S_{HO}(t) = - \frac{1}{2} m v(x(t), t)^2 - \frac{1}{2} m \omega^2 x(t)^2
+\end{equation}`$
+
+which can be easily numerically integrated (using $`S_{HO}(t=0) = 0`$).
+
+Continuous field case corresponds to governing equation (12) with Hamiltonian density (3)
+
+$`\begin{equation}
+\partial_t \mathcal{s}_{FHO}(x, t) = - \rho(x, t) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) .~()
 \end{equation}`$
 
 
