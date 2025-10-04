@@ -73,7 +73,7 @@ $`\begin{equation}
 and we write the density Hamilton-Jacobi equation
 
 $`\begin{equation}
-\partial_t \mathcal{s}(\rho(x, t), t) = - \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) = 0,~\forall (x, t).~(10)
+\partial_t \mathcal{s}(\rho(x, t), t) + \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) = 0,~\forall (x, t).~(10)
 \end{equation}`$
 
 It is simple to see that $`\mathcal{S}`$ defined by (9) satisfies (8) if $`\mathcal{s}`$ solves (10) $`\forall (x, t)`$, because (8) can be written as
@@ -95,7 +95,7 @@ $`\begin{equation}
 Similarly in the case of continuous fields, our objective is to obtain (postprocess) the action functional (generating functional) of the dynamics (10) assuming we know the solution $`\rho(x, t)`$, $`v(x, t)`$, and $`\varepsilon(x, t)`$, hence the solution $\mathcal{s}$ of (10) only depends on time $`t`$ and position $`x`$
 
 $`\begin{equation}
-\partial_t \mathcal{s}(x, t) = - \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) = 0.~(12)
+\partial_t \mathcal{s}(x, t) = - \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) .~(12)
 \end{equation}`$
 
 ### Action of harmonic oscilator
