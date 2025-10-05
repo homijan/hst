@@ -88,7 +88,7 @@ $`\begin{equation}
 \partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, \delta_\rho S(\rho, t)) = 0,~(8)
 \end{equation}`$
 
-where $`\delta_\rho`$ is the first functional variation with respect to field $`\rho`$.
+where $`\delta_\rho S`$ is the first variation of the functional $`S(\rho, t)`$ with respect to field $`\rho`$.
 
 $`\begin{equation}
 \partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, v, \varepsilon, t) = 0.~(8)
