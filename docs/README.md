@@ -115,7 +115,7 @@ $`\begin{align}
 \\
 & = \int \partial_t \left( \mathcal{w}(\rho(x, t)) + \mathcal{f}(x, t) \right) dx + \int \left( \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t)) \right) dx
 \\
-\partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, v, \varepsilon).
+&= \partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, v, \varepsilon).
 \end{align}`$
 
 $`\begin{multline}
