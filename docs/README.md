@@ -138,7 +138,7 @@ $`\begin{multline}
 Let's start by defining explicit, yet generally applicable, functional dependence of Hamiltonian density (slight reformulation of (5))
 
 $`\begin{equation}
-\mathcal{h}_{IF}(\rho(x), v(x), \varepsilon(x)) = \frac{1}{2\rho(x)} (\rho(x) v(x))^2 + \rho(x) \varepsilon(x),
+\mathcal{h}_{IF}(\rho(x), v(x), \varepsilon(x)) = \frac{1}{2\rho(x)} \left( \rho(x) v(x) \right)^2 + \rho(x) \varepsilon(x),
 \end{equation}`$
 
 ### Practical observation
