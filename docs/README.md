@@ -108,6 +108,8 @@ $`\begin{equation}
 \mathcal{h}\left( \rho(x, t), \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right) = - \partial_t \mathcal{f}(x, t),~(10b)
 \end{equation}`$
 
+where we will use a discrete approximation of the local variation $`\partial_\rho \mathcal{w}|_{\rho(x, t) \approx \frac{\mathcal{w}(x, t^n) - \mathcal{w}(x, t^{n-1})}{\rho(x, t^n) - \rho(x, t^{n-1})}`$.
+
 It is simple to see that $`\mathcal{S}`$ defined by (9) satisfies (8) if $`\mathcal{s} = \mathcal{w} + \mathcal{f}`$ solves (10) $`\forall (x, t)`$, because (8) can be written as
 
 $`\begin{align}
