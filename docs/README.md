@@ -105,7 +105,7 @@ $`\begin{equation}
 and
 
 $`\begin{equation}
-\mathcal{h}\left( \rho(x, t), \nabla_x \left( \left( \partial_\rho \mathcal{w} \right)|_{\rho(x, t)} \right) \right) = - \partial_t \mathcal{f}(x, t),~(10b)
+\mathcal{h}\left( \rho(x, t), \nabla_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right) = - \partial_t \mathcal{f}(x, t),~(10b)
 \end{equation}`$
 
 $`\begin{equation}
