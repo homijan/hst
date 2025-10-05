@@ -156,7 +156,7 @@ $`\begin{align}
 \partial_t \mathcal{f}(x, t) &= - \frac{1}{2} \rho(x) v(x)^2 - \rho(x) \varepsilon(x),
 \\
 \left( \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right)^2
-&= \left( \rho(x) v(x) \right)^2,
+&= \left( \rho(x) v(x) \right)^2 \Rightarrow \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) = \rho(x) v(x),
 \end{align}`$
 
 ### Practical observation
