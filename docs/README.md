@@ -96,10 +96,16 @@ $`\begin{equation}
 \mathcal{S}(\rho, t) = \int \mathcal{s}(\rho(x), t) dx = \int \left( \mathcal{w}(\rho(x)) + \mathcal{f}(x, t) \right) dx,~(9)
 \end{equation}`$
 
-and we write the density Hamilton-Jacobi equation
+and we write the density Hamilton-Jacobi equation, applying the variable separation,
 
 $`\begin{equation}
-\partial_t \mathcal{f}(x, t) + \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) = 0.~(10)
+\partial_t \mathcal{f}(x, t) + \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t)) = 0,~(10)
+\end{equation}`$
+
+and
+
+$`\begin{equation}
+\partial_t \mathcal{f}(x, t) + \mathcal{h}(\rho(x, t), \nabla_x \left( \delta_{\rho(x)} \mathcal{w}(\rho(x)) \right)) = 0,~(10)
 \end{equation}`$
 
 It is simple to see that $`\mathcal{S}`$ defined by (9) satisfies (8) if $`\mathcal{s}`$ solves (10) $`\forall (x, t)`$, because (8) can be written as
