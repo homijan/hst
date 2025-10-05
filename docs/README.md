@@ -110,9 +110,13 @@ $`\begin{equation}
 
 It is simple to see that $`\mathcal{S}`$ defined by (9) satisfies (8) if $`\mathcal{s} = \mathcal{w} + \mathcal{f}`$ solves (10) $`\forall (x, t)`$, because (8) can be written as
 
-$`\begin{equation}
-0 = \int \left( \partial_t \left( \mathcal{w}(\rho(x, t)) + \mathcal{f}(x, t) \right) + \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t)) \right) dx = \int \partial_t \left( \mathcal{w}(\rho(x, t)) + \mathcal{f}(x, t) \right) dx + \int \left( \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t)) \right) dx.
-\end{equation}`$
+$`\begin{align}
+0 &= \int \left( \partial_t \left( \mathcal{w}(\rho(x, t)) + \mathcal{f}(x, t) \right) + \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t)) \right) dx 
+\\
+& = \int \partial_t \left( \mathcal{w}(\rho(x, t)) + \mathcal{f}(x, t) \right) dx + \int \left( \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t)) \right) dx
+\\
+\partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, v, \varepsilon).
+\end{multline}`$
 
 $`\begin{multline}
 \mathcal{H}\left( \rho, \delta_{\rho} \mathcal{S}(\rho, t) \right) = - \partial_t \mathcal{S}(\rho, t) \overset{^{HJD}_{Chow~(1.1}}{\Rightarrow}
