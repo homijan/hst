@@ -92,7 +92,7 @@ $`\begin{equation}
 \partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, v, \varepsilon, t) = 0.~(8)
 \end{equation}`$.
 
-Similar to Hamiltonian density $`\mathcal{h}`$ we define the action density $`\mathcal{s}(\rho(x), t) = \mathcal{w}(\rho(x)) + \mathcal{f}(x, t)`$ by the following
+Similar to Hamiltonian density $`\mathcal{h}`$ we define the action density $`\mathcal{s}(\rho(x), t) = \mathcal{w}(\rho(x)) + \mathcal{f}(x, t)`$ (separation of variables thanks to conserved energy or explicitely time-independent Hamiltonian) by the following
 
 $`\begin{equation}
 \mathcal{S}(\rho, t) = \int \mathcal{s}(\rho(x), t) dx = \int \left( \mathcal{w}(\rho(x), t) + \mathcal{f}(x, t) \right) dx,~(9)
