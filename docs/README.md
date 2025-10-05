@@ -150,6 +150,15 @@ $`\begin{align}
 &= - 2 \rho(x, t) \left( \rho(x, t) \varepsilon(x, t) + \partial_t \mathcal{f}(x, t) \right),
 \end{align}`$
 
+which we further simplify by substituting $`\partial_t \mathcal{f}(x, t) = - \frac{1}{2} \rho(x) v(x)^2 - \rho(x) \varepsilon(x)`$ into the second equation
+
+$`\begin{align}
+\partial_t \mathcal{f}(x, t) &= - \frac{1}{2} \rho(x) v(x)^2 - \rho(x) \varepsilon(x),
+\\
+\left( \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right)^2
+&= \left( \rho(x) v(x) \right)^2,
+\end{align}`$
+
 ### Practical observation
 
 One partical dynamics described by (7) leads to the solution of particle trajectory $`x(t)`$, which also solves the equivalent dynamics system of Hamilton equations $`\dot{x} = \partial_p H,~ \dot{p} = - \partial_x H`$.
