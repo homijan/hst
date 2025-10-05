@@ -166,7 +166,7 @@ where the last equality in (13b) concludes the Hamilton-Jacobi model with unknow
 $`\begin{align}
 \frac{\mathcal{f}(x_i, t_n) - \mathcal{f}(x_i, t_{n-1})}{\Delta t} &= - \frac{1}{2} \rho(x_i, t_n) v(x_i, t_n)^2 - \rho(x_i, t_n) \varepsilon(x_i, t_n),~(d13a)
 \\
-\partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) = \rho(x_i, t_n) v(x_i, t_n),~(d13b)
+\partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) &= \rho(x_i, t_n) v(x_i, t_n),~(d13b)
 \end{align}`$
 
 # TBR
