@@ -95,7 +95,7 @@ $`\begin{equation}
 Similar to Hamiltonian density $`\mathcal{h}`$ we define the action density $`\mathcal{s}`$ by the following
 
 $`\begin{equation}
-\mathcal{S}(\rho, t) = \int \mathcal{s}(\rho(x), t) dx,~(9)
+\mathcal{S}(\rho, t) = \int \mathcal{s}(\rho(x), t) dx = \int \left( \mathcal{w}(\rho(x), t) + \mathcal{f}(x, t) \right) dx,~(9)
 \end{equation}`$
 
 and we write the density Hamilton-Jacobi equation
