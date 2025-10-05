@@ -116,7 +116,7 @@ $`\begin{equation}
 
 $`\begin{equation}
 \mathcal{H}\left( \rho, \delta_{\rho} \mathcal{S}(\rho, t) \right) = - \partial_t \mathcal{S}(\rho, t) \Rightarrow
-\mathcal{h}\left( \rho(x, t), \partial_x \left( \left( \left( \delta_{\rho} \mathcal{S} \right(\rho) \right)(x) \right) \right) = - \partial_t \mathcal{f}(x, t),~(10b)
+\mathcal{h}\left( \rho(x, t), \partial_x \left( \left( \left( \delta_{\rho} \mathcal{S} \right) (\rho) \right)(x) \right) \right) = - \partial_t \mathcal{f}(x, t),~(10b)
 \end{equation}`$
 
 ### Practical observation
