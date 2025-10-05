@@ -153,11 +153,13 @@ $`\begin{align}
 which we further simplify by substituting $`\partial_t \mathcal{f}(x, t) = - \frac{1}{2} \rho(x) v(x)^2 - \rho(x) \varepsilon(x)`$ into the second equation
 
 $`\begin{align}
-\partial_t \mathcal{f}(x, t) &= - \frac{1}{2} \rho(x) v(x)^2 - \rho(x) \varepsilon(x),
+\partial_t \mathcal{f}(x, t) &= - \frac{1}{2} \rho(x) v(x)^2 - \rho(x) \varepsilon(x),~(13a)
 \\
 \left( \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right)^2
-&= \left( \rho(x) v(x) \right)^2 \Rightarrow \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) = \rho(x) v(x),
+&= \left( \rho(x) v(x) \right)^2 \Rightarrow \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) = \rho(x) v(x),~(13b)
 \end{align}`$
+
+where the last equality in (13b) concludes the Hamilton-Jacobi model with unknowns $`\mathcal{f}(x, t)`$ and $`\mathcal{w}(\rho(x, t), v(\rho(x, t)))`$.
 
 ### Practical observation
 
