@@ -116,7 +116,7 @@ $`\begin{equation}
 
 $`\begin{multline}
 \mathcal{H}\left( \rho, \delta_{\rho} \mathcal{S}(\rho, t) \right) = - \partial_t \mathcal{S}(\rho, t) \overset{^{HJD}_{Chow~(1.1}}{\Rightarrow}
-\mathcal{h}\left( \rho(x, t), \partial_x \left( \left( \left( \delta_{\rho} \mathcal{S} \right) (\rho) \right)(x) \right) \right) = - \partial_t \mathcal{f}(x, t) \overset{^{functional derivative}_{of~integral~(9)}}{\Rightarrow} \mathcal{h}\left( \rho(x, t), \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right) = - \partial_t \mathcal{f}(x, t)
+\mathcal{h}\left( \rho(x, t), \partial_x \left( \left( \left( \delta_{\rho} \mathcal{S} \right) (\rho) \right)(x) \right) \right) = - \partial_t \mathcal{f}(x, t) \overset{^{functional~derivative}_{of~integral~(9)}}{\Rightarrow} \mathcal{h}\left( \rho(x, t), \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right) = - \partial_t \mathcal{f}(x, t)
 \end{multline}`$
 
 ### Practical observation
