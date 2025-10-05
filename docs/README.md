@@ -99,7 +99,7 @@ $`\begin{equation}
 and we write the density Hamilton-Jacobi equation, applying the variable separation,
 
 $`\begin{equation}
-\partial_t \mathcal{f}(x, t) + \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t)) = 0,~(10a)
+\partial_t \mathcal{f}(x, t) = - \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t)),~(10a)
 \end{equation}`$
 
 and
