@@ -71,7 +71,7 @@ $`\begin{equation}
 which leads to $`f(t) = -\alpha t`$, where $`\alpha`$ is a constant equal to the convserved energy of the system (Hamiltonian). Then the governing equation to solve for coordinate dependent part of action $`W(q)`$ is
 
 $`\begin{equation}
-H(q, \partial_q W) = \alpha,
+H(q, \partial_q W) = - \partial_t f(t),
 \end{equation}`$
 
 which takes an explicit form depending on the form of the Hamiltonian, where we substitute momemntum $`p = m v`$ by $`\partial_q W(q)`$.
@@ -79,7 +79,7 @@ which takes an explicit form depending on the form of the Hamiltonian, where we 
 For example substituting $`m v = \partial_q W(q)`$ in the harmonic oscilator Hamiltonian (1), we get
 
 $`\begin{equation}
-\frac{1}{2m} \left( \partial_q W(q) \right)^2 + \frac{1}{2} m \omega^2 q^2 = \alpha .
+\frac{1}{2m} \left( \partial_q W(q) \right)^2 + \frac{1}{2} m \omega^2 q^2 = - \partial_t f(t) .
 \end{equation}`$
 
 In case of continuous system, we write the **action functional** $`\mathcal{S}(\rho, t)`$ evaluated on the coordinate field $`\rho`$, where the Hamilton Jacobi equation for action functional reads
