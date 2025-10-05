@@ -144,13 +144,13 @@ $`\begin{equation}
 Hamilton-Jacobi model (10) can be rewrriten with (12) as
 
 $`\begin{align}
-\partial_t \mathcal{f}(x, t) &= - \frac{1}{2} \rho(x) v(x)^2 - \rho(x) \varepsilon(x),
+\partial_t \mathcal{f}(x, t) &= - \frac{1}{2} \rho(x, t) v(x, t)^2 - \rho(x, t) \varepsilon(x, t),
 \\
 \left( \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right)^2
 &= - 2 \rho(x, t) \left( \rho(x, t) \varepsilon(x, t) + \partial_t \mathcal{f}(x, t) \right),
 \end{align}`$
 
-which we further simplify by substituting $`\partial_t \mathcal{f}(x, t) = - \frac{1}{2} \rho(x) v(x)^2 - \rho(x) \varepsilon(x)`$ into the second equation
+which we further simplify by substituting $`\partial_t \mathcal{f}(x, t) = - \frac{1}{2} \rho(x, t) v(x, t)^2 - \rho(x, t) \varepsilon(x, t)`$ into the second equation
 
 $`\begin{align}
 \partial_t \mathcal{f}(x, t) &= - \frac{1}{2} \rho(x) v(x)^2 - \rho(x) \varepsilon(x),~(13a)
