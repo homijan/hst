@@ -116,7 +116,7 @@ $`\begin{align}
 & = \int \partial_t \left( \mathcal{w}(\rho(x, t)) + \mathcal{f}(x, t) \right) dx + \int \left( \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t)) \right) dx
 \\
 \partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, v, \varepsilon).
-\end{multline}`$
+\end{align}`$
 
 $`\begin{multline}
 \mathcal{H}\left( \rho, \delta_{\rho} \mathcal{S}(\rho, t) \right) = - \partial_t \mathcal{S}(\rho, t) \overset{^{HJD}_{Chow~(1.1}}{\Rightarrow}
