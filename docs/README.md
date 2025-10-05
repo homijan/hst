@@ -60,7 +60,9 @@ S(q, t) = W(q) + f(t),
 
 where $`\alpha`$ is constant.
 
-However, we will leverage a version where we assume we know how to evaluate the hamiltonian with respect to coordinate $`x`$ and momentum $`v`$ as
+*It needs to be highlighted, that we assume we know the dynamics of the system, i.e. coordinate $`x(t)`$ and momentum $`m v(t)`$ are known.*
+
+The time dependent part of action is obtained from
 
 $`\begin{equation}
 \partial_t f(t) + H(q, v) = 0.~(7)
@@ -73,8 +75,6 @@ H(q, \partial_q W) = -\alpha,
 \end{equation}`$
 
 which takes an explicit form depending on the form of the Hamiltonian, where we substitute momemntum $`p = m v`$ by $`\partial_q W(q)`$.
-
-Then we will 
 
 In case of continuous system, we write the **action functional** $`\mathcal{S}(\rho, t)`$ evaluated on the coordinate field $`\rho`$, where the Hamilton Jacobi equation for action functional reads
 
