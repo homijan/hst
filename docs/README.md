@@ -105,7 +105,7 @@ $`\begin{equation}
 and
 
 $`\begin{equation}
-\mathcal{h}\left( \rho(x, t), \nabla_x \left( \delta_{\rho(x, t)} \mathcal{w}(\rho(x)) \right) \right) = - \partial_t \mathcal{f}(x, t),~(10)
+\mathcal{h}\left( \rho(x, t), \nabla_x \left( \delta_{\rho(x)} \mathcal{w}(\rho(x)) \right) \right) = - \partial_t \mathcal{f}(x, t),~(10)
 \end{equation}`$
 
 It is simple to see that $`\mathcal{S}`$ defined by (9) satisfies (8) if $`\mathcal{s} = \mathcal{w} + \mathcal{f}`$ solves (10) $`\forall (x, t)`$, because (8) can be written as
