@@ -115,7 +115,7 @@ $`\begin{equation}
 \end{equation}`$
 
 $`\begin{equation}
-\mathcal{H}\left( \rho, \delta_{\rho} \mathcal{S}(\rho, t) \right) = - \partial_t \mathcal{S}(\rho, t) \Rightarrow
+\mathcal{H}\left( \rho, \delta_{\rho} \mathcal{S}(\rho, t) \right) = - \partial_t \mathcal{S}(\rho, t) \overset{^{HJD}_{Chow~(1.1}}{\Rightarrow}
 \mathcal{h}\left( \rho(x, t), \partial_x \left( \left( \left( \delta_{\rho} \mathcal{S} \right) (\rho) \right)(x) \right) \right) = - \partial_t \mathcal{f}(x, t),~(10b)
 \end{equation}`$
 
