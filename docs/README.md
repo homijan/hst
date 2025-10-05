@@ -76,6 +76,12 @@ H(q, \partial_q W) = -\alpha,
 
 which takes an explicit form depending on the form of the Hamiltonian, where we substitute momemntum $`p = m v`$ by $`\partial_q W(q)`$.
 
+For example substituting $`m v = \partial_q W(q)`$ in the harmonic oscilator Hamiltonian (1), we get
+
+$`\begin{equation}
+\frac{1}{2m} \left( \partial_q W(q) \right)^2 + \frac{1}{2} m \omega^2 q^2 = - alpha .
+\end{equation}`$
+
 In case of continuous system, we write the **action functional** $`\mathcal{S}(\rho, t)`$ evaluated on the coordinate field $`\rho`$, where the Hamilton Jacobi equation for action functional reads
 
 $`\begin{equation}
