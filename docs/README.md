@@ -85,6 +85,10 @@ $`\begin{equation}
 In case of continuous system, we write the **action functional** $`\mathcal{S}(\rho, t)`$ evaluated on the coordinate field $`\rho`$, where the Hamilton Jacobi equation for action functional reads
 
 $`\begin{equation}
+\partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, \delta_\rho S(\rho, t)) = 0.~(8)
+\end{equation}`$.
+
+$`\begin{equation}
 \partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, v, \varepsilon, t) = 0.~(8)
 \end{equation}`$.
 
