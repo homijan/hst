@@ -135,6 +135,12 @@ $`\begin{multline}
 
 ### Algorithm
 
+Let's start by defining explicit, yet generally applicable, functional dependence of Hamiltonian density (slight reformulation of (5))
+
+$`\begin{equation}
+\mathcal{h}_{IF}(\rho(x), v(x), \varepsilon(x)) = \frac{1}{2\rho(x)} (\rho(x) v(x))^2 + \rho(x) \varepsilon(x),
+\end{equation}`$
+
 ### Practical observation
 
 One partical dynamics described by (7) leads to the solution of particle trajectory $`x(t)`$, which also solves the equivalent dynamics system of Hamilton equations $`\dot{x} = \partial_p H,~ \dot{p} = - \partial_x H`$.
