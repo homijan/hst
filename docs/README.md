@@ -138,8 +138,17 @@ $`\begin{multline}
 Let's start by defining explicit, yet generally applicable, functional dependence of Hamiltonian density (slight reformulation of (5))
 
 $`\begin{equation}
-\mathcal{h}(\rho(x), v(x), \varepsilon(x)) = \frac{1}{2\rho(x)} \left( \rho(x) v(x) \right)^2 + \rho(x) \varepsilon(x),~(12)
+\mathcal{h}(\rho(x), v(x), \varepsilon(x)) = \frac{1}{2\rho(x)} \left( \rho(x) v(x) \right)^2 + \rho(x) \varepsilon(x).~(12)
 \end{equation}`$
+
+Hamilton-Jacobi model (10) can be rewrriten with (12) as
+
+$`\begin{align}
+\partial_t \mathcal{f}(x, t) &= - \frac{1}{2} \rho(x) v(x)^2 - \rho(x) \varepsilon(x),
+\\
+\frac{1}{2\rho(x)} \left( \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right)^2 + \rho(x) \varepsilon(x)
+&= - \partial_t \mathcal{f}(x, t),
+\end{align}`$
 
 ### Practical observation
 
