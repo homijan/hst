@@ -46,17 +46,35 @@ $`\begin{equation}
 
 ## Action via Hamilton-Jacobi equation in 1D
 
-Generating function (or action) is governed by the Hamilton Jacobi equation (requires the knowledge of Hamiltonian)
+Generating function (or action) is governed by the Hamilton Jacobi equation (requires the knowledge of Hamiltonian assumed to not explicitly depend on time $`t`$)
 
 $`\begin{equation}
-\partial_t S(x, t) + H(x, \partial_x S, t) = 0.~(6)
+\partial_t S(q, t) + H(q, \partial_q S) = 0.~(6)
 \end{equation}`$.
+
+The time-independence of the Hamiltonian allows for a separation of veriables solution
+
+$`\begin{equation}
+S(q, t) = W(q) + f(t),
+\end{equation}`$ 
+
+where $`\alpha`$ is constant.
 
 However, we will leverage a version where we assume we know how to evaluate the hamiltonian with respect to coordinate $`x`$ and momentum $`v`$ as
 
 $`\begin{equation}
-\partial_t S(x, t) + H(x, v, t) = 0.~(7)
-\end{equation}`$.
+\partial_t f(t) + H(q, v) = 0.~(7)
+\end{equation}`$,
+
+which leads to $`f(t) = -\alpha t`$, where $`\alpha`$ is a constant equal to the convserved energy of the system (Hamiltonian). Then the governing equation to solve for coordinate dependent part of action $`W(q)`$ is
+
+$`\begin{equation}
+H(q, \partial_q W) = -\alpha,
+\end{equation}`$
+
+which takes an explicit form depending on the form of the Hamiltonian, where we substitute momemntum $`p = m v`$ by $`\partial_q W(q)`$.
+
+Then we will 
 
 In case of continuous system, we write the **action functional** $`\mathcal{S}(\rho, t)`$ evaluated on the coordinate field $`\rho`$, where the Hamilton Jacobi equation for action functional reads
 
