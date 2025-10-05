@@ -93,7 +93,7 @@ where $`\delta_\rho S`$ is the first variation of the functional $`S(\rho, t)`$ 
 Similar to Hamiltonian density $`\mathcal{h}`$ we define the action density $`\mathcal{s}(\rho(x), t) = \mathcal{w}(\rho(x)) + \mathcal{f}(x, t)`$ (separation of variables thanks to conserved energy or explicitely time-independent Hamiltonian) by the following
 
 $`\begin{equation}
-\mathcal{S}(\rho, t) = \int \mathcal{s}(\rho(x), t) dx = \int \left( \mathcal{w}(\rho(x)) + \mathcal{f}(x, t) \right) dx,~(9)
+\mathcal{S}(\rho, t) = \int \mathcal{s}(\rho(x, t), t) dx = \int \left( \mathcal{w}(\rho(x, t)) + \mathcal{f}(x, t) \right) dx,~(9)
 \end{equation}`$
 
 and we write the density Hamilton-Jacobi equation, applying the variable separation,
