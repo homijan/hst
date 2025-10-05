@@ -146,8 +146,8 @@ Hamilton-Jacobi model (10) can be rewrriten with (12) as
 $`\begin{align}
 \partial_t \mathcal{f}(x, t) &= - \frac{1}{2} \rho(x) v(x)^2 - \rho(x) \varepsilon(x),
 \\
-\left( \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right)^2 + 2 \rho(x, t)^2 \varepsilon(x)
-&= - 2 \rho(x, t) \partial_t \mathcal{f}(x, t),
+\left( \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right)^2
+&= - 2 \rho(x, t) \left( \rho(x, t) \varepsilon(x, t) + \partial_t \mathcal{f}(x, t) \right),
 \end{align}`$
 
 ### Practical observation
