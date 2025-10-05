@@ -159,7 +159,7 @@ $`\begin{align}
 &= \left( \rho(x) v(x) \right)^2 \Rightarrow \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) = \rho(x) v(x),~(13b)
 \end{align}`$
 
-where the last equality in (13b) concludes the Hamilton-Jacobi model with unknowns $`\mathcal{f}(x, t)`$ and $`\mathcal{w}(\rho(x, t), v(\rho(x, t)))`$.
+where the last equality in (13b) concludes the Hamilton-Jacobi model with unknowns $`\mathcal{f}(x, t)`$ and $`\mathcal{w}(x, t)`$.
 
 ### Practical observation
 
