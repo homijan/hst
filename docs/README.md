@@ -133,7 +133,7 @@ $`\begin{multline}
 \mathcal{h}\left( \rho(x, t), \partial_x \left( \left( \left( \delta_{\rho} \mathcal{S} \right) (\rho) \right)(x) \right) \right) = - \partial_t \mathcal{f}(x, t) \overset{^{functional~derivative}_{of~integral~(9)}}{\Rightarrow} \mathcal{h}\left( \rho(x, t), \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right) = - \partial_t \mathcal{f}(x, t)
 \end{multline}`$
 
-### Algorithm
+### Algorithm in 1D
 
 Let's start by defining explicit, yet generally applicable, functional dependence of Hamiltonian density (slight reformulation of (5))
 
@@ -160,6 +160,8 @@ $`\begin{align}
 \end{align}`$
 
 where the last equality in (13b) concludes the Hamilton-Jacobi model with unknowns $`\mathcal{f}(x, t)`$ and $`\mathcal{w}(x, t)`$.
+
+# TBR
 
 ### Practical observation
 
