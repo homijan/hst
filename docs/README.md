@@ -110,9 +110,7 @@ $`\begin{equation}
 
 where we will use a discrete approximation of the local variation 
 
-$`\begin{equation}
-\partial_\rho \mathcal{w}|_{\rho(x, t) \approx 
-\end{equation}`$
+
 
 It is simple to see that $`\mathcal{S}`$ defined by (9) satisfies (8) if $`\mathcal{s} = \mathcal{w} + \mathcal{f}`$ solves (10) $`\forall (x, t)`$, because (8) can be written as
 
