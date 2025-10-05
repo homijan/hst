@@ -133,7 +133,7 @@ $`\begin{multline}
 \mathcal{h}\left( \rho(x, t), \partial_x \left( \left( \left( \delta_{\rho} \mathcal{S} \right) (\rho) \right)(x) \right) \right) = - \partial_t \mathcal{f}(x, t) \overset{^{functional~derivative}_{of~integral~(9)}}{\Rightarrow} \mathcal{h}\left( \rho(x, t), \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right) = - \partial_t \mathcal{f}(x, t)
 \end{multline}`$
 
-### Algorithm in 1D
+## Algorithm in 1D
 
 Let's start by defining explicit, yet generally applicable, functional dependence of Hamiltonian density (slight reformulation of (5))
 
@@ -153,13 +153,21 @@ $`\begin{align}
 which we further simplify by substituting $`\partial_t \mathcal{f}(x, t) = - \frac{1}{2} \rho(x, t) v(x, t)^2 - \rho(x, t) \varepsilon(x, t)`$ into the second equation
 
 $`\begin{align}
-\partial_t \mathcal{f}(x, t) &= - \frac{1}{2} \rho(x) v(x)^2 - \rho(x) \varepsilon(x),~(13a)
+\partial_t \mathcal{f}(x, t) &= - \frac{1}{2} \rho(x, t) v(x, t)^2 - \rho(x, t) \varepsilon(x, t),~(13a)
 \\
 \left( \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right)^2
-&= \left( \rho(x) v(x) \right)^2 \Rightarrow \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) = \rho(x) v(x),~(13b)
+&= \left( \rho(x) v(x) \right)^2 \Rightarrow \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) = \rho(x, t) v(x, t),~(13b)
 \end{align}`$
 
 where the last equality in (13b) concludes the Hamilton-Jacobi model with unknowns $`\mathcal{f}(x, t)`$ and $`\mathcal{w}(x, t)`$.
+
+### Discrete algorithm
+
+$`\begin{align}
+\frac{\mathcal{f}(x_i, t_n) - \mathcal{f}(x_i, t_{n-1})}{\Delta t} &= - \frac{1}{2} \rho(x_i, t_n) v(x_i, t_n)^2 - \rho(x_i, t_n) \varepsilon(x_i, t_n),~(d13a)
+\\
+\partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) = \rho(x_i, t_n) v(x_i, t_n),~(d13b)
+\end{align}`$
 
 # TBR
 
