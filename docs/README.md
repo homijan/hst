@@ -99,7 +99,7 @@ $`\begin{equation}
 and we write the density Hamilton-Jacobi equation
 
 $`\begin{equation}
-\partial_t \mathcal{f}(x, t) + \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) = 0,~\forall (x, t).~(10)
+\partial_t \mathcal{f}(x, t) + \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) = 0.~(10)
 \end{equation}`$
 
 It is simple to see that $`\mathcal{S}`$ defined by (9) satisfies (8) if $`\mathcal{s}`$ solves (10) $`\forall (x, t)`$, because (8) can be written as
