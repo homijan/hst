@@ -90,10 +90,6 @@ $`\begin{equation}
 
 where $`\delta_\rho S`$ is the first variation of the functional $`S(\rho, t)`$ with respect to field $`\rho`$.
 
-$`\begin{equation}
-\partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, v, \varepsilon, t) = 0.~(8)
-\end{equation}`$.
-
 Similar to Hamiltonian density $`\mathcal{h}`$ we define the action density $`\mathcal{s}(\rho(x), t) = \mathcal{w}(\rho(x)) + \mathcal{f}(x, t)`$ (separation of variables thanks to conserved energy or explicitely time-independent Hamiltonian) by the following
 
 $`\begin{equation}
@@ -103,7 +99,7 @@ $`\begin{equation}
 and we write the density Hamilton-Jacobi equation
 
 $`\begin{equation}
-\partial_t \mathcal{s}(\rho(x, t), t) + \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) = 0,~\forall (x, t).~(10)
+\partial_t \mathcal{f}(x, t) + \mathcal{h}(\rho(x, t), v(x, t), \varepsilon(x, t), t) = 0,~\forall (x, t).~(10)
 \end{equation}`$
 
 It is simple to see that $`\mathcal{S}`$ defined by (9) satisfies (8) if $`\mathcal{s}`$ solves (10) $`\forall (x, t)`$, because (8) can be written as
