@@ -161,12 +161,22 @@ $`\begin{align}
 
 where the last equality in (13b) concludes the Hamilton-Jacobi model with unknowns $`\mathcal{f}(x, t)`$ and $`\mathcal{w}(x, t)`$.
 
-### Discrete algorithm
+### Discrete algorithm in 1D
+
+Discrete version of (13) using the approximation (11) reads
 
 $`\begin{align}
-\frac{\mathcal{f}(x_i, t_n) - \mathcal{f}(x_i, t_{n-1})}{\Delta t} &= - \frac{1}{2} \rho(x_i, t_n) v(x_i, t_n)^2 - \rho(x_i, t_n) \varepsilon(x_i, t_n),~(d13a)
+\frac{\mathcal{f}(x_i, t_n) - \mathcal{f}(x_i, t_{n-1})}{\Delta t} &= - \frac{1}{2} \rho(x_i, t_n) v(x_i, t_n)^2 - \rho(x_i, t_n) \varepsilon(x_i, t_n),
 \\
-\frac{\frac{\mathcal{w}(x_i, t_n) - \mathcal{w}(x_i, t_{n-1})}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\mathcal{w}(x_{i-1}, t_n) - \mathcal{w}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{\Delta x}&= \rho(x_i, t_n) v(x_i, t_n),~(d13b)
+\frac{\frac{\mathcal{w}(x_i, t_n) - \mathcal{w}(x_i, t_{n-1})}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\mathcal{w}(x_{i-1}, t_n) - \mathcal{w}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i}&= \rho(x_i, t_n) v(x_i, t_n),
+\end{align}`$
+
+which can be formulated in its recursion form
+
+$`\begin{align}
+\mathcal{f}(x_i, t_n) &= \mathcal{f}(x_i, t_{n-1}) - \Delta t \left( \frac{1}{2} \rho(x_i, t_n) v(x_i, t_n)^2 +  \rho(x_i, t_n) \varepsilon(x_i, t_n) \right),~(d13a)
+\\
+\frac{\frac{\mathcal{w}(x_i, t_n) - \mathcal{w}(x_i, t_{n-1})}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\mathcal{w}(x_{i-1}, t_n) - \mathcal{w}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i}&= \rho(x_i, t_n) v(x_i, t_n),~(d13b)
 \end{align}`$
 
 # TBR
