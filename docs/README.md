@@ -179,11 +179,19 @@ $`\begin{align}
 \mathcal{w}(x_i, t_n) &= \mathcal{w}(x_i, t_{n-1}) + \left( \rho(x_i, t_n) - \rho(x_i, t_{n-1}) \right) \left( \frac{\mathcal{w}(x_{i-1}, t_n) - \mathcal{w}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})} + \Delta x_i \rho(x_i, t_n) v(x_i, t_n) \right).~(d13b)
 \end{align}`$
 
-Note, that $`\varepsilon(x_i) = \frac{1}{2} \omega^2 x_i^2`$ in the case of *continous* harmonic oscilator.
+Note that the action density model (10) uses separation of variables if $`\partial t \mathcal{H} = 0`$. This contraint can be relaxed and (10) would take the common form of Hamilton-Jacobi equation for action density
+
+$`\begin{equation}
+\mathcal{h}\left( \rho(x, t), \partial_x \left( \partial_\rho \mathcal{s}|_{\rho(x, t)} \right) \right) = - \partial_t \mathcal{s}(x, t),~(14)
+\end{equation}`$
+
+which can be discretized as
 
 $`\begin{align}
-\frac{\frac{\mathcal{s}(x_i, t_n) - \mathcal{s}(x_i, t_{n-1})}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\mathcal{s}(x_{i-1}, t_n) - \mathcal{s}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i} + 2 \rho(x_i, t_n)^2 \varepsilon(x_i, t_n) + 2 \rho(x_i, t_n) \frac{\mathcal{s}(x_i, t_n) - \mathcal{s}(x_i, t_{n-1})}{\Delta t} = 0,
+\frac{\frac{\mathcal{s}(x_i, t_n) - \mathcal{s}(x_i, t_{n-1})}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\mathcal{s}(x_{i-1}, t_n) - \mathcal{s}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i} + 2 \rho(x_i, t_n)^2 \varepsilon(x_i, t_n) + 2 \rho(x_i, t_n) \frac{\mathcal{s}(x_i, t_n) - \mathcal{s}(x_i, t_{n-1})}{\Delta t} = 0,~(15).
 \end{align}`$
+
+Note, that $`\varepsilon(x_i) = \frac{1}{2} \omega^2 x_i^2`$ in the case of *continous* harmonic oscilator.
 
 # TBR
 
