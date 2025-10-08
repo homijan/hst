@@ -182,9 +182,7 @@ $`\begin{align}
 Note, that $`\varepsilon(x_i) = \frac{1}{2} \omega^2 x_i^2`$ in the case of *continous* harmonic oscilator.
 
 $`\begin{align}
-\frac{\mathcal{f}(x_i, t_n) - \mathcal{f}(x_i, t_{n-1})}{\Delta t} &= - \frac{1}{2} \rho(x_i, t_n) v(x_i, t_n)^2 - \rho(x_i, t_n) \varepsilon(x_i, t_n),
-\\
-\frac{\frac{\mathcal{w}(x_i, t_n) - \mathcal{w}(x_i, t_{n-1})}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\mathcal{w}(x_{i-1}, t_n) - \mathcal{w}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i}&= \rho(x_i, t_n) v(x_i, t_n),
+\frac{\frac{\mathcal{w}(x_i, t_n) - \mathcal{w}(x_i, t_{n-1})}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\mathcal{w}(x_{i-1}, t_n) - \mathcal{w}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i} + \rho(x_i, t_n) eps(x_i, t_n) + \rho(x_i, t_n) \frac{\mathcal{f}(x_i, t_n) - \mathcal{f}(x_i, t_{n-1})}{\Delta t} = 0,
 \end{align}`$
 
 # TBR
