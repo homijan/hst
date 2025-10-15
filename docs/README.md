@@ -193,7 +193,7 @@ $`\begin{equation}
 
 Note, that $`\varepsilon(x_i) = \frac{1}{2} \omega^2 x_i^2`$ in the case of *continous* harmonic oscilator.
 
-**Exercise: Harmonic oscilator**
+**Exercise: Derive action of harmonic oscilator from its known dynamics**
 
 The Hamilton-Jacobi equation (6) for harmonics oscilator via its Hamitlonian (1) reads
 
