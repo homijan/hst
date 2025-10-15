@@ -199,8 +199,13 @@ $`\begin{equation}
 
 Note, that $`\varepsilon(x_i) = \frac{1}{2} \omega^2 x_i^2`$ in the case of *continous* harmonic oscilator.
 
-**TODO**
+**Exercise**
+
 Consider $`\rho(x_i, t_n) = \delta_{ij}\delta{nm}`$, where $`i, j`$ are spatial indexes and $`m, n`$ are temporal indexes.
+
+$`\begin{equation}
+\left( \frac{1}{ \Delta x_i \left( \rho(x_i, t_n) \right)} + \frac{2 \rho(x_i, t_n)}{\Delta t} \right) \mathcal{s}(x_i, t_n)= 2 \rho(x_i, t_n) \frac{\mathcal{s}(x_i, t_{n-1})}{\Delta t} + \frac{\frac{\mathcal{s}(x_i, t_{n-1})}{\rho(x_i, t_n)} + \frac{\mathcal{s}(x_{i-1}, t_n) - \mathcal{s}(x_{i-1}, t_{n-1})}{ - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i} - 2 \rho(x_i, t_n)^2 \varepsilon(x_i, t_n).~(16)
+\end{equation}`$
 
 # TBR
 
