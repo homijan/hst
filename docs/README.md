@@ -167,11 +167,12 @@ Let's define a discrete approximation to $`\partial_x \left( \partial_\rho \math
 
 $`\begin{equation}
 \partial_x \left( \partial_\rho \mathcal{f}|_{\rho(x_i, t_i)} \right) \approx
-\frac{\frac{\mathcal{f}(x_i, t_n) - \frac{\mathcal{f}(x_i, t_{n-1}) + \mathcal{f}(x_{i-1}, t_n)}{2}}{\rho(x_i, t_n) - \frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2}} - \frac{\frac{\mathcal{f}(x_i, t_{n-1}) + \mathcal{f}(x_{i-1}, t_n)}{2} - \mathcal{f}(x_{i-1}, t_{n-1})}{\frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2} - \rho(x_{i-1}, t_{n-1})}}{x_i - x_{i-1}}
+\frac{\frac{\mathcal{f}(x_i, t_n) - \frac{\mathcal{f}(x_i, t_{n-1}) + \mathcal{f}(x_{i-1}, t_n)}{2}}{\rho(x_i, t_n) - \frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2}} - \frac{\frac{\mathcal{f}(x_i, t_{n-1}) + \mathcal{f}(x_{i-1}, t_n)}{2} - \mathcal{f}(x_{i-1}, t_{n-1})}{\frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2} - \rho(x_{i-1}, t_{n-1})}}{x_i - x_{i-1}},~(14)
 \end{equation}`$
 
+where $`\frac{g_{in-1} + g_{i-1n}}{2}`$ geometrically coresponds to the center of $`(i, i-1) \times (n, n-1)`$ coordinate square.
 
-Discrete version of (13) using the approximation (11) reads
+Discrete version of (13) using the approximation (14) reads
 
 $`\begin{align}
 \frac{\mathcal{f}(x_i, t_n) - \mathcal{f}(x_i, t_{n-1})}{\Delta t} &= - \frac{1}{2} m \rho(x_i, t_n) v(x_i, t_n)^2 - m \rho(x_i, t_n) \varepsilon(x_i, t_n),
