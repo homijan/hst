@@ -215,7 +215,7 @@ $`\begin{equation}
 
 where $`W_i`$ and $`v_i`$ corresponds to value at $`q_i`$. Further, the discrete coodrinate $`q_i = q(t_i)`$ correspond to discrete time $`t_i`$ based on the known dynamics of harmonic oscillator. 
 
-The equivalent *continous* formula for the fluid harmonic oscilator (d13b) can be reduced considering $`\rho(x_i, t_n) = m \delta_{in}`$, where $`i`$ is the spatial index and $`n`$ is the temporal index, hence
+The equivalent *continous* formula for the fluid harmonic oscilator (d13b) can be reduced considering $`\rho(x_i, t_n) = \delta_{in}`$, where $`i`$ is the spatial index and $`n`$ is the temporal index, hence
 
 $`\begin{equation}
 \mathcal{w}(x_i, t_n) = \mathcal{w}(x_i, t_{n-1}) + \rho(x_i, t_n) \left( \frac{\mathcal{w}(x_{i-1}, t_n) - \mathcal{w}(x_{i-1}, t_{n-1})}{ - \rho(x_{i-1}, t_{n-1})} + \Delta x_i \rho(x_i, t_n) v(x_i, t_n) \right)
