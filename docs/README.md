@@ -213,6 +213,8 @@ $`\begin{equation}
 \frac{W_i - W_{i-1}}{q_i - q_{i-1}} = m v_i,~(18)
 \end{equation}`$
 
+where $`W_i`$ and $`v_i`$ corresponds to value at $`q_i`$. Further, the discrete coodrinate $`q_i = q(t_i)`$ correspond to discrete time $`t_i`$ based on the known dynamics of harmonic oscillator. 
+
 Considering $`\rho(x_i, t_n) = m \delta_{in}`$, where $`i`$ is the spatial index and $`n`$ is the temporal index, (15) reduces to
 
 $`\begin{equation}
