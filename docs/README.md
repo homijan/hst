@@ -198,7 +198,13 @@ Note, that $`\varepsilon(x_i) = \frac{1}{2} \omega^2 x_i^2`$ in the case of *con
 The Hamilton-Jacobi equation (6) for harmonics oscilator via its Hamitlonian (1) reads
 
 $`\begin{equation}
-\partial_t S(q, t) + \frac{1}{2 m} \left( \partial_q S \right)^2 + \frac{1}{2} m \omega^2 q^2 = 0.~(16)
+\partial_t S(q, t) + \frac{1}{2 m} \left( \partial_q S \right)^2 + \frac{1}{2} m \omega^2 q^2 = 0,~(16)
+\end{equation}`$
+
+which can be rewritten using separation of variables $`S(q, t) = W(q) + f(t)`$ as
+
+$`\begin{equation}
+\left( \partial_q S \right)^2 +  = - m^2 \omega^2 q^2 - 2 m \partial_t f(t),~(17)
 \end{equation}`$
 
 Considering $`\rho(x_i, t_n) = m \delta_{in}`$, where $`i`$ is the spatial index and $`n`$ is the temporal index, (15) reduces to
