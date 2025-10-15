@@ -163,10 +163,10 @@ where the last equality in (13b) concludes the Hamilton-Jacobi model with unknow
 
 ### Discrete algorithm in 1D
 
-Let's define a discrete approximation to $`\partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)}`$. Along with the functional approximation (11), we define the following approximation
+Let's define a discrete approximation to $`\partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right)`$. Along with the functional approximation (11), we define the following approximation
 
 $`\begin{equation}
-\partial_x \left( \partial_\rho \mathcal{f}|_{\rho(x_i, t_i)} \approx
+\partial_x \left( \partial_\rho \mathcal{f}|_{\rho(x_i, t_i)} \right) \approx
 \frac{\frac{\mathcal{f}(x_i, t_n) - \frac{\mathcal{f}(x_i, t_{n-1}) + \mathcal{f}(x_{i-1}, t_n)}{2}}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\frac{\mathcal{f}(x_i, t_{n-1}) + \mathcal{f}(x_{i-1}, t_n)}{2} - \mathcal{f}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{x_i - x_{i-1}}
 \end{equation}`$
 
