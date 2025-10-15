@@ -138,25 +138,25 @@ $`\begin{multline}
 Let's start by defining explicit, yet generally applicable, functional dependence of Hamiltonian density (slight reformulation of (5))
 
 $`\begin{equation}
-\mathcal{h}(\rho(x), v(x), \varepsilon(x)) = \frac{1}{2\rho(x)} \left( \rho(x) v(x) \right)^2 + \rho(x) \varepsilon(x).~(12)
+\mathcal{h}(\rho(x), v(x), \varepsilon(x)) = \frac{1}{2 m \rho(x)} \left( m \rho(x) v(x) \right)^2 + m \rho(x) \varepsilon(x).~(12)
 \end{equation}`$
 
 Hamilton-Jacobi model (10) can be rewrriten with (12) as
 
 $`\begin{align}
-\partial_t \mathcal{f}(x, t) &= - \frac{1}{2} \rho(x, t) v(x, t)^2 - \rho(x, t) \varepsilon(x, t),
+\partial_t \mathcal{f}(x, t) &= - \frac{1}{2} m \rho(x, t) v(x, t)^2 - m \rho(x, t) \varepsilon(x, t),
 \\
 \left( \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right)^2
-&= - 2 \rho(x, t) \left( \rho(x, t) \varepsilon(x, t) + \partial_t \mathcal{f}(x, t) \right),
+&= - 2 m \rho(x, t) \left( m \rho(x, t) \varepsilon(x, t) + \partial_t \mathcal{f}(x, t) \right),
 \end{align}`$
 
-which we further simplify by substituting $`\partial_t \mathcal{f}(x, t) = - \frac{1}{2} \rho(x, t) v(x, t)^2 - \rho(x, t) \varepsilon(x, t)`$ into the second equation
+which we further simplify by substituting $`\partial_t \mathcal{f}(x, t) = - \frac{1}{2} m \rho(x, t) v(x, t)^2 - m \rho(x, t) \varepsilon(x, t)`$ into the second equation
 
 $`\begin{align}
-\partial_t \mathcal{f}(x, t) &= - \frac{1}{2} \rho(x, t) v(x, t)^2 - \rho(x, t) \varepsilon(x, t),~(13a)
+\partial_t \mathcal{f}(x, t) &= - \frac{1}{2} m \rho(x, t) v(x, t)^2 - m \rho(x, t) \varepsilon(x, t),~(13a)
 \\
 \left( \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) \right)^2
-&= \left( \rho(x) v(x) \right)^2 \Rightarrow \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) = \rho(x, t) v(x, t),~(13b)
+&= \left( m \rho(x) v(x) \right)^2 \Rightarrow \partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right) = m \rho(x, t) v(x, t),~(13b)
 \end{align}`$
 
 where the last equality in (13b) concludes the Hamilton-Jacobi model with unknowns $`\mathcal{f}(x, t)`$ and $`\mathcal{w}(x, t)`$.
