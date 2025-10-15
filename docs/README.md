@@ -204,7 +204,7 @@ $`\begin{equation}
 which can be rewritten using separation of variables $`S(q, t) = W(q) + f(t)`$ as
 
 $`\begin{equation}
-\left( \partial_q S \right)^2 +  = - m^2 \omega^2 q^2 - 2 m \partial_t f(t),~(17)
+\left( \partial_q W \right)^2 = - m^2 \omega^2 q^2 - 2 m \partial_t f(t),~(17)
 \end{equation}`$
 
 Considering $`\rho(x_i, t_n) = m \delta_{in}`$, where $`i`$ is the spatial index and $`n`$ is the temporal index, (15) reduces to
