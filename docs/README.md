@@ -215,15 +215,11 @@ $`\begin{equation}
 
 where $`W_i`$ and $`v_i`$ corresponds to value at $`q_i`$. Further, the discrete coodrinate $`q_i = q(t_i)`$ correspond to discrete time $`t_i`$ based on the known dynamics of harmonic oscillator. 
 
-We will use a discrete approximation of the local variation $`\partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right)`$ as
+The equivalent *continous* formula for the fluid harmonic oscilator (d13b) can be reduced considering $`\rho(x_i, t_n) = m \delta_{in}`$, where $`i`$ is the spatial index and $`n`$ is the temporal index, hence
 
 $`\begin{equation}
-\partial_x \left( \partial_\rho \mathcal{w}|_{\rho(x, t)} \right)
-\approx
-\frac{\frac{\mathcal{w}(x_i, t^n) - \mathcal{w}(x_{i-1}, t^{n-1})}{\rho(x_i, t^n) - \rho(x_{i-1}, t^{n-1})}}{x_i - x_{i-1}} .~(19)
+\mathcal{w}(x_i, t_n) &= \mathcal{w}(x_i, t_{n-1}) + \rho(x_i, t_n) \left( \frac{\mathcal{w}(x_{i-1}, t_n) - \mathcal{w}(x_{i-1}, t_{n-1})}{ - \rho(x_{i-1}, t_{n-1})} + \Delta x_i \rho(x_i, t_n) v(x_i, t_n) \right)
 \end{equation}`$
-
-Considering $`\rho(x_i, t_n) = m \delta_{in}`$, where $`i`$ is the spatial index and $`n`$ is the temporal index, (15) reduces to
 
 $`\begin{equation}
 \left( \frac{1}{ \Delta x_i \left( \rho(x_i, t_n) \right)} + \frac{2 \rho(x_i, t_n)}{\Delta t} \right) \mathcal{s}(x_i, t_n)= 2 \rho(x_i, t_n) \frac{\mathcal{s}(x_i, t_{n-1})}{\Delta t} + \frac{\frac{\mathcal{s}(x_i, t_{n-1})}{\rho(x_i, t_n)} + \frac{\mathcal{s}(x_{i-1}, t_n) - \mathcal{s}(x_{i-1}, t_{n-1})}{ - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i} - 2 \rho(x_i, t_n)^2 \varepsilon(x_i, t_n).~(17)
