@@ -199,7 +199,7 @@ The Hamilton-Jacobi equation (6) for harmonics oscilator via its Hamitlonian (1)
 
 $`\begin{equation}
 \partial_t S(q, t) + \frac{1}{2 m} \left( \partial_q S \right)^2 + \frac{1}{2} m \omega^2 q^2 = 0.~(16)
-\end{equation}`$.
+\end{equation}`$
 
 Considering $`\rho(x_i, t_n) = m \delta_{in}`$, where $`i`$ is the spatial index and $`n`$ is the temporal index, (15) reduces to
 
