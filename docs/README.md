@@ -204,7 +204,13 @@ $`\begin{equation}
 which can be rewritten using separation of variables $`S(q, t) = W(q) + f(t)`$ as
 
 $`\begin{equation}
-\left( \partial_q W \right)^2 = - m^2 \omega^2 q^2 - 2 m \partial_t f(t) \overset{_{\partial_t f(t) = H(q, v)}}{=} (m v)^2 \Rightarrow \partial_q W = mv,~(17)
+\left( \partial_q W \right)^2 = - m^2 \omega^2 q^2 - 2 m \partial_t f(t) \overset{_{\partial_t f(t) = H(q, v)}}{=} (m v)^2 \Rightarrow \partial_q W = mv.~(17)
+\end{equation}`$
+
+The discrete version of the last equality of (17) gives
+
+$`\begin{equation}
+\frac{W_i - W_{i-1}}{q_i - q_{i-1}} = m v_i,~(18)
 \end{equation}`$
 
 Considering $`\rho(x_i, t_n) = m \delta_{in}`$, where $`i`$ is the spatial index and $`n`$ is the temporal index, (15) reduces to
