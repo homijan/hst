@@ -166,17 +166,17 @@ where the last equality in (13b) concludes the Hamilton-Jacobi model with unknow
 Discrete version of (13) using the approximation (11) reads
 
 $`\begin{align}
-\frac{\mathcal{f}(x_i, t_n) - \mathcal{f}(x_i, t_{n-1})}{\Delta t} &= - \frac{1}{2} \rho(x_i, t_n) v(x_i, t_n)^2 - \rho(x_i, t_n) \varepsilon(x_i, t_n),
+\frac{\mathcal{f}(x_i, t_n) - \mathcal{f}(x_i, t_{n-1})}{\Delta t} &= - \frac{1}{2} m \rho(x_i, t_n) v(x_i, t_n)^2 - m \rho(x_i, t_n) \varepsilon(x_i, t_n),
 \\
-\frac{\frac{\mathcal{w}(x_i, t_n) - \mathcal{w}(x_i, t_{n-1})}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\mathcal{w}(x_{i-1}, t_n) - \mathcal{w}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i}&= \rho(x_i, t_n) v(x_i, t_n),
+\frac{\frac{\mathcal{w}(x_i, t_n) - \mathcal{w}(x_i, t_{n-1})}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\mathcal{w}(x_{i-1}, t_n) - \mathcal{w}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i}&= m \rho(x_i, t_n) v(x_i, t_n),
 \end{align}`$
 
 which can be formulated in its forward advection form
 
 $`\begin{align}
-\mathcal{f}(x_i, t_n) &= \mathcal{f}(x_i, t_{n-1}) - \Delta t \left( \frac{1}{2} \rho(x_i, t_n) v(x_i, t_n)^2 +  \rho(x_i, t_n) \varepsilon(x_i, t_n) \right),~(d13a)
+\mathcal{f}(x_i, t_n) &= \mathcal{f}(x_i, t_{n-1}) - \Delta t \left( \frac{1}{2} m \rho(x_i, t_n) v(x_i, t_n)^2 +  m \rho(x_i, t_n) \varepsilon(x_i, t_n) \right),~(d13a)
 \\
-\mathcal{w}(x_i, t_n) &= \mathcal{w}(x_i, t_{n-1}) + \left( \rho(x_i, t_n) - \rho(x_i, t_{n-1}) \right) \left( \frac{\mathcal{w}(x_{i-1}, t_n) - \mathcal{w}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})} + \Delta x_i \rho(x_i, t_n) v(x_i, t_n) \right).~(d13b)
+\mathcal{w}(x_i, t_n) &= \mathcal{w}(x_i, t_{n-1}) + \left( \rho(x_i, t_n) - \rho(x_i, t_{n-1}) \right) \left( \frac{\mathcal{w}(x_{i-1}, t_n) - \mathcal{w}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})} + \Delta x_i m \rho(x_i, t_n) v(x_i, t_n) \right).~(d13b)
 \end{align}`$
 
 Note that the action density model (10) uses separation of variables if $`\partial t \mathcal{H} = 0`$. This contraint can be relaxed and (10) would take the common form of Hamilton-Jacobi equation for action density
