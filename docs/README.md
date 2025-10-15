@@ -167,7 +167,7 @@ Let's define a discrete approximation to $`\partial_x \left( \partial_\rho \math
 
 $`\begin{equation}
 \partial_x \left( \partial_\rho \mathcal{f}|_{\rho(x_i, t_i)} \right) \approx
-\frac{\frac{\mathcal{f}(x_i, t_n) - \frac{\mathcal{f}(x_i, t_{n-1}) + \mathcal{f}(x_{i-1}, t_n)}{2}}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\frac{\mathcal{f}(x_i, t_{n-1}) + \mathcal{f}(x_{i-1}, t_n)}{2} - \mathcal{f}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{x_i - x_{i-1}}
+\frac{\frac{\mathcal{f}(x_i, t_n) - \frac{\mathcal{f}(x_i, t_{n-1}) + \mathcal{f}(x_{i-1}, t_n)}{2}}{\rho(x_i, t_n) - \frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2}} - \frac{\frac{\mathcal{f}(x_i, t_{n-1}) + \mathcal{f}(x_{i-1}, t_n)}{2} - \mathcal{f}(x_{i-1}, t_{n-1})}{\frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2} - \rho(x_{i-1}, t_{n-1})}}{x_i - x_{i-1}}
 \end{equation}`$
 
 
