@@ -21,13 +21,13 @@ H_{NHO}(\mathbf{q}, \mathbf{v}) = \sum_i^N \frac{1}{2} m v_i^2 + \frac{1}{2} m \
 Fluid harmonic oscillator ($`\overset{^{i \rightarrow \infty}_{as~\rho(x)}}{\Rightarrow}`$) Hamiltonian functional
 
 $`\begin{equation}
-\mathcal{H}_{FHO}(\rho, v) = \int \rho(x, t) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right) dx,~(2)
+\mathcal{H}_{FHO}(\rho, v) = \int \rho(x, t) \left( \frac{1}{2} m v(x)^2 + \frac{1}{2} m (2\pi)^2 f^2 x^2 \right) dx,~(2)
 \end{equation}`$
 
 defining Hamiltonian density
 
 $`\begin{equation}
-\mathcal{h}_{FHO}(\rho(x, t), v(x)) = \rho(x, t) \left( \frac{1}{2} v(x)^2 + \frac{1}{2} (2\pi)^2 f^2 x^2 \right),~(3)
+\mathcal{h}_{FHO}(\rho(x, t), v(x)) = \rho(x, t) \left( \frac{1}{2} m v(x)^2 + \frac{1}{2} m (2\pi)^2 f^2 x^2 \right),~(3)
 \end{equation}`$
 
 where linear position $`x`$ [cm], linear density $`\rho(x)`$ [g/cm], fluid velocity $`v(x) = \frac{d x}{d t}`$ [cm/s], and frequency $`f = \frac{\omega}{2\pi}`$ [rad/s].
