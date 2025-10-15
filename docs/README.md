@@ -30,18 +30,18 @@ $`\begin{equation}
 \mathcal{h}_{FHO}(\rho(x, t), v(x)) = \rho(x, t) \left( \frac{1}{2} m v(x)^2 + \frac{1}{2} m (2\pi)^2 f^2 x^2 \right),~(3)
 \end{equation}`$
 
-where linear position $`x`$ [cm], linear density $`\rho(x)`$ [g/cm], fluid velocity $`v(x) = \frac{d x}{d t}`$ [cm/s], and frequency $`f = \frac{\omega}{2\pi}`$ [rad/s].
+where linear position $`x`$ [cm], linear density $`\rho(x)`$ [1/cm], fluid velocity $`v(x) = \frac{d x}{d t}`$ [cm/s], and frequency $`f = \frac{\omega}{2\pi}`$ [rad/s].
 
 ### Ideal compressible fluid
 
 $`\begin{equation}
-\mathcal{H}_{IF}(\rho, v, \varepsilon, t) = \int \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x)\right) dx,~(4)
+\mathcal{H}_{IF}(\rho, v, \varepsilon, t) = \int m \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x)\right) dx,~(4)
 \end{equation}`$
 
 defining Hamiltonian density
 
 $`\begin{equation}
-\mathcal{h}_{IF}(\rho(x), v(x), \varepsilon(x)) = \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x) \right),~(5)
+\mathcal{h}_{IF}(\rho(x), v(x), \varepsilon(x)) = m \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x) \right),~(5)
 \end{equation}`$
 
 ## Action via Hamilton-Jacobi equation in 1D
