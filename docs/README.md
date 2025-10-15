@@ -199,7 +199,13 @@ $`\begin{equation}
 
 Note, that $`\varepsilon(x_i) = \frac{1}{2} \omega^2 x_i^2`$ in the case of *continous* harmonic oscilator.
 
-**Exercise**
+**Exercise: Harmonic oscilator**
+
+The Hamilton-Jacobi equation (6) for harmonics oscilator via its Hamitlonian (1) reads
+
+$`\begin{equation}
+\partial_t S(q, t) + \frac{1}{2 m} \left( \partial_q S \right)^2 + \frac{1}{2} m \omega^2 q^2 = 0.~(17)
+\end{equation}`$.
 
 Considering $`\rho(x_i, t_n) = m \delta_{in}`$, where $`i`$ is the spatial index and $`n`$ is the temporal index, (16) reduces to
 
