@@ -188,7 +188,7 @@ $`\begin{equation}
 which can be discretized as
 
 $`\begin{equation}
-\frac{\frac{\mathcal{s}(x_i, t_n) - \mathcal{s}(x_i, t_{n-1})}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\mathcal{s}(x_{i-1}, t_n) - \mathcal{s}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i} + 2 \rho(x_i, t_n)^2 \varepsilon(x_i, t_n) + 2 \rho(x_i, t_n) \frac{\mathcal{s}(x_i, t_n) - \mathcal{s}(x_i, t_{n-1})}{\Delta t} = 0,~(15)
+\left( \frac{\frac{\mathcal{s}(x_i, t_n) - \mathcal{s}(x_i, t_{n-1})}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\mathcal{s}(x_{i-1}, t_n) - \mathcal{s}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i} \right)^2 + 2 \rho(x_i, t_n)^2 \varepsilon(x_i, t_n) + 2 \rho(x_i, t_n) \frac{\mathcal{s}(x_i, t_n) - \mathcal{s}(x_i, t_{n-1})}{\Delta t} = 0,~(15)
 \end{equation}`$
 
 or in its forward advection form
