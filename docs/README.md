@@ -222,8 +222,11 @@ $`\begin{equation}
 \end{equation}`$
 
 $`\begin{equation}
-\frac{\frac{\mathcal{w}(x_i, t_n) - \mathcal{w}(x_i, t_{n-1})}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\mathcal{w}(x_{i-1}, t_n) - \mathcal{w}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{x_i - x_{i-1}} \overset{?}{=}
-\frac{\frac{\mathcal{w}(x_i, t_n) - \mathcal{w}(x_{i-1}, t_n)}{x_i - x_{i-1}} - \frac{\mathcal{w}(x_i, t_{n-1}) - \mathcal{w}(x_{i-1}, t_{n-1})}{x_i - x_{i-1}}}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})}
+\mathcal{w}(x_i, t_{n-1}) = \mathcal{w}(x_{i-1}, t_{n-2}) + \left( \mathcal{w}(x_i, t_{n-2}) - \mathcal{w}(x_{i-1}, t_{n-1}) \right) + m \left( \Delta x_i m v(x_i, t_{n-1}) \right)
+\end{equation}`$
+
+$`\begin{equation}
+\mathcal{w}(x_{i-1}, t_n) = \mathcal{w}(x_{i-2}, t_{n-1}) + \left( \mathcal{w}(x_{i-1}, t_{n-1}) - \mathcal{w}(x_{i-2}, t_n) \right) + m \left( \Delta x_{i-1} m v(x_{i-1}, t_n) \right)
 \end{equation}`$
 
 # TBR
