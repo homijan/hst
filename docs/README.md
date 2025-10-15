@@ -222,6 +222,10 @@ $`\begin{equation}
 \end{equation}`$
 
 $`\begin{equation}
+\mathcal{w}(x_i, t_n) = \mathcal{w}(x_i, t_{n-1}) - \mathcal{w}(x_{i-1}, t_n) + \mathcal{w}(x_{i-1}, t_{n-1}) + \Delta x_i m^2 v(x_i, t_n)
+\end{equation}`$
+
+$`\begin{equation}
 \left( \frac{1}{ \Delta x_i \left( \rho(x_i, t_n) \right)} + \frac{2 \rho(x_i, t_n)}{\Delta t} \right) \mathcal{s}(x_i, t_n)= 2 \rho(x_i, t_n) \frac{\mathcal{s}(x_i, t_{n-1})}{\Delta t} + \frac{\frac{\mathcal{s}(x_i, t_{n-1})}{\rho(x_i, t_n)} + \frac{\mathcal{s}(x_{i-1}, t_n) - \mathcal{s}(x_{i-1}, t_{n-1})}{ - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i} - 2 \rho(x_i, t_n)^2 \varepsilon(x_i, t_n).~(17)
 \end{equation}`$
 
