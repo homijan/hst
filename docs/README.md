@@ -199,6 +199,9 @@ $`\begin{equation}
 
 Note, that $`\varepsilon(x_i) = \frac{1}{2} \omega^2 x_i^2`$ in the case of *continous* harmonic oscilator.
 
+**TODO**
+Consider $`\rho(x_i, t_n) = \delta_{ij}\delta{nm}`$, where $`i, j`$ are spatial indexes and $`m, n`$ are temporal indexes.
+
 # TBR
 
 ### Practical observation
