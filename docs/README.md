@@ -126,7 +126,7 @@ $`\begin{align}
 &= \partial_t \mathcal{S}(\rho, t) + \mathcal{H}(\rho, v, \varepsilon).
 \end{align}`$
 
-Equation 10b is non-obvious, but it originates from Wasserstein gradient required when working with continuous fields (such as density) and functional (density) Hamiltonian formulation. The formula is motivated by the following
+Equation 10b is non-obvious, but it originates from *Wasserstein gradient* required when working with continuous fields (such as density) and functional (density) Hamiltonian formulation. The formula is motivated by the following
 
 $`\begin{multline}
 \mathcal{H}\left( \rho, \delta_{\rho} \mathcal{S}(\rho, t) \right) = - \partial_t \mathcal{S}(\rho, t) \overset{^{HJD}_{Chow~(1.1)}}{\Rightarrow}
