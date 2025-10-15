@@ -191,12 +191,6 @@ $`\begin{equation}
 \left( \frac{\frac{\mathcal{s}(x_i, t_n) - \mathcal{s}(x_i, t_{n-1})}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\mathcal{s}(x_{i-1}, t_n) - \mathcal{s}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i} \right)^2 + 2 \rho(x_i, t_n)^2 \varepsilon(x_i, t_n) + 2 \rho(x_i, t_n) \frac{\mathcal{s}(x_i, t_n) - \mathcal{s}(x_i, t_{n-1})}{\Delta t} = 0,~(15)
 \end{equation}`$
 
-or in its forward advection form
-
-$`\begin{equation}
-\left( \frac{1}{ \Delta x_i \left( \rho(x_i, t_n) - \rho(x_i, t_{n-1}) \right)} + \frac{2 \rho(x_i, t_n)}{\Delta t} \right) \mathcal{s}(x_i, t_n)= 2 \rho(x_i, t_n) \frac{\mathcal{s}(x_i, t_{n-1})}{\Delta t} + \frac{\frac{\mathcal{s}(x_i, t_{n-1})}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} + \frac{\mathcal{s}(x_{i-1}, t_n) - \mathcal{s}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i} - 2 \rho(x_i, t_n)^2 \varepsilon(x_i, t_n).~(16)
-\end{equation}`$
-
 Note, that $`\varepsilon(x_i) = \frac{1}{2} \omega^2 x_i^2`$ in the case of *continous* harmonic oscilator.
 
 **Exercise: Harmonic oscilator**
@@ -204,10 +198,10 @@ Note, that $`\varepsilon(x_i) = \frac{1}{2} \omega^2 x_i^2`$ in the case of *con
 The Hamilton-Jacobi equation (6) for harmonics oscilator via its Hamitlonian (1) reads
 
 $`\begin{equation}
-\partial_t S(q, t) + \frac{1}{2 m} \left( \partial_q S \right)^2 + \frac{1}{2} m \omega^2 q^2 = 0.~(17)
+\partial_t S(q, t) + \frac{1}{2 m} \left( \partial_q S \right)^2 + \frac{1}{2} m \omega^2 q^2 = 0.~(16)
 \end{equation}`$.
 
-Considering $`\rho(x_i, t_n) = m \delta_{in}`$, where $`i`$ is the spatial index and $`n`$ is the temporal index, (16) reduces to
+Considering $`\rho(x_i, t_n) = m \delta_{in}`$, where $`i`$ is the spatial index and $`n`$ is the temporal index, (15) reduces to
 
 $`\begin{equation}
 \left( \frac{1}{ \Delta x_i \left( \rho(x_i, t_n) \right)} + \frac{2 \rho(x_i, t_n)}{\Delta t} \right) \mathcal{s}(x_i, t_n)= 2 \rho(x_i, t_n) \frac{\mathcal{s}(x_i, t_{n-1})}{\Delta t} + \frac{\frac{\mathcal{s}(x_i, t_{n-1})}{\rho(x_i, t_n)} + \frac{\mathcal{s}(x_{i-1}, t_n) - \mathcal{s}(x_{i-1}, t_{n-1})}{ - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i} - 2 \rho(x_i, t_n)^2 \varepsilon(x_i, t_n).~(17)
