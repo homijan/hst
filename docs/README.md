@@ -222,7 +222,7 @@ $`\begin{equation}
 \end{equation}`$
 
 $`\begin{equation}
-\mathcal{w}(x_i, t_n) = \mathcal{w}(x_i, t_{n-1}) - \mathcal{w}(x_{i-1}, t_n) + \mathcal{w}(x_{i-1}, t_{n-1}) + \Delta x_i m^2 v(x_i, t_n)
+\mathcal{w}(x_i, t_n) = \mathcal{w}(x_{i-1}, t_{n-1}) + \left( \mathcal{w}(x_i, t_{n-1}) - \mathcal{w}(x_{i-1}, t_n) \right) + \Delta x_i m^2 v(x_i, t_n)
 \end{equation}`$
 
 $`\begin{equation}
