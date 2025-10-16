@@ -35,6 +35,10 @@ allowing for **re-engineeing of action density** $`\mathcal{s}(x, t)`$.
 
 $`\mathcal{S}_p[f(x)](\tau)`$
 
+$`\begin{equation}
+\mathcal{H}\left[ f(x), \partial_x \left( \partial_f \mathcal{s}|_{\rho(x, t)} \right) \right] = - \partial_t \mathcal{s}(x, t),~(3)
+\end{equation}`$
+
 # Euler fluid Hamiltonian
 
 ## Hamiltonians in 1D 
