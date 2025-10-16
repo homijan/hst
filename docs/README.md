@@ -5,7 +5,7 @@
 Hamiltonian functional
 
 $`\begin{equation}
-\mathcal{H}(\rho, v, \varepsilon) = \int \mathcal{h}(\rho(x), v(x), \varepsilon(x)) dx,~(1)
+\mathcal{H}[\rho, v, \varepsilon] = \int \mathcal{h}(\rho(x), v(x), \varepsilon(x)) dx,~(1)
 \end{equation}`$
 
 where $`\mathcal{h}(\rho(x), v(x), \varepsilon(x))`$ is the Hamiltonian density, e.g. ideal fluid
@@ -14,7 +14,7 @@ $`\mathcal{h}_{IF}(\rho(x), v(x), \varepsilon(x)) = m \rho(x) \left( \frac{1}{2}
 Similarly action functional
 
 $`\begin{equation}
-\mathcal{S}(\rho, t) = \int \mathcal{s}(\rho(x, t), t) dx,~(2)
+\mathcal{S}[\rho, t] = \int \mathcal{s}(\rho(x, t), t) dx,~(2)
 \end{equation}`$
 
 where $`\mathcal{s}(\rho(x, t), t)`$ is the action density.
