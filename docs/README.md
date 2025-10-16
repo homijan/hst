@@ -191,13 +191,13 @@ $`\begin{align}
 Note that the action density model (10) uses separation of variables if $`\partial t \mathcal{H} = 0`$. This contraint can be relaxed and (10) would take the common form of Hamilton-Jacobi equation for action density
 
 $`\begin{equation}
-\mathcal{h}\left( \rho(x, t), \partial_x \left( \partial_\rho \mathcal{s}|_{\rho(x, t)} \right) \right) = - \partial_t \mathcal{s}(x, t),~(14)
+\mathcal{h}\left( \rho(x, t), \partial_x \left( \partial_\rho \mathcal{s}|_{\rho(x, t)} \right) \right) = - \partial_t \mathcal{s}(x, t),~(15)
 \end{equation}`$
 
 which can be discretized as
 
 $`\begin{equation}
-\left( \frac{\frac{\mathcal{s}(x_i, t_n) - \frac{\mathcal{s}(x_i, t_{n-1}) + \mathcal{s}(x_{i-1}, t_n)}{2}}{\rho(x_i, t_n) - \frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2}} - \frac{\frac{\mathcal{s}(x_i, t_{n-1}) + \mathcal{s}(x_{i-1}, t_n)}{2} - \mathcal{s}(x_{i-1}, t_{n-1})}{\frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2} - \rho(x_{i-1}, t_{n-1})}}{x_i - x_{i-1}} \right)^2 + 2 \left( m \rho(x_i, t_n) \right)^2 \varepsilon(x_i, t_n) + 2 m \rho(x_i, t_n) \frac{\mathcal{s}(x_i, t_n) - \mathcal{s}(x_i, t_{n-1})}{\Delta t} = 0,~(15)
+\left( \frac{\frac{\mathcal{s}(x_i, t_n) - \frac{\mathcal{s}(x_i, t_{n-1}) + \mathcal{s}(x_{i-1}, t_n)}{2}}{\rho(x_i, t_n) - \frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2}} - \frac{\frac{\mathcal{s}(x_i, t_{n-1}) + \mathcal{s}(x_{i-1}, t_n)}{2} - \mathcal{s}(x_{i-1}, t_{n-1})}{\frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2} - \rho(x_{i-1}, t_{n-1})}}{x_i - x_{i-1}} \right)^2 + 2 \left( m \rho(x_i, t_n) \right)^2 \varepsilon(x_i, t_n) + 2 m \rho(x_i, t_n) \frac{\mathcal{s}(x_i, t_n) - \mathcal{s}(x_i, t_{n-1})}{\Delta t} = 0,~(16)
 \end{equation}`$
 
 Note, that $`\varepsilon(x_i) = \frac{1}{2} \omega^2 x_i^2`$ in the case of *continous* harmonic oscilator.
@@ -207,19 +207,19 @@ Note, that $`\varepsilon(x_i) = \frac{1}{2} \omega^2 x_i^2`$ in the case of *con
 The Hamilton-Jacobi equation (6) for harmonics oscilator via its Hamitlonian (1) reads
 
 $`\begin{equation}
-\partial_t S(q, t) + \frac{1}{2 m} \left( \partial_q S \right)^2 + \frac{1}{2} m \omega^2 q^2 = 0,~(16)
+\partial_t S(q, t) + \frac{1}{2 m} \left( \partial_q S \right)^2 + \frac{1}{2} m \omega^2 q^2 = 0,~(17)
 \end{equation}`$
 
 which can be rewritten using separation of variables $`S(q, t) = W(q) + f(t)`$ as
 
 $`\begin{equation}
-\left( \partial_q W \right)^2 = - m^2 \omega^2 q^2 - 2 m \partial_t f(t) \overset{_{\partial_t f(t) = H(q, v)}}{=} (m v)^2 \Rightarrow \partial_q W = mv.~(17)
+\left( \partial_q W \right)^2 = - m^2 \omega^2 q^2 - 2 m \partial_t f(t) \overset{_{\partial_t f(t) = H(q, v)}}{=} (m v)^2 \Rightarrow \partial_q W = mv.~(18)
 \end{equation}`$
 
-The discrete version of the last equality of (17) gives
+The discrete version of the last equality of (18) gives
 
 $`\begin{equation}
-\frac{W_i - W_{i-1}}{q_i - q_{i-1}} = m v_i,~(18)
+\frac{W_i - W_{i-1}}{q_i - q_{i-1}} = m v_i,~(19)
 \end{equation}`$
 
 where $`W_i`$ and $`v_i`$ corresponds to value at $`q_i`$. Further, the discrete coodrinate $`q_i = q(t_i)`$ correspond to discrete time $`t_i`$ based on the known dynamics of harmonic oscillator. 
@@ -227,10 +227,10 @@ where $`W_i`$ and $`v_i`$ corresponds to value at $`q_i`$. Further, the discrete
 The equivalent *continous* formula for the fluid harmonic oscilator (d13b) can be reduced considering $`\rho(x_i, t_n) = \delta_{in}`$, where $`i`$ is the spatial index and $`n`$ is the temporal index, hence
 
 $`\begin{equation}
-\mathcal{w}(x_i, t_n) = \mathcal{w}(x_{i-1}, t_{n-1}) + m ( x_i - x_{i-1}) m v(x_i, t_n),~(19)
+\mathcal{w}(x_i, t_n) = \mathcal{w}(x_{i-1}, t_{n-1}) + m ( x_i - x_{i-1}) m v(x_i, t_n),~(20)
 \end{equation}`$
 
-which is equivalent to (18) for $`x_i = q_i \forall i`$.
+which concludees that (20) is equivalent to (19) for $`x_i = q_i \forall i`$.
 
 # TBR
 
