@@ -227,15 +227,7 @@ where $`W_i`$ and $`v_i`$ corresponds to value at $`q_i`$. Further, the discrete
 The equivalent *continous* formula for the fluid harmonic oscilator (d13b) can be reduced considering $`\rho(x_i, t_n) = \delta_{in}`$, where $`i`$ is the spatial index and $`n`$ is the temporal index, hence
 
 $`\begin{equation}
-\mathcal{w}(x_i, t_n) = \mathcal{w}(x_{i-1}, t_{n-1}) + \left( \mathcal{w}(x_i, t_{n-1}) - \mathcal{w}(x_{i-1}, t_n) \right) + m \left( \Delta x_i m v(x_i, t_n) \right)
-\end{equation}`$
-
-$`\begin{equation}
-\mathcal{w}(x_i, t_{n-1}) = \mathcal{w}(x_{i-1}, t_{n-2}) + \left( \mathcal{w}(x_i, t_{n-2}) - \mathcal{w}(x_{i-1}, t_{n-1}) \right) + m \left( \Delta x_i m v(x_i, t_{n-1}) \right)
-\end{equation}`$
-
-$`\begin{equation}
-\mathcal{w}(x_{i-1}, t_n) = \mathcal{w}(x_{i-2}, t_{n-1}) + \left( \mathcal{w}(x_{i-1}, t_{n-1}) - \mathcal{w}(x_{i-2}, t_n) \right) + m \left( \Delta x_{i-1} m v(x_{i-1}, t_n) \right)
+\mathcal{w}(x_i, t_n) = \mathcal{w}(x_{i-1}, t_{n-1}) + m \left( \Delta x_i m v(x_i, t_n) \right)
 \end{equation}`$
 
 # TBR
