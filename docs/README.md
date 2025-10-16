@@ -36,8 +36,10 @@ allowing for **re-engineeing of action density** $`\mathcal{s}(x, t)`$.
 $`\mathcal{S}_p[f(x)](\tau)`$
 
 $`\begin{equation}
-\mathcal{H}\left[ f(x), \partial_x \left( \partial_f \mathcal{S}_p[f(x)](\tau) \right) \right] = - \frac{\partial \mathcal{S}_p[f(x)](\tau)}{\partial \tau} ,~(3)
+\mathcal{H}\left[ f(x), \delta_f \mathcal{S}_p[f(x)](\tau) \right] = - \frac{\partial \mathcal{S}_p[f(x)](\tau)}{\partial \tau} ,~(3)
 \end{equation}`$
+
+$`\partial_x \left( \partial_f \mathcal{S}_p[f(x)](\tau) \right)`$
 
 # Euler fluid Hamiltonian
 
