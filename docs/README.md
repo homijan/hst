@@ -200,6 +200,8 @@ $`\begin{equation}
 \left( \frac{\frac{\mathcal{s}(x_i, t_n) - \frac{\mathcal{s}(x_i, t_{n-1}) + \mathcal{s}(x_{i-1}, t_n)}{2}}{\rho(x_i, t_n) - \frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2}} - \frac{\frac{\mathcal{s}(x_i, t_{n-1}) + \mathcal{s}(x_{i-1}, t_n)}{2} - \mathcal{s}(x_{i-1}, t_{n-1})}{\frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2} - \rho(x_{i-1}, t_{n-1})}}{x_i - x_{i-1}} \right)^2 + 2 \left( m \rho(x_i, t_n) \right)^2 \varepsilon(x_i, t_n) + 2 m \rho(x_i, t_n) \frac{\mathcal{s}(x_i, t_n) - \mathcal{s}(x_i, t_{n-1})}{\Delta t} = 0,~(16)
 \end{equation}`$
 
+which is a more general version (though nonlinear) of (d13), because it allows time dependent Hamiltonian.
+
 Note, that $`\varepsilon(x_i) = \frac{1}{2} \omega^2 x_i^2`$ in the case of *continous* harmonic oscilator.
 
 **Exercise: Derive action of harmonic oscilator from its known dynamics**
@@ -227,7 +229,7 @@ where $`W_i`$ and $`v_i`$ corresponds to value at $`q_i`$. Further, the discrete
 The equivalent *continous* formula for the fluid harmonic oscilator (d13b) can be reduced considering $`\rho(x_i, t_n) = \delta_{in}`$, where $`i`$ is the spatial index and $`n`$ is the temporal index, hence
 
 $`\begin{equation}
-\mathcal{w}(x_i, t_n) = \mathcal{w}(x_{i-1}, t_{n-1}) + m ( x_i - x_{i-1}) m v(x_i, t_n),~(20)
+\mathcal{w}(x_i, t_n) = \mathcal{w}(x_{i-1}, t_{n-1}) + ( x_i - x_{i-1}) m v(x_i, t_n),~(20)
 \end{equation}`$
 
 which concludees that (20) is equivalent to (19) for $`x_i = q_i \forall i`$.
