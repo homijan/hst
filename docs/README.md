@@ -170,14 +170,14 @@ $`\begin{equation}
 \frac{\frac{\mathcal{f}(x_i, t_n) - \frac{\mathcal{f}(x_i, t_{n-1}) + \mathcal{f}(x_{i-1}, t_n)}{2}}{\rho(x_i, t_n) - \frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2}} - \frac{\frac{\mathcal{f}(x_i, t_{n-1}) + \mathcal{f}(x_{i-1}, t_n)}{2} - \mathcal{f}(x_{i-1}, t_{n-1})}{\frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2} - \rho(x_{i-1}, t_{n-1})}}{x_i - x_{i-1}},~(14)
 \end{equation}`$
 
-where $`\frac{g_{in-1} + g_{i-1n}}{2}`$ geometrically coresponds to the center of $`(i, i-1) \times (n, n-1)`$ coordinate square.
+where $`\frac{g_{in-1} + g_{i-1n}}{2}`$ geometrically coresponds to the center of $`(i, i-1) \times (n, n-1)`$ coordinate square (targeting symmetry leading to symplectic discretization).
 
 Discrete version of (13) using the approximation (14) reads
 
 $`\begin{align}
 \frac{\mathcal{f}(x_i, t_n) - \mathcal{f}(x_i, t_{n-1})}{\Delta t} &= - \frac{1}{2} m \rho(x_i, t_n) v(x_i, t_n)^2 - m \rho(x_i, t_n) \varepsilon(x_i, t_n),
 \\
-\frac{\frac{\mathcal{w}(x_i, t_n) - \mathcal{w}(x_i, t_{n-1})}{\rho(x_i, t_n) - \rho(x_i, t_{n-1})} - \frac{\mathcal{w}(x_{i-1}, t_n) - \mathcal{w}(x_{i-1}, t_{n-1})}{\rho(x_{i-1}, t_n) - \rho(x_{i-1}, t_{n-1})}}{\Delta x_i}&= m \rho(x_i, t_n) v(x_i, t_n),
+\frac{\frac{\mathcal{w}(x_i, t_n) - \frac{\mathcal{w}(x_i, t_{n-1}) + \mathcal{w}(x_{i-1}, t_n)}{2}}{\rho(x_i, t_n) - \frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2}} - \frac{\frac{\mathcal{w}(x_i, t_{n-1}) + \mathcal{w}(x_{i-1}, t_n)}{2} - \mathcal{w}(x_{i-1}, t_{n-1})}{\frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2} - \rho(x_{i-1}, t_{n-1})}}{x_i - x_{i-1}} &= m \rho(x_i, t_n) v(x_i, t_n),
 \end{align}`$
 
 which can be formulated in its forward advection form
