@@ -232,7 +232,7 @@ $`\begin{equation}
 \mathcal{w}(x_i, t_n) = \mathcal{w}(x_{i-1}, t_{n-1}) + ( x_i - x_{i-1}) m v(x_i, t_n),~(20)
 \end{equation}`$
 
-which concludees that (20) is equivalent to (19) for $`x_i = q_i \forall i`$.
+which concludes the motivation of this excerices that (20) is equivalent to (19) for $`x_i = q_i \forall i`$.
 
 # TBR
 
