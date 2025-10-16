@@ -31,7 +31,7 @@ $`\begin{equation}
 \left( \frac{\frac{\mathcal{s}(x_i, t_n) - \frac{\mathcal{s}(x_i, t_{n-1}) + \mathcal{s}(x_{i-1}, t_n)}{2}}{\rho(x_i, t_n) - \frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2}} - \frac{\frac{\mathcal{s}(x_i, t_{n-1}) + \mathcal{s}(x_{i-1}, t_n)}{2} - \mathcal{s}(x_{i-1}, t_{n-1})}{\frac{\rho(x_i, t_{n-1}) + \rho(x_{i-1}, t_n)}{2} - \rho(x_{i-1}, t_{n-1})}}{x_i - x_{i-1}} \right)^2 + 2 \left( m \rho(x_i, t_n) \right)^2 \varepsilon(x_i, t_n) + 2 m \rho(x_i, t_n) \frac{\mathcal{s}(x_i, t_n) - \mathcal{s}(x_i, t_{n-1})}{\Delta t} = 0,~(4)
 \end{equation}`$
 
-allowing for **re-engineeing of action density** $`\mathcal{s}`$.
+allowing for **re-engineeing of action density** $`\mathcal{s}(x, t)`$.
 
 # Euler fluid Hamiltonian
 
