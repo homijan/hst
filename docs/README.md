@@ -1,5 +1,16 @@
 # Docs
 
+# Re-engineering of action functional
+
+Hamiltonian functional
+
+$`\begin{equation}
+\mathcal{H}(\rho, v, \varepsilon) = \int \mathcal{h}(\rho(x), v(x), \varepsilon(x)) dx,~(1)
+\end{equation}`$
+
+where $`\mathcal{h}(\rho(x), v(x), \varepsilon(x))`$ is Hamiltonian density, e.g. ideal fluid
+$`\mathcal{h}_{IF}(\rho(x), v(x), \varepsilon(x)) = m \rho(x) \left( \frac{1}{2} v(x)^2 + \varepsilon(x) \right)`$.
+
 # Euler fluid Hamiltonian
 
 ## Hamiltonians in 1D 
