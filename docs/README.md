@@ -113,7 +113,7 @@ where we will use a discrete approximation of the local variation
 $`\begin{equation}
 \partial_\rho \mathcal{w}|_{\rho(x, t)}
 \approx
-\frac{\mathcal{w}(x, t^n) - \mathcal{w}(x, t^{n-1})}{\rho(x, t^n) - \rho(x, t^{n-1})} .~(11)
+\frac{\mathcal{w}(x, t) - \mathcal{w}(x-\Delta z, t-\Delta t)}{\rho(x, t) - \rho(x-\Delta x, t-\Delta t)} .~(11)
 \end{equation}`$
 
 It is simple to see that $`\mathcal{S}`$ defined by (9) satisfies (8) if $`\mathcal{s} = \mathcal{w} + \mathcal{f}`$ solves (10) $`\forall (x, t)`$, because (8) can be written as
