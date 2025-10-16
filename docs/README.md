@@ -19,7 +19,7 @@ $`\begin{equation}
 
 where $`\mathcal{s}(\rho(x, t), t)`$ is the action density.
 
-The Hamilton-Jacobi equation for continuum ($`\delta_\rho \mathcal{S} \Rightarrow \partial_x \left( \partial_\rho \right)`$)
+The Hamilton-Jacobi equation for continuum ($`\delta_\rho \mathcal{S} \Rightarrow \partial_x \left( \partial_\rho \mathcal{s} \right)`$)
 
 $`\begin{equation}
 \mathcal{h}\left( \rho(x, t), \partial_x \left( \partial_\rho \mathcal{s}|_{\rho(x, t)} \right) \right) = - \partial_t \mathcal{s}(x, t),~(3)
