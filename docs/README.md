@@ -33,7 +33,7 @@ $`\begin{equation}
 
 allowing for **re-engineeing of action density** $`\mathcal{s}(x, t)`$.
 
-$`\mathcal{s}_p[f](x, \tau)`$
+$`\mathcal{S}_p[f(x)](\tau)`$
 
 # Euler fluid Hamiltonian
 
