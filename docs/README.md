@@ -78,9 +78,9 @@ where we used $`\partial_\tau = D_t = \dot{}`$ and $`v = D_t f = \partial_\tau f
 ## To be digested
 
 $`\begin{align}
-D_\tau S[f] &= \delta_{f(\tau)} S[f] D_\tau f + \partial_\tau S
+D_\tau S[f] &= \delta_{f(\tau)} S[f] D_\tau f + \delta_\tau S[f]
 \\
-&\overset{_{(l1)}}{=} L[f]
+&\overset{_{(l1)}}{=} L[f(\tau), \dot{f}(\tau)]
 \end{align}`$
 
 ## MG's notation
