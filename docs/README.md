@@ -53,6 +53,12 @@ $`\begin{equation}
 F[\rho] = \int_\Omega f(\mathbf{s}, \rho(\mathbf{s}), \nabla_{\mathbf{s}} \rho(\mathbf{s})) d\mathbf{s},
 \end{equation}`$
 
+the functional derivative is
+
+$`\begin{equation}
+\delta_{\rho(\mathbf{s}) F[\rho] = \partial_\rho f(\mathbf{s}) - \nabla_\mathbf{s} \cdot \partial_{\nabla_\mathbf{s} \rho} f(\mathbf{s})
+\end{equation}`$
+
 ## MG's notation
 
 $`\mathcal{S}_p[f(x)](\tau)`$
