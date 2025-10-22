@@ -73,7 +73,7 @@ $`\begin{equation}
 \rho \partial_\tau v = - \partial_x p
 \end{equation}`$
 
-if Jacobian determinant $`J = \partial_a f`$, hence density $\rho = \frac{\rho_0}{\partial_a f}$
+if Jacobian determinant $`J = \partial_a f`$, hence density $\rho = \frac{\rho_0}{\partial_a f}$, ideal gas equation of state $`\varepsilon = \frac{p}{(\gamma - 1) \rho}`$ is used. Note that $`\partial_a = J \partial_x`$.
 
 ## MG's notation
 
