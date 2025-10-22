@@ -38,7 +38,7 @@ allowing for **re-engineeing of action density** $`\mathcal{s}(x, t)`$.
 $`\begin{align}
 S_\pi[f] &= \int_{\tau_0}^{\tau_1} L[f, \dot{f}] d\tau = \int_{\tau_0}^{\tau_1} \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), a, \tau) d^3a~d\tau 
 \\
-&\overset{^{ideal}_{fluid}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 + \varepsilon(a, \tau) \right) d^3 a~d\tau \overset{_{\pi = \rho_0 \dot{f}}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \left( \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 + \rho_0(a) \varepsilon(a, \tau) \right) d^3 a~d\tau,
+&\overset{^{ideal}_{fluid}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 + \varepsilon(a, \tau) \right) d^3 a~d\tau \overset{_{\pi = \rho_0 \dot{f}}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \left( \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 + \rho_0(a) \varepsilon(a, \tau) \right) d^3 a~d\tau,~(l1)
 \end{align}`$
 
 where *Lagrangian desnity* $`\mathcal{L}`$ is a function of the field and its derivatives at given point $`(a, \tau)`$. Note that $`\rho_0(a)`$ does not change with $`\tau`$.
@@ -50,14 +50,18 @@ $`\delta_{f(a, \tau)} S_\pi[f] = \pi(a, \tau)`$
 Given functional $`F[\rho]`$ on function $`\rho`$ defined at every point $\mathbf{s}$ of the volume domain $`\Omega`$
 
 $`\begin{equation}
-F[\rho] = \int_\Omega f(\mathbf{s}, \rho(\mathbf{s}), \nabla_{\mathbf{s}} \rho(\mathbf{s})) d\mathbf{s},
+F[\rho] = \int_\Omega f(\mathbf{s}, \rho(\mathbf{s}), \nabla_{\mathbf{s}} \rho(\mathbf{s})) d\mathbf{s},~(fd1)
 \end{equation}`$
 
-the functional derivative is
+the functional derivative of $`F[\rho]`$ at point $`\mathbf{s}`$ is
 
 $`\begin{equation}
-\delta_{\rho(\mathbf{s})} F[\rho] = \left( \partial_\rho f \right) (\mathbf{s}) - \nabla_\mathbf{s} \cdot \partial_{\nabla_\mathbf{s} \rho} f(\mathbf{s})
+\delta_{\rho(\mathbf{s})} F[\rho] = \left( \partial_\rho f \right) (\mathbf{s}) - \left( \nabla_\mathbf{s} \cdot \partial_{\nabla_\mathbf{s} \rho} f \right)(\mathbf{s}).~(fd2)
 \end{equation}`$
+
+### Ideal fluid action and functional derivative
+
+Note, that if $`\mathbf{s} = (t, a)`$ in $`(fd2)`$ and $`f`$ is the ideal fluid Lagrangian density from $`(l1)`$, $`\mathcal{L}(a, \dot{f}, \partial_a f) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 + \varepsilon(\partial_a f) \right)`$ 
 
 ## MG's notation
 
