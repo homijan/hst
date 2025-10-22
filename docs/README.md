@@ -61,7 +61,7 @@ $`\begin{equation}
 
 ### Ideal fluid action and functional derivative
 
-Note, that if $`\mathbf{s} = (a, \tau)`$ in $`(fd2)`$ and $`g`$ is the ideal fluid Lagrangian density from $`(l1)`$, $`\mathcal{L}(a, \dot{f}, \partial_a f) = \rho_0(a) \left( \frac{1}{2}\dot{f}^2 + \varepsilon(\partial_a f) \right)`$ 
+Note, that if $`\mathbf{s} = (a, \tau)`$ in $`(fd2)`$ and $`g`$ is the ideal fluid Lagrangian density from $`(l1)`$, $`\mathcal{L}(a, \dot{f}, \partial_a f) = \rho_0(a) \left( \frac{1}{2}\dot{f}^2 + \varepsilon(s_0(a), \rho_0(a), \partial_a f) \right)`$ 
 
 ## MG's notation
 
