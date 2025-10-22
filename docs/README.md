@@ -47,21 +47,21 @@ $`\delta_{f(a, \tau)} S_\pi[f] = \pi(a, \tau)`$
 
 ## Functional derivative
 
-Given functional $`F[\rho]`$ on function $`\rho`$ defined at every point $\mathbf{s}$ of the volume domain $`\Omega`$
+Given functional $`G[\rho]`$ on function $`\rho`$ defined at every point $\mathbf{s}$ of the volume domain $`\Omega`$
 
 $`\begin{equation}
-F[\rho] = \int_\Omega f(\mathbf{s}, \rho(\mathbf{s}), \nabla_{\mathbf{s}} \rho(\mathbf{s})) d\mathbf{s},~(fd1)
+G[\rho] = \int_\Omega g(\mathbf{s}, \rho(\mathbf{s}), \nabla_{\mathbf{s}} \rho(\mathbf{s})) d\mathbf{s},~(fd1)
 \end{equation}`$
 
-the functional derivative of $`F[\rho]`$ at point $`\mathbf{s}`$ is
+the functional derivative of $`G[\rho]`$ at point $`\mathbf{s}`$ is
 
 $`\begin{equation}
-\delta_{\rho(\mathbf{s})} F[\rho] = \left( \partial_\rho f \right) (\mathbf{s}) - \left( \nabla_\mathbf{s} \cdot \partial_{\nabla_\mathbf{s} \rho} f \right)(\mathbf{s}).~(fd2)
+\delta_{\rho(\mathbf{s})} G[\rho] = \left( \partial_\rho g \right) (\mathbf{s}) - \left( \nabla_\mathbf{s} \cdot \partial_{\nabla_\mathbf{s} \rho} g \right)(\mathbf{s}).~(fd2)
 \end{equation}`$
 
 ### Ideal fluid action and functional derivative
 
-Note, that if $`\mathbf{s} = (t, a)`$ in $`(fd2)`$ and $`f`$ is the ideal fluid Lagrangian density from $`(l1)`$, $`\mathcal{L}(a, \dot{f}, \partial_a f) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 + \varepsilon(\partial_a f) \right)`$ 
+Note, that if $`\mathbf{s} = (t, a)`$ in $`(fd2)`$ and $`g`$ is the ideal fluid Lagrangian density from $`(l1)`$, $`\mathcal{L}(a, \dot{f}, \partial_a f) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 + \varepsilon(\partial_a f) \right)`$ 
 
 ## MG's notation
 
