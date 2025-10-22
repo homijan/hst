@@ -38,7 +38,7 @@ allowing for **re-engineeing of action density** $`\mathcal{s}(x, t)`$.
 $`\begin{align}
 S_\pi[f] &= \int_{\tau_0}^{\tau_1} L[f, \dot{f}] d\tau = \int_{\tau_0}^{\tau_1} \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), a, \tau) d^3a~d\tau 
 \\
-&\overset{^{ideal}_{fluid}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 + \varepsilon(a, \tau) \right) d^3 a~d\tau \overset{_{\pi = \rho_0 \dot{f}}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \left( \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 + \rho_0(a) \varepsilon(a, \tau) \right) d^3 a~d\tau,~(l1)
+&\overset{^{ideal}_{fluid}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon(a, \tau) \right) d^3 a~d\tau \overset{_{\pi = \rho_0 \dot{f}}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \left( \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 - \rho_0(a) \varepsilon(a, \tau) \right) d^3 a~d\tau,~(l1)
 \end{align}`$
 
 where *Lagrangian desnity* $`\mathcal{L}`$ is a function of the field and its derivatives at given point $`(a, \tau)`$. Note that $`\rho_0(a)`$ does not change with $`\tau`$.
@@ -61,7 +61,7 @@ $`\begin{equation}
 
 ### Ideal fluid action and functional derivative
 
-Note, that if $`\mathbf{s} = (a, \tau)`$ in $`(fd2)`$ and $`g`$ is the ideal fluid Lagrangian density from $`(l1)`$, $`\mathcal{L}(a, \dot{f}, \partial_a f) = \rho_0(a) \left( \frac{1}{2}\dot{f}^2 + \varepsilon \left( s_0(a), \frac{\rho_0(a)}{\partial_a f} \right) \right)`$, we obtain Euler-Lagrange equations (Euler–Lagrange equations section of https://en.wikipedia.org/wiki/Lagrangian_(field_theory) )
+Note, that if $`\mathbf{s} = (a, \tau)`$ in $`(fd2)`$ and $`g`$ is the ideal fluid Lagrangian density from $`(l1)`$, $`\mathcal{L}(a, \dot{f}, \partial_a f) = \rho_0(a) \left( \frac{1}{2}\dot{f}^2 - \varepsilon \left( s_0(a), \frac{\rho_0(a)}{\partial_a f} \right) \right)`$, we obtain Euler-Lagrange equations (Euler–Lagrange equations section of https://en.wikipedia.org/wiki/Lagrangian_(field_theory) )
 
 $`\begin{equation}
 \partial_f \mathcal{L} = \partial_{s^i} \left( \partial_{(\partial_{s^i} f)} \mathcal{L} \right) \overset{_{\partial_f \mathcal{L} = 0}}{\Rightarrow} \partial_\tau \left( \partial_{(\partial_\tau f)} \mathcal{L} \right) + \partial_a \left( \partial_{(\partial_a f)} \mathcal{L} \right) = 0 \Rightarrow \rho_0 \partial^2_{\tau^2} f + \partial_a \left( \frac{\rho_0^2}{(\partial_a f)^2} \partial_{\frac{\rho_0(a)}{\partial_a f}} \varepsilon \right) = 0
