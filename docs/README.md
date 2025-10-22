@@ -73,7 +73,7 @@ $`\begin{equation}
 \rho \partial_\tau v = - \partial_x p
 \end{equation}`$
 
-if Jacobian determinant $`\mathcal{J} = \partial_a f`$, hence density $\rho = \frac{\rho_0}{\mathcal{J}}$
+if Jacobian determinant $`J = \partial_a f`$, hence density $\rho = \frac{\rho_0}{\partial_a f}$
 
 ## MG's notation
 
