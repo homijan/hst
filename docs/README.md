@@ -73,7 +73,7 @@ $`\begin{equation}
 \rho \dot{v} = - \partial_x p
 \end{equation}`$
 
-where $`\partial_\tau = D_t = \dot{}`$ and $`v = D_t f = \partial_\tau f`$, Jacobian determinant $`J = \partial_a f`$, hence density $\rho = \frac{\rho_0}{\partial_a f}$, ideal gas equation of state $`\varepsilon = \frac{p}{(\gamma - 1) \rho}`$, hence $`\partial_{\frac{\rho_0(a)}{\partial_a f}} \varepsilon = -\frac{p}{(\gamma - 1)\rho^2}`$, are used. Note that $`\partial_a = J \partial_x`$.
+where we used $`\partial_\tau = D_t = \dot{}`$ and $`v = D_t f = \partial_\tau f`$, Jacobian determinant $`J = \partial_a f`$, hence density $\rho = \frac{\rho_0}{\partial_a f}$, ideal gas equation of state $`\varepsilon = \frac{p}{(\gamma - 1) \rho}`$, hence $`\partial_{\frac{\rho_0(a)}{\partial_a f}} \varepsilon = -\frac{p}{(\gamma - 1)\rho^2}`$. Note that $`\partial_a = J \partial_x`$.
 
 ## MG's notation
 
