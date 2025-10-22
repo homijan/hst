@@ -33,6 +33,12 @@ $`\begin{equation}
 
 allowing for **re-engineeing of action density** $`\mathcal{s}(x, t)`$.
 
+## Lagrangian
+
+$`S_p[f(a, \tau)] = \int_{\tau_0}^{\tau_1} L(f, \dot{f}) d\tau`$
+
+## MG's notation
+
 $`\mathcal{S}_p[f(x)](\tau)`$
 
 $`\begin{equation}
