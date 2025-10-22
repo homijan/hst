@@ -39,7 +39,7 @@ $`S_\pi[f] = \int_{\tau_0}^{\tau_1} L[f, \dot{f}] d\tau = \int_{\tau_0}^{\tau_1}
 
 note that $`\rho_0(a)`$ does not change with $`\tau`$.
 
-$`\delta_f(a, \tau) S_\pi[f] = \pi(a, \tau)`$
+$`\delta_{f(a, \tau)} S_\pi[f] = \pi(a, \tau)`$
 
 ## MG's notation
 
