@@ -50,7 +50,7 @@ $`\delta_{f(a, \tau)} S_\pi[f] = \pi(a, \tau)`$
 Given functional $`F[\rho]`$ on function $`\rho`$ defined at every point $\mathbf{s}$ of the volume domain $`\Omega`$
 
 $`\begin{equation}
-F[\rho] = \int_\Omega f(\mathbf{s}, \rho(\mathbf{s}), \nabla \rho(\mathbf{s})) d\mathbf{s},
+F[\rho] = \int_\Omega f(\mathbf{s}, \rho(\mathbf{s}), \nabla_{\mathbf{s}} \rho(\mathbf{s})) d\mathbf{s},
 \end{equation}`$
 
 ## MG's notation
