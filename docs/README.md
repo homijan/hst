@@ -67,13 +67,13 @@ $`\begin{equation}
 \partial_f \mathcal{L} = \partial_{s^i} \left( \partial_{(\partial_{s^i} f)} \mathcal{L} \right) \overset{_{\partial_f \mathcal{L} = 0}}{\Rightarrow} \partial_\tau \left( \partial_{(\partial_\tau f)} \mathcal{L} \right) + \partial_a \left( \partial_{(\partial_a f)} \mathcal{L} \right) = 0 \Rightarrow \rho_0 \partial^2_{\tau^2} f - \partial_a \left( \frac{\rho_0^2}{(\partial_a f)^2} \partial_{\frac{\rho_0(a)}{\partial_a f}} \varepsilon \right) = 0,~(l2)
 \end{equation}`$
 
-which can be found to be equivalent to
+which can be found to be equivalent to second Newton law of fluid 
 
 $`\begin{equation}
-\rho \partial_\tau v = - \partial_x p
+\rho \dot{v} = - \partial_x p
 \end{equation}`$
 
-if Jacobian determinant $`J = \partial_a f`$, hence density $\rho = \frac{\rho_0}{\partial_a f}$, ideal gas equation of state $`\varepsilon = \frac{p}{(\gamma - 1) \rho}`$ is used. Note that $`\partial_a = J \partial_x`$.
+where $`\partial_\tau = \dot{}`$, Jacobian determinant $`J = \partial_a f`$, hence density $\rho = \frac{\rho_0}{\partial_a f}$, ideal gas equation of state $`\varepsilon = \frac{p}{(\gamma - 1) \rho}`$ is used. Note that $`\partial_a = J \partial_x`$.
 
 ## MG's notation
 
