@@ -56,7 +56,7 @@ F[\rho] = \int_\Omega f(\mathbf{s}, \rho(\mathbf{s}), \nabla_{\mathbf{s}} \rho(\
 the functional derivative is
 
 $`\begin{equation}
-\delta_{\rho(\mathbf{s}) F[\rho] = \partial_\rho f(\mathbf{s}) - \nabla_\mathbf{s} \cdot \partial_{\nabla_\mathbf{s} \rho} f(\mathbf{s})
+\delta_{\rho(\mathbf{s}) F[\rho] = \left( \partial_\rho f \right) (\mathbf{s})
 \end{equation}`$
 
 ## MG's notation
