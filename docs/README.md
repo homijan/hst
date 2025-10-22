@@ -35,7 +35,7 @@ allowing for **re-engineeing of action density** $`\mathcal{s}(x, t)`$.
 
 ## Lagrangian
 
-$`S_\pi[f] = \int_{\tau_0}^{\tau_1} L[f, \dot{f}] d\tau = \int_{\tau_0}^{\tau_1} \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau)) d^3a~d\tau = \int_{\tau_0}^{\tau_1} \int_\Omega \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 + \varepsilon(a, \tau) \right) d^3 a~d\tau \overset{_{\pi = \rho_0 \dot{f}}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \left( \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 + \rho_0(a) \varepsilon(a, \tau) \right) d^3 a~d\tau,`$
+$`S_\pi[f] = \int_{\tau_0}^{\tau_1} L[f, \dot{f}] d\tau = \int_{\tau_0}^{\tau_1} \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), a, \tau) d^3a~d\tau = \int_{\tau_0}^{\tau_1} \int_\Omega \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 + \varepsilon(a, \tau) \right) d^3 a~d\tau \overset{_{\pi = \rho_0 \dot{f}}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \left( \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 + \rho_0(a) \varepsilon(a, \tau) \right) d^3 a~d\tau,`$
 
 note that $`\rho_0(a)`$ does not change with $`\tau`$.
 
