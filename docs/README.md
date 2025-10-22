@@ -53,7 +53,7 @@ $`\begin{equation}
 G[\rho] = \int_\Omega g(\mathbf{s}, \rho(\mathbf{s}), \nabla_{\mathbf{s}} \rho(\mathbf{s})) d\mathbf{s},~(fd1)
 \end{equation}`$
 
-the functional derivative of $`G[\rho]`$ at point $`\mathbf{s}`$ is
+the functional derivative of $`G[\rho]`$ at point $`\mathbf{s}`$ is (Formula section of https://en.wikipedia.org/wiki/Functional_derivative )
 
 $`\begin{equation}
 \delta_{\rho(\mathbf{s})} G[\rho] = \left( \partial_\rho g \right) (\mathbf{s}) - \left( \nabla_\mathbf{s} \cdot \partial_{\nabla_\mathbf{s} \rho} g \right)(\mathbf{s}).~(fd2)
@@ -61,7 +61,11 @@ $`\begin{equation}
 
 ### Ideal fluid action and functional derivative
 
-Note, that if $`\mathbf{s} = (a, \tau)`$ in $`(fd2)`$ and $`g`$ is the ideal fluid Lagrangian density from $`(l1)`$, $`\mathcal{L}(a, \dot{f}, \partial_a f) = \rho_0(a) \left( \frac{1}{2}\dot{f}^2 + \varepsilon(s_0(a), \rho_0(a), \partial_a f) \right)`$, we get obtain (Euler–Lagrange equations section of https://en.wikipedia.org/wiki/Lagrangian_(field_theory))
+Note, that if $`\mathbf{s} = (a, \tau)`$ in $`(fd2)`$ and $`g`$ is the ideal fluid Lagrangian density from $`(l1)`$, $`\mathcal{L}(a, \dot{f}, \partial_a f) = \rho_0(a) \left( \frac{1}{2}\dot{f}^2 + \varepsilon(s_0(a), \rho_0(a), \partial_a f) \right)`$, we obtain Euler-Lagrange equations (Euler–Lagrange equations section of https://en.wikipedia.org/wiki/Lagrangian_(field_theory) )
+
+$`\begin{equation}
+\partial_f \mathcal{L} = \partial_\tau \left( \partial_{\partial_\tau f) \mathcal{L} \right)
+\end{equation}`$
 
 ## MG's notation
 
