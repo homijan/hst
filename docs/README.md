@@ -41,7 +41,7 @@ S_\pi[f] &= \int_{\tau_0}^{\tau_1} L[f, \dot{f}] d\tau = \int_{\tau_0}^{\tau_1} 
 &\overset{^{ideal}_{fluid}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 + \varepsilon(a, \tau) \right) d^3 a~d\tau \overset{_{\pi = \rho_0 \dot{f}}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \left( \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 + \rho_0(a) \varepsilon(a, \tau) \right) d^3 a~d\tau,
 \end{align}`$
 
-note that $`\rho_0(a)`$ does not change with $`\tau`$.
+where *Lagrangian desnity* $`\mathcal{L}`$ is a function of the field and its derivatives at given point $`(a, \tau)`$. Note that $`\rho_0(a)`$ does not change with $`\tau`$.
 
 $`\delta_{f(a, \tau)} S_\pi[f] = \pi(a, \tau)`$
 
