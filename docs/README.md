@@ -77,9 +77,11 @@ where we used $`\partial_\tau = D_t = \dot{}`$ and $`v = D_t f = \partial_\tau f
 
 ## To be digested
 
-$`\begin{equation}
-D_t S = \partial_q S D_t q + \partial_t S
-\end{equation}`$
+$`\begin{align}
+D_t S[f] &= \partial_f S D_t f + \partial_t S
+\\
+&\overset{_{(l1)}}{=} L[f]
+\end{align}`$
 
 ## MG's notation
 
