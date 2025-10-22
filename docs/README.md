@@ -64,8 +64,16 @@ $`\begin{equation}
 Note, that if $`\mathbf{s} = (a, \tau)`$ in $`(fd2)`$ and $`g`$ is the ideal fluid Lagrangian density from $`(l1)`$, $`\mathcal{L}(a, \dot{f}, \partial_a f) = \rho_0(a) \left( \frac{1}{2}\dot{f}^2 - \varepsilon \left( s_0(a), \frac{\rho_0(a)}{\partial_a f} \right) \right)`$, we obtain Euler-Lagrange equations (Euler–Lagrange equations section of https://en.wikipedia.org/wiki/Lagrangian_(field_theory) )
 
 $`\begin{equation}
-\partial_f \mathcal{L} = \partial_{s^i} \left( \partial_{(\partial_{s^i} f)} \mathcal{L} \right) \overset{_{\partial_f \mathcal{L} = 0}}{\Rightarrow} \partial_\tau \left( \partial_{(\partial_\tau f)} \mathcal{L} \right) + \partial_a \left( \partial_{(\partial_a f)} \mathcal{L} \right) = 0 \Rightarrow \rho_0 \partial^2_{\tau^2} f - \partial_a \left( \frac{\rho_0^2}{(\partial_a f)^2} \partial_{\frac{\rho_0(a)}{\partial_a f}} \varepsilon \right) = 0
+\partial_f \mathcal{L} = \partial_{s^i} \left( \partial_{(\partial_{s^i} f)} \mathcal{L} \right) \overset{_{\partial_f \mathcal{L} = 0}}{\Rightarrow} \partial_\tau \left( \partial_{(\partial_\tau f)} \mathcal{L} \right) + \partial_a \left( \partial_{(\partial_a f)} \mathcal{L} \right) = 0 \Rightarrow \rho_0 \partial^2_{\tau^2} f - \partial_a \left( \frac{\rho_0^2}{(\partial_a f)^2} \partial_{\frac{\rho_0(a)}{\partial_a f}} \varepsilon \right) = 0,~(l2)
 \end{equation}`$
+
+which can be found to be equivalent to
+
+$`\begin{equation}
+\rho \partial_\tau v = - \partial_x p
+\end{equation}`$
+
+if Jacobian determinant $`\mathcal{J} = \partial_a f`$, hence density $\rho = \frac{\rho_0}{\mathcal{J}}$
 
 ## MG's notation
 
