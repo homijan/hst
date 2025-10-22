@@ -39,6 +39,8 @@ $`S_\pi[f] = \int_{\tau_0}^{\tau_1} L[f, \dot{f}] d\tau = \int_{\tau_0}^{\tau_1}
 
 note that $`\rho_0(a)`$ does not change with $`\tau`$.
 
+$`\partial_f S_\pi[f(a, \tau)] = \pi(a, \tau)`$
+
 ## MG's notation
 
 $`\mathcal{S}_p[f(x)](\tau)`$
