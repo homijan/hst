@@ -78,7 +78,7 @@ where we used $`\partial_\tau = D_t = \dot{}`$ and $`v = D_t f = \partial_\tau f
 ## To be digested
 
 $`\begin{align}
-D_t S[f] &= \partial_f S D_t f + \partial_t S
+D_t S[f] &= \delta_f S[f] D_t f + \partial_t S
 \\
 &\overset{_{(l1)}}{=} L[f]
 \end{align}`$
