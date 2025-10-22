@@ -45,6 +45,14 @@ where *Lagrangian desnity* $`\mathcal{L}`$ is a function of the field and its de
 
 $`\delta_{f(a, \tau)} S_\pi[f] = \pi(a, \tau)`$
 
+## Functional derivative
+
+Given functional $`F[\rho]`$ on function $`\rho`$ defined on volume domain $`\Omega`$
+
+$`\begin{equation}
+F[\rho] = \int_\Omega f(\mathbf{s}, \rho(\mathbf{s}), \nabla \rho(\mathbf{s})) d\mathbf{s},
+\end{equation}`$
+
 ## MG's notation
 
 $`\mathcal{S}_p[f(x)](\tau)`$
