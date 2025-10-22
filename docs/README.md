@@ -33,7 +33,7 @@ $`\begin{equation}
 
 allowing for **re-engineeing of action density** $`\mathcal{s}(x, t)`$.
 
-## Lagrangian
+## Lagrangian density
 
 $`\begin{align}
 S_\pi[f] &= \int_{\tau_0}^{\tau_1} L[f, \dot{f}] d\tau = \int_{\tau_0}^{\tau_1} \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), a, \tau) d^3a~d\tau 
