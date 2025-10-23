@@ -38,9 +38,13 @@ S[f](\tilde{\tau}) = \int_\Omega \mathcal{S}_f(a, \tilde{\tau}) d^3a.~(l4)
 
 ## Ideal fluid example
 
+Let's $`a`$ is the fluid coordinate, then the ideal fluid Lagrangian density function reads
+
 $`\begin{equation}
-\mathcal{L}_{if}(\rho_0(a), \dot{f}(a, \tau), \partial_a f(a, \tau)) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon(a, \partial_a f(a, \tau)) \right),~(l5)
+\mathcal{L}_{if}(\rho_0(a), \dot{f}(a, \tau), \partial_a f(a, \tau)) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right),~(l5)
 \end{equation}`$
+
+where $`\varepsilon`$ is the internal energy potential depending on density $`\rho(a, t) = \frac{\rho_0(a)}{\partial_a f(a, \tau)}`$.
 
 Note that $`\rho_0(a)`$ does not change with $`\tau`$.
 
