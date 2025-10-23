@@ -76,7 +76,7 @@ $`\begin{align}
 \partial_\tau s + v \partial_x s &= 0,
 \end{align}`$
 
-with closure $`p = (\gamma - 1) \rho`$
+with closure $`p = (\gamma - 1) \rho \varepsilon(s, \rho)`$.
 
 # Re-engineering of action functional
 
