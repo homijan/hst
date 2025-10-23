@@ -91,7 +91,13 @@ where we assume initial condition $`x(a, 0) = a`$.
 We conclude this ideal fluid example by rewritting action density from $`(L7)`$ in laboratory Eulerian coordinates by using $`(L12)`$ as
 
 $`\begin{equation}
-\frac{d \mathcal{S}_f^{if}}{d \tau}(x, \tau) = \rho_0(a(x, \tau)) \left( \frac{1}{2}v(x, \tau)^2 - \varepsilon(x, \tau) \right).~(L13)
+\frac{d \mathcal{S}_f^{if}}{d \tau}(x, \tau) = \rho_0(a(x, \tau)) \left( \frac{1}{2}v(x, \tau)^2 - \varepsilon(x, \tau) \right),~(L13)
+\end{equation}`$
+
+and conjugate momentum $`(L6)`$ in lab coordinates as
+
+$`\begin{equation}
+\pi(x, \tau) = \rho_0(a(x, t)) v(x, \tau).~(L14) 
 \end{equation}`$
 
 # Re-engineering of action functional
