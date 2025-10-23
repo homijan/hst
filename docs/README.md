@@ -86,7 +86,7 @@ x(a, \tau) &= a + \int_0^\tau v(x(a, \tilde{\tau}), \tilde{\tau}) d\tilde{\tau},
 a(x, \tau) &= x - \int_0^\tau v(x, \tilde{\tau}) d\tilde{\tau},~(L12)
 \end{align}`$
 
-$`x(a, 0)`$
+where we assume initial condition $`x(a, 0) = a`$.
 
 # Re-engineering of action functional
 
