@@ -76,7 +76,7 @@ $`\begin{align}
 \partial_\tau s + v \partial_x s &= 0,
 \end{align}`$
 
-with closure $`p = (\gamma - 1) \rho \varepsilon(s, \rho)`$.
+with isentropic closure $`p = (\gamma - 1) \rho \varepsilon(s, \rho) = c_0 \rho^\gamma`$, $`c_0`$ constant in fluid coordinates.
 
 # Re-engineering of action functional
 
