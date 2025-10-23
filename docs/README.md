@@ -3,12 +3,16 @@
 # Re-engineering of action functional from Lagrangian density
 
 $`\begin{align}
-S_\pi[f](\tilde{\tau}) &= \int_{0}^{\tau} L[f, \dot{f}] d\tau = \int_{0}^{\tilde{\tau}} \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), a, \tau) d^3a~d\tau 
-\\
-&\overset{^{ideal}_{fluid}}{=} \int_{0}^{\tilde{\tau}} \int_\Omega \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon(a, \tau) \right) d^3 a~d\tau \overset{_{\pi = \rho_0 \dot{f}}}{=} \int_{0}^{\tilde{\tau}} \int_\Omega \left( \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 - \rho_0(a) \varepsilon(a, \tau) \right) d^3 a~d\tau,~(l1)
+S_\pi[f](\tilde{\tau}) &= \int_{0}^{\tilde{\tau}} L[f, \dot{f}] d\tau = \int_{0}^{\tilde{\tau}} \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), a, \tau) d^3a~d\tau,~(l0)
 \end{align}`$
 
-where *Lagrangian desnity* $`\mathcal{L}`$ is a function of the field and its derivatives at given point $`(a, \tau)`$. Note that $`\rho_0(a)`$ does not change with $`\tau`$.
+where *Lagrangian desnity* $`\mathcal{L}`$ is a function of the field and its derivatives at given point $`(a, \tau)`$. 
+
+$`\begin{align}
+S_\pi[f](\tilde{\tau}) &= \int_{0}^{\tilde{\tau}} \int_\Omega \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon(a, \tau) \right) d^3 a~d\tau \overset{_{\pi = \rho_0 \dot{f}}}{=} \int_{0}^{\tilde{\tau}} \int_\Omega \left( \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 - \rho_0(a) \varepsilon(a, \tau) \right) d^3 a~d\tau,~(l1)
+\end{align}`$
+
+Note that $`\rho_0(a)`$ does not change with $`\tau`$.
 
 # Re-engineering of action functional
 
