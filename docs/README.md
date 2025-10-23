@@ -4,37 +4,37 @@
 
 The action functional is defined as
 
-$`\begin{align}
-S[f](\tilde{\tau}) &= \int_{0}^{\tilde{\tau}} L[f] d\tau = \int_{0}^{\tilde{\tau}} \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau) d^3a~d\tau,~(l0)
-\end{align}`$
+$`\begin{equation}
+S[f](\tilde{\tau}) = \int_{0}^{\tilde{\tau}} L[f] d\tau = \int_{0}^{\tilde{\tau}} \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau) d^3a~d\tau,~(l0)
+\end{equation}`$
 
 where *Lagrangian desnity* $`\mathcal{L}`$ is a function of the field and its derivatives at given point $`(a, \tau)`$. 
 
 The integral formulation of action $`(l0)`$ can be written in differential form as
 
-$`\begin{align}
-\frac{d S[f]}{d t}(\tau) &= L[f](\tau) = \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau) d^3a.~(l1)
-\end{align}`$
+$`\begin{equation}
+\frac{d S[f]}{d t}(\tau) = L[f](\tau) = \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau) d^3a.~(l1)
+\end{equation}`$
 
 ## Proposal of action density equivalence
 
 The action density field $`\mathcal{S}_f(a, t)`$ solving the following ordinary differential equation for given field $`f`$
 
-$`\begin{align}
-\frac{d \mathcal{S}_f}{d t}(a, \tau) &= \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau),~(l2)
-\end{align}`$
+$`\begin{equation}
+\frac{d \mathcal{S}_f}{d t}(a, \tau) = \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau),~(l2)
+\end{equation}`$
 
 leads to the same action as evaluated by $`(l0)`$ written mathematically as
 
-$`\begin{align}
-S[f](\tilde{\tau}) &= \int_\Omega \mathcal{S}_f(a, \tilde{\tau}) d^3a.~(l3)
-\end{align}`$
+$`\begin{equation}
+S[f](\tilde{\tau}) = \int_\Omega \mathcal{S}_f(a, \tilde{\tau}) d^3a.~(l3)
+\end{equation}`$
 
 ## Ideal fluid example
 
-$`\begin{align}
-\mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau) &= \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon(a, \tau) \right) \overset{_{\pi = \rho_0 \dot{f}}}{=} \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 - \rho_0(a) \varepsilon(a, \tau),~(l1)
-\end{align}`$
+$`\begin{equation}
+\mathcal{L}(\rho_0(a), \dot{f}(a, \tau), \varepsilon(a, \tau)) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon(a, \tau) \right) \overset{_{\pi = \rho_0 \dot{f}}}{=} \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 - \rho_0(a) \varepsilon(a, \tau),~(l1)
+\end{equation}`$
 
 Note that $`\rho_0(a)`$ does not change with $`\tau`$.
 
