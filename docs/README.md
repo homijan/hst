@@ -69,7 +69,7 @@ $`\begin{align}
 where $`v(x, \tau)`$ and $`\rho(x, \tau)`$ are solution to Euler equations
 
 $`\begin{align}
-\rho \left(\partial_\tau v + v \partial_x v) &= - \partial_x p,
+\rho \left(\partial_\tau v + v \partial_x v \right) &= - \partial_x p,
 \\
 \partial_\tau \rho + \partial_x \left( \rho v \right) &= 0,
 \\
