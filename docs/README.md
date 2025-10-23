@@ -78,7 +78,11 @@ $`\begin{align}
 
 with isentropic closure $`p = (\gamma - 1) \rho \varepsilon(s, \rho) = c_0 \rho^\gamma`$, $`c_0`$ constant in fluid coordinates.
 
+Note that the realtion between Eulerian coordinate $`x`$ and Lagrangian (fluid) coordinate $`a`$ reads
 
+$`\begin{equation}
+x(a, \tau) = x(a, 0) + \int_0^\tau v(x(a, \tilde{\tau}), \tilde{\tau}) d\tilde{\tau},~(L11)
+\end{equation}`$
 
 # Re-engineering of action functional
 
