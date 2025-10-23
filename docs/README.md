@@ -49,7 +49,7 @@ where $`\varepsilon(s, \rho) = c \rho^{\gamma - 1} \exp(\alpha s)`$, where $`c`$
 The conjugate momentum of field $`f`$ defined by $`(L2)`$ from $`(L5)`$ is
 
 $`\begin{equation}
-\pi(a, \tau) = \partial_{\dot{f}} \mathcal{L}_=^{if}(a, \tau) = \rho_0(a) \dot{f}(a, \tau).~(L6) 
+\pi(a, \tau) = \partial_{\dot{f}} \mathcal{L}_^{if}(a, \tau) = \rho_0(a) \dot{f}(a, \tau).~(L6) 
 \end{equation}`$
 
 Finally, we obtain the ideal fluid action density $`\mathcal{S}^{if}_f(a, \tau)`$ for a given function $`f`$ from $`(L3)`$ using ideal fluid Lagrangian density $`(L5)`$ by solving ordinary differential equation
