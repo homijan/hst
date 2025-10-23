@@ -52,7 +52,7 @@ $`\begin{equation}
 \pi(a, \tau) = \partial_{\dot{f}} \mathcal{L}_f^{if}(a, \tau) = \rho_0(a) \dot{f}(a, \tau).~(L6) 
 \end{equation}`$
 
-Finally, we obtain the ideal fluid action density $`\mathcal{S}^{if}_f(a, \tau)`$ for a given function $`f`$ from $`(L3)`$ using ideal fluid Lagrangian density $`(L5)`$ by solving ordinary differential equation
+Finally, we obtain the ideal fluid action density $`\mathcal{S}^{if}_f(a, \tau)`$ for a given function $`f`$ from $`(L3)`$ using ideal fluid Lagrangian density $`(L5)`$ by solving an ordinary differential equation
 
 $`\begin{equation}
 \frac{d \mathcal{S}_f^{if}}{d \tau}(a, \tau) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right).~(L7)
@@ -88,7 +88,7 @@ a(x, \tau) &= x - \int_0^\tau v(x, \tilde{\tau}) d\tilde{\tau},~(L12)
 
 where we assume initial condition $`x(a, 0) = a`$.
 
-We conclude this ideal fluid example by rewritting action density from $`(L7)`$ in laboratory Eulerian coordinates by using $`(L12)`$ as
+We conclude this ideal fluid example by rewritting action density from $`(L7)`$ into laboratory Eulerian coordinates by using $`(L12)`$ as
 
 $`\begin{equation}
 \frac{d \mathcal{S}_f^{if}}{d \tau}(x, \tau) = \rho_0(a(x, \tau)) \left( \frac{1}{2}v(x, \tau)^2 - \varepsilon(x, \tau) \right),~(L13)
