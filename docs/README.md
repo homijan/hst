@@ -27,7 +27,7 @@ $`\begin{align}
 leads to the same action as evaluated by $`(l0)`$ written mathematically as
 
 $`\begin{align}
-S[f](\tilde{\tau}) &= \int_{0}^{\tilde{\tau}} L[f] d\tau = \int_{0}^{\tilde{\tau}} \int_\Omega \mathcal{S}(a, \tau) d^3a~d\tau.~(l3)
+S[f](\tilde{\tau}) &= \int_\Omega \mathcal{S}(a, \tilde{\tau}) d^3a.~(l3)
 \end{align}`$
 
 $`\begin{align}
