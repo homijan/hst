@@ -61,9 +61,9 @@ $`\begin{equation}
 It can be shown that $`\dot{f}(a, \tau)`$ and $`\partial_a f(a, \tau)`$ are equivalent to Euler variables of ideal fluid
 
 $`\begin{align}
-\dot{f}(a, \tau) &= v(x(a, \tau), \tau),
+\dot{f}(a, \tau) &= v(x(a, \tau), \tau),~(L8)
 \\
-\partial_a f(a, \tau) &= \frac{\rho_0(a)}{\rho(x(a, \tau), \tau)},
+\partial_a f(a, \tau) &= \frac{\rho_0(a)}{\rho(x(a, \tau), \tau)},~(L9)
 \end{align}`$
 
 where $`v(x, \tau)`$ and $`\rho(x, \tau)`$ are solution to Euler equations
@@ -71,12 +71,14 @@ where $`v(x, \tau)`$ and $`\rho(x, \tau)`$ are solution to Euler equations
 $`\begin{align}
 \rho \left( \partial_\tau v + v \partial_x v \right) &= - \partial_x p,
 \\
-\partial_\tau \rho + \partial_x \left( \rho v \right) &= 0,
+\partial_\tau \rho + \partial_x \left( \rho v \right) &= 0,~(L10)
 \\
 \partial_\tau s + v \partial_x s &= 0,
 \end{align}`$
 
 with isentropic closure $`p = (\gamma - 1) \rho \varepsilon(s, \rho) = c_0 \rho^\gamma`$, $`c_0`$ constant in fluid coordinates.
+
+
 
 # Re-engineering of action functional
 
