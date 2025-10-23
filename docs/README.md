@@ -5,12 +5,12 @@
 The action functional is defined as
 
 $`\begin{equation}
-S[f](\tilde{\tau}) = \int_{0}^{\tilde{\tau}} L[f] d\tau = \int_{0}^{\tilde{\tau}} \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau) d^3a~d\tau,~(l0)
+S[f](\tilde{\tau}) = \int_{0}^{\tilde{\tau}} L[f] d\tau = \int_{0}^{\tilde{\tau}} \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau) d^3a~d\tau,~(L0)
 \end{equation}`$
 
 where *Lagrangian desnity* $`\mathcal{L}`$ is a function of the field and its derivatives at given point $`(a, \tau)`$. 
 
-The integral formulation of action $`(l0)`$ can be written in differential form as
+The integral formulation of action $`(L0)`$ can be written in differential form as
 
 $`\begin{equation}
 \frac{d S[f]}{d t}(\tau) = L[f](\tau) = \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau) d^3a.~(L1)
@@ -30,7 +30,7 @@ $`\begin{equation}
 \frac{d \mathcal{S}_f}{d t}(a, \tau) = \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau),~(L3)
 \end{equation}`$
 
-leads to the same action as evaluated by $`(l0)`$ written mathematically as
+leads to the same action as evaluated by $`(L0)`$ written mathematically as
 
 $`\begin{equation}
 S[f](\tilde{\tau}) = \int_\Omega \mathcal{S}_f(a, \tilde{\tau}) d^3a.~(L4)
