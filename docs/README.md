@@ -3,7 +3,7 @@
 # Re-engineering of action functional from Lagrangian density
 
 $`\begin{align}
-S_\pi[f](\tilde{\tau}) &= \int_{0}^{\tilde{\tau}} L[f, \dot{f}] d\tau = \int_{0}^{\tilde{\tau}} \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), a, \tau) d^3a~d\tau,~(l0)
+S[f](\tilde{\tau}) &= \int_{0}^{\tilde{\tau}} L[f, \dot{f}] d\tau = \int_{0}^{\tilde{\tau}} \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), a, \tau) d^3a~d\tau,~(l0)
 \end{align}`$
 
 where *Lagrangian desnity* $`\mathcal{L}`$ is a function of the field and its derivatives at given point $`(a, \tau)`$. 
