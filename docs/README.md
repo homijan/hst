@@ -80,9 +80,13 @@ with isentropic closure $`p = (\gamma - 1) \rho \varepsilon(s, \rho) = c_0 \rho^
 
 Note that the realtion between Eulerian coordinate $`x`$ and Lagrangian (fluid) coordinate $`a`$ reads
 
-$`\begin{equation}
-x(a, \tau) = x(a, 0) + \int_0^\tau v(x(a, \tilde{\tau}), \tilde{\tau}) d\tilde{\tau},~(L11)
-\end{equation}`$
+$`\begin{align}
+x(a, \tau) &= a + \int_0^\tau v(x(a, \tilde{\tau}), \tilde{\tau}) d\tilde{\tau},~(L11)
+\\
+a(x, \tau) &= x - \int_0^\tau v(x(a, \tilde{\tau}), \tilde{\tau}) d\tilde{\tau},~(L12)
+\end{align}`$
+
+$`x(a, 0)`$
 
 # Re-engineering of action functional
 
