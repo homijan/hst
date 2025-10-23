@@ -100,6 +100,16 @@ $`\begin{equation}
 \pi(x, \tau) = \rho_0(a(x, t)) v(x, \tau).~(L14) 
 \end{equation}`$
 
+The action $`S^{if}[f](\tau)`$ can be obtained from the solution of $`(L7)`$ via $`(L4)`$.
+
+Note, that, equivalently, can be obtained from solution of $`(L13)`$ via
+
+$`\begin{equation}
+S[f](\tilde{\tau}) = \int_\Omega \mathcal{S}_f^{if}(x, \tilde{\tau}) \frac{1}{J}d^3x,~(L15)
+\end{equation}`$
+
+where the integration is carried out over laboratory coordinates (not the fluid coordinates, requiring Jacobian scaling).
+
 # Re-engineering of action functional
 
 Hamiltonian functional
