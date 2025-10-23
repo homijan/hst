@@ -41,10 +41,10 @@ S[f](\tilde{\tau}) = \int_\Omega \mathcal{S}_f(a, \tilde{\tau}) d^3a.~(L4)
 Let's $`a`$ is the fluid coordinate, then the ideal fluid Lagrangian density function reads
 
 $`\begin{equation}
-\mathcal{L}^{if}(\rho_0(a), \dot{f}(a, \tau), \partial_a f(a, \tau)) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right),~(L5)
+\mathcal{L}^{if}(\rho_0(a), \dot{f}(a, \tau), \partial_a f(a, \tau)) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( s_0(a), \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right),~(L5)
 \end{equation}`$
 
-where $`\varepsilon`$ is the internal energy potential depending on density $`\rho(a, t) = \frac{\rho_0(a)}{\partial_a f(a, \tau)}`$. Note that $`\rho_0(a)`$ does not change with $`\tau`$.
+where $`\varepsilon(s, \rho) = c \rho^{\gamma - 1} \exp(\alpha s)`$, where $`c`$, $`\gamma`$, and $`\alpha`$ are constants, is the internal energy potential depending on density $`\rho(a, t) = \frac{\rho_0(a)}{\partial_a f(a, \tau)}`$. Note that $`\rho_0(a)`$ (density in with respect to fluid coordinates) and $`s_0(a)`$ (isentropic processs) do not change with $`\tau`$.
 
 The conjugate momentum of field $`f`$ defined by $`(L2)`$ from $`(L5)`$ is
 
@@ -58,13 +58,25 @@ $`\begin{equation}
 \frac{d \mathcal{S}_f^{if}}{d \tau}(a, \tau) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right).~(L7)
 \end{equation}`$
 
-It can be shown that $`\dot{f}(a, \tau)`$ and $`\partial_a f(a, \tau)`$ are equivalent with Euler variables of ideal fluid
+It can be shown that $`\dot{f}(a, \tau)`$ and $`\partial_a f(a, \tau)`$ are equivalent to Euler variables of ideal fluid
 
 $`\begin{align}
 \dot{f}(a, \tau) &= v(x(a, \tau), \tau),
 \\
 \partial_a f(a, \tau) &= \frac{\rho_0(a)}{\rho(x(a, \tau), \tau)},
 \end{align}`$
+
+where $`v(x, \tau)`$ and $`\rho(x, \tau)`$ are solution to Euler equations
+
+$`\begin{align}
+\rho \left(\partial_\tau v + v \partial_x v) &= - \partial_x p,
+\\
+\partial_\tau \rho + \partial_x \left( \rho v \right) = 0,
+\\
+\partial_\tau s + v \partial_x s = 0,
+\end{align}`$
+
+with closure $`p = (\gamma - 1) \rho`$
 
 # Re-engineering of action functional
 
