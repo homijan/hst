@@ -49,7 +49,7 @@ where $`\varepsilon`$ is the internal energy potential depending on density $`\r
 The conjugate momentum of field $`f`$ defined by $`(l2)`$ from $`(l5)`$ is
 
 $`\begin{equation}
-\pi(a, \tau) = \partial_{\dot{f}} \mathcal{L}_{if}(\a, \tau) = \rho_0(a) \dot{f}(a, \tau).~(l6) 
+\pi(a, \tau) = \partial_{\dot{f}} \mathcal{L}_{if}(a, \tau) = \rho_0(a) \dot{f}(a, \tau).~(l6) 
 \end{equation}`$
 
 # Re-engineering of action functional
