@@ -72,6 +72,8 @@ $`\begin{align}
 \rho \left( \partial_\tau v + v \partial_x v \right) &= - \partial_x p,
 \\
 \partial_\tau \rho + \partial_x \left( \rho v \right) &= 0,
+\\
+\partial_\tau s + v \partial_x s &= 0,
 \end{align}`$
 
 with closure $`p = (\gamma - 1) \rho`$
