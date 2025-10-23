@@ -18,10 +18,10 @@ $`\begin{align}
 
 ## Proposal of action density equivalence
 
-The action density $`\mathcal{S}(a, t)`$ solving the following equation
+The action density function $`\mathcal{S}_f(a, t)`$ solving the following equation
 
 $`\begin{align}
-\frac{d \mathcal{S}}{d t}(a, \tau) &= \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau),~(l2)
+\frac{d \mathcal{S}_f}{d t}(a, \tau) &= \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau),~(l2)
 \end{align}`$
 
 
