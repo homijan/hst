@@ -2,7 +2,7 @@
 
 # Re-engineering of action functional from Lagrangian density
 
-The action functional is defined
+The action functional is defined as
 
 $`\begin{align}
 S[f](\tilde{\tau}) &= \int_{0}^{\tilde{\tau}} L[f, \dot{f}] d\tau = \int_{0}^{\tilde{\tau}} \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), a, \tau) d^3a~d\tau,~(l0)
