@@ -41,7 +41,7 @@ S[f](\tilde{\tau}) = \int_\Omega \mathcal{S}_f(a, \tilde{\tau}) d^3a.~(L4)
 Let's $`a`$ is the fluid coordinate, then the ideal fluid Lagrangian density function reads
 
 $`\begin{equation}
-\mathcal{L}_f^{if}(\rho_0(a), \dot{f}(a, \tau), \partial_a f(a, \tau)) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( s_0(a), \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right),~(L5)
+\mathcal{L}^{if}(\rho_0(a), \dot{f}(a, \tau), \partial_a f(a, \tau)) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( s_0(a), \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right),~(L5)
 \end{equation}`$
 
 where $`\varepsilon(s, \rho) = c \rho^{\gamma - 1} \exp(\alpha s)`$, where $`c`$, $`\gamma`$, and $`\alpha`$ are constants, is the internal energy potential depending on density $`\rho(a, t) = \frac{\rho_0(a)}{\partial_a f(a, \tau)}`$. Note that $`\rho_0(a)`$ (density in with respect to fluid coordinates) and $`s_0(a)`$ (isentropic processs) do not change with $`\tau`$.
