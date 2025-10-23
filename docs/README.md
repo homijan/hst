@@ -44,7 +44,7 @@ $`\begin{equation}
 \mathcal{L}_{if}(\rho_0(a), \dot{f}(a, \tau), \partial_a f(a, \tau)) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right),~(l5)
 \end{equation}`$
 
-where $`p = (\gamma - 1) \rho \varepsilon`$ is the internal energy potential depending on density $`\rho(a, t) = \frac{\rho_0(a)}{\partial_a f(a, \tau)}`$.
+where $`\varepsilon`$ is the internal energy potential depending on density $`\rho(a, t) = \frac{\rho_0(a)}{\partial_a f(a, \tau)}`$.
 
 Note that $`\rho_0(a)`$ does not change with $`\tau`$.
 
