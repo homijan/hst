@@ -18,7 +18,7 @@ $`\begin{align}
 
 ## Proposal of action density equivalence
 
-The action density field $`\mathcal{S}(a, t)`$ solving the following equation for given field $`f`$
+The action density field $`\mathcal{S}_f(a, t)`$ solving the following equation for given field $`f`$
 
 $`\begin{align}
 \frac{d \mathcal{S}_f}{d t}(a, \tau) &= \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau),~(l2)
