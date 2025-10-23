@@ -58,6 +58,8 @@ $`\begin{equation}
 \frac{d \mathcal{S}_f^{if}}{d \tau}(a, \tau) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right).~(L7)
 \end{equation}`$
 
+*It should be noted, that $`f(a, \tau)`$ is the evolving spatial position of a fluid element $`a`$ in time*.
+
 It can be shown that $`\dot{f}(a, \tau)`$ and $`\partial_a f(a, \tau)`$ are equivalent to Euler variables of ideal fluid
 
 $`\begin{align}
