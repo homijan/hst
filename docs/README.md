@@ -18,13 +18,17 @@ $`\begin{align}
 
 ## Proposal of action density equivalence
 
-The action density field $`\mathcal{S}_f(a, t)`$ solving the following equation for given field $`f`$
+The action density field $`\mathcal{S}_f(a, t)`$ solving the following ordinary differential equation for given field $`f`$
 
 $`\begin{align}
 \frac{d \mathcal{S}_f}{d t}(a, \tau) &= \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau),~(l2)
 \end{align}`$
 
+leads to the same action as evaluated by $`(l0)`$ written mathematically as
 
+$`\begin{align}
+S[f](\tilde{\tau}) &= \int_{0}^{\tilde{\tau}} L[f] d\tau = \int_{0}^{\tilde{\tau}} \int_\Omega \mathcal{S}(a, \tau) d^3a~d\tau.~(l3)
+\end{align}`$
 
 $`\begin{align}
 S_\pi[f](\tilde{\tau}) &= \int_{0}^{\tilde{\tau}} \int_\Omega \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon(a, \tau) \right) d^3 a~d\tau \overset{_{\pi = \rho_0 \dot{f}}}{=} \int_{0}^{\tilde{\tau}} \int_\Omega \left( \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 - \rho_0(a) \varepsilon(a, \tau) \right) d^3 a~d\tau,~(l1)
