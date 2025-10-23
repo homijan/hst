@@ -41,7 +41,7 @@ S[f](\tilde{\tau}) = \int_\Omega \mathcal{S}_f(a, \tilde{\tau}) d^3a.~(l4)
 Let's $`a`$ is the fluid coordinate, then the ideal fluid Lagrangian density function reads
 
 $`\begin{equation}
-\mathcal{L}_{if}(\rho_0(a), \dot{f}(a, \tau), \partial_a f(a, \tau)) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right),~(l5)
+\mathcal{L}^{if}(\rho_0(a), \dot{f}(a, \tau), \partial_a f(a, \tau)) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right),~(l5)
 \end{equation}`$
 
 where $`\varepsilon`$ is the internal energy potential depending on density $`\rho(a, t) = \frac{\rho_0(a)}{\partial_a f(a, \tau)}`$. Note that $`\rho_0(a)`$ does not change with $`\tau`$.
@@ -49,7 +49,13 @@ where $`\varepsilon`$ is the internal energy potential depending on density $`\r
 The conjugate momentum of field $`f`$ defined by $`(l2)`$ from $`(l5)`$ is
 
 $`\begin{equation}
-\pi(a, \tau) = \partial_{\dot{f}} \mathcal{L}_{if}(a, \tau) = \rho_0(a) \dot{f}(a, \tau).~(l6) 
+\pi(a, \tau) = \partial_{\dot{f}} \mathcal{L}_=^{if}(a, \tau) = \rho_0(a) \dot{f}(a, \tau).~(l6) 
+\end{equation}`$
+
+Finally, we obtain the ideal fluid action density $`\mathcal{S}^{if}_f(a, \tau)`$ for a given function $`f`$ from $`(l3)`$ using ideal fluid Lagrangian density $`(l5)`$ by solving ordinary differential equation
+
+$`\begin{equation}
+\frac{d \mathcal{S}_f}{d t}(a, \tau) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right).~(l7)
 \end{equation}`$
 
 # Re-engineering of action functional
