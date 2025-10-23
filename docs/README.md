@@ -70,6 +70,8 @@ where $`v(x, \tau)`$ and $`\rho(x, \tau)`$ are solution to Euler equations
 
 $`\begin{align}
 \rho \left( \partial_\tau v + v \partial_x v \right) &= - \partial_x p,
+\\
+\partial_\tau \rho + \partial_x \left( \rho v \right) &= 0,
 \end{align}`$
 
 with closure $`p = (\gamma - 1) \rho`$
