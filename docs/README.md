@@ -13,7 +13,7 @@ where *Lagrangian desnity* $`\mathcal{L}`$ is a function of the field and its de
 The integral formulation of action $`(L0)`$ can be written in differential form as
 
 $`\begin{equation}
-\frac{d S[f]}{d t}(\tau) = L[f](\tau) = \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau) d^3a.~(L1)
+\frac{d S[f]}{d \tau}(\tau) = L[f](\tau) = \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau) d^3a.~(L1)
 \end{equation}`$
 
 The *conjugate momentum* to $`f`$ is defined as
@@ -27,7 +27,7 @@ $`\begin{equation}
 The action density field $`\mathcal{S}_f(a, t)`$ solving the following ordinary differential equation for given field $`f`$
 
 $`\begin{equation}
-\frac{d \mathcal{S}_f}{d t}(a, \tau) = \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau),~(L3)
+\frac{d \mathcal{S}_f}{d \tau}(a, \tau) = \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau),~(L3)
 \end{equation}`$
 
 leads to the same action as evaluated by $`(L0)`$ written mathematically as
@@ -55,8 +55,16 @@ $`\begin{equation}
 Finally, we obtain the ideal fluid action density $`\mathcal{S}^{if}_f(a, \tau)`$ for a given function $`f`$ from $`(L3)`$ using ideal fluid Lagrangian density $`(L5)`$ by solving ordinary differential equation
 
 $`\begin{equation}
-\frac{d \mathcal{S}_f^{if}}{d t}(a, \tau) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right).~(L7)
+\frac{d \mathcal{S}_f^{if}}{d \tau}(a, \tau) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right).~(L7)
 \end{equation}`$
+
+It can be shown that $`\dot(f)(a, \tau)`$ and $`\partial_a f(a, \tau)`$ are equivalent with Euler variables of ideal fluid
+
+$`\begin{align}
+\dot(f)(a, \tau) &= v(x(a, \tau), \tau),
+\\
+\partial_a f(a, \tau) &= \frac{\rho_0(a)}{\rho(x(a, \tau), \tau)},
+\end{align}`$
 
 # Re-engineering of action functional
 
