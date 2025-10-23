@@ -111,7 +111,7 @@ $`\begin{equation}
 S[f](\tilde{\tau}) = \int_\Omega \mathcal{S}_f^{if}(x, \tilde{\tau}) \frac{1}{J}d^3x,~(L15)
 \end{equation}`$
 
-where the integration is carried out over laboratory coordinates (not the fluid coordinates, requiring Jacobian scaling).
+where the integration is carried out over laboratory coordinates (not the fluid coordinates, requiring Jacobian scaling $`J = \partial_a x(a(x, \tau), \tau)`$).
 
 # Re-engineering of action functional
 
