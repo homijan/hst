@@ -10,10 +10,16 @@ S[f](\tilde{\tau}) &= \int_{0}^{\tilde{\tau}} L[f] d\tau = \int_{0}^{\tilde{\tau
 
 where *Lagrangian desnity* $`\mathcal{L}`$ is a function of the field and its derivatives at given point $`(a, \tau)`$. 
 
-The integral formulation of action $`(l0)`$ can be equivalently written in differential form
+The integral formulation of action $`(l0)`$ can be written in differential form as
 
 $`\begin{align}
-\frac{d S[f]}{d t}(\tau) &= L[f](\tau) = \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau) d^3a,~(l1)
+\frac{d S[f]}{d t}(\tau) &= L[f](\tau) = \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau) d^3a.~(l1)
+\end{align}`$
+
+## Proposal of action density equivalence
+
+$`\begin{align}
+\frac{d \mathcal{S}}{d t}(a, \tau) &= L[f](\tau) = \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau),~(l2)
 \end{align}`$
 
 $`\begin{align}
