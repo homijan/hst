@@ -39,7 +39,7 @@ S[f](\tilde{\tau}) = \int_\Omega \mathcal{S}_f(a, \tilde{\tau}) d^3a.~(l4)
 ## Ideal fluid example
 
 $`\begin{equation}
-\mathcal{L}(\rho_0(a), \dot{f}(a, \tau), \varepsilon(a, \tau)) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon(a, \tau) \right) \overset{_{\pi = \rho_0 \dot{f}}}{=} \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 - \rho_0(a) \varepsilon(a, \tau),~(l5)
+\mathcal{L}_{if}(\rho_0(a), \dot{f}(a, \tau), \partial_a f(a, \tau)) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon(a, \partial_a f(a, \tau)) \right),~(l5)
 \end{equation}`$
 
 Note that $`\rho_0(a)`$ does not change with $`\tau`$.
