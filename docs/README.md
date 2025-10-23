@@ -83,7 +83,7 @@ Note that the realtion between Eulerian coordinate $`x`$ and Lagrangian (fluid) 
 $`\begin{align}
 x(a, \tau) &= a + \int_0^\tau v(x(a, \tilde{\tau}), \tilde{\tau}) d\tilde{\tau},~(L11)
 \\
-a(x, \tau) &= x - \int_0^\tau v(x(a, \tilde{\tau}), \tilde{\tau}) d\tilde{\tau},~(L12)
+a(x, \tau) &= x - \int_0^\tau v(x, \tilde{\tau}) d\tilde{\tau},~(L12)
 \end{align}`$
 
 $`x(a, 0)`$
