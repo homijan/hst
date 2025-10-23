@@ -13,13 +13,13 @@ where *Lagrangian desnity* $`\mathcal{L}`$ is a function of the field and its de
 The integral formulation of action $`(l0)`$ can be written in differential form as
 
 $`\begin{equation}
-\frac{d S[f]}{d t}(\tau) = L[f](\tau) = \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau) d^3a.~(l1)
+\frac{d S[f]}{d t}(\tau) = L[f](\tau) = \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau) d^3a.~(L1)
 \end{equation}`$
 
 The *conjugate momentum* to $`f`$ is defined as
 
 $`\begin{equation}
-\pi = \partial_{\dot{f}} \mathcal{L}.~(l2)
+\pi = \partial_{\dot{f}} \mathcal{L}.~(L2)
 \end{equation}`$
 
 ## Proposal of action density equivalence
@@ -27,13 +27,13 @@ $`\begin{equation}
 The action density field $`\mathcal{S}_f(a, t)`$ solving the following ordinary differential equation for given field $`f`$
 
 $`\begin{equation}
-\frac{d \mathcal{S}_f}{d t}(a, \tau) = \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau),~(l3)
+\frac{d \mathcal{S}_f}{d t}(a, \tau) = \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau),~(L3)
 \end{equation}`$
 
 leads to the same action as evaluated by $`(l0)`$ written mathematically as
 
 $`\begin{equation}
-S[f](\tilde{\tau}) = \int_\Omega \mathcal{S}_f(a, \tilde{\tau}) d^3a.~(l4)
+S[f](\tilde{\tau}) = \int_\Omega \mathcal{S}_f(a, \tilde{\tau}) d^3a.~(L4)
 \end{equation}`$
 
 ## Ideal fluid example
@@ -41,21 +41,21 @@ S[f](\tilde{\tau}) = \int_\Omega \mathcal{S}_f(a, \tilde{\tau}) d^3a.~(l4)
 Let's $`a`$ is the fluid coordinate, then the ideal fluid Lagrangian density function reads
 
 $`\begin{equation}
-\mathcal{L}^{if}(\rho_0(a), \dot{f}(a, \tau), \partial_a f(a, \tau)) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right),~(l5)
+\mathcal{L}^{if}(\rho_0(a), \dot{f}(a, \tau), \partial_a f(a, \tau)) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right),~(L5)
 \end{equation}`$
 
 where $`\varepsilon`$ is the internal energy potential depending on density $`\rho(a, t) = \frac{\rho_0(a)}{\partial_a f(a, \tau)}`$. Note that $`\rho_0(a)`$ does not change with $`\tau`$.
 
-The conjugate momentum of field $`f`$ defined by $`(l2)`$ from $`(l5)`$ is
+The conjugate momentum of field $`f`$ defined by $`(L2)`$ from $`(L5)`$ is
 
 $`\begin{equation}
-\pi(a, \tau) = \partial_{\dot{f}} \mathcal{L}_=^{if}(a, \tau) = \rho_0(a) \dot{f}(a, \tau).~(l6) 
+\pi(a, \tau) = \partial_{\dot{f}} \mathcal{L}_=^{if}(a, \tau) = \rho_0(a) \dot{f}(a, \tau).~(L6) 
 \end{equation}`$
 
-Finally, we obtain the ideal fluid action density $`\mathcal{S}^{if}_f(a, \tau)`$ for a given function $`f`$ from $`(l3)`$ using ideal fluid Lagrangian density $`(l5)`$ by solving ordinary differential equation
+Finally, we obtain the ideal fluid action density $`\mathcal{S}^{if}_f(a, \tau)`$ for a given function $`f`$ from $`(L3)`$ using ideal fluid Lagrangian density $`(L5)`$ by solving ordinary differential equation
 
 $`\begin{equation}
-\frac{d \mathcal{S}_f}{d t}(a, \tau) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right).~(l7)
+\frac{d \mathcal{S}_f}{d t}(a, \tau) = \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon\left( \frac{\rho_0(a)}{\partial_a f(a, \tau)} \right) \right).~(L7)
 \end{equation}`$
 
 # Re-engineering of action functional
@@ -96,7 +96,7 @@ allowing for **re-engineeing of action density** $`\mathcal{s}(x, t)`$.
 $`\begin{align}
 S_\pi[f] &= \int_{\tau_0}^{\tau_1} L[f, \dot{f}] d\tau = \int_{\tau_0}^{\tau_1} \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), a, \tau) d^3a~d\tau 
 \\
-&\overset{^{ideal}_{fluid}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon(a, \tau) \right) d^3 a~d\tau \overset{_{\pi = \rho_0 \dot{f}}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \left( \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 - \rho_0(a) \varepsilon(a, \tau) \right) d^3 a~d\tau,~(l1)
+&\overset{^{ideal}_{fluid}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon(a, \tau) \right) d^3 a~d\tau \overset{_{\pi = \rho_0 \dot{f}}}{=} \int_{\tau_0}^{\tau_1} \int_\Omega \left( \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 - \rho_0(a) \varepsilon(a, \tau) \right) d^3 a~d\tau,~(L1)
 \end{align}`$
 
 where *Lagrangian desnity* $`\mathcal{L}`$ is a function of the field and its derivatives at given point $`(a, \tau)`$. Note that $`\rho_0(a)`$ does not change with $`\tau`$.
@@ -119,10 +119,10 @@ $`\begin{equation}
 
 ### Ideal fluid action and functional derivative
 
-Note, that if $`\mathbf{s} = (a, \tau)`$ in $`(fd2)`$ and $`g`$ is the ideal fluid Lagrangian density from $`(l1)`$, $`\mathcal{L}(a, \dot{f}, \partial_a f) = \rho_0(a) \left( \frac{1}{2}\dot{f}^2 - \varepsilon \left( s_0(a), \frac{\rho_0(a)}{\partial_a f} \right) \right)`$, we obtain Euler-Lagrange equations (Euler–Lagrange equations section of https://en.wikipedia.org/wiki/Lagrangian_(field_theory) )
+Note, that if $`\mathbf{s} = (a, \tau)`$ in $`(fd2)`$ and $`g`$ is the ideal fluid Lagrangian density from $`(L1)`$, $`\mathcal{L}(a, \dot{f}, \partial_a f) = \rho_0(a) \left( \frac{1}{2}\dot{f}^2 - \varepsilon \left( s_0(a), \frac{\rho_0(a)}{\partial_a f} \right) \right)`$, we obtain Euler-Lagrange equations (Euler–Lagrange equations section of https://en.wikipedia.org/wiki/Lagrangian_(field_theory) )
 
 $`\begin{equation}
-\partial_f \mathcal{L} = \partial_{s^i} \left( \partial_{(\partial_{s^i} f)} \mathcal{L} \right) \overset{_{\partial_f \mathcal{L} = 0}}{\Rightarrow} \partial_\tau \left( \partial_{(\partial_\tau f)} \mathcal{L} \right) + \partial_a \left( \partial_{(\partial_a f)} \mathcal{L} \right) = 0 \Rightarrow \rho_0 \partial^2_{\tau^2} f - \partial_a \left( \frac{\rho_0^2}{(\partial_a f)^2} \partial_{\frac{\rho_0(a)}{\partial_a f}} \varepsilon \right) = 0,~(l2)
+\partial_f \mathcal{L} = \partial_{s^i} \left( \partial_{(\partial_{s^i} f)} \mathcal{L} \right) \overset{_{\partial_f \mathcal{L} = 0}}{\Rightarrow} \partial_\tau \left( \partial_{(\partial_\tau f)} \mathcal{L} \right) + \partial_a \left( \partial_{(\partial_a f)} \mathcal{L} \right) = 0 \Rightarrow \rho_0 \partial^2_{\tau^2} f - \partial_a \left( \frac{\rho_0^2}{(\partial_a f)^2} \partial_{\frac{\rho_0(a)}{\partial_a f}} \varepsilon \right) = 0,~(L2)
 \end{equation}`$
 
 which can be found to be equivalent to second Newton law of fluid 
@@ -140,7 +140,7 @@ Considering (Goldstein3-10.12) we see that functional
 $`\begin{align}
 D_\tau S[f](\tau) &= \delta_{f(\tau)} S[f](\tau) D_\tau f(\tau) + \delta_\tau S[f](\tau)
 \\
-&\overset{_{(l1)}}{=} L[f(\tau), \dot{f}(\tau)]
+&\overset{_{(L1)}}{=} L[f(\tau), \dot{f}(\tau)]
 \end{align}`$
 
 ## MG's notation
