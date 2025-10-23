@@ -18,9 +18,13 @@ $`\begin{align}
 
 ## Proposal of action density equivalence
 
+The action density $`\mathcal{S}(a, t)`$ solving the following equation
+
 $`\begin{align}
-\frac{d \mathcal{S}}{d t}(a, \tau) &= L[f](\tau) = \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau),~(l2)
+\frac{d \mathcal{S}}{d t}(a, \tau) &= \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau),~(l2)
 \end{align}`$
+
+
 
 $`\begin{align}
 S_\pi[f](\tilde{\tau}) &= \int_{0}^{\tilde{\tau}} \int_\Omega \rho_0(a) \left( \frac{1}{2}\dot{f}(a, \tau)^2 - \varepsilon(a, \tau) \right) d^3 a~d\tau \overset{_{\pi = \rho_0 \dot{f}}}{=} \int_{0}^{\tilde{\tau}} \int_\Omega \left( \frac{1}{2 \rho_0(a)} \pi(a, \tau)^2 - \rho_0(a) \varepsilon(a, \tau) \right) d^3 a~d\tau,~(l1)
