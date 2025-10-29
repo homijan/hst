@@ -57,7 +57,7 @@ $`\begin{equation}
 \end{equation}`$
 
 **Remark:**
-*It should be noted, that $`f(a, \tau)`$ is the evolving spatial position of a fluid element $`a`$ in time, $`x(a, \tau)`$ in 1D*.
+*It should be noted, that $`f(a, \tau)`$ is the evolving spatial position of a fluid element $`a`$ in time, $`f(a, \tau) = x(a, \tau)`$ in 1D*.
 
 It can be shown that $`\dot{f}(a, \tau)`$ and $`\partial_a f(a, \tau)`$ are equivalent to Euler variables of ideal fluid
 
