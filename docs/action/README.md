@@ -135,6 +135,6 @@ $`P^{fric}:\nabla \vec{v}`$
 
 and
 
-$`\nabla \dot \vec{q}^{heat}`$
+$`\nabla \dot {\vec{q}}^{heat}`$
 
 sources/contributions.
