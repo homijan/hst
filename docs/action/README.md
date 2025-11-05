@@ -126,3 +126,7 @@ The correctness of the fluid coordinate to lab coordinates transformation can be
 $`\begin{equation}
 \rho(\frac{x_{i+1}(t) + x_{i}(t)}{2}) = \frac{\rho_0(\frac{a_{i+1}(t) + a_{i}(t)}{2})}{J_i}
 \end{equation}`$
+
+# Dissipative least action principle
+
+(2.10) in Gay-Balmaz show that the entirety of dissipative processess is actually incorporated in the Lagrangian density via internal energy, that is evolved by a pde with $`P^{fric}:\nabla \vec{v}`$ and $`\nabla \dot \vec{q}^{heat}`$ sources/contributions.
