@@ -116,4 +116,4 @@ where the integration is carried out over laboratory coordinates (not the fluid 
 Let's have a mesh in laboratory coordinates at $`t=0`$ given by nodes $x_i$, then we define the Lagrangian *fluid* coordinate by $`a_i = x_i \forall i`$.
 
 The discrete analog of the Jacobian reads
-$`J_i = \frac{x_{i+1} - x_i}{a_{i+1] - a_i}`$
+$`J_i = \frac{x_{i+1} - x_i}{a_{i+1} - a_i}`$
