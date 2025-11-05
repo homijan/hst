@@ -129,4 +129,12 @@ $`\begin{equation}
 
 # Dissipative least action principle
 
-(2.10) in Gay-Balmaz show that the entirety of dissipative processess is actually incorporated in the Lagrangian density via internal energy, that is evolved by a pde with $`P^{fric}:\nabla \vec{v}`$ and $`\nabla \dot \vec{q}^{heat}`$ sources/contributions.
+(2.10) in Gay-Balmaz show that the entirety of dissipative processess is actually incorporated in the Lagrangian density via internal energy, that is evolved by a pde with 
+
+$`P^{fric}:\nabla \vec{v}`$
+
+and
+
+$`\nabla \dot \vec{q}^{heat}`$
+
+sources/contributions.
