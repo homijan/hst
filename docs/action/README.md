@@ -120,6 +120,6 @@ $`J_i = \frac{x_{i+1} - x_i}{a_{i+1} - a_i}`$
 
 The correctness of the fluid coordinate to lab coordinates transformation can be checked via density and the following needs to hold
 
-$`\begin{equaiton}
+$`\begin{equation}
 \rho(\frac{x_{i+1}(t) + x_{i}(t)}{2}) = \frac{\rho_0(\frac{a_{i+1}(t) + a_{i}(t)}{2})}{J_i}
 \end{equation}`$
