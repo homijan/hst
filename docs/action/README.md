@@ -117,3 +117,9 @@ Let's have a mesh in laboratory coordinates at $`t=0`$ given by nodes $x_i$, the
 
 The discrete analog of the Jacobian reads
 $`J_i = \frac{x_{i+1} - x_i}{a_{i+1} - a_i}`$
+
+The correctness of the fluid coordinate to lab coordinates transformation can be checked via density and the following needs to hold
+
+$`\begin{equaiton}
+\rho(\frac{x_{i+1}(t) + x_{i}(t)}{2}) = \frac{\rho_0(\frac{a_{i+1}(t) + a_{i}(t)}{2})}{J_i}
+\end{equation}`$
