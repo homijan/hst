@@ -110,3 +110,7 @@ S[f](\tilde{\tau}) = \int_\Omega \mathcal{S}_f^{if}(x, \tilde{\tau}) \frac{1}{J}
 \end{equation}`$
 
 where the integration is carried out over laboratory coordinates (not the fluid coordinates, requiring Jacobian scaling $`J = \partial_a x(a(x, \tau), \tau)`$).
+
+# Discrete formulation
+
+Let's have a mesh in laboratory coordinates at $`t=0`$ given by nodes $x_i$, then we define the Lagrangian *fluid* coordinate by $a_i = x_i \forall i$.
