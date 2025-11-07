@@ -1,3 +1,13 @@
+# Riemann Solvers (repos)
+
+* `git clone https://github.com/meithan/Euler1D_Benchmark.git`
+
+* `git clone https://github.com/ibackus/sod-shocktube.git`
+
+
+
+
+
 # Sod shock tube calculator
 
 A simple package to numerically solve the sod shock tube problem for python 2.7 and 3.5+, including a modified solution
