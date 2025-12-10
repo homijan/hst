@@ -14,6 +14,10 @@ $`\begin{equation}
 \frac{d S[f]}{d \tau}(\tau) = L[f](\tau) = \int_\Omega \mathcal{L}(f(a, \tau), \dot{f}(a, \tau), \partial_a f(a, \tau), a, \tau) d^3a.~(L1)
 \end{equation}`$
 
+See a comprehensive comparison of Lagrangian vs Hamiltonian
+
+https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Variational_Principles_in_Classical_Mechanics_(Cline)/15%3A_Advanced_Hamiltonian_Mechanics/15.08%3A_Comparison_of_the_Lagrangian_and_Hamiltonian_Formulations
+
 The *conjugate momentum* to $`f`$ is defined as
 
 $`\begin{equation}
