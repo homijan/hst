@@ -9,18 +9,126 @@ def nonlinear_function(f):
     return f
 def nonlinear_function_inverse(g):
     return g
-# Logarithmic operation on high-frequencies
-eps = 1e-10
-c_nln = 1e-2
-# Note that that the one shift is turned off
-def R0(f):
-    return f + c_nln #+ f / (abs(f) + eps)
-def R0_inverse(g):
-    return g - c_nln #- g / (abs(g) + eps)
-def MG_bar_nonlinear_function(f):
-    return 1j*np.log(R0(f))
-def MG_bar_nonlinear_function_inverse(g): 
-    return R0_inverse(np.exp(-1j*g))
+def bar_nonlinear_function(f):
+    return f
+def bar_nonlinear_function_inverse(g):
+    return g
+
+#######################################
+# Michael Glinsky - conformal mapping #
+#######################################
+def R_0_inv(z):
+    value = np.pi * (z * 1j + 1/(z * 1j) ) / 4.0
+    return value
+
+def R_0(z, outside=True):
+    z_bar = 2.0 * z / np.pi
+    z_bar = np.array(z_bar).astype(complex)
+    
+    value_plus = (z_bar + np.sqrt( z_bar * z_bar - 1 )) / 1j
+    value_minus = (z_bar - np.sqrt( z_bar * z_bar - 1 )) / 1j
+    
+    if outside:
+        value = np.where(np.abs(value_plus) > 1.0, value_plus, value_minus)
+    else:
+        value = np.where(np.abs(value_plus) > 1.0, value_minus, value_plus)
+        
+    return value
+
+def R_0_inv(z):
+    return z
+def R_0(z, outside=True):
+    return z
+
+def R_inv(z):
+    value = R_0_inv(np.exp(np.array(z).astype(complex) / 1j))
+    return value
+
+def R(z, outside=True):
+    value = 1j * np.log( R_0(np.array(z).astype(complex), outside=outside))
+    value.real = np.cos(value.real)
+    return value
+
+def R_inv(z):
+    value = np.array(z).astype(complex)
+    value.real = np.arccos(2.0 * value.real)
+    value = np.exp(value / 1j)
+    return value
+
+def R(z, outside=True):
+    value = 1j * np.log(np.array(z).astype(complex))
+    value.real = np.cos(2.0 * value.real)
+    return value
+
+# Uncomment to use MG's rectifier
+mapping_sheet_outside = True
+def bar_nonlinear_function(f):
+    return R(f, mapping_sheet_outside)
+def bar_nonlinear_function_inverse(g):
+    return R_inv(g)
+######################################
+
+
+#def h_MG(z):
+#    return 0.5 * (z + 1.0 / z)
+#def h_MG_inverse(z):
+#    #return z + (z * z - 1)**0.5
+#    #if z.real < 0 or abs(z) < 1.0:
+#    #if abs(z) < 1.0 and z.real < 0.0:
+#    if abs(z) < 1.0:
+#        return z - (z * z - 1)**0.5
+#    else:
+#        return z + (z * z - 1)**0.5
+#
+#
+#    #if (np.abs(z) >= 1.0):
+#    #    return z + (z * z - 1)**0.5
+#    #else:
+#    #    return z - (z * z - 1)**0.5
+#    #indexes = np.abs(z) <= 1
+#    #h_inv = z + (z * z - 1)**0.5
+#    #h_inv[indexes] = z[indexes] - (z[indexes] * z[indexes] - 1)**0.5
+#    #return h_inv
+#
+#def bar_nonlinear_function(z):
+#    return 2 * 1j / np.pi * np.log(h_MG_inverse(z) / 1j)
+#def bar_nonlinear_function_inverse(z):
+#    return h_MG(1j * np.exp(np.pi / 2.0 / 1j * z))
+#
+#for i in range(100):
+#    re = 4.0 * (np.random.rand() - 0.5)
+#    im = 4.0 * (np.random.rand() - 0.5)
+#    z = re + 1j * im
+#    #print(f'z {z:.3e}, abs(z) {np.abs(z):.3e}')
+#
+#    h_h_inv_z = h_MG(h_MG_inverse(z))
+#    h_inv_h_z = h_MG_inverse(h_MG(z))
+#    nln_nln_inv_z = bar_nonlinear_function(bar_nonlinear_function_inverse(z))
+#    nln_inv_nln_z = bar_nonlinear_function_inverse(bar_nonlinear_function(z))
+#    eps = 1e-10
+#    if np.abs(z) < 1.0 and (np.abs(z - h_h_inv_z) > eps or np.abs(z - h_inv_h_z) > eps):  
+#        print(f'i {i}')
+#        print(f'z {z:.3e}')
+#        print(f'abs(z) {np.abs(z):.3e}')
+#        print(f'h_MG(h_MG_inverse(z)) {h_h_inv_z:.3e}')
+#        print(f'h_MG_inverse(h_MG(z)) {h_inv_h_z:.3e}')
+#    if False:#np.abs(z - nln_nln_inv_z) > eps or np.abs(z - nln_inv_nln_z) > eps:
+#        print(f'bar_nonlinear_function(bar_nonlinear_function_inverse(z)) {nln_nln_inv_z:.3e}')
+#        print(f'bar_nonlinear_function_inverse(bar_nonlinear_function(z)) {nln_inv_nln_z:.3e}')
+
+
+## Logarithmic operation on high-frequencies
+#eps = 1e-10
+#c_nln = 1e-2
+## Note that that the one shift is turned off
+#def R0(f):
+#    return f + c_nln #+ f / (abs(f) + eps)
+#def R0_inverse(g):
+#    return g - c_nln #- g / (abs(g) + eps)
+#def MG_bar_nonlinear_function(f):
+#    return 1j*np.log(R0(f))
+#def MG_bar_nonlinear_function_inverse(g): 
+#    return R0_inverse(np.exp(-1j*g))
 
 # log scatter from S_0 to coarser structures
 #def bar_nonlinear_function(f):
@@ -29,10 +137,11 @@ def MG_bar_nonlinear_function_inverse(g):
 #    return MG_bar_nonlinear_function_inverse(g)
 
 # log scatter from S_J to finer structures
-def bar_nonlinear_function(f):
-    return MG_bar_nonlinear_function_inverse(f)
-def bar_nonlinear_function_inverse(g):
-    return MG_bar_nonlinear_function(g) 
+#def bar_nonlinear_function(f):
+#    return MG_bar_nonlinear_function_inverse(f)
+#def bar_nonlinear_function_inverse(g):
+#    return MG_bar_nonlinear_function(g) 
+
 
 ##############
 # Input data #
